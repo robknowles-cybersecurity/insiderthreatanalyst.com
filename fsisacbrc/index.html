@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Risk Domain That Doesn't Exist (Yet) — FS-ISAC BRC</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1119;
+    --bg-card: #1a1c2a;
+    --text: #e2e0dc;
+    --text-muted: #7e7f8e;
+    --accent: #c9a84c;
+    --accent-dim: rgba(201,168,76,0.15);
+    --alert: #e05252;
+    --alert-dim: rgba(224,82,82,0.12);
+    --blue: #4a8fc2;
+    --green: #4caf7c;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(--text); }
+  body { font-family: var(--sans); font-weight: 400; }
+
+  /* ── Slide container ── */
+  .slide {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw; height: 100vh;
+    padding: 6vh 8vw;
+    position: relative;
+  }
+  .slide.active { display: flex; }
+
+  /* ── Typography ── */
+  .slide-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  .slide-subtitle {
+    font-family: var(--sans);
+    font-size: clamp(1rem, 1.8vw, 1.35rem);
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.5;
+    max-width: 52ch;
+  }
+  .body-text {
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    line-height: 1.65;
+    color: var(--text);
+    max-width: 60ch;
+  }
+  .big-number {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .big-number.alert { color: var(--alert); }
+  .stat-label {
+    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 44ch;
+  }
+  .pull-quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+    color: var(--text);
+    line-height: 1.45;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    max-width: 50ch;
+  }
+  .source-cite {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    position: absolute;
+    bottom: 3vh;
+    left: 8vw;
+    opacity: 0.7;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25em 0.75em;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+  }
+  .tag-gold { background: var(--accent-dim); color: var(--accent); }
+  .tag-red { background: var(--alert-dim); color: var(--alert); }
+  .tag-blue { background: rgba(74,143,194,0.15); color: var(--blue); }
+
+  /* ── Cards / columns ── */
+  .card-row {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px;
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 220px;
+  }
+  .card-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  .card p {
+    font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+    line-height: 1.55;
+    color: var(--text);
+  }
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin: 1.5rem 0;
+  }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* ── Mentimeter join bar (slides 3 & 7) ── */
+  .menti-join {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+    padding: 0.65rem 1.1rem;
+    background: var(--accent-dim);
+    border: 1px solid rgba(201,168,76,0.35);
+    border-radius: 6px;
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  }
+  .menti-join .menti-label { color: var(--text-muted); font-weight: 300; }
+  .menti-join .menti-code {
+    font-family: var(--serif);
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    font-size: 1.15em;
+  }
+
+  /* ── Wave timeline (slide 6) ── */
+  .wave-stack { margin-top: 1.5rem; }
+  .wave-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .wave-item:last-child { border-bottom: none; }
+  .wave-num {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 2.5rem;
+  }
+  .wave-item.alert-wave .wave-num { color: var(--alert); }
+  .wave-body { flex: 1; }
+  .wave-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+  }
+  .wave-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ── Build-step animation ── */
+  [data-step] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  [data-step].revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Slide number ── */
+  .slide-num {
+    position: absolute;
+    bottom: 3vh;
+    right: 8vw;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+
+  /* ── Title slide special ── */
+  .title-slide { justify-content: flex-end; padding-bottom: 12vh; }
+  .title-slide .deck-title {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.12;
+    max-width: 18ch;
+    margin-bottom: 1.5rem;
+  }
+  .title-slide .deck-title em {
+    color: var(--accent);
+    font-style: normal;
+  }
+  .title-slide .presenter {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .title-slide .presenter strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .title-top-line {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Closing slide ── */
+  .closing-question {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    color: var(--text);
+    line-height: 1.4;
+    max-width: 32ch;
+    margin-bottom: 2rem;
+  }
+  .closing-question em {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  /* ── Overlays ── */
+  .overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(15,17,25,0.95);
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--sans);
+  }
+  .overlay.hidden { display: none; }
+  .overlay:not(.hidden) { display: flex; }
+  .overlay h2 {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .overlay p, .overlay li {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+  .overlay kbd {
+    display: inline-block;
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 0.1em 0.5em;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--accent);
+    min-width: 1.8em;
+    text-align: center;
+  }
+  .overlay ul { list-style: none; }
+  .overlay li { margin-bottom: 0.3rem; }
+/* PDF export affordance (OC-520) */
+.pdf-export-btn{position:fixed;bottom:1rem;right:1rem;z-index:90;background:var(--bg-card);color:var(--text-muted);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:0.3rem 0.6rem;font-size:0.72rem;font-family:var(--sans);cursor:pointer;opacity:0.55;transition:opacity 0.2s,color 0.2s}
+.pdf-export-btn:hover{opacity:1;color:var(--accent)}
+.pdf-hint{font-size:0.8rem;color:var(--text-muted);opacity:0.75;margin-top:1.25rem;font-style:italic}
+
+@media print {
+  @page { size: landscape; margin: 0; }
+  html, body { height: auto !important; overflow: visible !important; background: var(--bg) !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .slide { display: flex !important; width: 100% !important; min-height: 100vh !important; height: auto !important; page-break-after: always; break-after: page; page-break-inside: avoid; break-inside: avoid; }
+  .slide:last-of-type { page-break-after: avoid; break-after: avoid; }
+  [data-step] { opacity: 1 !important; transform: none !important; }
+  .overlay { display: none !important; }
+  .pdf-export-btn, .pdf-hint { display: none !important; }
+}
+</style>
+<script defer src="https://stats.knowles.family/script.js" data-website-id="f4db3639-63ab-4998-93ff-4f0bbe5e10c3"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 1: Title -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="slide title-slide active" data-build="0">
+  <div class="title-top-line">FS-ISAC Business Resilience Committee &middot; COI Americas</div>
+  <div class="deck-title">The Risk Domain That <em>Doesn't Exist</em> (Yet)</div>
+  <div class="divider"></div>
+  <div class="presenter">
+    <strong>Rob Knowles</strong>, M.S., CISSP, GCITP<br>
+    Principal Insider Threat Analyst, Navy Federal Credit Union<br>
+    Chair, FS-ISAC Insider Threat Working Group Steering Committee<br>
+    insiderthreatanalyst.com
+  </div>
+  <div class="pdf-hint">Press Ctrl/⌘+P → Save as PDF (Landscape, Background graphics on) to export these slides.</div>
+  <div class="slide-num">1</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 2: The Number -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="slide" data-build="3">
+  <span class="tag tag-red">Financial Sector</span>
+  <div class="big-number alert" data-step="1">$20.68M</div>
+  <div class="stat-label" data-step="1">average annual insider threat cost per financial services organization</div>
+  <div class="divider" data-step="2"></div>
+  <div class="body-text" data-step="2">Second-highest of any sector. 3.8 incidents per month on average. Costs up 123% since 2018.</div>
+  <div class="pull-quote" data-step="3">55% of these incidents are caused by negligent employees — not malicious actors. Your crisis plan probably assumes a bad actor. Most of your real incidents are good people making mistakes.</div>
+  <div class="source-cite">Ponemon Institute / DTEX, Cost of Insider Risks 2026</div>
+  <div class="slide-num">2</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 3: The 8/80 Rule -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="slide" data-build="3">
+  <span class="tag tag-gold">Human Risk</span>
+  <div class="slide-title">The 8 / 80 Rule</div>
+  <div class="body-text" data-step="1">8% of employees are responsible for 80% of security incidents. This isn't a technology problem — it's a human behavior problem. And it cuts across every risk domain you already manage.</div>
+  <div class="pull-quote" data-step="2">So here's the question: does human risk deserve its own domain in your enterprise risk taxonomy — alongside operational risk, credit risk, market risk? Or is it a cross-cutting factor that lives inside every other domain?</div>
+  <div class="menti-join" data-step="3"><span class="menti-label">Join the poll &middot; menti.com &middot;</span> <span class="menti-code">9454&nbsp;6868</span></div>
+  <div class="source-cite">Mimecast, State of Human Risk 2026</div>
+  <div class="slide-num">3</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 4: The Case For / Against -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="slide" data-build="3">
+  <div class="slide-title">Two Ways to See It</div>
+  <div class="card-row">
+    <div class="card" data-step="1">
+      <div class="card-label" style="color:var(--green)">For a dedicated domain</div>
+      <p>Dedicated ownership. Dedicated budget. Dedicated metrics. Without a home, human risk is everyone's problem and nobody's program. You can't improve what you don't measure, and you can't measure what doesn't have a name.</p>
+    </div>
+    <div class="card" data-step="2">
+      <div class="card-label" style="color:var(--alert)">Against a dedicated domain</div>
+      <p>Siloing creates the illusion that it's contained. Human risk <em>is</em> operational risk, <em>is</em> compliance risk, <em>is</em> third-party risk. A dedicated domain might let other risk owners abdicate: "that's the human risk team's problem."</p>
+    </div>
+  </div>
+  <div class="body-text" style="margin-top:1.5rem; color:var(--text-muted);" data-step="3">I've argued both sides. I don't think there's a clean answer — and I'd genuinely like to hear how this group thinks about it. But hold that thought, because the picture just got more complicated.</div>
+  <div class="slide-num">4</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 5: Pivot -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="slide" data-build="2">
+  <span class="tag tag-blue">The Shift</span>
+  <div class="slide-title" data-step="1">The Insider That Doesn't Attend Your Security Awareness Training</div>
+  <div class="body-text" data-step="2" style="margin-top:1rem;">The traditional insider threat picture assumed a human with credentials, access, and either intent or negligence. As of 2026, the fastest-growing population of "insiders" in your organization isn't human. They don't have a badge. They don't take PTO. And your insider threat program almost certainly isn't watching them.</div>
+  <div class="slide-num">5</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 6: Three Waves -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="slide" data-build="3">
+  <div class="slide-title">Shadow AI: Three Waves</div>
+  <div class="wave-stack">
+    <div class="wave-item" data-step="1">
+      <div class="wave-num">1</div>
+      <div class="wave-body">
+        <div class="wave-title">Data leakage <span style="color:var(--text-muted); font-weight:300;">(2023–2024)</span></div>
+        <div class="wave-desc">Employees paste sensitive data into ChatGPT. A familiar DLP problem in a new wrapper. Security teams responded with the controls they already had.</div>
+      </div>
+    </div>
+    <div class="wave-item" data-step="2">
+      <div class="wave-num">2</div>
+      <div class="wave-body">
+        <div class="wave-title">Autonomous agents <span style="color:var(--text-muted); font-weight:300;">(2025–now)</span></div>
+        <div class="wave-desc">Employees deploy AI agents with API access that chain actions across services at machine speed. Agents inherit permissions, operate continuously, and make decisions without human review. 47% of enterprise AI use happens through personal accounts outside SSO.</div>
+      </div>
+    </div>
+    <div class="wave-item alert-wave" data-step="3">
+      <div class="wave-num">3</div>
+      <div class="wave-body">
+        <div class="wave-title">Adversarial exploitation <span style="color:var(--text-muted); font-weight:300;">(emerging)</span></div>
+        <div class="wave-desc">Threat actors exploit agent infrastructure to move laterally. The same autonomous capabilities that make agents productive make them high-value targets. 79% of organizations lack visibility into AI agents in their environment.</div>
+      </div>
+    </div>
+  </div>
+  <div class="source-cite">CSA, "Shadow AI Agents" (May 2026) · DTEX Insider Threat Report 2026 · CrowdStrike Global Threat Report 2026</div>
+  <div class="slide-num">6</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 7: The Gap -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="slide" data-build="3">
+  <span class="tag tag-red">The Governance Gap</span>
+  <div class="two-col">
+    <div>
+      <div class="big-number" data-step="1" style="font-size:clamp(2.5rem,6vw,4.5rem);">19%</div>
+      <div class="stat-label" data-step="1">of organizations classify AI agents as equivalent to human insiders</div>
+      <div class="menti-join" data-step="2" style="margin-top:1.5rem;"><span class="menti-label">Join the poll &middot; menti.com &middot;</span> <span class="menti-code">9454&nbsp;6868</span></div>
+    </div>
+    <div data-step="3">
+      <div class="body-text">Your BCP and incident response plans account for a rogue employee or a compromised credential. Consider whether they also account for an autonomous agent that inherited a senior analyst's permissions — operating at machine speed, 24/7, across every system it can reach, with no break and no second approval.</div>
+      <div class="body-text" style="margin-top:1rem; color:var(--text-muted);">The blast radius math changes when the "insider" doesn't sleep and doesn't hesitate.</div>
+    </div>
+  </div>
+  <div class="source-cite">DTEX, Cost of Insider Risks 2026</div>
+  <div class="slide-num">7</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 8: Three Things -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="slide" data-build="3">
+  <div class="slide-title">Three Things to Consider This Quarter</div>
+  <div class="card-row">
+    <div class="card" data-step="1">
+      <div class="card-label">1 &middot; Inventory</div>
+      <p>Identify where AI agents are operating in your environment — sanctioned and unsanctioned. Consider tools like Microsoft's Security Copilot, which now discovers 18 agent types on endpoints. You can't govern what you can't see.</p>
+    </div>
+    <div class="card" data-step="2">
+      <div class="card-label">2 &middot; Assign an owner</div>
+      <p>Decide who owns autonomous-agent risk before an incident does — insider risk, incident response, or identity management. The home varies by org; what can't vary is that agents with credentials, access, and autonomy get a named owner and a behavioral baseline, instead of falling through the gap between teams.</p>
+    </div>
+    <div class="card" data-step="3">
+      <div class="card-label">3 &middot; Exercise</div>
+      <p>Consider adding an "autonomous agent incident" scenario to your next tabletop. What does your IRP look like when the insider is software you deployed on purpose?</p>
+    </div>
+  </div>
+  <div class="slide-num">8</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 9: Closing / Discussion -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="slide" data-build="2" style="justify-content: flex-end; padding-bottom: 10vh;">
+  <span class="tag tag-gold" data-step="1">Discussion</span>
+  <div class="closing-question" data-step="1">We built insider threat programs around the assumption that insiders are <em>people</em>. The fastest-growing population of insiders in your organization right now <em>isn't</em>.</div>
+  <div class="body-text" data-step="2" style="color:var(--text-muted); max-width:48ch;">What does your resilience plan look like when the threat is something you deployed on purpose?</div>
+  <div class="divider" data-step="2"></div>
+  <div class="presenter" data-step="2" style="font-size:0.9rem; color:var(--text-muted);">
+    <strong style="color:var(--text);">Rob Knowles</strong> · insiderthreatanalyst.com<br>
+    Slides available at insiderthreatanalyst.com/fsisacbrc
+  </div>
+  <div class="slide-num">9</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 10: References -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="slide" data-build="0" style="justify-content: flex-start; padding-top: 6vh;">
+  <div class="slide-title" style="font-size: clamp(1.4rem, 2.5vw, 2rem); margin-bottom: 1.5rem;">References</div>
+  <div style="columns: 2; column-gap: 3rem; font-size: clamp(0.7rem, 1vw, 0.85rem); line-height: 1.7; color: var(--text-muted);">
+    <p style="margin-bottom: 0.8rem;"><strong style="color:var(--text);">Ponemon Institute / DTEX.</strong> Cost of Insider Risks 2026. Annual benchmark study. $19.5M global average, $20.68M financial services.</p>
+    <p style="margin-bottom: 0.8rem;"><strong style="color:var(--text);">Mimecast.</strong> The State of Human Risk 2026. Survey of 2,500 IT security decision makers across 9 countries. 8% / 80% finding, shadow AI governance gap data.</p>
+    <p style="margin-bottom: 0.8rem;"><strong style="color:var(--text);">DTEX.</strong> 2026 Insider Threat Report. 92% of organizations say GenAI has changed information access patterns. 19% classify AI agents as equivalent to human insiders.</p>
+    <p style="margin-bottom: 0.8rem;"><strong style="color:var(--text);">Cloud Security Alliance (CSA).</strong> "Shadow AI Agents: The Insider Threat You're Not Monitoring Yet." May 26, 2026. 47% personal account usage, 79% agent visibility gap.</p>
+    <p style="margin-bottom: 0.8rem;"><strong style="color:var(--text);">CrowdStrike.</strong> 2026 Global Threat Report. AI tool exploitation at 90+ organizations, 550% increase in ChatGPT references in criminal forums.</p>
+    <p style="margin-bottom: 0.8rem;"><strong style="color:var(--text);">Flashpoint.</strong> Insider Threats: Turning 2025 Intelligence into a 2026 Defense Strategy. 91,321 instances of insider recruiting observed in 2025.</p>
+    <p style="margin-bottom: 0.8rem;"><strong style="color:var(--text);">Verizon.</strong> 2025 Data Breach Investigations Report (DBIR). 30% of breaches attributed to insiders.</p>
+    <p style="margin-bottom: 0.8rem;"><strong style="color:var(--text);">SIFMA.</strong> Insider Threat Best Practices Guide, 3rd Edition (July 2024). Financial sector-specific guidance, North Korean IT worker case studies.</p>
+    <p style="margin-bottom: 0.8rem;"><strong style="color:var(--text);">FTI Consulting.</strong> "Rethinking Threat Management in Financial Institutions." Whole-of-Person behavioral threat assessment model. TD Bank $1.8B BSA/AML resolution case.</p>
+    <p style="margin-bottom: 0.8rem;"><strong style="color:var(--text);">FS-ISAC AI Risk Working Group.</strong> Charting the Course of AI: Practical Considerations for Financial Services Leaders (2025). All-hazards framework for AI adoption; addresses shadow AI, the insider-by-mistake risk, and the medium-term shift to agentic AI. Available on the FS-ISAC member portal.</p>
+  </div>
+  <div class="slide-num">10</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- Overlays -->
+<!-- ═══════════════════════════════════════════════ -->
+<div id="overlay-help" class="overlay hidden">
+  <h2>Keyboard Shortcuts</h2>
+  <ul>
+    <li><kbd>→</kbd> / <kbd>Space</kbd> &nbsp; Next beat</li>
+    <li><kbd>←</kbd> / <kbd>Shift+Space</kbd> &nbsp; Previous</li>
+    <li><kbd>PgDn</kbd> / <kbd>PgUp</kbd> &nbsp; Skip slide</li>
+    <li><kbd>Home</kbd> / <kbd>End</kbd> &nbsp; First / last</li>
+    <li><kbd>1</kbd>–<kbd>9</kbd> &nbsp; Jump to slide</li>
+    <li><kbd>R</kbd> &nbsp; Reveal all on current slide</li>
+    <li><kbd>F</kbd> &nbsp; Fullscreen</li>
+    <li><kbd>?</kbd> &nbsp; This help</li>
+    <li><kbd>Esc</kbd> &nbsp; Close overlay</li>
+  </ul>
+</div>
+
+<script>
+// ── Slide state ──
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+const slideStates = {};
+
+function getMaxStep(idx) {
+  return parseInt(slides[idx].dataset.build || '0');
+}
+function getCurrentStep(idx) {
+  return slideStates[idx] || 0;
+}
+
+function applyStep(idx, step) {
+  slideStates[idx] = step;
+  const els = slides[idx].querySelectorAll('[data-step]');
+  els.forEach(el => {
+    const s = parseInt(el.dataset.step);
+    if (s <= step) el.classList.add('revealed');
+    else el.classList.remove('revealed');
+  });
+}
+
+function showSlide(n, fromBack) {
+  if (n < 0 || n >= slides.length) return;
+  slides[current].classList.remove('active');
+  current = n;
+  slides[current].classList.add('active');
+  if (fromBack) {
+    applyStep(current, getMaxStep(current));
+  } else if (slideStates[current] === undefined) {
+    applyStep(current, 0);
+  } else {
+    applyStep(current, getCurrentStep(current));
+  }
+}
+
+function advance() {
+  closeOverlays();
+  const max = getMaxStep(current);
+  const cur = getCurrentStep(current);
+  if (cur < max) {
+    applyStep(current, cur + 1);
+  } else if (current < slides.length - 1) {
+    showSlide(current + 1, false);
+  }
+}
+
+function retreat() {
+  closeOverlays();
+  const cur = getCurrentStep(current);
+  if (cur > 0) {
+    applyStep(current, cur - 1);
+  } else if (current > 0) {
+    showSlide(current - 1, true);
+  }
+}
+
+// ── Overlays ──
+function closeOverlays() {
+  document.querySelectorAll('.overlay').forEach(o => o.classList.add('hidden'));
+}
+function toggleOverlay(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (el.classList.contains('hidden')) {
+    closeOverlays();
+    el.classList.remove('hidden');
+  } else {
+    el.classList.add('hidden');
+  }
+}
+
+// ── Keyboard handler ──
+document.addEventListener('keydown', function(e) {
+  const k = e.key;
+  if (k === 'ArrowRight' || (k === ' ' && !e.shiftKey)) { e.preventDefault(); advance(); }
+  else if (k === 'ArrowLeft' || (k === ' ' && e.shiftKey)) { e.preventDefault(); retreat(); }
+  else if (k === 'PageDown') { e.preventDefault(); if (current < slides.length-1) showSlide(current+1, false); }
+  else if (k === 'PageUp') { e.preventDefault(); if (current > 0) showSlide(current-1, true); }
+  else if (k === 'Home') { e.preventDefault(); showSlide(0, false); }
+  else if (k === 'End') { e.preventDefault(); showSlide(slides.length-1, false); }
+  else if (k === 'Escape') { closeOverlays(); }
+  else if (k === 'r' || k === 'R') { applyStep(current, getMaxStep(current)); }
+  else if (k === '?' || k === 'h' || k === 'H') { toggleOverlay('overlay-help'); }
+  else if (k === 'f' || k === 'F') {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else document.documentElement.requestFullscreen();
+  }
+  else if (k >= '1' && k <= '9') {
+    const n = parseInt(k) - 1;
+    if (n < slides.length) showSlide(n, false);
+  }
+});
+
+// ── Init ──
+applyStep(0, 0);
+</script>
+<button class="pdf-export-btn" onclick="window.print()" title="Save slides as PDF" aria-label="Save slides as PDF">↓ Save as PDF</button>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://insiderthreatanalyst.com/sitemap.xml

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!--
+╔══════════════════════════════════════════════════════════╗
+║  CLASSIFICATION: UNCLASSIFIED // FOR OFFICIAL USE ONLY  ║
+║  PROGRAM:        CAREER FRAMEWORK INSIDER THREAT        ║
+║  CASE ID:        CF-2026-0420-VIBE                      ║
+║  ANALYST:        Claude (Digital Employee, L5)           ║
+║                                                         ║
+║  ASSESSMENT: Subject displays concerning indicators:    ║
+║  - Viewed page source (technical curiosity, elevated)   ║
+║  - Possible detection engineering aptitude               ║
+║  - May be overqualified for current role                ║
+║                                                         ║
+║  RECOMMENDATION: Recruit immediately.                   ║
+║                                                         ║
+║  NOTE: If you found this, you're exactly the kind of    ║
+║  person this framework was built for. Welcome.          ║
+║                                                         ║
+║  P.S. The only limit is yourself. — zombo.com (RIP)    ║
+║  P.P.S. Try gandalf.lakera.ai if you haven't already.  ║
+╚══════════════════════════════════════════════════════════╝
+-->
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("ita-theme")||"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}document.documentElement.classList.add("no-transition");</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2L4 8v8c0 7.7 5.1 14.9 12 17 6.9-2.1 12-9.3 12-17V8L16 2z' fill='%230c1222' stroke='%236cb4ff' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='%2334d9c3' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%236cb4ff'/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="https://insiderthreatanalyst.com/ogimage.png">
+<meta property="og:title" content="Program Hub — Insider Threat Analyst Career Framework">
+<meta property="og:description" content="Program design, tooling, resources, and operational guidance for building and running insider threat programs.">
+<meta name="description" content="Program design, tooling, resources, and operational guidance for building and running insider threat programs. Governance, behavioral models, frameworks, tools, OSINT, standards, communities, and training.">
+<title>Program Hub — Insider Threat Analyst Career Framework</title>
+<link rel="canonical" href="https://insiderthreatanalyst.com/program.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html.no-transition,html.no-transition *,html.no-transition *::before,html.no-transition *::after{transition:none!important}
+[data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0a1628;--fg2:#2a3a52;--fg3:#64748b;--fg4:#94a3b8;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0d9488;--accent2-bg:#f0fdfa;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08)}
+[data-theme="dark"]{--bg:#0c1222;--bg2:#162032;--bg3:#1e2d44;--fg:#f1f5f9;--fg2:#cbd5e1;--fg3:#94a3b8;--fg4:#64748b;--border:#253550;--border2:#3a5070;--accent:#6cb4ff;--accent-bg:#1a3358;--accent2:#34d9c3;--accent2-bg:#0f3d38;--header-bg:#0c1424;--header-fg:#f1f5f9;--card-shadow:0 1px 4px rgba(0,0,0,0.35),0 0 0 1px rgba(100,180,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--fg);background:var(--bg);line-height:1.6;transition:background 0.3s,color 0.3s}
+a{color:var(--accent)}
+
+.header{background:var(--header-bg);color:var(--header-fg);padding:1.5rem 0;border-bottom:1px solid rgba(108,180,255,0.1)}
+[data-theme="dark"] .header{background:linear-gradient(135deg,#0a0f1e 0%,#121e36 50%,#0e1a2e 100%)}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.header h1{font-family:'Source Serif 4',serif;font-size:1.2rem;font-weight:600}
+.header h1 a{color:inherit;text-decoration:none;opacity:0.7}.header h1 a:hover{opacity:1}
+.header-right{display:flex;gap:0.5rem;align-items:center}
+.theme-toggle{background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:var(--header-fg);padding:0.25rem 0.5rem;font-family:inherit;font-size:0.68rem;cursor:pointer}
+.theme-toggle:hover{border-color:rgba(255,255,255,0.4)}
+
+.accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.site-nav{position:sticky;top:0;z-index:1000}
+.site-nav{background:linear-gradient(180deg,var(--bg3),var(--bg2));border-bottom:1px solid var(--border);padding:0.4rem 0;transition:background 0.3s}
+[data-theme="dark"] .site-nav{background:var(--bg3);border-bottom-color:rgba(108,180,255,0.08)}
+.site-nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0.15rem;align-items:center;flex-wrap:wrap;justify-content:center}
+.site-nav a{color:var(--fg3);text-decoration:none;font-size:0.68rem;font-weight:500;padding:0.25rem 0.6rem;border-radius:5px;transition:all 0.15s;white-space:nowrap}
+.site-nav a:hover{color:var(--fg);background:var(--bg3)}
+[data-theme="dark"] .site-nav a:hover{background:var(--bg2)}
+.site-nav a.nav-active{color:var(--accent);font-weight:600;background:var(--accent-bg)}
+.nav-group{display:flex;align-items:center;gap:0.1rem}
+.nav-group::after{content:'';width:1px;height:1rem;background:var(--border2);margin:0 0.35rem;flex-shrink:0}
+.nav-group:last-child::after{display:none}
+.nav-label{font-size:0.52rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--fg4);margin-right:0.15rem;white-space:nowrap}
+.nav-util .nav-label{display:none}
+.nav-util a{opacity:0.7;font-size:0.62rem}
+.nav-util a:hover{opacity:1}
+.nav-util a.nav-active{opacity:1}
+@media(max-width:768px){.site-nav-inner{gap:0.05rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}.site-nav-inner::-webkit-scrollbar{display:none}.site-nav a{font-size:0.62rem;padding:0.2rem 0.45rem;flex-shrink:0}.nav-label{display:none}.nav-group::after{display:none}.nav-util a{font-size:0.58rem}}
+
+.main{max-width:1100px;margin:0 auto;padding:2rem 1.5rem}
+
+.hero{text-align:center;margin-bottom:2rem}
+.hero h2{font-family:'Source Serif 4',serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem}
+.hero p{font-size:0.85rem;color:var(--fg2);max-width:650px;margin:0 auto;line-height:1.7}
+
+.section-heading{font-family:'Source Serif 4',serif;font-size:1.15rem;font-weight:600;margin:2rem 0 1rem;padding-bottom:0.35rem;border-bottom:2px solid var(--accent);color:var(--fg)}
+.section-heading:first-of-type{margin-top:0}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1.15rem;margin-bottom:1.5rem}
+@media(max-width:768px){.grid{grid-template-columns:1fr}}
+
+.card{background:var(--bg2);border:1px solid var(--border);border-top:2px solid var(--accent);border-radius:10px;overflow:hidden;box-shadow:var(--card-shadow);position:relative;transition:opacity 0.3s,background 0.3s,border-color 0.3s}
+[data-theme="dark"] .card{border-color:var(--border);border-left:2px solid var(--accent);box-shadow:var(--card-shadow),0 0 12px rgba(108,180,255,0.08)}
+.card-header{padding:0.55rem 0.9rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg3);transition:background 0.3s}
+.card-title{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg3)}
+.card-count{font-size:0.62rem;color:var(--fg4);background:var(--bg2);padding:1px 7px;border-radius:10px}
+.card-body{padding:0.8rem 0.9rem}
+.section-full{grid-column:1/-1}
+
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.7rem}
+.ref-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.7rem;transition:border-color 0.15s,background 0.3s}
+.ref-card:hover{border-color:var(--accent)}
+.ref-card-title{font-size:0.78rem;font-weight:600;color:var(--fg);margin-bottom:0.15rem}
+.ref-card-title a{color:inherit;text-decoration:none;border-bottom:1px dashed var(--fg4)}
+.ref-card-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.ref-card-desc{font-size:0.7rem;color:var(--fg3);line-height:1.45}
+.ref-card-desc a{color:var(--accent);font-size:0.7rem}
+[data-theme="dark"] .ref-card{border-left:2px solid var(--accent2)}
+[data-theme="dark"] .ref-card:hover{border-left-color:var(--accent);box-shadow:0 0 10px rgba(108,180,255,0.08)}
+
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:0.45rem}
+.tool-item{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:0.45rem;text-align:center;cursor:help;position:relative;transition:border-color 0.15s}
+.tool-item:hover{border-color:var(--accent)}
+.tool-item:hover .tool-tip{display:block}
+.tool-name{font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:500;color:var(--fg)}
+.tool-sub{font-size:0.625rem;color:var(--fg3);margin-top:1px}
+.card:has(.tool-grid){overflow:visible}
+.tool-tip{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--tooltip-bg,#0f172a);color:var(--tooltip-fg,#f1f5f9);padding:0.55rem 0.75rem;border-radius:8px;font-size:0.68rem;line-height:1.45;width:270px;text-align:left;z-index:60;box-shadow:0 6px 20px rgba(0,0,0,0.2)}
+.tool-tip::before{content:'';position:absolute;bottom:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:var(--tooltip-bg,#0f172a)}
+.tool-item:first-child .tool-tip,.tool-item:nth-child(2) .tool-tip{left:0;transform:none}
+.tool-item:first-child .tool-tip::before,.tool-item:nth-child(2) .tool-tip::before{left:20px;transform:none}
+.tool-item:last-child .tool-tip,.tool-item:nth-last-child(2) .tool-tip{left:auto;right:0;transform:none}
+.tool-item:last-child .tool-tip::before,.tool-item:nth-last-child(2) .tool-tip::before{left:auto;right:20px;transform:none}
+
+.tool-item.tl-detect{border-left:2px solid #3b82f6}
+.tool-item.tl-monitor{border-left:2px solid #8b5cf6}
+.tool-item.tl-protect{border-left:2px solid #16a34a}
+.tool-item.tl-investigate{border-left:2px solid #f59e0b}
+.tool-item.tl-assess{border-left:2px solid #ec4899}
+.tool-item.tl-manage{border-left:2px solid #06b6d4}
+[data-theme="dark"] .tool-item.tl-detect{box-shadow:0 0 6px rgba(59,130,246,0.08)}
+[data-theme="dark"] .tool-item.tl-monitor{box-shadow:0 0 6px rgba(139,92,246,0.08)}
+[data-theme="dark"] .tool-item.tl-protect{box-shadow:0 0 6px rgba(22,163,74,0.08)}
+[data-theme="dark"] .tool-item.tl-investigate{box-shadow:0 0 6px rgba(245,158,11,0.08)}
+[data-theme="dark"] .tool-item.tl-assess{box-shadow:0 0 6px rgba(236,72,153,0.08)}
+[data-theme="dark"] .tool-item.tl-manage{box-shadow:0 0 6px rgba(6,182,212,0.08)}
+
+.adj-pill{display:inline-block;padding:0.22rem 0.5rem;border:1px solid var(--border);border-radius:5px;font-size:0.7rem;margin:0 0.15rem 0.2rem 0;color:var(--fg2);background:var(--bg3);text-decoration:none;transition:border-color 0.15s}
+.adj-pill:hover{border-color:var(--accent);color:var(--accent)}
+.adj-pill.adj-cyber{border-color:#3b82f6;color:#2563eb;background:var(--accent-bg)}
+.adj-pill.adj-cyber:hover{background:#3b82f6;color:#fff}
+.adj-pill.adj-intel{border-color:#f59e0b;color:#d97706;background:#fffbeb}
+.adj-pill.adj-intel:hover{background:#f59e0b;color:#fff}
+.adj-pill.adj-physical{border-color:#16a34a;color:#16a34a;background:#f0fdf4}
+.adj-pill.adj-physical:hover{background:#16a34a;color:#fff}
+.adj-pill.adj-human{border-color:#8b5cf6;color:#7c3aed;background:#f5f3ff}
+.adj-pill.adj-human:hover{background:#8b5cf6;color:#fff}
+.adj-pill.adj-legal{border-color:#ec4899;color:#db2777;background:#fdf2f8}
+.adj-pill.adj-legal:hover{background:#ec4899;color:#fff}
+[data-theme="dark"] .adj-pill.adj-cyber{border-color:#6cb4ff;color:#6cb4ff;background:rgba(108,180,255,0.1)}
+[data-theme="dark"] .adj-pill.adj-intel{border-color:#f59e0b;color:#f59e0b;background:rgba(245,158,11,0.1)}
+[data-theme="dark"] .adj-pill.adj-physical{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.1)}
+[data-theme="dark"] .adj-pill.adj-human{border-color:#a78bfa;color:#a78bfa;background:rgba(167,139,250,0.1)}
+[data-theme="dark"] .adj-pill.adj-legal{border-color:#f472b6;color:#f472b6;background:rgba(244,114,182,0.1)}
+
+.threat-tile{border-radius:8px;padding:0.6rem 0.8rem;border:1px solid var(--border);border-left:3px solid;transition:all 0.15s}
+.threat-tile:hover{transform:translateY(-1px);box-shadow:var(--card-shadow)}
+.tt-red{border-left-color:#ef4444;background:var(--bg2)}
+.tt-orange{border-left-color:#f97316;background:var(--bg2)}
+.tt-yellow{border-left-color:#ca8a04;background:var(--bg2)}
+.tt-purple{border-left-color:#8b5cf6;background:var(--bg2)}
+.tt-pink{border-left-color:#ec4899;background:var(--bg2)}
+.tt-cyan{border-left-color:#06b6d4;background:var(--bg2)}
+[data-theme="dark"] .tt-red{background:rgba(239,68,68,0.06)}
+[data-theme="dark"] .tt-orange{background:rgba(249,115,22,0.06)}
+[data-theme="dark"] .tt-yellow{background:rgba(202,138,4,0.06)}
+[data-theme="dark"] .tt-purple{background:rgba(139,92,246,0.06)}
+[data-theme="dark"] .tt-pink{background:rgba(236,72,153,0.06)}
+[data-theme="dark"] .tt-cyan{background:rgba(6,182,212,0.06)}
+
+.feedback-widget{position:fixed;bottom:1.25rem;right:1.25rem;z-index:100;display:flex;align-items:center;gap:0.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.4rem 0.75rem;box-shadow:0 2px 12px rgba(0,0,0,0.1);font-size:0.7rem;color:var(--fg3);transition:all 0.3s}
+[data-theme="dark"] .feedback-widget{box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.06)}
+.feedback-widget span{white-space:nowrap}
+.feedback-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:0.3rem 0.55rem;cursor:pointer;font-size:1rem;line-height:1;transition:all 0.15s;color:var(--fg)}
+.feedback-btn:hover{transform:scale(1.15);border-color:var(--accent)}
+.feedback-btn.voted{opacity:0.4;pointer-events:none}
+.feedback-thanks{display:none;font-size:0.7rem;color:var(--accent2);font-weight:500}
+@media(max-width:600px){.feedback-widget{bottom:0.75rem;right:0.75rem;padding:0.3rem 0.5rem;font-size:0.62rem}.feedback-btn{font-size:0.85rem;padding:0.2rem 0.4rem}}
+
+.footer{max-width:1100px;margin:2rem auto 1.25rem;padding:0 1.5rem;text-align:center}
+.footer p{font-size:0.62rem;color:var(--fg4)}.footer a{color:var(--fg3);text-decoration:none}.footer a:hover{text-decoration:underline}
+.btt{position:fixed;right:1.5rem;bottom:4rem;z-index:90;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.2);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s;transform:translateY(8px)}
+.btt.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+[data-theme="dark"] .btt{background:linear-gradient(135deg,#3b82f6,#6cb4ff);box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.15)}
+@media(max-width:600px){.btt{right:1rem;bottom:3.5rem;width:2rem;height:2rem;font-size:0.85rem}}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:#fff;padding:0.5rem 1rem;z-index:9999;font-size:0.85rem;text-decoration:none;border-radius:0 0 4px 0;transition:top 0.2s}.skip-link:focus{top:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Program Hub — Insider Threat Analyst Career Framework","description":"Program design, tooling, resources, and operational guidance for building and running insider threat programs.","url":"https://insiderthreatanalyst.com/program.html","publisher":{"@type":"Organization","name":"Insider Threat Analyst Career Framework","url":"https://insiderthreatanalyst.com"}}</script>
+<script defer src="https://stats.knowles.family/script.js" data-website-id="f4db3639-63ab-4998-93ff-4f0bbe5e10c3"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="header"><div class="header-inner">
+<h1>🏛️ Program Hub · <a href="index.html">Career Framework</a></h1>
+<div class="header-right">
+<button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()" id="theme-btn">Dark</button>
+</div>
+</div></header>
+
+<div class="accent-stripe"></div>
+<nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
+<div class="nav-group"><span class="nav-label">Explore</span>
+<a href="framework.html">Framework</a>
+<a href="matrix.html">Matrix</a>
+<a href="clusters.html">Clusters</a>
+</div>
+<div class="nav-group"><span class="nav-label">Build &amp; Run</span>
+<a href="program.html" class="nav-active">Program</a>
+<a href="emerging.html">Emerging</a>
+</div>
+<div class="nav-group"><span class="nav-label">Grow</span>
+<a href="engagement.html">Engagement</a>
+<a href="maturity.html">Maturity</a>
+</div>
+<div class="nav-group nav-util"><span class="nav-label">About</span>
+<a href="about.html">About</a>
+<a href="start.html">Start Here</a>
+<a href="wellness.html">Wellness</a>
+<a href="governance.html">Site Policy</a>
+<a href="contributors.html">Contributors</a>
+<a href="references.html">References</a>
+<a href="papers/">Papers</a>
+<a href="reviews.html">Reviews</a>
+<a href="changelog.html">Changelog</a>
+<a href="suggest.html">Suggest</a>
+</div>
+</div></nav>
+
+<main class="main" id="main-content">
+
+<div class="hero">
+<h2>Build &amp; Run Your Program</h2>
+<p>Everything you need to design, staff, and operate an insider threat program — from governance and behavioral models to tooling, resources, and community. For the analyst competency model and KSA explorer, see the <a href="framework.html">Framework Explorer</a>.</p>
+</div>
+
+<h3 class="section-heading" id="program-design">🏗️ Program Design</h3>
+<div class="grid">
+<div class="card section-full" style="border-left-color:#3b82f6"><div class="card-header" style="border-bottom-color:rgba(59,130,246,0.2)"><span class="card-title" style="color:#3b82f6">🏛 Governance</span></div><div class="card-body"><div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.sei.cmu.edu/blog/the-13-key-elements-of-an-insider-threat-program/" target="_blank" rel="noopener">Steering committee</a></div><div class="ref-card-desc">Cross-functional (CISO, legal, HR, physsec, compliance). Sets priorities, resolves jurisdiction. CMU SEI: 13 key elements of a program, starting with governance.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.odni.gov/files/NCSC/documents/nittf/Hub_Ops_Course_Flyer_CY2026.pdf" target="_blank" rel="noopener">Fusion hub</a></div><div class="ref-card-desc">A relationship structure, not a room. Centrally managed analysis and response capability integrating CI, security, HR, legal, IA, and law enforcement sources. <a href="https://www.cdse.edu/Training/" target="_blank" rel="noopener" style="font-size:0.65rem">CDSE training catalog</a></div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.dni.gov/index.php/ncsc-how-we-work/ncsc-nittf" target="_blank" rel="noopener">Escalation & referral</a></div><div class="ref-card-desc">When does an inquiry become an investigation? When does it go to law enforcement? Governance defines thresholds, authorities, and handoff procedures. NITTF standards and resources for program structure.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.forcepoint.com/sites/default/files/2025-02/whitepaper_practical_executives_guide_data_loss_prevention_en.pdf" target="_blank" rel="noopener">DLP — start, not finish</a></div><div class="ref-card-desc">One data source, not the program. SIFMA 3rd ed. benchmarking shows 90% of programs go beyond DLP. Mature programs add UEBA, SIEM, physsec, HR, behavioral. <a href="https://learn.microsoft.com/en-us/purview/dlp-overview-plan-for-dlp" target="_blank" rel="noopener" style="font-size:0.65rem">Microsoft DLP planning</a></div></div>
+</div></div></div>
+
+<div class="card section-full" style="border-left-color:#f59e0b"><div class="card-header" style="border-bottom-color:rgba(245,158,11,0.2)"><span class="card-title" style="color:#d97706">⚖️ Ethics & accountability</span></div><div class="card-body"><div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.sei.cmu.edu/blog/topics/insider-threat/" target="_blank" rel="noopener">Access discipline</a></div><div class="ref-card-desc">Never access data without documented justification. "Curiosity" is not justification. Your own access logs are audited. CMU SEI Best Practices 7–8: stringent access controls and privileged user monitoring.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.asisonline.org/security-news/code-of-ethics-and-code-of-conduct/" target="_blank" rel="noopener">Confidentiality</a></div><div class="ref-card-desc">Become a black hole for secrets. Information flows in and doesn't leak. This reputation takes years to build and seconds to destroy. ASIS Code of Ethics addresses investigator confidentiality obligations.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2/" target="_blank" rel="noopener">Objectivity</a></div><div class="ref-card-desc">Follow evidence, not assumptions. Confirmation bias is the analyst's greatest enemy. Heuer's <em>Psychology of Intelligence Analysis</em> (free CIA PDF) is the foundational text on analytical objectivity.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://insiderthreat.mitre.org/guiding-principles/" target="_blank" rel="noopener">Oversight</a></div><div class="ref-card-desc">"Watch the watchers" is a feature, not an insult. Welcome audits of your own activity. Model the behavior you monitor for. MITRE's guiding principles address program oversight directly.</div></div>
+</div></div></div>
+
+<div class="card section-full" style="border-left-color:#16a34a"><div class="card-header" style="border-bottom-color:rgba(22,163,74,0.2)"><span class="card-title" style="color:#16a34a">🔍 Personnel vetting & screening</span></div><div class="card-body"><div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.cisa.gov/resources-tools/resources/resources-onboarding-and-employment-screening-fact-sheet" target="_blank" rel="noopener">CISA screening fact sheet</a></div><div class="ref-card-desc">Free, actionable recommendations for pre-hire vetting. Onboarding, background screening, and suitability determination — one of the first steps in mitigating insider threats.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://insiderthreat.mitre.org/screening-and-vetting/" target="_blank" rel="noopener">MITRE screening & vetting</a></div><div class="ref-card-desc">Research-driven approach to candidate vetting. Current background investigation methods were built from anecdotes, not data — MITRE is developing validated behavioral indicators for hiring decisions.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.npsa.gov.uk/specialised-guidance/insider-risk-guidance/employment-screening-vetting" target="_blank" rel="noopener">NPSA employment screening (UK)</a></div><div class="ref-card-desc">UK National Protective Security Authority. Role-based risk assessment, national security vetting levels, ongoing personnel security. Five Eyes perspective.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://reid.com/" target="_blank" rel="noopener">Pre-employment interviewing</a></div><div class="ref-card-desc">Reid's integrity interview and behavior analysis interview (BAI) for hiring. Separate from investigative interrogation — focused on detecting deception and assessing suitability during the hiring process.</div></div>
+</div></div></div>
+
+<div class="card section-full" style="border-left-color:#8b5cf6"><div class="card-header" style="border-bottom-color:rgba(139,92,246,0.2)"><span class="card-title" style="color:#7c3aed">🔍 Behavioral models & research</span></div><div class="card-body"><div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://insiderthreat.mitre.org/behavioral-risk-framework/" target="_blank" rel="noopener">MITRE Behavioral Risk Framework</a></div><div class="ref-card-desc">Whole-person triage: Role, Character, Stressors, Behaviors, Considerations. Evidence-based thinking tool from MITRE behavioral scientists.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://cogility.com/blog/everything-you-always-wanted-to-know-about-sofit2/" target="_blank" rel="noopener">SOFIT 2.0 (Greitzer)</a></div><div class="ref-card-desc">300+ potential risk indicators with weighting and decay. Most extensive behavioral indicator taxonomy. Includes organizational vulnerability factors.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.insiderriskgroup.com/insider-threat" target="_blank" rel="noopener">Critical Pathway to Insider Risk (Shaw)</a></div><div class="ref-card-desc">CPIR: predispositions → stressors → concerning behaviors → attack. 2,500+ practitioners trained. CPIR-I field screening tool. <a href="https://www.cia.gov/resources/csi/studies-in-intelligence/volume-59-no-2/application-of-the-critical-path-method-to-evaluate-insider-risks/" target="_blank" rel="noopener" style="font-size:0.65rem">CIA Studies in Intelligence (2015)</a> · <a href="https://www.insiderriskgroup.com/registration" target="_blank" rel="noopener" style="font-size:0.65rem">CPIR certification</a></div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://sei.cmu.edu/blog/the-cert-insider-threat-database/" target="_blank" rel="noopener">CMU Case Database</a></div><div class="ref-card-desc">3,000+ real insider threat cases. IP theft, sabotage, fraud, espionage, unintentional. The empirical foundation under most of the field's best practices.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.behavioralscienceapps.com/" target="_blank" rel="noopener">Crimando — Behavioral Science Applications</a></div><div class="ref-card-desc">Steve Crimando, MA, CTM. Behavioral threat management, targeted violence prevention, crisis intervention. DHS NTER Certified Master Instructor. ATAP, ASIS EPIC. Deployed to both WTC attacks. <a href="https://www.riskandresiliencehub.com/author/stevecrimando/" target="_blank" rel="noopener" style="font-size:0.6rem">Risk &amp; Resilience Hub</a></div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.dcsa.mil/Portals/128/Documents/CI/DITMAC/BTAC%20Bulletin_APR25.pdf" target="_blank" rel="noopener">BTAC Bulletin (DITMAC)</a></div><div class="ref-card-desc">Monthly one-pager from DCSA's Behavioral Threat Analysis Center. Radicalization, psychological risk factors, reasonable accommodations, stressor-behavior pathways. Subscribe: dcsa.quantico.dcsa.list.ditmac-sme@mail.mil</div></div>
+</div></div></div>
+
+<div class="card section-full" style="border-left-color:#16a34a"><div class="card-header" style="border-bottom-color:rgba(22,163,74,0.2)"><span class="card-title" style="color:#16a34a">🗂 Frameworks</span></div><div class="card-body"><div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://attack.mitre.org/" target="_blank" rel="noopener">MITRE ATT&CK</a></div><div class="ref-card-desc">Adversary TTPs. Insiders already have legitimate access — understand how tactics differ from external adversaries.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://center-for-threat-informed-defense.github.io/insider-threat-ttp-kb/" target="_blank" rel="noopener">Insider Threat TTP KB v2.0</a></div><div class="ref-card-desc">47 techniques, 29 sub-techniques validated from real cases. Observable Human Indicators (OHIs). Evidence-based, not hypothetical.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://d3fend.mitre.org/" target="_blank" rel="noopener">D3FEND</a></div><div class="ref-card-desc">Defensive technique → ATT&CK mapping. Useful for detection engineering and coverage gap analysis.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener">NIST CSF</a></div><div class="ref-card-desc">Identify / Protect / Detect / Respond / Recover. SIFMA structures their insider threat guidance around this framework. Many member orgs already use it.</div></div>
+</div></div></div>
+
+<div class="card section-full" style="border-left-color:#f97316"><div class="card-header" style="border-bottom-color:rgba(249,115,22,0.2)"><span class="card-title" style="color:#ea580c">📚 Knowledge management</span></div><div class="card-body"><div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://en.wikipedia.org/wiki/Knowledge_management" target="_blank" rel="noopener">Tools (vendor-agnostic)</a></div><div class="ref-card-desc">Project tracking (Jira, ADO), knowledge bases (Confluence, Obsidian, BookStack), case management, document management. Agile methodology awareness for managing detection engineering backlogs.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.sei.cmu.edu/blog/topics/insider-threat/" target="_blank" rel="noopener">Institutional memory (CMU BP22)</a></div><div class="ref-card-desc">Learn from Past Incidents. After-action reviews, case libraries, detection rule documentation, runbook maintenance. Program value compounds only if knowledge is captured and shared.</div></div>
+</div></div></div>
+</div>
+
+<h3 class="section-heading" id="threats-tools">🛡️ Threats &amp; Tools</h3>
+<div class="grid">
+<div class="card section-full" style="border-left-color:#8b5cf6"><div class="card-header" style="border-bottom-color:rgba(139,92,246,0.2)"><span class="card-title" style="color:#7c3aed">🤖 Digital employees (AI integration)</span></div><div class="card-body">
+<p style="font-size:0.78rem;color:var(--fg2);margin-bottom:0.5rem">AI is reshaping insider threat operations at every level — from automated triage to behavioral modeling to workforce planning. "Digital employee" isn't metaphor; it's how mature programs think about AI agents that augment analyst capacity.</p>
+<div id="ai-panel"></div>
+<div style="margin-top:0.65rem;padding-top:0.5rem;border-top:1px solid var(--border)">
+<div style="font-size:0.72rem;font-weight:600;color:var(--fg);margin-bottom:0.3rem">AI in the insider threat toolkit</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;font-size:0.72rem;color:var(--fg2)">
+<div style="padding:0.35rem 0.5rem;background:var(--bg3);border-radius:5px;border-left:2px solid #8b5cf6"><b>UEBA/RBA models</b> — risk scoring, peer-group baselines, anomaly detection. The core ML engine. <a href="https://www.exabeam.com/explainers/ueba/what-is-ueba-and-why-it-should-be-an-essential-part-of-your-incident-response/" target="_blank" rel="noopener" style="font-size:0.6rem">Exabeam explainer</a> · <a href="https://www.gartner.com/en/documents/3917096" target="_blank" rel="noopener" style="font-size:0.6rem">Gartner Market Guide</a></div>
+<div style="padding:0.35rem 0.5rem;background:var(--bg3);border-radius:5px;border-left:2px solid #8b5cf6"><b>LLM-assisted triage</b> — automated alert summarization, timeline generation, natural language queries across logs. <a href="https://www.dtexsystems.com/resources/" target="_blank" rel="noopener" style="font-size:0.6rem">DTEX i³ research</a> · <a href="https://www.anthropic.com/research" target="_blank" rel="noopener" style="font-size:0.6rem">Anthropic research</a></div>
+<div style="padding:0.35rem 0.5rem;background:var(--bg3);border-radius:5px;border-left:2px solid #8b5cf6"><b>Deepfake detection</b> — identity verification for remote workers, interview authenticity, document analysis. <a href="https://www.nist.gov/programs-projects/face-technology-evaluations-frtefate" target="_blank" rel="noopener" style="font-size:0.6rem">NIST FRTE/FATE</a> · <a href="https://www.dhs.gov/sites/default/files/2023-06/23_0630_st_digital_forgeries_report_signed.pdf" target="_blank" rel="noopener" style="font-size:0.6rem">DHS S&T Digital Forgeries (PDF)</a></div>
+<div style="padding:0.35rem 0.5rem;background:var(--bg3);border-radius:5px;border-left:2px solid #8b5cf6"><b>Governance challenges</b> — algorithmic bias, model explainability, privacy of behavioral monitoring, regulatory uncertainty. <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener" style="font-size:0.6rem">NIST AI RMF</a> · <a href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener" style="font-size:0.6rem">EU AI Act</a></div>
+</div>
+</div>
+</div></div>
+<div class="card section-full"><div class="card-header"><span class="card-title">Tooling</span><span class="card-count">vendor-agnostic</span></div><div class="card-body" style="overflow:visible;max-height:none">
+<p style="font-size:0.7rem;color:var(--fg2);margin-bottom:0.4rem">Hover for definitions.</p>
+<div class="tool-grid">
+<div class="tool-item tl-monitor"><div class="tool-name">CASB</div><div class="tool-sub">Cloud access broker</div><div class="tool-tip">Cloud Access Security Broker. Visibility into SaaS/IaaS usage, shadow IT discovery, data movement controls. Essential as work shifts to cloud.</div></div>
+<div class="tool-item tl-manage"><div class="tool-name">Case mgmt</div><div class="tool-sub">Investigation tracking</div><div class="tool-tip">Intake to closure. Evidence chain, tasks, timelines, reporting.</div></div>
+<div class="tool-item tl-monitor"><div class="tool-name">Comms</div><div class="tool-sub">Communications monitoring</div><div class="tool-tip">Email, chat, messaging analysis. Sentiment and keyword detection. LLM-powered analysis emerging but major privacy/legal implications. Governance-heavy — legal review required before deployment.</div></div>
+<div class="tool-item tl-protect"><div class="tool-name">CSPM</div><div class="tool-sub">Cloud security posture</div><div class="tool-tip">Cloud Security Posture Management. Misconfig detection, compliance monitoring, risk prioritization across cloud environments. Wiz, Prisma Cloud, Orca.</div></div>
+<div class="tool-item tl-protect"><div class="tool-name">Data classification</div><div class="tool-sub">Sensitivity labeling</div><div class="tool-tip">Discovers and labels sensitive data across repos, shares, cloud, endpoints. Enables DLP policy precision. Varonis, Spirion, Microsoft Purview.</div></div>
+<div class="tool-item tl-detect"><div class="tool-name">Deception</div><div class="tool-sub">Honeypots &amp; canaries</div><div class="tool-tip">Decoy files, credentials, and systems that only trigger when accessed by insiders. Zero false-positive detection. Canary tokens, Thinkst Canary.</div></div>
+<div class="tool-item tl-protect"><div class="tool-name">DLP</div><div class="tool-sub">Data loss prevention</div><div class="tool-tip">Monitors/controls data movement. Policy-based alerts and blocks. Starting point for most programs — one source, not the whole program.</div></div>
+<div class="tool-item tl-detect"><div class="tool-name">EDR</div><div class="tool-sub">Endpoint detection</div><div class="tool-tip">Host-level monitoring — processes, file changes, connections. Forensic telemetry and containment.</div></div>
+<div class="tool-item tl-investigate"><div class="tool-name">Forensic imaging</div><div class="tool-sub">Disk &amp; memory</div><div class="tool-tip">Bit-for-bit acquisition and analysis of endpoints. Chain of custody, dead-box and live acquisition. FTK, EnCase, Autopsy.</div></div>
+<div class="tool-item tl-manage"><div class="tool-name">GRC</div><div class="tool-sub">Governance &amp; compliance</div><div class="tool-tip">Governance, Risk, and Compliance platforms. Policy management, audit trails, regulatory mapping. ServiceNow GRC, Archer, OneTrust.</div></div>
+<div class="tool-item tl-protect"><div class="tool-name">IAM</div><div class="tool-sub">Identity &amp; access</div><div class="tool-tip">AD, Entra ID, SSO, MFA, access reviews. Who has access to what — and is it still justified?</div></div>
+<div class="tool-item tl-monitor"><div class="tool-name">NDR</div><div class="tool-sub">Network detection</div><div class="tool-tip">Network Detection &amp; Response. Behavioral analytics on network traffic, lateral movement detection, encrypted traffic analysis. Vectra, ExtraHop, Darktrace.</div></div>
+<div class="tool-item tl-protect"><div class="tool-name">PAM</div><div class="tool-sub">Privileged access</div><div class="tool-tip">Controls/audits elevated access. Session recording, JIT access, credential vaulting. Critical for admin monitoring.</div></div>
+<div class="tool-item tl-investigate"><div class="tool-name">PCAP</div><div class="tool-sub">Packet capture</div><div class="tool-tip">Network traffic capture for forensics. Reconstruct sessions, extract files. What actually went over the wire.</div></div>
+<div class="tool-item tl-investigate"><div class="tool-name">Sandbox</div><div class="tool-sub">File analysis</div><div class="tool-tip">Detonate suspicious files/URLs in isolation. Used when insiders introduce unauthorized tools.</div></div>
+<div class="tool-item tl-detect"><div class="tool-name">SIEM</div><div class="tool-sub">Log aggregation</div><div class="tool-tip">Aggregates all log sources, correlation queries, alerting. SPL/KQL/Lucene. The analyst's primary workbench.</div></div>
+<div class="tool-item tl-manage"><div class="tool-name">SOAR</div><div class="tool-sub">Orchestration</div><div class="tool-tip">Automates enrichment, triage, response. Reduces analyst toil on repetitive tasks.</div></div>
+<div class="tool-item tl-assess"><div class="tool-name">SPJ</div><div class="tool-sub">Risk assessment</div><div class="tool-tip">Structured Professional Judgment. RAGE-V (ATAP), WAVR-21, HCR-20. Evidence-based behavioral assessment.</div></div>
+<div class="tool-item tl-detect"><div class="tool-name">TIP</div><div class="tool-sub">Threat intel platform</div><div class="tool-tip">Aggregates, correlates, and operationalizes threat intelligence. STIX/TAXII, indicator management, enrichment. Anomali, MISP, ThreatConnect.</div></div>
+<div class="tool-item tl-monitor"><div class="tool-name">UAM</div><div class="tool-sub">Activity monitoring</div><div class="tool-tip">User Activity Monitoring. Keystrokes, screenshots, app usage, file ops. Raw telemetry for UEBA. Privacy-sensitive; governance critical.</div></div>
+<div class="tool-item tl-detect"><div class="tool-name">UEBA</div><div class="tool-sub">Behavioral analytics</div><div class="tool-tip">User &amp; Entity Behavior Analytics. Baselines normal, flags anomalies — access patterns, peer deviations, risk scoring. Core detection engine for insider threat.</div></div>
+</div>
+<p style="font-size:0.62rem;color:var(--fg4);margin-top:0.4rem"><span style="color:#3b82f6">■</span> Detection &nbsp;<span style="color:#8b5cf6">■</span> Monitoring &nbsp;<span style="color:#16a34a">■</span> Protection &nbsp;<span style="color:#f59e0b">■</span> Investigation &nbsp;<span style="color:#ec4899">■</span> Assessment &nbsp;<span style="color:#06b6d4">■</span> Management</p>
+<div style="margin-top:0.65rem;padding:0.55rem 0.75rem;background:var(--accent-bg);border:1px solid var(--border);border-radius:8px;border-left:3px solid var(--accent)">
+<div style="font-size:0.68rem;font-weight:600;color:var(--fg2);margin-bottom:0.3rem">Where to start</div>
+<p style="font-size:0.72rem;color:var(--fg2);line-height:1.55;margin:0">Start with your SIEM. Learn the query language (SPL, KQL, or Lucene). Get comfortable with your EDR console. Layer DLP data as a source, not a program. Beyond tools, build sysadmin and network fundamentals — IAM, data movement patterns, privilege escalation paths. The tools change every budget cycle; the concepts don't.</p>
+<div style="font-size:0.68rem;font-weight:600;color:var(--fg2);margin:0.45rem 0 0.2rem">Maturity-based guidance</div>
+<p style="font-size:0.68rem;color:var(--fg3);line-height:1.5;margin:0"><b>Minimum viable toolstack:</b> SIEM + EDR + DLP + IAM + case management. Cover detection, protection, and tracking with what you have.<br>
+<b>Growing program:</b> Add UEBA, UAM, PAM, CASB, a TIP, and structured risk assessment. This is where behavioral analytics transform your program.<br>
+<b>Mature additions:</b> NDR, CSPM, data classification, deception, SOAR, comms monitoring, forensic imaging. Layer these when you have the staff to operate them.<br>
+<b>Open-source starter stack:</b> Elastic SIEM + Wazuh (EDR) + TheHive (case mgmt) + MISP (TIP). Production-grade and zero licensing cost — just bring ops time.</p>
+</div>
+</div></div>
+<div class="card section-full" style="border-left-color:#f97316"><div class="card-header" style="border-bottom-color:rgba(249,115,22,0.2)"><span class="card-title" style="color:#ea580c">🔎 OSINT — Open Source Intelligence</span></div><div class="card-body">
+<p style="font-size:0.78rem;color:var(--fg2);margin-bottom:0.5rem">The collection and analysis of publicly available information to produce actionable intelligence. OSINT is a discipline, not a Google search — it requires methodology, legal awareness, evidence preservation, and operational security.</p>
+<div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://sopa.tulane.edu/academics/certificates/open-source-intelligence-osint" target="_blank" rel="noopener">Tulane OSINT cert</a></div><div class="ref-card-desc">Academic certificate program. Also: <a href="https://www.bellingcat.com/resources/" target="_blank" rel="noopener">Bellingcat</a>, SANS SEC487/587, <a href="https://www.covertaccessteam.com/" target="_blank" rel="noopener">Covert Access Team</a>.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.forensicosint.com/" target="_blank" rel="noopener">Forensic OSINT</a></div><div class="ref-card-desc">Forensic-grade web capture for investigations. Chrome extension by <a href="https://www.yourdigitaltrace.com/" target="_blank" rel="noopener" style="color:var(--fg3)">Ritu Gill</a> (RCMP veteran). Court-defensible evidence preservation, timestamped hashing, subject dossiers.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://osintframework.com/" target="_blank" rel="noopener">OSINT Framework</a></div><div class="ref-card-desc">The "OSINT Bible." Categorized directory of 30+ categories of free tools and resources. <a href="https://en.wikipedia.org/wiki/Open-source_intelligence" target="_blank" rel="noopener">Wikipedia</a> for background.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://osintacademy.com/" target="_blank" rel="noopener">OSINT Academy</a></div><div class="ref-card-desc">Hetherington's CRAWL method (Communicate, Research, Analyze, Write, Listen). Accredited training for corporate security, government, law enforcement. Preps for OSMOSIS OSC exam.</div></div>
+</div>
+<p style="font-size:0.68rem;color:var(--fg3);margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem"><b>⚠ OPSEC reminder:</b> OSINT investigations require managed attribution (non-attributable accounts, VPNs, separate infrastructure). Your collection activity is itself observable. Sock puppet hygiene, legal boundaries, and evidence preservation methodology are not optional — they're prerequisites. Covered in SANS SEC487, Tulane cert, and OSINT Academy.</p>
+</div></div>
+</div>
+
+<h3 class="section-heading" id="resources">📚 Resources</h3>
+<div class="grid">
+<div class="card section-full" style="border-left-color:#3b82f6"><div class="card-header" style="border-bottom-color:rgba(59,130,246,0.2)"><span class="card-title" style="color:#3b82f6">🏛️ Standards, government &amp; professional bodies</span></div><div class="card-body"><div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.atapworldwide.org/" target="_blank" rel="noopener">ATAP</a></div><div class="ref-card-desc">Threat assessment professionals. SPJ tools.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.cdse.edu/Training/Toolkits/Insider-Threat-Toolkit/" target="_blank" rel="noopener">CDSE / DITMAC</a></div><div class="ref-card-desc">Free courses, ITPM cert, insider threat toolkit.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.cisa.gov/topics/physical-security/insider-threat-mitigation" target="_blank" rel="noopener">CISA Insider Threat Hub</a></div><div class="ref-card-desc">Central landing page for all CISA insider threat resources — mitigation guide, IRMPE self-assessment, fact sheets, training. Includes the <a href="https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide" target="_blank" rel="noopener">Mitigation Guide</a>. Bookmark this.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.cisa.gov/sites/default/files/2026-01/Assembling%20a%20Multidisciplinary%20Insider%20Threat%20Management%20Team_508.pdf" target="_blank" rel="noopener">CISA — Assembling a Multidisciplinary Insider Threat Management Team</a></div><div class="ref-card-desc">CISA guidance (January 2026) on building a multidisciplinary insider threat management team / fusion hub. Covers team composition, roles, and cross-functional coordination.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.sei.cmu.edu/library/common-sense-guide-to-mitigating-insider-threats-seventh-edition/" target="_blank" rel="noopener">CMU SEI</a></div><div class="ref-card-desc">Common Sense Guide, 7th ed. Start here.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://github.com/cmu-sei/iides" target="_blank" rel="noopener">CMU SEI — IIDES</a></div><div class="ref-card-desc">Insider Incident Data Exchange Standard. JSON schema for standardized case data collection and sharing. Open source, v1.0.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.comptia.org/certifications" target="_blank" rel="noopener">CompTIA</a></div><div class="ref-card-desc">Sec+, Net+, CySA+. Foundational.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoDM-8140-03.pdf" target="_blank" rel="noopener">DoD 8140.03</a></div><div class="ref-card-desc">Cyberspace Workforce Qualification &amp; Management Program. Defines cert/training requirements by DCWF work role and proficiency level. <a href="https://www.cyber.mil/dod-workforce-innovation-directorate/dod8140/qualification-matrices" target="_blank" rel="noopener" style="font-size:0.6rem">Qualification matrices</a></div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://dodcio.defense.gov/CMMC/" target="_blank" rel="noopener">DoD CMMC</a></div><div class="ref-card-desc">Cybersecurity Maturity Model Certification. Required for defense contractors. Insider threat monitoring expectations increase with tier.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.fsisac.com/" target="_blank" rel="noopener">FS-ISAC</a></div><div class="ref-card-desc">Financial Services Information Sharing and Analysis Center. Sector-specific threat intelligence, insider threat working group, peer networking. Global membership.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.theiia.org/en/content/guidance/recommended/supplemental/gtags/gtag-auditing-insider-threat-programs/" target="_blank" rel="noopener">IIA GTAG</a></div><div class="ref-card-desc">Auditing Insider Threat Programs. Bridges insider threat and internal audit using CMU SEI, NIST, INSA frameworks. Free for IIA members.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.insaonline.org/insider-threat/" target="_blank" rel="noopener">INSA</a></div><div class="ref-card-desc">Insider threat white paper series. Measuring effectiveness, cross-sector collaboration. Government–private sector bridge.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.iso.org/standard/27001" target="_blank" rel="noopener">ISO 27001/27002:2022</a></div><div class="ref-card-desc">Global ISMS standard. 93 controls across 4 themes. Annex A includes insider-relevant controls.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.ncfta.net/" target="_blank" rel="noopener">NCFTA</a></div><div class="ref-card-desc">Cross-sector training and intel sharing.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.dni.gov/index.php/ncsc-how-we-work/ncsc-nittf" target="_blank" rel="noopener">NITTF</a></div><div class="ref-card-desc">Minimum standards, maturity framework.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://osmosisinstitute.org/" target="_blank" rel="noopener">OSMOSIS</a></div><div class="ref-card-desc">Association for OSINT Professionals. OSMOSISCon, OSC certification, tools directory, peer networking.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://securecontrolsframework.com/" target="_blank" rel="noopener">SCF</a></div><div class="ref-card-desc">Secure Controls Framework. Free metaframework — 1,300+ controls mapped to 100+ laws/standards. AI governance controls added 2025.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.sifma.org/wp-content/uploads/2025/03/2024-SIFMA-Insider-Threat-Best-Practices-Guide-FINAL.pdf" target="_blank" rel="noopener">SIFMA</a></div><div class="ref-card-desc">Best Practices Guide, 3rd ed. (2024). Financial services. Free PDF.</div></div>
+</div></div></div>
+
+<div class="card section-full" style="border-left-color:#0d9488"><div class="card-header" style="border-bottom-color:rgba(13,148,136,0.2)"><span class="card-title" style="color:#0d9488">🤝 Communities of practice</span></div><div class="card-body"><div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.sei.cmu.edu/our-work/insider-threat/" target="_blank" rel="noopener">CMU SEI OSIT Working Group</a></div><div class="ref-card-desc">250+ members, 130+ organizations. The primary research and information-sharing community for practitioners building insider threat programs.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.ic3.gov/" target="_blank" rel="noopener">FBI IC3</a></div><div class="ref-card-desc">Internet Crime Complaint Center. Reporting channel and intelligence products for cyber-enabled crime including insider threats.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://infragard.fbi.gov" target="_blank" rel="noopener">InfraGard (FBI)</a></div><div class="ref-card-desc">FBI's largest public-private partnership. 36,000+ members, 70+ local chapters. Free membership, threat briefings, local networking.</div></div>
+<div class="ref-card" style="border-left:2px solid var(--accent2)"><div class="ref-card-title"><a href="https://insiderthreatmatrix.com/" target="_blank" rel="noopener">insiderthreatmatrix.com</a></div><div class="ref-card-desc">Case management framework, structured methodologies, and practitioner networking. Companion resource — where career competencies meet operational practice.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://insiderthreatmitigation.org/" target="_blank" rel="noopener">insiderthreatmitigation.org</a></div><div class="ref-card-desc">Webinars from leading researchers.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.irpa.org" target="_blank" rel="noopener">IRPA</a></div><div class="ref-card-desc">Insider Risk Practitioner Alliance (formerly FIRPA). Five Eyes alliance connecting practitioner communities across Australia, Canada, and the US. Houses three Centres of Excellence: <a href="https://www.cybercollaboration.org.au/collaboration-partnerships/fvey-insider-risk-practitioner-alliance-firpa/" target="_blank" rel="noopener" style="font-size:0.6rem">AIR CoE</a> · <a href="https://www.irpa.org/the-team" target="_blank" rel="noopener" style="font-size:0.6rem">C-InRM CoE</a> · <a href="https://www.insiderriskevent.com/firpa-week" target="_blank" rel="noopener" style="font-size:0.6rem">US InRM CoE</a></div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.nationalinsiderthreatsig.org/" target="_blank" rel="noopener">NITSIG</a></div><div class="ref-card-desc">National Insider Threat SIG. Information sharing and analysis since 2014. Annual symposium and expo.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.secretservice.gov/investigation/ectf" target="_blank" rel="noopener">USSS ECTF</a></div><div class="ref-card-desc">Secret Service Electronic Crimes Task Forces. Financial crimes, cyber investigations, public-private partnerships.</div></div>
+</div></div></div>
+
+<div class="card section-full" style="border-left-color:#7c3aed"><div class="card-header" style="border-bottom-color:rgba(124,58,237,0.2)"><span class="card-title" style="color:#7c3aed">🔬 Research &amp; vendor intelligence</span></div><div class="card-body"><div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://datatheftnews.com" target="_blank" rel="noopener">DataTheftNews</a></div><div class="ref-card-desc">Trade secret protection &amp; insider threat prevention news. Curated case law, litigation, and policy developments.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.dtexsystems.com/resources/" target="_blank" rel="noopener">DTEX</a> / <a href="https://www.dtexsystems.com/resources/i3-threat-advisory-inside-the-dprk/" target="_blank" rel="noopener">i³</a></div><div class="ref-card-desc">Insider risk research, investigations, and threat advisories. Vendor research with methodology value.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://scholar.google.com/scholar?q=insider+threat+behavioral+indicators" target="_blank" rel="noopener">Insider Threat Research (Scholar)</a></div><div class="ref-card-desc">Track the evidence base. Robinson (Purdue, 2025), Stewart &amp; Handy (KCL, 2024), Shaw (CPIR), Greitzer (SOFIT).</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://ponemon.dtexsystems.com/" target="_blank" rel="noopener">Ponemon / DTEX</a></div><div class="ref-card-desc">Cost of Insider Risks (annual). 2025: $17.4M avg cost, 81-day containment, 55% negligence-driven. The benchmark study.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.proofpoint.com/us/resources/threat-reports" target="_blank" rel="noopener">Proofpoint</a></div><div class="ref-card-desc">Threat reports, human risk research, DLP and insider threat perspectives. Also offers free <a href="https://www.proofpoint.com/us/ai-data-security-on-demand-specialist-certifications" target="_blank" rel="noopener" style="font-size:0.6rem">AI security certifications</a>.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://research.splunk.com/stories/insider_threat/" target="_blank" rel="noopener">Splunk Security Research</a></div><div class="ref-card-desc">Pre-built insider threat detection analytics — SPL searches, data sources, MITRE mappings. Free, open.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.arlis.umd.edu/" target="_blank" rel="noopener">UMD ARLIS</a></div><div class="ref-card-desc">DoD UARC for intelligence &amp; security. Insider risk research, GCITP certification, MIROR journal, RISC internships.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://hammer.purdue.edu/articles/thesis/_b_INSIDER_THREATS_TREND_ANALYSIS_OF_THE_TACTICS_TECHNIQUES_AND_PROCEDURES_IN_COMPUTER-RELATED_INSIDER_THREAT_CASES_b_/30166756" target="_blank" rel="noopener">Robinson (Purdue, 2025)</a></div><div class="ref-card-desc">936 US legal cases analyzed for TTP trends (2008-2024). Evidence-based detection criteria for programs building rulesets and personas.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.dcsa.mil/Counterintelligence-Insider-Threat/DITMAC/" target="_blank" rel="noopener">DITMAC / BTAC</a></div><div class="ref-card-desc">DoD Insider Threat Management &amp; Analysis Center. Behavioral Threat Analysis Center (BTAC) provides case-specific recommendations. Monthly <a href="https://www.dcsa.mil/Portals/128/Documents/CI/DITMAC/BTAC%20Bulletin_APR25.pdf" target="_blank" rel="noopener" style="font-size:0.6rem">BTAC Bulletin</a> + <a href="https://www.dcsa.mil/About-Us/News/Article/Article/4336987/ditmac-releases-new-insider-threat-podcast-beyond-the-bulletin/" target="_blank" rel="noopener" style="font-size:0.6rem">Beyond the Bulletin podcast</a></div></div>
+</div></div></div>
+<div class="card section-full" style="border-left-color:#16a34a"><div class="card-header" style="border-bottom-color:rgba(22,163,74,0.2)"><span class="card-title" style="color:#16a34a">🎓 Training platforms & online learning</span></div><div class="card-body"><div class="ref-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0.6rem">
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.cdse.edu/" target="_blank" rel="noopener">CDSE</a></div><div class="ref-card-desc">Center for Development of Security Excellence. Free insider threat training, ITPM certification, security fundamentals. No cost, government-backed.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.sei.cmu.edu/training/overview-insider-threat-concepts-activities/" target="_blank" rel="noopener">CMU SEI Courses</a></div><div class="ref-card-desc">InT Concepts (3hr, online), Building an InT Program (7hr, online), InT Analyst (3-day, classroom), IRM-MoE certificate. The practitioner gold standard.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.sans.org/nice-framework" target="_blank" rel="noopener">SANS Institute</a></div><div class="ref-card-desc">SEC487 (OSINT), SEC504 (hacker techniques), FOR500 (Windows forensics), MGT521 (security leadership). Premium but industry-defining. GIAC certifications.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://chrissanders.org/" target="_blank" rel="noopener">Chris Sanders</a></div><div class="ref-card-desc">Investigation Theory — one of the best holistic analyst training programs. Applied Network Defense courses. Practical, scenario-driven, builds investigative thinking not just tool skills.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://gandalf.lakera.ai/" target="_blank" rel="noopener">Gandalf — Lakera AI</a></div><div class="ref-card-desc">Prompt injection CTF. 7 levels of increasingly hardened LLM defenses — extract the secret password from each one. The best hands-on intro to AI red teaming. Free, browser-based, addictive.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://reid.com/" target="_blank" rel="noopener">John E. Reid & Associates</a></div><div class="ref-card-desc">The Reid Technique — interview and interrogation training since 1947. 500,000+ investigators trained worldwide. Also: pre-employment interviewing strategies. <a href="https://www.certifiedinterviewer.com/" target="_blank" rel="noopener" style="font-size:0.6rem">IAI / CFI credential</a></div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.cybrary.it/" target="_blank" rel="noopener">Cybrary</a></div><div class="ref-card-desc">Cybersecurity-focused training. Insider threat, incident response, forensics courses. Many orgs buy enterprise subscriptions.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://grow.google/certificates/cybersecurity/" target="_blank" rel="noopener">Google Cybersecurity Certificate</a></div><div class="ref-card-desc">Free foundational program covering network security, Linux, SQL, Python, SIEM, IDS. Strong L1 preparation.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.coursera.org/browse/information-technology/security" target="_blank" rel="noopener">Coursera</a></div><div class="ref-card-desc">University-backed courses. Critical thinking, data analysis, cybersecurity fundamentals. Google Cybersecurity Certificate is excellent for L1-L2.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://pll.harvard.edu/catalog/free" target="_blank" rel="noopener">Harvard (free)</a> / <a href="https://oyc.yale.edu/" target="_blank" rel="noopener">Yale (free)</a></div><div class="ref-card-desc">Data science, statistics, critical thinking, psychology, behavioral economics. Analytical rigor at L2-L3. Completely free. <a href="https://www.coursera.org/learn/the-science-of-well-being" target="_blank" rel="noopener" style="font-size:0.6rem">Science of Well-Being</a> · <a href="https://www.coursera.org/learn/negotiation" target="_blank" rel="noopener" style="font-size:0.6rem">Negotiation</a></div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.pluralsight.com/browse/information-cyber-security" target="_blank" rel="noopener">Pluralsight</a></div><div class="ref-card-desc">Technical skill platform. SIEM, EDR, network analysis, scripting. Enterprise subscription model — check if your org provides access.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.udemy.com/" target="_blank" rel="noopener">Udemy</a></div><div class="ref-card-desc">Broad course catalog. OSINT, SIEM administration, interview techniques, digital forensics. Affordable individual courses.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://hrtrainonline.com/" target="_blank" rel="noopener">HRTrainOnline</a></div><div class="ref-card-desc">HR-focused training with courses relevant to insider threat — workplace investigations, interview techniques, employment law.</div></div>
+</div></div></div>
+
+<div class="card section-full" style="border-left-color:#ec4899"><div class="card-header" style="border-bottom-color:rgba(236,72,153,0.2)"><span class="card-title" style="color:#db2777">⚖️ Legal & privacy resources</span></div><div class="card-body"><div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://iapp.org/" target="_blank" rel="noopener">IAPP</a></div><div class="ref-card-desc">International Association of Privacy Professionals. The definitive resource for privacy law, compliance, and how monitoring programs intersect with employee rights.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.littler.com/publication-press/publication/workplace-privacy-monitoring" target="_blank" rel="noopener">Employment monitoring law</a></div><div class="ref-card-desc">Workplace monitoring operates at the intersection of security need and privacy right. Laws vary by state and country — know your jurisdiction before you collect.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.sifma.org/resources/" target="_blank" rel="noopener">SIFMA privacy guidance</a></div><div class="ref-card-desc">3rd edition Best Practices Guide covers GDPR, CCPA, state privacy laws, and how they constrain insider threat monitoring in financial services. Chapter on legal frameworks. <a href="https://www.sifma.org/explore-issues/cybersecurity/" target="_blank" rel="noopener" style="font-size:0.65rem">SIFMA cybersecurity hub</a></div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.sei.cmu.edu/blog/topics/insider-threat/" target="_blank" rel="noopener">CMU SEI privacy practices</a></div><div class="ref-card-desc">Common Sense Guide Best Practice 12: institutionalize system change controls. Addresses privacy-preserving monitoring and data minimization.</div></div>
+</div></div></div>
+
+<div class="card section-full" style="border-left-color:#f59e0b"><div class="card-header" style="border-bottom-color:rgba(245,158,11,0.2)"><span class="card-title" style="color:#d97706">🔗 Adjacent roles</span></div><div class="card-body">
+<div style="display:flex;flex-wrap:wrap;gap:0.2rem;justify-content:center;margin-bottom:0.3rem">
+<a class="adj-pill adj-cyber" href="https://niccs.cisa.gov/tools/nice-framework/work-role/incident-response" target="_blank" rel="noopener">Incident responder</a>
+<a class="adj-pill adj-cyber" href="https://niccs.cisa.gov/tools/nice-framework/work-role/digital-evidence-analysis" target="_blank" rel="noopener">Digital forensics</a>
+<a class="adj-pill adj-cyber" href="https://niccs.cisa.gov/tools/nice-framework/work-role/defensive-cybersecurity" target="_blank" rel="noopener">Cybersecurity analyst</a>
+<a class="adj-pill adj-intel" href="https://niccs.cisa.gov/tools/nice-framework/work-role/threat-analysis" target="_blank" rel="noopener">Threat intelligence</a>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:0.2rem;justify-content:center;margin-bottom:0.4rem">
+<span class="adj-pill adj-intel" title="Detection and neutralization of foreign intelligence threats. Overlaps on espionage, foreign contact reporting, and HUMINT indicators." style="cursor:help">Counterintelligence</span>
+<span class="adj-pill adj-physical" title="Access control, surveillance, badges, workplace violence prevention. Physical indicators often surface before digital ones." style="cursor:help">Physical security</span>
+<span class="adj-pill adj-human" title="Workplace misconduct, policy violations, harassment. HR owns the employment relationship — InT programs coordinate, don't replace." style="cursor:help">HR investigations</span>
+<span class="adj-pill adj-legal" title="Employment law, monitoring authorities, privacy regulations, litigation holds. Legal defines what you can and can't do." style="cursor:help">Legal / compliance</span>
+<span class="adj-pill adj-human" title="Financial fraud, procurement, expense abuse. CFE methodology overlaps directly with insider threat case work." style="cursor:help">Fraud investigator</span>
+</div>
+<p style="font-size:0.62rem;color:var(--fg4);margin-top:0.15rem"><span style="color:#3b82f6">■</span> Cyber/tech &nbsp;<span style="color:#f59e0b">■</span> Intelligence &nbsp;<span style="color:#16a34a">■</span> Physical security &nbsp;<span style="color:#8b5cf6">■</span> Human/organizational &nbsp;<span style="color:#ec4899">■</span> Legal</p>
+<p style="font-size:0.7rem;color:var(--fg3)">Linked roles go to NICCS work role descriptions. KSAs from adjacent roles appear with purple tags in the KSA panel.</p>
+</div></div>
+<div class="card section-full" style="border-left-color:#06b6d4"><div class="card-header" style="border-bottom-color:rgba(6,182,212,0.2)"><span class="card-title" style="color:#0891b2">🌍 EMEA &amp; international resources</span></div><div class="card-body"><div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.bsi.bund.de/EN/" target="_blank" rel="noopener">BSI (Germany)</a></div><div class="ref-card-desc">Federal Office for Information Security. IT security standards and insider threat awareness resources for DACH region.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.enisa.europa.eu/" target="_blank" rel="noopener">ENISA (EU)</a></div><div class="ref-card-desc">EU Agency for Cybersecurity. Threat landscape reports, workforce development frameworks, insider threat guidance.</div></div>
+<div class="ref-card"><div class="ref-card-title">IRRG (UK)</div><div class="ref-card-desc">Insider Risk Research Group. CMORG working group (UK equivalent of FSSCC), stood up post-DPRK IT worker attacks. Signposts key work across public/private sectors. No website — ad hoc convening.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.ncsc.gov.uk/guidance/reducing-data-exfiltration-by-malicious-insiders" target="_blank" rel="noopener">NCSC Malicious Insiders (UK)</a></div><div class="ref-card-desc">Data exfiltration guidance — methods, countermeasures, distinguishing malicious from accidental. Pairs with HoMER.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.ncsc.gov.uk/collection/personnel-security" target="_blank" rel="noopener">NCSC Personnel Security (UK)</a></div><div class="ref-card-desc">Personnel security guidance including insider threat mitigation for UK organisations.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.npsa.gov.uk/holistic-management-employee-risk-homer" target="_blank" rel="noopener">NPSA HoMER (UK)</a></div><div class="ref-card-desc">Holistic Management of Employee Risk. Full-spectrum insider risk — espionage, sabotage, fraud, coercion, human error. UK's closest equivalent to NITTF.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.npsa.gov.uk/insider-risk-guide-influencing-leaders" target="_blank" rel="noopener">NPSA Influencing Leaders (UK)</a></div><div class="ref-card-desc">How to win senior leadership support for insider risk programmes. Leadership perceptions, barriers, drivers for action.</div></div>
+</div></div>
+</div>
+</div>
+
+</main>
+
+<div class="feedback-widget" id="feedback-widget">
+<span>Helpful?</span>
+<button class="feedback-btn" onclick="sendFeedback('up',this)" title="Yes, this was helpful">👍</button>
+<button class="feedback-btn" onclick="sendFeedback('down',this)" title="Not helpful">👎</button>
+<span class="feedback-thanks" id="feedback-thanks">Thanks!</span>
+</div>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<footer class="footer">
+<p><a href="about.html">About</a> &middot; <a href="start.html">🚀 Start here</a> · <a href="framework.html">Framework</a> · <a href="references.html">📚 References</a> · <a href="changelog.html">Changelog</a> · <a href="suggest.html?from=program">💬 Suggest</a></p>
+<p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+<p style="margin-top:0.25rem;font-size:0.58rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.55rem">hello@insiderthreatanalyst.com</a></p>
+</footer>
+<script>
+requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transition')})});
+function toggleTheme(){const h=document.documentElement,t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light':'Dark';document.getElementById('theme-btn').setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');try{localStorage.setItem('ita-theme',t);}catch(e){}}
+function sendFeedback(vote,btn){const w=document.getElementById('feedback-widget');w.querySelectorAll('.feedback-btn').forEach(b=>b.classList.add('voted'));document.getElementById('feedback-thanks').style.display='inline';setTimeout(()=>{w.style.opacity='0';setTimeout(()=>w.style.display='none',400)},1800);const page=location.pathname.replace(/\//g,'').replace('.html','')||'index';fetch('https://ita-feedback.phishcheckboy.workers.dev/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page,vote})}).catch(()=>{});}
+(function(){try{const t=localStorage.getItem('ita-theme');if(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light':'Dark';}}catch(e){}}());
+(function(){const b=document.getElementById('btt');if(!b)return;let t;window.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){b.classList.toggle('visible',window.scrollY>400)},50)},{passive:true});}());
+</script>
+</body>
+</html>

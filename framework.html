@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<!--
+╔══════════════════════════════════════════════════════════╗
+║  CLASSIFICATION: UNCLASSIFIED // FOR OFFICIAL USE ONLY  ║
+║  PROGRAM:        CAREER FRAMEWORK INSIDER THREAT        ║
+║  CASE ID:        CF-2026-0420-VIBE                      ║
+║  ANALYST:        Claude (Digital Employee, L5)           ║
+║                                                         ║
+║  ASSESSMENT: Subject displays concerning indicators:    ║
+║  - Viewed page source (technical curiosity, elevated)   ║
+║  - Possible detection engineering aptitude               ║
+║  - May be overqualified for current role                ║
+║                                                         ║
+║  RECOMMENDATION: Recruit immediately.                   ║
+║                                                         ║
+║  NOTE: If you found this, you're exactly the kind of    ║
+║  person this framework was built for. Welcome.          ║
+║                                                         ║
+║  P.S. The only limit is yourself. — zombo.com (RIP)    ║
+║  P.P.S. Try gandalf.lakera.ai if you haven't already.  ║
+╚══════════════════════════════════════════════════════════╝
+-->
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("ita-theme")||"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}document.documentElement.classList.add("no-transition");</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2L4 8v8c0 7.7 5.1 14.9 12 17 6.9-2.1 12-9.3 12-17V8L16 2z' fill='%230c1222' stroke='%236cb4ff' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='%2334d9c3' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%236cb4ff'/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework Explorer — Insider Threat Analyst Career Framework</title>
+<link rel="canonical" href="https://insiderthreatanalyst.com/framework.html">
+<meta property="og:image" content="https://insiderthreatanalyst.com/ogimage.png">
+<meta name="description" content="Interactive framework explorer: KSAs, certifications, tools, program design, and career pathways for insider threat analysts. Filter by concentration and level.">
+<meta name="keywords" content="insider threat, career framework, NICE, KSA, cybersecurity, analyst, FS-ISAC, UEBA, detection engineering, insider risk">
+<meta property="og:title" content="Framework Explorer — Insider Threat Analyst Career Framework">
+<meta property="og:description" content="Interactive framework explorer: KSAs, certs, tools, and career paths for insider threat analysts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://insiderthreatanalyst.com/framework.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha384-JcnsjUPPylna1s1fvi1u12X5qjY5OL56iySh75FdtrwhO/SWXgMjoVqcKyIIWOLk" crossorigin="anonymous"></script>
+<style>
+html.no-transition,html.no-transition *,html.no-transition *::before,html.no-transition *::after{transition:none!important}
+[data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0a1628;--fg2:#2a3a52;--fg3:#64748b;--fg4:#94a3b8;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0d9488;--accent2-bg:#f0fdfa;--accent2-dark:#115e59;--tab-active:#2563eb;--tab-bg:#f1f5f9;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08);--tooltip-bg:#0f172a;--tooltip-fg:#f1f5f9;--highlight:#fef9c3;--ksa-nice-bg:#dbeafe;--ksa-nice-fg:#1e40af;--ksa-custom-bg:#ccfbf1;--ksa-custom-fg:#115e59;--ksa-adj-bg:#fae8ff;--ksa-adj-fg:#7e22ce;--c1:#dbeafe;--c1f:#1e40af;--c2:#ccfbf1;--c2f:#115e59;--c3:#fef3c7;--c3f:#92400e;--c4:#ede9fe;--c4f:#5b21b6;--c5:#fee2e2;--c5f:#991b1b}
+[data-theme="dark"]{--bg:#0c1222;--bg2:#162032;--bg3:#1e2d44;--fg:#f1f5f9;--fg2:#cbd5e1;--fg3:#94a3b8;--fg4:#64748b;--border:#253550;--border2:#3a5070;--accent:#6cb4ff;--accent-bg:#1a3358;--accent2:#34d9c3;--accent2-bg:#0f3d38;--accent2-dark:#5eead4;--tab-active:#6cb4ff;--tab-bg:#162032;--header-bg:linear-gradient(135deg,#0a0f1e 0%,#121e36 50%,#0e1a2e 100%);--header-bg-flat:#0c1424;--header-fg:#f1f5f9;--card-shadow:0 1px 4px rgba(0,0,0,0.35),0 0 0 1px rgba(100,180,255,0.04);--tooltip-bg:#f1f5f9;--tooltip-fg:#0f172a;--highlight:#854d0e;--ksa-nice-bg:#172e52;--ksa-nice-fg:#7dbaff;--ksa-custom-bg:#0e3630;--ksa-custom-fg:#4ae8d0;--ksa-adj-bg:#2d1054;--ksa-adj-fg:#c9a8ff;--c1:#172e52;--c1f:#7dbaff;--c2:#0e3630;--c2f:#4ae8d0;--c3:#5c2d0a;--c3f:#f59e0b;--c4:#2d1054;--c4f:#c4b5fd;--c5:#5c1a1a;--c5f:#fca5a5;--glow-accent:rgba(108,180,255,0.08);--glow-teal:rgba(52,217,195,0.06)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--fg);background:var(--bg);line-height:1.6;transition:background 0.3s,color 0.3s}
+a{color:var(--accent)}
+.header{background:var(--header-bg);color:var(--header-fg);padding:2.25rem 0 1.5rem;border-bottom:1px solid rgba(108,180,255,0.1)}
+[data-theme="dark"] .card{border-color:var(--border);border-left:2px solid var(--accent);box-shadow:var(--card-shadow),0 0 12px var(--glow-accent)}
+[data-theme="dark"] .conc-bar{border-left:3px solid var(--accent2);background:linear-gradient(90deg,var(--glow-teal),var(--bg2) 70%)}
+[data-theme="dark"] .nav-tab.active{background:var(--bg2);box-shadow:var(--card-shadow),0 0 8px var(--glow-accent)}
+[data-theme="dark"] .ref-card{border-left:2px solid var(--accent2)}
+[data-theme="dark"] .ref-card:hover{border-left-color:var(--accent);box-shadow:0 0 10px var(--glow-accent)}
+[data-theme="dark"] .ksa-item:nth-child(odd){background:rgba(108,180,255,0.015)}
+[data-theme="dark"] .tool-item:hover{box-shadow:0 0 8px var(--glow-teal)}
+[data-theme="dark"] .cert-pill:hover{box-shadow:0 2px 8px rgba(0,0,0,0.3)}
+[data-theme="dark"] .lang-item{border-color:var(--border)}
+[data-theme="dark"] .btn-primary{background:linear-gradient(135deg,#3b82f6,#6cb4ff);border:none}
+[data-theme="dark"] .sticky-controls{border-bottom-color:rgba(108,180,255,0.12);box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.site-nav{position:sticky;top:0;z-index:1000}
+.site-nav{background:linear-gradient(180deg,var(--bg3),var(--bg2));border-bottom:1px solid var(--border);padding:0.4rem 0;transition:background 0.3s}
+[data-theme="dark"] .accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
+.site-nav{background:var(--bg3);border-bottom-color:rgba(108,180,255,0.08)}
+.site-nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0.15rem;align-items:center;flex-wrap:wrap;justify-content:center}
+.site-nav a{color:var(--fg3);text-decoration:none;font-size:0.68rem;font-weight:500;padding:0.25rem 0.6rem;border-radius:5px;transition:all 0.15s;white-space:nowrap}
+.site-nav a:hover{color:var(--fg);background:var(--bg3)}
+[data-theme="dark"] .site-nav a:hover{background:var(--bg2)}
+.site-nav a.nav-active{color:var(--accent);font-weight:600;background:var(--accent-bg)}
+.nav-group{display:flex;align-items:center;gap:0.1rem}
+.nav-group::after{content:'';width:1px;height:1rem;background:var(--border2);margin:0 0.35rem;flex-shrink:0}
+.nav-group:last-child::after{display:none}
+.nav-label{font-size:0.52rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--fg4);margin-right:0.15rem;white-space:nowrap}
+.nav-util .nav-label{display:none}
+.nav-util a{opacity:0.7;font-size:0.62rem}
+.nav-util a:hover{opacity:1}
+.nav-util a.nav-active{opacity:1}
+@media(max-width:768px){.site-nav-inner{gap:0.05rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}.site-nav-inner::-webkit-scrollbar{display:none}.site-nav a{font-size:0.62rem;padding:0.2rem 0.45rem;flex-shrink:0}.nav-label{display:none}.nav-group::after{display:none}.nav-util a{font-size:0.58rem}}
+.classified-mode .ksa-item,.classified-mode .ref-card-desc,.classified-mode .tool-tip,.classified-mode .step-desc,.classified-mode .faq-a{color:transparent;background:var(--fg);border-radius:2px;user-select:none;transition:all 0.3s}
+.classified-mode .ksa-item *,.classified-mode .ref-card-desc *{color:transparent}
+.classified-mode .header h1::after{content:' [CLASSIFIED]';color:#ef4444;font-size:0.7em;font-weight:400}
+.classified-mode .badge-progress{background:#ef4444 !important}
+@keyframes redact{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.classified-mode .ksa-item{animation:redact 0.15s ease forwards}
+[data-theme="dark"] .classified-mode .ksa-item,[data-theme="dark"] .classified-mode .ref-card-desc,[data-theme="dark"] .classified-mode .tool-tip,[data-theme="dark"] .classified-mode .step-desc,[data-theme="dark"] .classified-mode .faq-a{background:#1a0505;border:1px solid rgba(239,68,68,0.3)}
+.feedback-widget{position:fixed;bottom:1.25rem;right:1.25rem;z-index:100;display:flex;align-items:center;gap:0.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.4rem 0.75rem;box-shadow:0 2px 12px rgba(0,0,0,0.1);font-size:0.7rem;color:var(--fg3);transition:all 0.3s}
+.feedback-widget{box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.06)}
+.feedback-widget span{white-space:nowrap}
+.feedback-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:0.3rem 0.55rem;cursor:pointer;font-size:1rem;line-height:1;transition:all 0.15s;color:var(--fg)}
+.feedback-btn:hover{transform:scale(1.15);border-color:var(--accent)}
+.feedback-btn.voted{opacity:0.4;pointer-events:none}
+.feedback-thanks{display:none;font-size:0.7rem;color:var(--accent2);font-weight:500}
+@media(max-width:600px){.accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
+.feedback-widget{bottom:0.75rem;right:0.75rem;padding:0.3rem 0.5rem;font-size:0.62rem}.feedback-btn{font-size:0.85rem;padding:0.2rem 0.4rem}}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:flex-start}
+.header-left{flex:1}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:0.25rem;flex-shrink:0}
+.header h1{font-family:'Source Serif 4',serif;font-size:1.75rem;font-weight:600;letter-spacing:-0.02em;margin:0 0 0.25rem}
+.header h1 a{color:inherit;text-decoration:none;border-bottom:1px dashed rgba(255,255,255,0.3)}
+.header h1 a:hover{border-bottom-color:rgba(255,255,255,0.7)}
+.header .subtitle{font-size:0.85rem;color:var(--fg4)}
+.header .meta{display:flex;gap:0.75rem;margin-top:0.6rem;font-size:0.7rem;color:var(--fg4);flex-wrap:wrap;align-items:center}
+.badge{padding:2px 8px;border-radius:3px;font-size:0.625rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+.badge-progress{background:#16a34a;color:#fff}
+.theme-toggle{background:none;border:1px solid rgba(255,255,255,0.2);border-radius:6px;color:var(--header-fg);padding:0.3rem 0.6rem;font-family:inherit;font-size:0.68rem;cursor:pointer;transition:border-color 0.15s}
+.theme-toggle:hover{border-color:rgba(255,255,255,0.5)}
+.latest-updates{display:inline-block;background:#f97316;color:#fff;padding:2px 10px;border-radius:5px;font-size:0.6rem;font-weight:600;letter-spacing:0.03em;text-decoration:none;cursor:pointer;animation:pulse-orange 3s ease-in-out infinite;transition:opacity 0.15s}
+.latest-updates:hover{opacity:0.85;color:#fff}
+@keyframes pulse-orange{0%,100%{background:#f97316;box-shadow:0 0 0 0 rgba(249,115,22,0)}50%{background:#fb923c;box-shadow:0 0 8px 2px rgba(249,115,22,0.25)}}
+.newtab-poll{position:fixed;bottom:1.25rem;left:1.25rem;z-index:200;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;box-shadow:0 4px 20px rgba(0,0,0,0.15);font-size:0.72rem;color:var(--fg2);max-width:320px;animation:slideUp 0.3s ease}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.newtab-poll-title{font-weight:600;margin-bottom:0.5rem;font-size:0.75rem}
+.newtab-poll button{display:block;width:100%;text-align:left;padding:0.35rem 0.6rem;margin:0.25rem 0;border:1px solid var(--border);border-radius:5px;background:var(--bg3);color:var(--fg);font-family:inherit;font-size:0.68rem;cursor:pointer;transition:all 0.15s}
+.newtab-poll button:hover{border-color:var(--accent);background:var(--accent-bg)}
+.newtab-poll-dismiss{display:block;text-align:center;margin-top:0.5rem;font-size:0.6rem;color:var(--fg4);cursor:pointer;border:none;background:none;font-family:inherit}
+.newtab-poll-dismiss:hover{color:var(--fg3)}
+
+.sticky-controls{position:sticky;top:0;z-index:50;background:var(--accent-bg,#eff6ff);border-bottom:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,0.06);padding:0.65rem 0;transition:background 0.3s}
+[data-theme="dark"] .sticky-controls{background:var(--bg3)}
+[data-theme="dark"] .nav-tabs{background:var(--bg3);border-color:var(--border)}
+.sticky-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0.85rem;align-items:flex-end;flex-wrap:wrap}
+.ctrl{flex:1;min-width:170px}
+.ctrl label{display:block;font-size:0.62rem;font-weight:600;color:var(--fg3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.15rem}
+.ctrl select{width:100%;padding:0.38rem 0.55rem;border:1px solid var(--border);border-radius:6px;font-family:inherit;font-size:0.78rem;color:var(--fg);background:var(--bg2);cursor:pointer;transition:border-color 0.15s}
+.ctrl select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,0.15)}
+.export-btns{display:flex;gap:0.35rem;flex-shrink:0}
+.btn{padding:0.38rem 0.8rem;border:1px solid var(--border);border-radius:6px;font-family:inherit;font-size:0.72rem;font-weight:500;cursor:pointer;background:var(--bg2);color:var(--fg);transition:all 0.15s}
+.btn:hover{background:var(--bg3);border-color:var(--border2)}
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary:hover{opacity:0.9}
+#pdf-status{display:none;font-size:0.68rem;color:var(--accent2)}
+
+.main{max-width:1100px;margin:0 auto;padding:0.85rem 1.5rem}
+.conc-bar{background:var(--accent2-bg,#f0fdfa);border:1px solid var(--border);border-radius:10px;padding:0.65rem 1rem;margin-bottom:0.85rem;font-size:0.8rem;color:var(--fg2);transition:all 0.3s;border-left:3px solid var(--accent2)}
+.conc-name{font-weight:600;color:var(--accent)}
+
+.nav-tabs{display:flex;gap:2px;background:var(--accent-bg,#eff6ff);border:1px solid var(--border);border-radius:10px;padding:3px;margin-bottom:1.15rem;overflow-x:auto}
+.nav-tab{padding:0.5rem 1.1rem;font-family:inherit;font-size:0.75rem;font-weight:500;border:none;background:transparent;color:var(--fg3);cursor:pointer;border-radius:8px;transition:all 0.2s;white-space:nowrap}
+.nav-tab.active{background:var(--bg2);color:var(--accent);font-weight:600;box-shadow:var(--card-shadow);border-bottom:2px solid var(--accent)}
+.nav-tab:hover:not(.active){color:var(--fg)}
+
+.tab-pane{display:none;animation:fadeIn 0.3s ease}.tab-pane.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1.15rem}
+@media(max-width:768px){.grid{grid-template-columns:1fr}.sticky-inner{flex-direction:column}.ctrl{min-width:100%}
+.header h1{font-size:1.35rem}
+.header-inner{flex-direction:column;gap:0.5rem}.header-right{align-items:flex-start;flex-direction:row}
+.nav-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap}
+.nav-tabs::-webkit-scrollbar{display:none}
+.nav-tab{padding:0.45rem 0.85rem;font-size:0.7rem;flex-shrink:0}
+.ref-grid{grid-template-columns:1fr !important}
+.tool-grid{grid-template-columns:repeat(3,1fr) !important}
+.tool-tip{width:220px;font-size:0.65rem}
+.cert-pill{padding:4px 8px;font-size:0.62rem;margin:2px}
+.lang-grid{grid-template-columns:repeat(2,1fr) !important}
+.export-btns{width:100%;justify-content:flex-start}
+.main{padding:0.6rem 0.75rem}
+.conc-bar{padding:0.5rem 0.75rem;font-size:0.75rem}
+.adj-pill{padding:3px 6px;font-size:0.6rem}
+.conf-card{padding:0.5rem 0.6rem}
+.media-tabs{flex-wrap:wrap}
+}
+.card{background:var(--bg2);border:1px solid var(--border);border-top:2px solid var(--accent);border-radius:10px;overflow:hidden;box-shadow:var(--card-shadow);position:relative;transition:opacity 0.3s,background 0.3s,border-color 0.3s}
+.card.dimmed{opacity:0.35}
+.card-header{padding:0.55rem 0.9rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg3);transition:background 0.3s}
+.card-title{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg3)}
+.card-count{font-size:0.62rem;color:var(--fg4);background:var(--bg2);padding:1px 7px;border-radius:10px}
+.card-body{padding:0.8rem 0.9rem;max-height:700px;overflow-y:auto;overflow-x:visible}
+.section-full{grid-column:1/-1}
+
+.ksa-group-label{font-size:0.62rem;font-weight:600;color:var(--fg3);text-transform:uppercase;letter-spacing:0.05em;margin:0.55rem 0 0.25rem;padding-bottom:0.2rem;border-bottom:1px dashed var(--border)}
+.ksa-group-label:first-child{margin-top:0}
+.ksa-item{padding:0.35rem 0;border-bottom:1px solid var(--border);font-size:0.78rem;line-height:1.5;transition:background 0.6s}
+.ksa-item:last-child{border-bottom:none}
+.ksa-item.highlight{background:var(--highlight)}
+.ksa-id{font-family:'JetBrains Mono',monospace;font-size:0.62rem;padding:1px 5px;border-radius:3px;margin-right:0.25rem;white-space:nowrap}
+.ksa-nice{color:var(--ksa-nice-fg);background:var(--ksa-nice-bg)}
+.ksa-custom{background:var(--ksa-custom-bg);color:var(--ksa-custom-fg)}
+.ksa-adj{background:var(--ksa-adj-bg);color:var(--ksa-adj-fg)}
+.ksa-src{font-size:0.625rem;color:var(--fg4);margin-left:3px}
+
+.cross-item{display:flex;align-items:flex-start;gap:0.6rem;padding:0.45rem 0;border-bottom:1px solid var(--border)}
+.cross-item:last-child{border-bottom:none}
+.cross-label{font-size:0.7rem;font-weight:600;color:var(--fg);min-width:85px;flex-shrink:0}
+.cross-val{font-size:0.78rem;color:var(--fg2);flex:1}
+.pips{display:flex;gap:2px;margin-top:3px}
+.pip{width:15px;height:3px;border-radius:2px;background:var(--border);transition:background 0.3s,width 0.3s}
+.pip.on{background:var(--accent2);width:18px}
+
+.cert-pill{display:inline-block;font-size:0.68rem;padding:3px 9px;border-radius:4px;margin:0 4px 5px 0;font-weight:500;cursor:pointer;transition:transform 0.15s;text-decoration:none;color:inherit}
+.cert-pill:hover{transform:scale(1.05)}
+.c1{background:var(--c1);color:var(--c1f)}.c2{background:var(--c2);color:var(--c2f)}.c3{background:var(--c3);color:var(--c3f)}.c4{background:var(--c4);color:var(--c4f)}.c5{background:var(--c5);color:var(--c5f)}
+.c-nice{border:1px dashed var(--fg4);background:transparent;color:var(--fg3);font-style:italic}
+
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.7rem}
+.ref-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.7rem;transition:border-color 0.15s,background 0.3s}
+.ref-card:hover{border-color:var(--accent)}
+.ref-card-title{font-size:0.78rem;font-weight:600;color:var(--fg);margin-bottom:0.15rem}
+.ref-card-title a{color:inherit;text-decoration:none;border-bottom:1px dashed var(--fg4)}
+.ref-card-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.ref-card-desc{font-size:0.7rem;color:var(--fg3);line-height:1.45}
+.ref-card-desc a{color:var(--accent);font-size:0.7rem}
+
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:0.45rem}
+.lang-item{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:0.4rem;text-align:center;transition:border-color 0.15s}
+.lang-item:hover{border-color:var(--accent)}
+.lang-item a{text-decoration:none;color:inherit}
+.lang-name{font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:500;color:var(--fg)}
+.lang-desc{font-size:0.625rem;color:var(--fg3);margin-top:1px}
+
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:0.45rem}
+.tool-item{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:0.45rem;text-align:center;cursor:help;position:relative;transition:border-color 0.15s}
+.tool-item:hover{border-color:var(--accent)}
+.tool-item:hover .tool-tip{display:block}
+
+.tool-name{font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:500;color:var(--fg)}
+.tool-sub{font-size:0.625rem;color:var(--fg3);margin-top:1px}
+.card:has(.tool-grid){overflow:visible}
+.tool-tip{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--tooltip-bg);color:var(--tooltip-fg);padding:0.55rem 0.75rem;border-radius:8px;font-size:0.68rem;line-height:1.45;width:270px;text-align:left;z-index:60;box-shadow:0 6px 20px rgba(0,0,0,0.2)}
+.tool-tip::before{content:'';position:absolute;bottom:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:var(--tooltip-bg)}
+.tool-item:first-child .tool-tip,.tool-item:nth-child(2) .tool-tip{left:0;transform:none}
+.tool-item:first-child .tool-tip::before,.tool-item:nth-child(2) .tool-tip::before{left:20px;transform:none}
+.tool-item:last-child .tool-tip,.tool-item:nth-last-child(2) .tool-tip{left:auto;right:0;transform:none}
+.tool-item:last-child .tool-tip::before,.tool-item:nth-last-child(2) .tool-tip::before{left:auto;right:20px;transform:none}
+
+.media-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:0.4rem}
+.media-tab{padding:0.35rem 0.8rem;font-family:inherit;font-size:0.68rem;font-weight:500;border:none;background:none;color:var(--fg3);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.15s}
+.media-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.media-pane{display:none}.media-pane.active{display:block}
+.media-item{padding:0.35rem 0;border-bottom:1px solid var(--border)}.media-item:last-child{border-bottom:none}
+.media-title{font-size:0.78rem;font-weight:500}.media-title a{color:inherit;text-decoration:none;border-bottom:1px dashed var(--fg4)}.media-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.media-meta{font-size:0.68rem;color:var(--fg3)}.media-note{font-size:0.72rem;color:var(--fg2);margin-top:1px}
+.media-tag{font-size:0.625rem;padding:1px 5px;border-radius:3px;background:var(--bg3);color:var(--fg3);border:1px solid var(--border)}
+
+.adj-pill{display:inline-block;padding:0.22rem 0.5rem;border:1px solid var(--border);border-radius:5px;font-size:0.7rem;margin:0 0.15rem 0.2rem 0;color:var(--fg2);background:var(--bg3);text-decoration:none;transition:border-color 0.15s}
+.adj-pill:hover{border-color:var(--accent);color:var(--accent)}
+
+.customize textarea{width:100%;min-height:65px;padding:0.45rem;border:1px solid var(--border);border-radius:6px;font-family:inherit;font-size:0.78rem;resize:vertical;background:var(--bg2);color:var(--fg)}
+.customize input[type="text"]{width:100%;padding:0.38rem 0.5rem;border:1px solid var(--border);border-radius:6px;font-family:inherit;font-size:0.78rem;background:var(--bg2);color:var(--fg)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-bottom:0.55rem}
+.form-label{display:block;font-size:0.62rem;font-weight:600;color:var(--fg3);margin-bottom:0.15rem}
+
+.footer{max-width:1100px;margin:2rem auto 1.25rem;padding:0 1.5rem;text-align:center}
+.footer p{font-size:0.62rem;color:var(--fg4)}.footer a{color:var(--fg3);text-decoration:none}.footer a:hover{text-decoration:underline}
+
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:100;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:var(--bg2);border-radius:10px;max-width:650px;width:90%;max-height:85vh;overflow-y:auto;padding:1.5rem;box-shadow:0 8px 32px rgba(0,0,0,0.2);color:var(--fg)}
+.modal h3{font-family:'Source Serif 4',serif;font-size:1.1rem;margin-bottom:0.75rem}
+
+.ksa-legend{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;font-size:0.65rem}
+.ksa-legend-item{display:flex;align-items:center;gap:0.3rem}
+.ksa-legend-dot{width:10px;height:10px;border-radius:2px}
+
+.header-links{display:flex;gap:0.35rem;margin-top:0.35rem}
+.header-link{display:inline-block;padding:0.3rem 0.7rem;border-radius:6px;font-size:0.72rem;font-weight:500;text-decoration:none;transition:all 0.15s}
+.header-link-matrix{color:var(--header-fg);border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.05)}
+.header-link-matrix:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.1)}
+.header-link-wellness{color:#34d9c3;border:1px solid rgba(52,217,195,0.4);background:rgba(52,217,195,0.08)}
+.header-link-wellness:hover{border-color:rgba(52,217,195,0.7);background:rgba(52,217,195,0.15)}
+[data-theme="dark"] .header-link-matrix{box-shadow:0 0 6px rgba(108,180,255,0.1)}
+[data-theme="dark"] .header-link-wellness{box-shadow:0 0 6px rgba(52,217,195,0.1)}
+
+.lang-item.lang-intro{border-color:var(--accent2) !important;background:var(--accent2-bg) !important;border-width:2px}
+.lang-item.lang-intro .lang-name{color:var(--accent2) !important;font-weight:600}
+.lang-item.lang-active{border-color:var(--accent) !important;background:var(--accent-bg) !important}
+.lang-item.lang-active .lang-name{color:var(--accent) !important}
+.lang-item.lang-future{opacity:0.4}
+
+.conf-card{border-radius:8px;padding:0.65rem 0.8rem;border:1px solid var(--border);transition:all 0.15s;display:flex;align-items:flex-start;gap:0.5rem}
+.conf-card:hover{transform:translateY(-1px);box-shadow:var(--card-shadow)}
+.conf-icon{font-size:1.3rem;flex-shrink:0;margin-top:0.1rem}
+.conf-card:nth-child(odd){background:var(--bg2)}
+.conf-card:nth-child(even){background:var(--bg3)}
+[data-theme="dark"] .conf-card:nth-child(odd){background:var(--bg2);border-left:2px solid var(--accent)}
+[data-theme="dark"] .conf-card:nth-child(even){background:var(--bg3);border-left:2px solid var(--accent2)}
+
+.threat-tile{border-radius:8px;padding:0.6rem 0.8rem;border:1px solid var(--border);border-left:3px solid;transition:all 0.15s}
+.threat-tile:hover{transform:translateY(-1px);box-shadow:var(--card-shadow)}
+.tt-red{border-left-color:#ef4444;background:var(--bg2)}
+.tt-orange{border-left-color:#f97316;background:var(--bg2)}
+.tt-yellow{border-left-color:#ca8a04;background:var(--bg2)}
+.tt-purple{border-left-color:#8b5cf6;background:var(--bg2)}
+.tt-pink{border-left-color:#ec4899;background:var(--bg2)}
+.tt-cyan{border-left-color:#06b6d4;background:var(--bg2)}
+[data-theme="dark"] .tt-red{background:rgba(239,68,68,0.06)}
+[data-theme="dark"] .tt-orange{background:rgba(249,115,22,0.06)}
+[data-theme="dark"] .tt-yellow{background:rgba(202,138,4,0.06)}
+[data-theme="dark"] .tt-purple{background:rgba(139,92,246,0.06)}
+[data-theme="dark"] .tt-pink{background:rgba(236,72,153,0.06)}
+[data-theme="dark"] .tt-cyan{background:rgba(6,182,212,0.06)}
+
+.tool-item.tl-detect{border-left:2px solid #3b82f6}
+.tool-item.tl-monitor{border-left:2px solid #8b5cf6}
+.tool-item.tl-protect{border-left:2px solid #16a34a}
+.tool-item.tl-investigate{border-left:2px solid #f59e0b}
+.tool-item.tl-assess{border-left:2px solid #ec4899}
+.tool-item.tl-manage{border-left:2px solid #06b6d4}
+[data-theme="dark"] .tool-item.tl-detect{box-shadow:0 0 6px rgba(59,130,246,0.08)}
+[data-theme="dark"] .tool-item.tl-monitor{box-shadow:0 0 6px rgba(139,92,246,0.08)}
+[data-theme="dark"] .tool-item.tl-protect{box-shadow:0 0 6px rgba(22,163,74,0.08)}
+[data-theme="dark"] .tool-item.tl-investigate{box-shadow:0 0 6px rgba(245,158,11,0.08)}
+[data-theme="dark"] .tool-item.tl-assess{box-shadow:0 0 6px rgba(236,72,153,0.08)}
+[data-theme="dark"] .tool-item.tl-manage{box-shadow:0 0 6px rgba(6,182,212,0.08)}
+
+.adj-pill.adj-cyber{border-color:#3b82f6;color:#2563eb;background:var(--accent-bg)}
+.adj-pill.adj-cyber:hover{background:#3b82f6;color:#fff}
+.adj-pill.adj-intel{border-color:#f59e0b;color:#d97706;background:#fffbeb}
+.adj-pill.adj-intel:hover{background:#f59e0b;color:#fff}
+.adj-pill.adj-physical{border-color:#16a34a;color:#16a34a;background:#f0fdf4}
+.adj-pill.adj-physical:hover{background:#16a34a;color:#fff}
+.adj-pill.adj-human{border-color:#8b5cf6;color:#7c3aed;background:#f5f3ff}
+.adj-pill.adj-human:hover{background:#8b5cf6;color:#fff}
+.adj-pill.adj-legal{border-color:#ec4899;color:#db2777;background:#fdf2f8}
+.adj-pill.adj-legal:hover{background:#ec4899;color:#fff}
+[data-theme="dark"] .adj-pill.adj-cyber{border-color:#6cb4ff;color:#6cb4ff;background:rgba(108,180,255,0.1)}
+[data-theme="dark"] .adj-pill.adj-cyber:hover{background:#3b82f6;color:#fff}
+[data-theme="dark"] .adj-pill.adj-intel{border-color:#f59e0b;color:#f59e0b;background:rgba(245,158,11,0.1)}
+[data-theme="dark"] .adj-pill.adj-intel:hover{background:#f59e0b;color:#fff}
+[data-theme="dark"] .adj-pill.adj-physical{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.1)}
+[data-theme="dark"] .adj-pill.adj-physical:hover{background:#16a34a;color:#fff}
+[data-theme="dark"] .adj-pill.adj-human{border-color:#a78bfa;color:#a78bfa;background:rgba(167,139,250,0.1)}
+[data-theme="dark"] .adj-pill.adj-human:hover{background:#8b5cf6;color:#fff}
+[data-theme="dark"] .adj-pill.adj-legal{border-color:#f472b6;color:#f472b6;background:rgba(244,114,182,0.1)}
+[data-theme="dark"] .adj-pill.adj-legal:hover{background:#ec4899;color:#fff}
+
+.media-rating{display:inline-block;font-size:0.62rem;font-weight:600;padding:1px 5px;border-radius:3px;margin-left:0.35rem;background:var(--warm-bg,#fffbeb);color:var(--warm-fg,#92400e);border:1px solid rgba(245,158,11,0.2)}
+[data-theme="dark"] .media-rating{background:rgba(245,158,11,0.12);color:#f59e0b;border-color:rgba(245,158,11,0.2)}
+
+.video-item{display:flex;gap:0.6rem;padding:0.45rem 0;border-bottom:1px solid var(--border);font-size:0.78rem;align-items:flex-start}
+.video-item:last-child{border-bottom:none}
+.video-icon{font-size:1.1rem;flex-shrink:0;margin-top:0.1rem}
+.video-title a{color:inherit;text-decoration:none;font-weight:500;border-bottom:1px dashed var(--fg4)}
+.video-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.video-desc{font-size:0.7rem;color:var(--fg3);margin-top:0.1rem}
+.btt{position:fixed;right:1.5rem;bottom:4rem;z-index:90;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.2);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s;transform:translateY(8px)}
+.btt.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{opacity:1;transform:translateY(-2px)}
+[data-theme="dark"] .btt{background:linear-gradient(135deg,#3b82f6,#6cb4ff);box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.15)}
+@media(max-width:600px){.btt{right:1rem;bottom:3.5rem;width:2rem;height:2rem;font-size:0.85rem}}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:#fff;padding:0.5rem 1rem;z-index:9999;font-size:0.85rem;text-decoration:none;border-radius:0 0 4px 0;transition:top 0.2s}.skip-link:focus{top:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Framework Explorer — Insider Threat Analyst Career Framework","description":"Interactive framework explorer: KSAs, certifications, tools, program design, and career pathways for insider threat analysts.","url":"https://insiderthreatanalyst.com/framework.html","publisher":{"@type":"Organization","name":"Insider Threat Analyst Career Framework","url":"https://insiderthreatanalyst.com"}}</script>
+<script defer src="https://stats.knowles.family/script.js" data-website-id="f4db3639-63ab-4998-93ff-4f0bbe5e10c3"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="header"><div class="header-inner">
+<div class="header-left">
+<h1>Insider Threat Analyst Career Framework</h1>
+<div class="subtitle">A competency model for building, staffing, and maturing insider threat analysis programs</div>
+<div class="meta">
+<span><span class="badge badge-progress">MVP 1.0</span></span>
+</div>
+</div>
+<div class="header-right">
+<a href="changelog.html" class="latest-updates">Latest Updates</a>
+<button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()" id="theme-btn">Dark mode</button>
+</div>
+</div></header>
+
+<div class="accent-stripe"></div>
+<nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
+<div class="nav-group"><span class="nav-label">Explore</span>
+<a href="framework.html" class="nav-active">Framework</a>
+<a href="matrix.html">Matrix</a>
+<a href="clusters.html">Clusters</a>
+</div>
+<div class="nav-group"><span class="nav-label">Build &amp; Run</span>
+<a href="program.html">Program</a>
+<a href="emerging.html">Emerging</a>
+</div>
+<div class="nav-group"><span class="nav-label">Grow</span>
+<a href="engagement.html">Engagement</a>
+<a href="maturity.html">Maturity</a>
+</div>
+<div class="nav-group nav-util"><span class="nav-label">About</span>
+<a href="about.html">About</a>
+<a href="start.html">Start Here</a>
+<a href="wellness.html">Wellness</a>
+<a href="governance.html">Site Policy</a>
+<a href="contributors.html">Contributors</a>
+<a href="references.html">References</a>
+<a href="papers/">Papers</a>
+<a href="reviews.html">Reviews</a>
+<a href="changelog.html">Changelog</a>
+<a href="suggest.html">Suggest</a>
+</div>
+</div></nav>
+
+<div style="max-width:1100px;margin:0 auto;padding:0.5rem 1.5rem 0;font-size:0.78rem;color:var(--fg3);text-align:center;line-height:1.5">
+Pick a concentration and level to explore KSAs, certs, tools, and training for that role.
+</div>
+
+<div class="sticky-controls"><div class="sticky-inner">
+<div class="ctrl"><label>Concentration</label><select id="conc">
+<option value="core">Core analyst (all concentrations)</option>
+<option value="tech">Technical specialist</option>
+<option value="hunt">Threat hunter</option>
+<option value="case">Case officer</option>
+<option value="desk">Desk officer</option>
+<option value="outreach">Outreach & education</option>
+<option value="maturity">Program maturity</option>
+<option value="cag">CAG lead / incident response</option>
+<option value="audit">Program Auditor</option>
+</select></div>
+<div class="ctrl"><label>Level</label><select id="level">
+<option value="1">L1 — Junior analyst</option>
+<option value="2">L2 — Analyst</option>
+<option value="3" selected>L3 — Senior analyst</option>
+<option value="4">L4 — Lead / principal</option>
+<option value="5">L5 — Senior principal</option>
+</select></div>
+<div class="export-btns">
+<button class="btn btn-primary" onclick="exportPDF()">PDF</button>
+<button class="btn" onclick="showJDModal()">Job desc</button>
+<span id="pdf-status">Done!</span>
+</div>
+</div></div>
+
+<main class="main" id="main-content">
+<div class="conc-bar"><span class="conc-name" id="conc-name"></span> <span id="conc-desc-text"></span></div>
+
+<div class="nav-tabs" id="main-tabs" role="tablist">
+<button class="nav-tab active" data-tab="tab-ksas" role="tab" aria-selected="true" aria-controls="tab-ksas" id="btn-tab-ksas">KSAs & competencies</button>
+<button class="nav-tab" data-tab="tab-dev" role="tab" aria-selected="false" aria-controls="tab-dev" id="btn-tab-dev">Development</button>
+<button class="nav-tab" data-tab="tab-program" role="tab" aria-selected="false" aria-controls="tab-program" id="btn-tab-program">Program Hub →</button>
+<button class="nav-tab" data-tab="tab-export" role="tab" aria-selected="false" aria-controls="tab-export" id="btn-tab-export">Export</button>
+</div>
+
+<!-- TAB 1: KSAs -->
+<div class="tab-pane active" id="tab-ksas" role="tabpanel" aria-labelledby="btn-tab-ksas">
+<div class="grid">
+<div class="card section-full"><div class="card-header"><span class="card-title">Knowledge, skills & abilities</span> <a href="matrix.html" target="_blank" rel="noopener" style="font-size:0.65rem;font-weight:400;margin-left:0.5rem">View full matrix →</a><button class="btn" id="priority-toggle" onclick="togglePriority()" style="margin-left:auto;font-size:0.62rem;padding:0.2rem 0.6rem;background:var(--accent-bg);color:var(--accent);border:1px solid rgba(37,99,235,0.2)">⭐ Show Top 5</button><span class="card-count" id="ksa-count"></span></div><div class="card-body">
+<div class="ksa-legend">
+<div class="ksa-legend-item"><div class="ksa-legend-dot" style="background:var(--ksa-nice-bg);border:1px solid var(--ksa-nice-fg)"></div> NICE Framework (Insider Threat Analysis)</div>
+<div class="ksa-legend-item"><div class="ksa-legend-dot" style="background:var(--ksa-custom-bg);border:1px solid var(--ksa-custom-fg)"></div> InT-specific (custom)</div>
+<div class="ksa-legend-item"><div class="ksa-legend-dot" style="background:var(--ksa-adj-bg);border:1px solid var(--ksa-adj-fg)"></div> Adjacent work role</div>
+</div>
+<div id="ksa-panel"></div>
+<p id="ksa-nudge" style="font-size:0.7rem;color:var(--fg4);margin-top:0.5rem;text-align:center;display:none">Showing all KSAs through this level. A lot to take in? Try the <button onclick="togglePriority()" style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:0.7rem;font-weight:600;font-family:inherit;padding:0;text-decoration:underline">⭐ Show Top 5</button> filter.</p>
+</div></div>
+</div></div>
+
+<!-- TAB 2: Development -->
+<div class="tab-pane" id="tab-dev" role="tabpanel" aria-labelledby="btn-tab-dev">
+<div class="grid">
+<div class="card section-full"><div class="card-header"><span class="card-title">Certifications & training</span></div><div class="card-body"><div style="display:flex;gap:0.75rem;margin-bottom:0.5rem;font-size:0.62rem;color:var(--fg3)"><span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--accent);vertical-align:middle;margin-right:3px"></span> Required at this level</span><span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--check,#16a34a);vertical-align:middle;margin-right:3px;border:1px dashed var(--fg4)"></span> Nice to have / preferred</span><span>Level shown = introduced at</span></div><div id="cert-panel"></div></div></div>
+
+<div class="card section-full" style="border-left-color:#ef4444"><div class="card-header" style="border-bottom-color:rgba(239,68,68,0.2)"><span class="card-title" style="color:#dc2626">📐 The analyst's value chain (DIKW)</span></div><div class="card-body">
+<div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+<svg viewBox="0 0 280 200" style="width:280px;flex-shrink:0" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="gD" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.4"/></linearGradient></defs>
+<polygon points="140,10 270,190 10,190" fill="url(#gD)" stroke="#6cb4ff" stroke-width="1.5" rx="4"/>
+<line x1="55" y1="150" x2="225" y2="150" stroke="#64748b" stroke-width="0.5" stroke-dasharray="3"/>
+<line x1="80" y1="115" x2="200" y2="115" stroke="#64748b" stroke-width="0.5" stroke-dasharray="3"/>
+<line x1="105" y1="80" x2="175" y2="80" stroke="#64748b" stroke-width="0.5" stroke-dasharray="3"/>
+<text x="140" y="178" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="DM Sans,sans-serif">Data</text>
+<text x="140" y="142" text-anchor="middle" fill="#6cb4ff" font-size="11" font-family="DM Sans,sans-serif">Information</text>
+<text x="140" y="107" text-anchor="middle" fill="#34d9c3" font-size="11" font-family="DM Sans,sans-serif" font-weight="600">Knowledge</text>
+<text x="140" y="55" text-anchor="middle" fill="#a78bfa" font-size="13" font-family="DM Sans,sans-serif" font-weight="700">Wisdom</text>
+<text x="140" y="30" text-anchor="middle" fill="#c4b5fd" font-size="8" font-family="DM Sans,sans-serif">↑ YOU ARE HERE</text>
+</svg>
+<div style="flex:1;min-width:250px;font-size:0.78rem;color:var(--fg2);line-height:1.65">
+<div style="margin-bottom:0.3rem"><span style="color:#a78bfa;font-weight:600">Wisdom</span> — Actionable recommendations to leadership. Your judgment delivers it. <em>This is the analyst's irreplaceable value.</em></div>
+<div style="margin-bottom:0.3rem"><span style="color:#34d9c3;font-weight:600">Knowledge</span> — Contextualized analysis: who, what, why, how bad. Your investigation builds it.</div>
+<div style="margin-bottom:0.3rem"><span style="color:#6cb4ff;font-weight:600">Information</span> — Parsed events, correlated alerts, DLP triggers. Your detections produce it.</div>
+<div><span style="color:#94a3b8;font-weight:600">Data</span> — Raw logs, telemetry, badge swipes. Your SIEM ingests it.</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="card section-full" style="border-left-color:#ec4899"><div class="card-header" style="border-bottom-color:rgba(236,72,153,0.2)"><span class="card-title" style="color:#db2777">🧠 Analytical rigor — biases, fallacies & heuristic mistakes</span></div><div class="card-body">
+<p style="font-size:0.78rem;color:var(--fg2);margin-bottom:0.5rem">Insider threat analysis is high-stakes, low-base-rate work. The biases that trip us up aren't exotic — they're the ones we use every day without noticing. Training on these is not optional.</p>
+<div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://bias.wiki" target="_blank" rel="noopener">Cognitive biases</a></div><div class="ref-card-desc">Confirmation bias, anchoring, availability heuristic, fundamental attribution error, hindsight bias, base rate neglect. Interactive Cognitive Bias Codex — click any bias for explanation. <a href="https://www.cia.gov/resources/csi/static/Pyschology-of-Intelligence-Analysis.pdf" target="_blank" rel="noopener" style="font-size:0.65rem">Heuer: Psychology of Intelligence Analysis (free CIA PDF)</a></div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://en.wikipedia.org/wiki/Analysis_of_competing_hypotheses" target="_blank" rel="noopener">Structured analytic techniques</a></div><div class="ref-card-desc">Analysis of Competing Hypotheses (ACH), devil's advocacy, red team analysis, key assumptions check. Formal methods to counter groupthink and tunnel vision.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://pll.harvard.edu/course/structure-and-function-argument-introduction-critical-thinking" target="_blank" rel="noopener">Logical fallacies</a></div><div class="ref-card-desc">Affirming the consequent, false equivalence, appeal to authority, post hoc ergo propter hoc. Harvard's free critical thinking course covers argument structure, reasoning, and bias identification.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://yourlogicalfallacyis.com/" target="_blank" rel="noopener">Heuristic mistakes</a></div><div class="ref-card-desc">Kahneman's System 1/System 2 framework. Substitution, representativeness, WYSIATI (what you see is all there is). Interactive fallacy reference — rollover each icon for examples of how your brain shortcuts lead to wrong conclusions.</div></div>
+</div>
+<p style="font-size:0.7rem;color:var(--fg3);margin-top:0.5rem"><b>Free training:</b> <a href="https://pll.harvard.edu/course/structure-and-function-argument-introduction-critical-thinking" target="_blank" rel="noopener">Harvard — Critical Thinking & Argument</a> · <a href="https://www.cia.gov/resources/csi/static/Pyschology-of-Intelligence-Analysis.pdf" target="_blank" rel="noopener">CIA — Psychology of Intelligence Analysis (PDF)</a> · <a href="https://www.coursera.org/learn/critical-thinking-skills-for-professionals" target="_blank" rel="noopener">Coursera — Critical Thinking</a></p>
+<div style="margin-top:0.75rem;padding:0.65rem 0.85rem;background:var(--bg3);border-radius:8px;border-left:3px solid #ec4899">
+<div style="font-size:0.72rem;font-weight:600;color:var(--fg2);margin-bottom:0.4rem">🎯 Spot the bias — practitioner edition</div>
+<p style="font-size:0.68rem;color:var(--fg3);margin-bottom:0.45rem;font-style:italic">Each quote demonstrates the bias it describes. Can you name them all before clicking?</p>
+<div id="bias-quiz" style="display:flex;flex-direction:column;gap:0.3rem"></div>
+</div>
+<script>
+requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transition')})});
+(function(){
+var biases=[
+{q:'"The first alert is always the most important one. I decided that within five seconds of opening the queue."',a:'Anchoring'},
+{q:'"I already suspected this employee was a risk, and look — every data point since then proves me right."',a:'Confirmation bias'},
+{q:'"Data exfiltration is obviously our biggest threat. I mean, the last three cases were all exfil."',a:'Availability heuristic'},
+{q:'"I\'ve spent six months tuning this detection rule. It generates 200 false positives a week, but I\'ve invested too much to kill it."',a:'Sunk cost fallacy'},
+{q:'"We\'ve always triaged cases this way. It works fine. No, I haven\'t measured the miss rate."',a:'Status quo bias'},
+{q:'"Everyone on the hub says this is a high-risk indicator, so it must be. I haven\'t looked at the base rate myself."',a:'Bandwagon effect'},
+{q:'"He accessed those files at 2 AM because he\'s malicious — not because he\'s in a different time zone."',a:'Fundamental attribution error'},
+{q:'"Insider threat is definitely getting worse. Well, based on this quarter\'s numbers anyway."',a:'Recency bias'}
+];
+var el=document.getElementById('bias-quiz');if(!el)return;
+biases.forEach(function(b,i){
+var d=document.createElement('div');
+d.style.cssText='padding:0.35rem 0.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:5px;cursor:pointer;font-size:0.68rem;color:var(--fg2);transition:all 0.15s;line-height:1.5';
+d.innerHTML=b.q+' <span style="display:none;color:#ec4899;font-weight:600;margin-left:0.3rem">→ '+b.a+'</span>';
+d.onclick=function(){var s=this.querySelector('span');s.style.display='inline';this.style.borderColor='#ec4899';this.style.cursor='default';};
+el.appendChild(d);
+});
+}());
+</script>
+</div></div>
+
+
+<div class="card section-full" style="border-left-color:#06b6d4"><div class="card-header" style="border-bottom-color:rgba(6,182,212,0.2)"><span class="card-title" style="color:#0891b2">📝 Communication & reporting</span></div><div class="card-body"><div class="ref-grid">
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.markerbench.com/posts/writing-for-impact-exec-summaries/" target="_blank" rel="noopener">Executive summaries</a></div><div class="ref-card-desc">One page, plain language, risk-focused. "Writing for Impact" by a Fortune 100 CISO — free guide to security exec summaries that get read and acted on. <a href="https://www.sans.org/white-papers/writing-better-security-reports/" target="_blank" rel="noopener" style="font-size:0.65rem">SANS: writing better security reports</a></div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.forensicfocus.com/articles/writing-dfir-reports-a-primer/" target="_blank" rel="noopener">Detailed case reports</a></div><div class="ref-card-desc">Evidence-backed, methodical, defensible. Timeline, artifacts, analysis, conclusions. Assume every report could end up in front of a judge. <a href="https://www.sans.org/blog/report-writing-for-digital-forensics-part-ii" target="_blank" rel="noopener" style="font-size:0.65rem">SANS DFIR report writing</a></div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.upguard.com/blog/writing-a-cybersecurity-executive-summary" target="_blank" rel="noopener">Technical translation</a></div><div class="ref-card-desc">Explaining DNS exfiltration to an HR director. Describing UEBA risk scores to a general counsel. UpGuard's guide walks through structure, audience, and tone for security reporting to non-technical readers.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://www.armyupress.army.mil/Portals/7/military-review/Archives/English/MA-21/Kwoun-Tradecraft-Standards.pdf" target="_blank" rel="noopener">Intel reporting formats</a></div><div class="ref-card-desc">ICD 203 analytic tradecraft standards applied to defense intelligence. SALUTE, INTSUM, SITREPs — structured formats that reduce ambiguity and improve handoff quality. <a href="https://www.dni.gov/files/documents/ICD/ICD-203.pdf" target="_blank" rel="noopener" style="font-size:0.65rem">ICD 203 full text (PDF)</a></div></div>
+</div></div></div>
+
+
+<div class="card section-full" id="lang-card"><div class="card-header"><span class="card-title">Query & analysis languages</span></div><div class="card-body">
+<div style="display:flex;gap:0.6rem;margin-bottom:0.5rem;font-size:0.62rem;color:var(--fg3)"><span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--accent2);vertical-align:middle;margin-right:3px"></span> Introduced at selected level</span><span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--accent);vertical-align:middle;margin-right:3px"></span> Active (already introduced)</span><span style="opacity:0.5"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--border);vertical-align:middle;margin-right:3px"></span> Higher level</span></div>
+<div class="lang-grid" id="lang-items">
+</div>
+<p style="font-size:0.72rem;color:var(--fg2);margin-top:0.6rem;padding-top:0.5rem;border-top:1px solid var(--border)"><b>Code literacy:</b> Identify Python, Bash, PowerShell, JavaScript, Java, C/C++ in logs and investigations. You don't need to write code — you need to recognize it when it appears in evidence. <a href="https://www.codecademy.com/" target="_blank" rel="noopener" style="font-size:0.65rem">Codecademy</a> · <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener" style="font-size:0.65rem">freeCodeCamp</a> · <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener" style="font-size:0.65rem">Harvard CS50</a></p>
+</div></div>
+<div class="card section-full"><div class="card-header"><span class="card-title">Conferences</span></div><div class="card-body">
+<div style="display:flex;gap:0.4rem;margin-bottom:0.5rem;font-size:0.68rem"><button onclick="filterConf('all')" class="conf-filter active" style="padding:2px 8px;border:1px solid var(--border);border-radius:4px;background:var(--accent);color:#fff;cursor:pointer;font-family:inherit;font-size:0.68rem">All</button><button onclick="filterConf('us')" class="conf-filter" style="padding:2px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg2);color:var(--fg3);cursor:pointer;font-family:inherit;font-size:0.68rem">Americas</button><button onclick="filterConf('emea')" class="conf-filter" style="padding:2px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg2);color:var(--fg3);cursor:pointer;font-family:inherit;font-size:0.68rem">EMEA</button><button onclick="filterConf('global')" class="conf-filter" style="padding:2px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg2);color:var(--fg3);cursor:pointer;font-family:inherit;font-size:0.68rem">Global</button></div>
+<div id="conf-list" style="display:flex;flex-direction:column;gap:0.45rem">
+<div class="conf-card" data-region="global"><span class="conf-icon">🏦</span><div><div class="ref-card-title"><a href="https://www.fsisac.com/" target="_blank" rel="noopener">FS-ISAC Summit</a></div><div class="ref-card-desc">Financial services sector intelligence sharing and peer networking. Annual summit (fall) + regional events worldwide. Americas, EMEA, APAC tracks.</div></div></div>
+<div class="conf-card" data-region="us"><span class="conf-icon">🔬</span><div><div class="ref-card-title"><a href="https://www.ncfta.net/" target="_blank" rel="noopener">NCFTA</a></div><div class="ref-card-desc">National Cyber-Forensics & Training Alliance. Cross-sector intel sharing with FBI, USSS, and private sector. Pittsburgh-based, ongoing events.</div></div></div>
+<div class="conf-card" data-region="us"><span class="conf-icon">🛡</span><div><div class="ref-card-title"><a href="https://www.cdse.edu/" target="_blank" rel="noopener">DSI Symposium</a></div><div class="ref-card-desc">Defense Security Institute annual insider threat symposium. Government and cleared contractor focused. Typically spring.</div></div></div>
+<div class="conf-card" data-region="global"><span class="conf-icon">🎯</span><div><div class="ref-card-title"><a href="https://insiderthreat.mitre.org/" target="_blank" rel="noopener">MITRE InT Events</a></div><div class="ref-card-desc">Behavioral framework workshops, TTP KB updates, practitioner roundtables. Invitation-based and open sessions throughout the year.</div></div></div>
+<div class="conf-card" data-region="us"><span class="conf-icon">🤝</span><div><div class="ref-card-title"><a href="https://insiderthreatmitigation.org/" target="_blank" rel="noopener">Insider Summit</a></div><div class="ref-card-desc">Annual summit (typically September — National Insider Threat Awareness Month). Community-driven, research-focused, open to all sectors.</div></div></div>
+<div class="conf-card" data-region="global"><span class="conf-icon">🧠</span><div><div class="ref-card-title"><a href="https://www.atapworldwide.org/" target="_blank" rel="noopener">ATAP TMC</a></div><div class="ref-card-desc">Threat Management Conference. Behavioral threat assessment, SPJ tools, case studies. Annual (typically August). Worldwide membership.</div></div></div>
+<div class="conf-card" data-region="us"><span class="conf-icon">📡</span><div><div class="ref-card-title"><a href="https://nationalinsiderthreatsig.org/" target="_blank" rel="noopener">NITSIG</a></div><div class="ref-card-desc">National Insider Threat SIG symposium and expo. Cross-sector practitioner community. Annual event + ongoing SIG meetings.</div></div></div>
+<div class="conf-card" data-region="emea"><span class="conf-icon">🇪🇺</span><div><div class="ref-card-title"><a href="https://www.enisa.europa.eu/" target="_blank" rel="noopener">ENISA Events</a></div><div class="ref-card-desc">EU Agency for Cybersecurity. Annual conference (October), working groups, EMEA threat landscape reports. GDPR-centric insider risk coverage.</div></div></div>
+<div class="conf-card" data-region="emea"><span class="conf-icon">🇬🇧</span><div><div class="ref-card-title"><a href="https://www.cpni.gov.uk/" target="_blank" rel="noopener">CPNI / NPSA</a></div><div class="ref-card-desc">UK National Protective Security Authority (formerly CPNI). Personnel security guidance, insider risk workshops, UK/Five Eyes focus.</div></div></div>
+</div></div></div>
+<div class="card section-full"><div class="card-header"><span class="card-title">Recommended media</span></div><div class="card-body">
+<div class="media-tabs">
+<button class="media-tab active" onclick="mt(this,'mp-books')">Books</button>
+<button class="media-tab" onclick="mt(this,'mp-pods')">Podcasts</button>
+<button class="media-tab" onclick="mt(this,'mp-screen')">Film & TV</button>
+<button class="media-tab" onclick="mt(this,'mp-video')">Video / Courses</button>
+</div>
+<div class="media-pane active" id="mp-books">
+<div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/thinking-fast-and-slow-daniel-kahneman/943943" target="_blank" rel="noopener">Thinking, Fast and Slow</a> <span class="media-rating">★ 4.18 GR</span></div><div class="media-meta">Daniel Kahneman</div><div class="media-note">Cognitive biases and heuristic mistakes. If you read one book, read this.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/spy-the-lie-former-cia-officers-teach-you-how-to-detect-deception-philip-houston/15553808" target="_blank" rel="noopener">Spy the Lie</a> <span class="media-rating">★ 3.89 GR</span></div><div class="media-meta">Philip Houston, Michael Floyd, Susan Carnicero (former CIA)</div><div class="media-note">Deception detection directly applicable to interviews.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/what-every-body-is-saying-an-ex-fbi-agent-s-guide-to-speed-reading-people-joe-navarro/416affad39cb573c" target="_blank" rel="noopener">What Every BODY Is Saying</a> <span class="media-rating">★ 4.08 GR</span></div><div class="media-meta">Joe Navarro (former FBI)</div><div class="media-note">Practical body language reading for interviews and elicitation.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://www.lenasisco.com/books" target="_blank" rel="noopener">Honest Answers</a> / <a href="https://www.lenasisco.com/books" target="_blank" rel="noopener">You're Lying!</a> <span class="media-rating">★ 3.72 GR</span></div><div class="media-meta"><a href="https://www.thecongruencygroup.com" target="_blank" rel="noopener" style="color:var(--fg3)">Lena Sisco</a> (former DoD interrogator)</div><div class="media-note">The SISCO Method — strategic, rapport-based, non-accusatory interviewing.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/the-art-of-intrusion-the-real-stories-behind-the-exploits-of-hackers-intruders-and-deceivers-kevin-d-mitnick/7250329" target="_blank" rel="noopener">The Art of Intrusion</a> <span class="media-rating">★ 3.80 GR</span></div><div class="media-meta">Kevin Mitnick</div><div class="media-note">Social engineering from the source. How trust is exploited.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/left-of-bang-how-the-marine-corps-combat-hunter-program-can-save-your-life-jason-a-riley/10891418" target="_blank" rel="noopener">Left of Bang</a> <span class="media-rating">★ 4.08 GR</span></div><div class="media-meta">Patrick Van Horne & Jason A. Riley</div><div class="media-note">Combat profiling for threat detection. Reading baselines and anomalies.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/inside-jobs-why-insider-risk-is-the-biggest-cyber-threat-you-can-t-ignore-jadee-hanson/8e6b4e4b9e323ec5" target="_blank" rel="noopener">Inside Jobs</a></div><div class="media-meta">Joe Payne, Jadee Hanson, Mark Wojtasiak (Code42)</div><div class="media-note">Why insider risk is the biggest cyber threat you can't ignore. Practical, program-level perspective from practitioners.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/the-art-of-deception-controlling-the-human-element-of-security-kevin-d-mitnick/1789bd02684960dd" target="_blank" rel="noopener">The Art of Deception</a> <span class="media-rating">★ 3.76 GR</span></div><div class="media-meta">Kevin Mitnick</div><div class="media-note">How humans are the weakest link. Social engineering playbook from the inside.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/ghost-in-the-wires-my-adventures-as-the-world-s-most-wanted-hacker-kevin-mitnick/3e56f65f9030008a" target="_blank" rel="noopener">Ghost in the Wires</a> <span class="media-rating">★ 3.97 GR</span></div><div class="media-meta">Kevin Mitnick</div><div class="media-note">Mitnick's own story. Access, trust, lateral movement — before those were buzzwords.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2/" target="_blank" rel="noopener">Psychology of Intelligence Analysis</a> <span class="media-rating">★ 4.00 GR</span></div><div class="media-meta">Richards J. Heuer Jr. (CIA)</div><div class="media-note">The foundational text on cognitive biases in analysis. Free from CIA. Chapter 8 (ACH) is the single most important chapter for insider threat analysts.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://bookshop.org/books/anticipating-surprise-analysis-for-strategic-warning/9780761829522" target="_blank" rel="noopener">Anticipating Surprise</a> <span class="media-rating">★ 4.06 GR</span></div><div class="media-meta">Cynthia Grabo</div><div class="media-note">Strategic warning analysis. Pattern recognition across weak signals — directly applicable to insider threat indicator correlation.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/true-believer-inside-the-investigation-and-capture-of-ana-montes-cuba-s-master-spy-scott-carmichael/88192d64e3f7ecb9" target="_blank" rel="noopener">True Believer</a> <span class="media-rating">★ 3.86 GR</span></div><div class="media-meta">Scott Carmichael (DIA)</div><div class="media-note">The investigation and capture of Ana Montes, Cuba's master spy inside DIA. First-person counterintelligence case study.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/the-body-keeps-the-score-brain-mind-and-body-in-the-healing-of-trauma-bessel-van-der-kolk-m-d/9e63236863805513" target="_blank" rel="noopener">The Body Keeps the Score</a> <span class="media-rating">★ 4.38 GR</span></div><div class="media-meta">Bessel van der Kolk</div><div class="media-note">How trauma reshapes the body and brain. Essential for anyone in chronic-stress fields. See also: <a href="wellness.html" target="_blank" rel="noopener">♡ Analyst Wellness</a></div></div>
+</div>
+<div class="media-pane" id="mp-pods">
+<div class="media-item"><div class="media-title"><a href="https://thecyberwire.com/podcasts/daily-podcast" target="_blank" rel="noopener">Cyberwire Daily</a></div><div class="media-note">Threat landscape in 20 min/day.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://isc.sans.edu/podcast.html" target="_blank" rel="noopener">SANS Stormcenter</a></div><div class="media-note">Daily technical brief.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://darknetdiaries.com/" target="_blank" rel="noopener">Darknet Diaries</a></div><div class="media-note">Narrative cybersecurity. Several insider threat episodes.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://covertaccessteam.substack.com/podcast" target="_blank" rel="noopener">Covert Access Team</a></div><div class="media-meta"><a href="https://www.covertaccessteam.com/" target="_blank" rel="noopener" style="color:var(--fg3)">Brian Harris</a></div><div class="media-note">Physical pentesting, social engineering, insider threats.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://podcasters.spotify.com/pod/show/layer-8-podcast" target="_blank" rel="noopener">Layer 8</a></div><div class="media-note">Social engineering and OSINT with practitioners.</div></div>
+</div>
+<div class="media-pane" id="mp-screen">
+<div class="media-item"><div class="media-title"><a href="https://www.imdb.com/title/tt0266987/" target="_blank" rel="noopener">Spy Game</a> (2001) <span class="media-rating">★ 7.0 IMDb</span> <span style="font-size:0.625rem;color:var(--fg4)">(criminally underrated)</span></div><div class="media-meta"><span class="media-tag">Film</span> Tony Scott</div><div class="media-note">"All you really need is a stick of gum, a pocket knife, and a smile." Required viewing.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://www.imdb.com/title/tt3774114/" target="_blank" rel="noopener">Snowden</a> (2016) <span class="media-rating">★ 7.3 IMDb</span></div><div class="media-meta"><span class="media-tag">Film</span> Oliver Stone</div><div class="media-note">Study the methods, access patterns, and program gaps.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://www.imdb.com/title/tt0140352/" target="_blank" rel="noopener">The Insider</a> (1999) <span class="media-rating">★ 7.8 IMDb</span></div><div class="media-meta"><span class="media-tag">Film</span> Michael Mann</div><div class="media-note">Whistleblower dynamics. The gray area between threat and courage.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://www.imdb.com/title/tt4158110/" target="_blank" rel="noopener">Mr. Robot</a> (2015–2019) <span class="media-rating">★ 8.5 IMDb</span></div><div class="media-meta"><span class="media-tag">TV</span></div><div class="media-note">Social engineering done right on screen.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://www.imdb.com/title/tt1235099/" target="_blank" rel="noopener">Lie to Me</a> (2009–2011) <span class="media-rating">★ 7.9 IMDb</span></div><div class="media-meta"><span class="media-tag">TV</span> Tim Roth</div><div class="media-note">Micro-expression analysis dramatized. Entertaining primer on nonverbal deception detection.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://www.code42.com/the-inside-man/" target="_blank" rel="noopener">The Inside Man</a> (series) <span style="font-size:0.625rem;color:var(--fg4)">(free signup req'd)</span></div><div class="media-meta"><span class="media-tag">Web series</span> Code42</div><div class="media-note">Dramatized insider threat scenarios. Short episodes, good for team training and awareness.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://www.imdb.com/title/tt1124373/" target="_blank" rel="noopener">Breach</a> (2007) <span class="media-rating">★ 7.0 IMDb</span></div><div class="media-meta"><span class="media-tag">Film</span> Billy Ray</div><div class="media-note">Robert Hanssen case. The definitive insider threat film — espionage, access, compartmentalization failure.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://www.imdb.com/title/tt2149175/" target="_blank" rel="noopener">The Americans</a> (2013–2018) <span class="media-rating">★ 8.4 IMDb</span></div><div class="media-meta"><span class="media-tag">TV</span> FX</div><div class="media-note">KGB illegals embedded as Americans. Long-game insider placement, dual-life psychology, recruitment tradecraft. Outstanding character study of ideological motivation.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://www.imdb.com/title/tt5446858/" target="_blank" rel="noopener">Zero Days</a> (2016) <span class="media-rating">★ 7.7 IMDb</span></div><div class="media-meta"><span class="media-tag">Doc</span> Alex Gibney</div><div class="media-note">Stuxnet documentary. Cyber-physical sabotage via insider-like access. The convergence of nation-state capability and industrial control systems.</div></div>
+<div class="media-item"><div class="media-title"><a href="https://www.imdb.com/title/tt11405060/" target="_blank" rel="noopener">The Two Faces of Ana</a> (2006) </div><div class="media-meta"><span class="media-tag">Doc</span> DIA</div><div class="media-note">DIA training video on Ana Montes — Cuba's spy inside the Pentagon for 17 years. See also: Carmichael's <em>True Believer</em> (books tab).</div></div>
+<div class="media-item"><div class="media-title"><a href="https://www.imdb.com/title/tt0115541/" target="_blank" rel="noopener">Aldrich Ames: Traitor Within</a> (1998) <span class="media-rating">★ 6.0 IMDb</span></div><div class="media-meta"><span class="media-tag">Film</span> Timothy Hutton</div><div class="media-note">CIA counterintelligence chief selling secrets to the KGB. Financial indicators, lifestyle changes, access abuse — textbook insider threat case.</div></div>
+</div>
+<div class="media-pane" id="mp-video">
+<div class="video-item"><span class="video-icon">▶</span><div><div class="video-title"><a href="https://www.youtube.com/watch?v=CyGWML6cI_k" target="_blank" rel="noopener">MITRE — Insider Threat TTP KB Overview</a></div><div class="video-desc">Official MITRE walkthrough of the Insider Threat TTP Knowledge Base v2.0. Free, foundational.</div></div></div>
+<div class="video-item"><span class="video-icon">▶</span><div><div class="video-title"><a href="https://www.youtube.com/results?search_query=SANS+insider+threat" target="_blank" rel="noopener">SANS Insider Threat Talks</a></div><div class="video-desc">SANS webcasts and summit recordings. Detection engineering, case studies, tooling deep-dives.</div></div></div>
+<div class="video-item"><span class="video-icon">▶</span><div><div class="video-title"><a href="https://www.youtube.com/results?search_query=insider+threat+CMU+SEI" target="_blank" rel="noopener">CMU SEI — Insider Threat Research</a></div><div class="video-desc">CMU Software Engineering Institute talks on insider threat case analysis and best practices.</div></div></div>
+<div class="video-item"><span class="video-icon">▶</span><div><div class="video-title"><a href="https://www.youtube.com/@CDSETraining" target="_blank" rel="noopener">CDSE Insider Threat Training</a></div><div class="video-desc">Free video courses and interactive scenarios from the Center for Development of Security Excellence.</div></div></div>
+<div class="video-item"><span class="video-icon">▶</span><div><div class="video-title"><a href="https://www.youtube.com/results?search_query=joe+navarro+body+language" target="_blank" rel="noopener">Joe Navarro — Body Language</a></div><div class="video-desc">Former FBI agent's YouTube talks on nonverbal communication. Directly applicable to interviews.</div></div></div>
+<div class="video-item"><span class="video-icon">▶</span><div><div class="video-title"><a href="https://www.youtube.com/watch?v=U_P23SqJaDc" target="_blank" rel="noopener">Google — Cybersecurity Career Path</a></div><div class="video-desc">Google career certificate overview. Network security, Linux, SQL, Python, SIEM, IDS. Free foundational program.</div></div></div>
+</div>
+</div></div>
+</div></div>
+
+<!-- Cross-link to program.html (formerly tabs 3-5) -->
+<div class="tab-pane" id="tab-program" role="tabpanel" aria-labelledby="btn-tab-program">
+<div style="text-align:center;padding:2rem 1rem">
+<p style="font-size:1rem;margin-bottom:0.5rem">🏛️ Program design, threats & tools, and resources have moved to their own page.</p>
+<a href="program.html" style="display:inline-block;padding:0.5rem 1.2rem;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85rem;margin-top:0.5rem">Go to Program Hub →</a>
+</div>
+</div>
+
+<!-- TAB 6: Export -->
+<div class="tab-pane" id="tab-export" role="tabpanel" aria-labelledby="btn-tab-export">
+<div class="grid">
+<div class="card customize section-full"><div class="card-header"><span class="card-title">Customize & export</span><span style="font-size:0.6rem;color:var(--fg4);font-weight:400;margin-left:0.5rem">PDFs generated client-side — no data leaves your browser</span></div><div class="card-body">
+<p style="font-size:0.72rem;color:var(--fg3);margin-bottom:0.5rem">Fields flow into PDF and job description exports.</p>
+<div class="form-row"><div><label class="form-label">Organization</label><input type="text" id="org-name" placeholder="e.g., Acme Financial"></div><div><label class="form-label">Department</label><input type="text" id="org-dept" placeholder="e.g., Insider Threat"></div></div>
+<div class="form-row"><div><label class="form-label">Reports to</label><input type="text" id="org-report" placeholder="e.g., VP Security"></div><div><label class="form-label">Clearance</label><input type="text" id="org-clearance" placeholder="N/A"></div></div>
+<div><label class="form-label">Additional requirements</label><textarea id="org-notes" placeholder="Regulatory context, tools, etc."></textarea></div>
+<div style="margin-top:0.5rem"><label class="form-label">PDF style</label><div style="display:flex;gap:1rem;font-size:0.75rem;color:var(--fg2);margin-top:0.15rem"><label style="cursor:pointer;display:flex;align-items:center;gap:0.3rem"><input type="radio" name="pdf-style" value="color" checked id="pdf-color"> <span style="color:#3b82f6">■</span> Color (source tags, level highlights)</label><label style="cursor:pointer;display:flex;align-items:center;gap:0.3rem"><input type="radio" name="pdf-style" value="bw" id="pdf-bw"> ■ B&W (print-friendly, no color coding)</label></div></div>
+<div style="margin-top:0.65rem;display:flex;gap:0.4rem;flex-wrap:wrap">
+<button class="btn btn-primary" onclick="exportPDF()">Export PDF</button>
+<button class="btn" onclick="showJDModal()">Generate job description</button>
+<button class="btn" onclick="showRoadmapModal()">Career roadmap</button>
+</div></div></div>
+
+<div class="card section-full" style="border-left-color:#8b5cf6"><div class="card-header" style="border-bottom-color:rgba(139,92,246,0.2)"><span class="card-title" style="color:#7c3aed">Career pathway</span><span style="font-size:0.6rem;color:var(--fg4);font-weight:400;margin-left:0.5rem">Visual progression across levels and concentrations</span></div><div class="card-body" id="career-viz-panel">
+</div></div>
+</div></div>
+
+</main>
+
+<div class="feedback-widget" id="feedback-widget">
+<span>Helpful?</span>
+<button class="feedback-btn" onclick="sendFeedback('up',this)" title="Yes, this was helpful">👍</button>
+<button class="feedback-btn" onclick="sendFeedback('down',this)" title="Not helpful">👎</button>
+<span class="feedback-thanks" id="feedback-thanks">Thanks!</span>
+</div>
+
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<footer class="footer">
+<p><a href="about.html">About</a> &middot; <a href="start.html">🚀 Start here</a> · <a href="references.html">📚 References</a> · <a href="contributors.html">🤝 Contributors</a> · <a href="changelog.html">Changelog</a> · <a href="suggest.html?from=framework">💬 Suggest</a></p>
+<p style="margin-top:0.25rem;font-size:0.625rem">Vibe-coded with Claude™ · No AI analysts were harmed · Deployed via double-ROT13 encryption<a href="https://html5zombo.com/" target="_blank" rel="noopener" style="opacity:0.3;margin-left:0.3rem" title="The only limit is yourself">∞</a></p>
+<p style="margin-top:0.15rem;font-size:0.625rem"><a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6">hello@insiderthreatanalyst.com</a></p>
+<p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+<p style="margin-top:0.25rem;font-size:0.625rem;font-style:italic">"All you really need is a stick of gum, a pocket knife, and a smile" · <a href="reviews.html" style="opacity:0.4;font-style:normal">⭐</a></p>
+</footer>
+
+<div class="modal-overlay" id="jd-modal"><div class="modal"><h3>Generated job description</h3><div id="jd-content" style="white-space:pre-wrap;line-height:1.6;font-family:'JetBrains Mono',monospace;font-size:0.68rem"></div><div style="display:flex;gap:0.4rem;margin-top:0.65rem"><button class="btn btn-primary" onclick="copyJD()">Copy</button><button class="btn" onclick="closeJDModal()">Close</button></div></div></div>
+
+<div class="modal-overlay" id="roadmap-modal"><div class="modal" style="max-width:700px"><h3>Career Roadmap — Gap Analysis</h3><div id="roadmap-controls" style="display:flex;gap:1rem;align-items:center;margin-bottom:0.75rem;font-size:0.78rem;flex-wrap:wrap">
+<label style="display:flex;align-items:center;gap:0.3rem">Concentration: <select id="rm-conc" style="padding:0.2rem 0.4rem;border-radius:4px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);font-size:0.78rem"></select></label>
+<label style="display:flex;align-items:center;gap:0.3rem">Current level: <select id="rm-from" style="padding:0.2rem 0.4rem;border-radius:4px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);font-size:0.78rem"><option value="1">L1</option><option value="2" selected>L2</option><option value="3">L3</option><option value="4">L4</option></select></label>
+<span style="color:var(--fg3)">→</span>
+<label style="display:flex;align-items:center;gap:0.3rem">Target level: <select id="rm-to" style="padding:0.2rem 0.4rem;border-radius:4px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);font-size:0.78rem"><option value="2">L2</option><option value="3">L3</option><option value="4" selected>L4</option><option value="5">L5</option></select></label>
+<button class="btn btn-primary" onclick="genRoadmap()" style="padding:0.25rem 0.75rem;font-size:0.72rem">Generate</button>
+</div>
+<div id="roadmap-content" style="max-height:55vh;overflow-y:auto;line-height:1.6;font-size:0.72rem;color:var(--fg2)"></div>
+<div style="display:flex;gap:0.4rem;margin-top:0.65rem"><button class="btn btn-primary" onclick="copyRoadmap()">Copy as text</button><button class="btn" onclick="closeRoadmapModal()">Close</button></div>
+</div></div>
+
+<script>
+function toggleTheme(){const h=document.documentElement;const t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light mode':'Dark mode';document.getElementById('theme-btn').setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');try{localStorage.setItem('ita-theme',t);}catch(e){}}
+(function(){try{const t=localStorage.getItem('ita-theme');if(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light mode':'Dark mode';}}catch(e){}}());
+
+function sendFeedback(vote,btn){
+const w=document.getElementById('feedback-widget');
+w.querySelectorAll('.feedback-btn').forEach(b=>b.classList.add('voted'));
+document.getElementById('feedback-thanks').style.display='inline';
+setTimeout(()=>{w.style.opacity='0';setTimeout(()=>w.style.display='none',400)},1800);
+const page=location.pathname.replace(/\//g,'').replace('.html','')||'index';
+fetch('https://ita-feedback.phishcheckboy.workers.dev/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page,vote})}).catch(()=>{});
+}
+
+const LV=['Junior analyst','Analyst','Senior analyst','Lead / principal','Senior principal'],LY=['0-2 years','2-5 years','5-8 years','8-12 years','12+ years'];
+const CN={core:{n:'Core analyst',d:'Foundation role. Behavioral analysis, technical fundamentals, investigative process, legal/regulatory awareness, organizational collaboration. Inherited by all concentrations.'},tech:{n:'Technical specialist',d:'SIEM, UEBA/RBA, DLP, detection engineering. Translates threat hypotheses into working controls. Sysadmin, networking, endpoint, mobile, identity depth.'},hunt:{n:'Threat hunter',d:'Hypothesis-driven analysis. Designs behavioral detections. Probable (evidence-based) over possible (hypothetical).'},case:{n:'Case officer',d:'Works investigations end-to-end. Interviews, elicitation, legal/HR coordination, evidence chains, courtroom-grade reporting.'},desk:{n:'Desk officer',d:'Triages intake, scopes investigations, manages queues, tracks cases. The air traffic controller.'},outreach:{n:'Outreach & education',d:'Awareness training, partner engagement, translating operations into prevention. Positive workplace culture as mitigation.'},maturity:{n:'Program maturity',d:'Research curation, maturity assessment, audit prep, regulatory guidance. The continuous improvement loop.'},cag:{n:'CAG lead',d:'Crisis Action Group during active incidents. Cross-functional coordination, containment, after-action.'},audit:{n:'Program Auditor',d:'Evaluates the program itself — maturity, coverage, effectiveness, audit readiness. Assesses gaps in detection, visibility, tooling, communications, reporting/metrics, and stakeholder engagement. Pre-audit self-assessment to external-audit response.'}};
+
+// s: N=NICE InT, C=Custom InT-specific, A=Adjacent role, T=NICE Task
+// src: source role for adjacent
+const K={core:{1:[{id:'K0001',t:'Knowledge of networking (TCP/IP, DNS, DHCP, HTTP/S)',s:'N'},{id:'K0002',t:'Knowledge of risk management processes and frameworks',s:'N'},{id:'K0784',t:'Knowledge of insider threat laws and regulations',s:'N'},{id:'K1254',t:'Knowledge of insider threat hub policies and procedures',s:'N'},{id:'K-OS01',t:'Knowledge of OS fundamentals — user activity logs, file systems, process behavior',s:'C'},{id:'K-NET01',t:'Knowledge of IP addressing, DNS resolution, basic network flow logs',s:'C'},{id:'S-BT01',t:'Skill in recognizing behavioral indicators — affluence, access anomalies, disgruntlement',s:'C'},{id:'K-IT01',t:'Knowledge of program structure, authorities, governance, fusion hub',s:'C'},{id:'K-SE01',t:'Knowledge of social engineering and phishing — how trust is exploited',s:'C'},{id:'K-UIT01',t:'Knowledge of unintentional insider threats — accidental disclosure, phishing victimization, shadow IT',s:'C'},{id:'K-CAT01',t:'Knowledge of CMU threat categories: IP theft, sabotage, fraud, espionage, unintentional',s:'C'}],
+2:[{id:'K0005',t:'Knowledge of cyber threats and vulnerabilities relevant to org systems',s:'N'},{id:'K0785',t:'Knowledge of insider threat tools and techniques',s:'N'},{id:'K1253',t:'Knowledge of information collection tools and techniques',s:'N'},{id:'K-SIEM01',t:'Knowledge of SIEM — log sources, queries (SPL/KQL/Lucene), alert triage',s:'C'},{id:'K-EP01',t:'Knowledge of EDR — alert triage, process trees, forensic artifacts',s:'C'},{id:'K-MOB01',t:'Knowledge of mobile device management and mobile-specific insider vectors',s:'C'},{id:'K-GEO01',t:'Knowledge of geolocation — IP geo, VPN detection, badge/logical correlation, WiFi triangulation',s:'C'},{id:'K-MITRE01',t:'Knowledge of MITRE ATT&CK — TTPs mapped to insider threat scenarios',s:'C'},{id:'S-EL01',t:'Skill in basic elicitation — rapport building, active listening, open-ended questioning',s:'C'},{id:'K-FOR01',t:'Knowledge of evidence handling — chain of custody, preservation, admissibility',s:'A',src:'Digital Evidence Analysis'},{id:'K-DLP01',t:'Knowledge of DLP — network, endpoint, cloud; as one data source in the ecosystem',s:'C'},{id:'K-INV01',t:'Knowledge of investigatory logic — hypotheses, confirmation bias, logical fallacies',s:'C'},{id:'K-REM01',t:'Knowledge of remote/hybrid work insider threat vectors',s:'C'},{id:'K-OSINT01',t:'Knowledge of OSINT concepts — collection, managed attribution, legal boundaries',s:'C'},{id:'K-PRIV01',t:'Awareness of privacy law constraints on monitoring (GDPR, state laws)',s:'C'},{id:'S-COMM01',t:'Skill in clear written communication — case notes, evidence documentation',s:'C'}],
+3:[{id:'K1250',t:'Knowledge of external org roles (law enforcement, regulators, FS-ISAC)',s:'N'},{id:'K1252',t:'Knowledge of high value asset characteristics and protection',s:'N'},{id:'T1439',t:'Assess behavior of victims, witnesses, or suspects during investigations',s:'T'},{id:'K-CTI01',t:'Knowledge of CTI sources, methods, intelligence lifecycle',s:'A',src:'Threat Analysis'},{id:'S-EL02',t:'Skill in detecting verbal/nonverbal deception — baselines, stress, cognitive load',s:'C'},{id:'K-FOR02',t:'Knowledge of network forensics — pcap, flow data, DNS, timeline reconstruction',s:'A',src:'Digital Evidence Analysis'},{id:'A-BU01',t:'Ability to collaborate as fusion hub participant',s:'C'},{id:'K-MITRE02',t:'Knowledge of MITRE InT TTP KB — evidence-based techniques, OHIs',s:'C'},{id:'K-NET02',t:'Knowledge of network architecture — VLANs, firewalls, proxies, PAM — trace data end-to-end',s:'C'},{id:'S-INV01',t:'Skill in recognizing own cognitive biases — anchoring, availability, confirmation, groupthink',s:'C'},{id:'S-COMM02',t:'Skill in exec summaries and courtroom-grade case reports',s:'C'},{id:'S-OSINT01',t:'Skill in OSINT investigations — non-attributable accounts, evidence preservation',s:'C'},{id:'K-WAVD01',t:'Knowledge of work avoidance detection — mouse movers, IP-KVMs, overemployment, DPRK TTPs',s:'C'},{id:'S-TECH01',t:'Skill in explaining complex technical scenarios to non-technical audiences',s:'C'},{id:'S-MOB01',t:'Skill in mobile forensics — MDM logs, app sideloading, cloud backup extraction, mobile-specific exfiltration vectors',s:'C'},{id:'A-FOR01',t:'Ability to conduct forensic analysis of digital media — disk, memory, mobile, cloud',s:'A',src:'Digital Evidence Analysis'},{id:'A-SYNTH01',t:'Ability to synthesize multi-source behavioral and technical data into cohesive risk assessments',s:'C'},{id:'A-SAT01',t:'Ability to apply structured analytic techniques (ACH, key assumptions check, red team) under operational pressure',s:'C'}],
+4:[{id:'K-MAT01',t:'Knowledge of maturity models (CMU, NITTF), audit frameworks, regulatory requirements',s:'C'},{id:'A-CAG01',t:'Ability to lead cross-functional crisis action groups',s:'C'},{id:'S-DET01',t:'Skill in designing behavioral detection signatures and UEBA/RBA logic',s:'C'},{id:'K-GOV01',t:'Knowledge of governance — steering committee, oversight mechanisms, investigation thresholds',s:'C'},{id:'A-MENT01',t:'Ability to mentor analysts and develop training curricula',s:'C'},{id:'K-FUSE01',t:'Knowledge of fusion hub design — partnerships, MOUs, liaison programs',s:'C'},{id:'K-ETH01',t:'Knowledge of ethical frameworks — access discipline, confidentiality, oversight',s:'C'},{id:'A-OSINT02',t:'Ability to design OSINT programs with legal guardrails',s:'C'},{id:'K-EMRG01',t:'Knowledge of emerging threats — DPRK, overemployment, AI social engineering, wearable exfiltration (smart glasses), shadow AI, TA integration',s:'C'},{id:'A-INTEL01',t:'Ability to produce finished intelligence products from raw multi-source data',s:'A',src:'Threat Analysis'},{id:'A-EVID01',t:'Ability to produce courtroom-defensible investigative products with chain-of-custody documentation',s:'C'},{id:'A-IRPB01',t:'Ability to develop and maintain insider-specific incident response playbooks',s:'A',src:'Incident Response'}],
+5:[{id:'A-PRG01',t:'Ability to design and transform programs holistically',s:'C'},{id:'S-EXT01',t:'Skill in external representation — FS-ISAC, SIFMA, government, regulators',s:'C'},{id:'K-AI01',t:'Knowledge of AI/ML for insider threat — "digital employees" as workforce concept',s:'C'},{id:'A-EXEC01',t:'Ability to communicate program value to executives in business terms',s:'C'},{id:'K-REG01',t:'Knowledge of regulatory landscape — SOX, GDPR, CCPA, GLBA, FISMA, NISPOM',s:'C'},{id:'A-INTPROG01',t:'Ability to design intelligence programs — collection plans, requirements, cross-sector sharing leadership',s:'A',src:'Threat Analysis'},{id:'A-TREND01',t:'Ability to conduct trend analysis across large case datasets to inform enterprise detection strategy',s:'A',src:'Threat Analysis'}]},
+tech:{1:[{id:'K-T01',t:'Knowledge of SIEM architecture — onboarding, parsing, extraction',s:'C'},{id:'K-T02',t:'Knowledge of log formats (syslog, WinEvent, JSON, CEF)',s:'C'}],2:[{id:'S-T01',t:'Skill in SIEM correlation rules for insider threat',s:'C'},{id:'K-T03',t:'Knowledge of UEBA/RBA — scoring, baselines, anomaly detection',s:'C'},{id:'S-T02',t:'Skill in SPL, KQL, Lucene for complex correlation',s:'C'},{id:'K-T04',t:'Knowledge of DLP architecture — tuning, exceptions, FP reduction',s:'C'}],3:[{id:'S-T03',t:'Skill in adapting vendor detection logic to org context',s:'C'},{id:'K-T05',t:'Knowledge of IAM audit — AD, Entra ID, PAM, privilege creep',s:'C'},{id:'K-T06',t:'Knowledge of EDR internals — telemetry, process trees, behavioral engines',s:'C'}],4:[{id:'A-T01',t:'Ability to evaluate new detection tech — POC, build-vs-buy',s:'C'},{id:'S-T04',t:'Skill in SOAR/automation for enrichment and triage',s:'C'}],5:[{id:'A-T02',t:'Ability to architect enterprise detection strategy',s:'C'},{id:'S-T05',t:'Skill in defining telemetry requirements and coverage metrics',s:'C'}]},
+hunt:{1:[{id:'K-H01',t:'Knowledge of hunting — hypothesis generation, intel vs. data driven',s:'C'}],2:[{id:'S-H01',t:'Skill in pivot analysis across SIEM, EDR, IAM, HR, physsec',s:'C'},{id:'K-H02',t:'Knowledge of statistical baselines',s:'C'}],3:[{id:'S-H02',t:'Skill in designing detections from hunt findings',s:'C'},{id:'K-H03',t:'Knowledge of persistent insider patterns — slow exfil, staging',s:'C'},{id:'K-H04',t:'Knowledge of network forensic hunting',s:'A',src:'Digital Evidence Analysis'}],4:[{id:'A-H01',t:'Ability to lead hunt operations',s:'C'},{id:'S-H03',t:'Skill in hunt reports — technical to business risk',s:'C'}],5:[{id:'A-H02',t:'Ability to build a hunting program with metrics',s:'C'}]},
+case:{1:[{id:'K-C01',t:'Knowledge of investigation lifecycle',s:'C'},{id:'K-C02',t:'Knowledge of evidence standards',s:'A',src:'Digital Evidence Analysis'}],2:[{id:'S-C01',t:'Skill in structured interviews — cognitive method, rapport',s:'C'},{id:'K-C03',t:'Knowledge of elicitation spectrum',s:'C'}],3:[{id:'S-C02',t:'Skill in nonverbal analysis — deception cues (Navarro/Houston)',s:'C'},{id:'K-C04',t:'Knowledge of legal constraints on investigations',s:'C'},{id:'K-C05',t:'Knowledge of dead-box forensics sufficient to direct examiners',s:'A',src:'Digital Evidence Analysis'}],4:[{id:'A-C01',t:'Ability to manage multi-subject investigations',s:'C'},{id:'S-C03',t:'Skill in courtroom-grade reports',s:'C'}],5:[{id:'A-C02',t:'Ability to provide expert testimony and set investigation standards',s:'C'}]},
+desk:{1:[{id:'K-D01',t:'Knowledge of triage criteria',s:'C'}],2:[{id:'S-D01',t:'Skill in scoping investigations',s:'C'},{id:'K-D02',t:'Knowledge of case management systems',s:'C'}],3:[{id:'S-D02',t:'Skill in queue management and priority balancing',s:'C'},{id:'K-D03',t:'Knowledge of QA for investigation products',s:'C'}],4:[{id:'A-D01',t:'Ability to develop triage frameworks',s:'C'}],5:[{id:'A-D02',t:'Ability to design enterprise intake-to-resolution workflows',s:'C'}]},
+outreach:{1:[{id:'K-O01',t:'Knowledge of awareness training and adult learning theory',s:'C'}],2:[{id:'S-O01',t:'Skill in targeted awareness campaigns',s:'C'},{id:'K-O02',t:'Knowledge of training regulatory requirements',s:'C'}],3:[{id:'S-O02',t:'Skill in external partner engagement',s:'C'},{id:'K-O03',t:'Knowledge of translating technical to business messaging',s:'C'}],4:[{id:'A-O01',t:'Ability to build stakeholder programs',s:'C'}],5:[{id:'A-O02',t:'Ability to represent program externally',s:'C'}]},
+maturity:{1:[{id:'K-M01',t:'Knowledge of documentation and metrics',s:'C'}],2:[{id:'S-M01',t:'Skill in curating research into actionable resources',s:'C'}],3:[{id:'S-M02',t:'Skill in maturity assessment',s:'C'},{id:'K-M02',t:'Knowledge of audit processes',s:'C'}],4:[{id:'A-M01',t:'Ability to lead audits and produce roadmaps',s:'C'}],5:[{id:'A-M02',t:'Ability to design multi-year maturity roadmaps',s:'C'}]},
+cag:{1:[{id:'K-G01',t:'Knowledge of IR frameworks and escalation',s:'A',src:'Incident Response'}],2:[{id:'S-G01',t:'Skill in real-time cross-functional coordination',s:'C'}],3:[{id:'S-G02',t:'Skill in containment decisions under pressure',s:'C'},{id:'K-G02',t:'Knowledge of legal hold and preservation',s:'C'}],4:[{id:'A-G01',t:'Ability to lead CAGs',s:'C'}],5:[{id:'A-G02',t:'Ability to design and exercise IR playbooks',s:'A',src:'Incident Response'}]},
+audit:{1:[],2:[{id:'K0727',t:'Knowledge of analysis standards and best practices',s:'A',src:'Technology Program Auditing'},{id:'K0835',t:'Knowledge of risk assessment principles and practices',s:'A',src:'Technology Program Auditing'},{id:'S0667',t:'Skill in assessing security controls',s:'A',src:'Security Control Assessment'},{id:'K0681',t:'Knowledge of privacy principles and practices',s:'A',src:'Privacy Compliance'},{id:'T0223',t:'Review or conduct audits of information technology (IT) programs and projects',s:'T'},{id:'S0085',t:'Skill in conducting audits or reviews of technical systems',s:'A',src:'NICE 805 IT Program Auditor (federal pathway)'}],3:[{id:'K0734',t:'Knowledge of Risk Management Framework (RMF) requirements',s:'A',src:'Technology Program Auditing'},{id:'S0423',t:'Skill in analyzing processes to ensure conformance with procedural requirements',s:'A',src:'Technology Program Auditing'},{id:'S0619',t:'Skill in auditing technical systems',s:'A',src:'Technology Program Auditing'},{id:'T1306',t:'Conduct technology program and project audits',s:'T'},{id:'T1480',t:'Examine service performance reports for issues and variances',s:'T'},{id:'T1481',t:'Initiate corrective actions to service performance issues and variances',s:'T'},{id:'K0800',t:'Knowledge of evidence admissibility laws and regulations',s:'A',src:'Security Control Assessment'},{id:'ITA-PA-K01',t:'Knowledge of insider threat program maturity dimensions — detection, visibility, tooling, communications, reporting/metrics, stakeholder engagement',s:'C'},{id:'ITA-PA-S01',t:'Skill in pre-audit program self-assessment and audit-artifact preparation',s:'C'}],4:[{id:'K0868',t:'Knowledge of process improvement principles and practices',s:'A',src:'Technology Program Auditing'},{id:'K0869',t:'Knowledge of process maturity models and frameworks',s:'A',src:'Technology Program Auditing'},{id:'T1154',t:'Develop risk, compliance, and assurance monitoring strategies',s:'T'},{id:'T1155',t:'Develop risk, compliance, and assurance measurement strategies',s:'T'},{id:'T1394',t:'Develop independent cybersecurity audit processes for application software, networks, and systems',s:'T'},{id:'ITA-PA-A01',t:'Ability to translate audit findings into prioritized, actionable program improvements',s:'C'}],5:[{id:'ITA-PA-A02',t:'Ability to serve as primary point of contact during external audit response and remediation',s:'C'}]}};
+const CX={1:[{l:'Behavioral',v:'Recognize basic indicators — affluence, access anomalies, disgruntlement'},{l:'Technical',v:'Navigate OS, read logs, understand IP/DNS, run saved searches'},{l:'CTI',v:'Awareness of threat landscape — news, CMU case repository'},{l:'Interviewing',v:'Active listening, structured notes, escalate when needed'},{l:'MITRE',v:'ATT&CK structure awareness; know InT TTP KB exists'},{l:'Partners',v:'Know legal, HR, physsec, training, TA and escalation paths'},{l:'Logic',v:'Form hypotheses, document evidence, avoid confirmation bias'},{l:'Soft skills',v:'Discretion, integrity, composure, handle sensitive info'}],2:[{l:'Behavioral',v:'Pattern recognition — digital anomalies correlated with HR signals'},{l:'Technical',v:'SIEM queries, EDR triage, network logs, DLP, physsec/logical correlation'},{l:'CTI',v:'Monitor feeds, contextualize for org, social engineering as vector'},{l:'Interviewing',v:'Basic elicitation, rapport, recognize evasion vs. confusion'},{l:'MITRE',v:'Map TTPs to insider scenarios, navigate InT TTP KB, understand OHIs'},{l:'Partners',v:'Working relationships, joint referrals, standing meetings'},{l:'Logic',v:'Recognize fallacies, heuristic mistakes, structured analysis'},{l:'Soft skills',v:'Objectivity, clear writing, emotional regulation'}],3:[{l:'Behavioral',v:'Contextualized analysis — weighting by culture, role, access, personal context'},{l:'Technical',v:'Sysadmin, netadmin, endpoint, mobile depth. Network forensics. DLP tuning.'},{l:'CTI',v:'Source development, intelligence production, DITMAC methodology'},{l:'Interviewing',v:'Deception detection (Navarro/Houston), body language, cognitive interview'},{l:'MITRE',v:'InT TTP KB → detection engineering, custom techniques, OHI integration'},{l:'Partners',v:'Lead cross-functional workflows, bridge technical and business'},{l:'Logic',v:'ACH, counter groupthink, peer review analytical products'},{l:'Soft skills',v:'Mentoring, briefing leadership, de-escalation, empathy with objectivity'}],4:[{l:'Behavioral',v:'Design behavioral frameworks and risk scoring models'},{l:'Technical',v:'Architecture-level — evaluate tools, design strategy, define requirements'},{l:'CTI',v:'Build intel requirements, collection plans, strategic assessments'},{l:'Interviewing',v:'Advanced methodology, expert witness prep, interview program design'},{l:'MITRE',v:'Map detection coverage, identify gaps, drive priorities'},{l:'Partners',v:'Own partnerships — MOUs, procedures, cadence, training exchanges'},{l:'Logic',v:'Design investigation frameworks, evidence thresholds, peer review'},{l:'Soft skills',v:'Strategic communication, conflict resolution, influence without authority'}],5:[{l:'Behavioral',v:'Enterprise strategy — risk culture, policy integration, board-level framing'},{l:'Technical',v:'Enterprise detection vision — multi-year strategy, emerging tech'},{l:'CTI',v:'Intelligence program design, cross-sector sharing leadership'},{l:'Interviewing',v:'Program-level standards, training design, methodology selection'},{l:'MITRE',v:'Industry collaboration, sector extensions, publications'},{l:'Partners',v:'Executive governance — steering committees, policy, org design'},{l:'Logic',v:'Define analytical standards, red team/challenge, evidence-based culture'},{l:'Soft skills',v:'Executive presence, influence, thought leadership, industry reputation'}]};
+const CT={1:[{n:'Security+',t:'r',d:'CompTIA',u:'https://www.comptia.org/certifications/security'},{n:'Network+',t:'r',d:'CompTIA',u:'https://www.comptia.org/certifications/network'},{n:'InT Awareness',t:'r',d:'CDSE',u:'https://www.cdse.edu/'}],2:[{n:'CySA+',t:'r',d:'CompTIA',u:'https://www.comptia.org/certifications/cybersecurity-analyst'},{n:'ITPM',t:'p',d:'CDSE',u:'https://www.cdse.edu/Training/Toolkits/Insider-Threat-Toolkit/'},{n:'GCTI',t:'p',d:'GIAC',u:'https://www.giac.org/certifications/cyber-threat-intelligence-gcti/'},{n:'CEH',t:'p',d:'EC-Council',u:'https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh/'},{n:'InT Concepts',t:'p',d:'CMU SEI',u:'https://www.sei.cmu.edu/training/overview-insider-threat-concepts-activities/'}],3:[{n:'GCIH',t:'p',d:'GIAC',u:'https://www.giac.org/certifications/certified-incident-handler-gcih/'},{n:'CFCE',t:'p',d:'IACIS',u:'https://www.iacis.com/certification/cfce/'},{n:'CFE',t:'p',d:'ACFE',u:'https://www.acfe.com/cfe-credential'},{n:'WRE',t:'p',d:'W-Z',u:'https://www.w-z.com/'},{n:'CPIR',t:'p',d:'IRG (Shaw)',u:'https://www.insiderriskgroup.com/registration'},{n:'CFI',t:'p',d:'IAI',u:'https://www.certifiedinterviewer.com/'},{n:'ITVA',t:'p',d:'CMU SEI',u:'https://www.sei.cmu.edu/blog/cert-insider-threat-vulnerability-assessments-itva-training-course-and-itva-certificate-program/'}],4:[{n:'CISSP',t:'r',d:'ISC2',u:'https://www.isc2.org/certifications/cissp'},{n:'CISM',t:'p',d:'ISACA',u:'https://www.isaca.org/credentialing/cism'},{n:'GCITP',t:'p',d:'GIAC',u:'https://www.giac.org/certifications/critical-infrastructure-protection-gcitp/'},{n:'IRM-MoE',t:'p',d:'CMU SEI',u:'https://www.sei.cmu.edu/credentials/cert-insider-risk-management-measures-of-effectiveness-certificate/'},{n:'Build InT Prog',t:'p',d:'CMU SEI',u:'https://www.sei.cmu.edu/training/building-insider-threat-program/'},{n:'GCITP',t:'p',d:'UMD ARLIS',u:'https://www.arlis.umd.edu/about/news-events/global-counter-insider-threat-professional-certification-program'},{n:'ITPE',t:'p',d:'CMU SEI',u:'https://www.sei.cmu.edu/library/insider-threat-program-evaluator-certificate/'}],5:[{n:'CISSP-ISSEP',t:'p',d:'ISC2',u:'https://www.isc2.org/certifications/cissp-concentrations'},{n:'Sector leadership',t:'p',d:'NITTF/FS-ISAC',u:'https://www.fsisac.com/'}]};
+const AI={1:'<b>Awareness.</b> AI/ML powers UEBA. Understand outputs without model internals. AI assists judgment — doesn\'t replace it.',2:'<b>Working knowledge.</b> How UEBA models work. Interpret risk scores. Recognize FP/FN. Begin using AI tools in workflow.',3:'<b>Applied.</b> Pipeline concepts — data quality, drift, bias. Evaluate vendor claims. Design human-in-the-loop. Privacy of algorithmic monitoring.',4:'<b>Strategic.</b> Define AI requirements. Build-vs-buy. Emerging capabilities. Algorithmic bias governance.',5:'<b>Vision.</b> AI as "digital employee." Governance, bias, regulation. Technology improves — the human element matters.'};
+const CONC_DIM={outreach:{dimLangs:1},maturity:{dimLangs:1},desk:{dimLangs:1}};
+
+const PRIO={1:['S-BT01','K0784','K-CAT01','K-OS01','K-IT01'],2:['K-SIEM01','K-MITRE01','K-INV01','S-COMM01','K-DLP01'],3:['A-SYNTH01','A-SAT01','S-COMM02','K-MITRE02','S-EL02'],4:['A-INTEL01','K-GOV01','A-MENT01','A-EVID01','S-DET01'],5:['A-PRG01','A-EXEC01','A-INTPROG01','K-REG01','S-EXT01']};
+let prioMode=false;
+
+let prevLevel=3;const $=id=>document.getElementById(id),concEl=$('conc'),levelEl=$('level');
+
+function render(){
+const c=concEl.value,l=parseInt(levelEl.value);
+$('conc-name').textContent=CN[c].n+' \u2014 L'+l+' '+LV[l-1];
+$('conc-desc-text').textContent=CN[c].d;
+let h='',n=0;
+for(let i=1;i<=l;i++){const co=K.core[i]||[],sp=(c!=='core'&&K[c])?K[c][i]||[]:[];let all=[...co,...sp];n+=all.length;if(prioMode){const pl=PRIO[i]||[];all=all.filter(k=>pl.includes(k.id));}if(all.length){h+='<div class="ksa-group-label">L'+i+' \u2014 '+LV[i-1]+(i===l?' (current)':'')+(prioMode?' \u2014 Top 5 priorities':'')+'</div>';all.forEach(k=>{const cls=k.s==='A'?'ksa-id ksa-adj':k.s==='C'?'ksa-id ksa-custom':'ksa-id ksa-nice';const src=k.s==='N'?' <span class="ksa-src">NICE InT</span>':k.s==='T'?' <span class="ksa-src">NICE Task</span>':k.s==='A'?' <span class="ksa-src">from: '+k.src+'</span>':'';const hl=i===l&&l!==prevLevel?' highlight':'';const star=(!prioMode&&(PRIO[i]||[]).includes(k.id))?' <span style="color:#f59e0b;font-size:0.6rem" title="Top 5 priority for this level">★</span>':'';h+='<div class="ksa-item'+hl+'"><span class="'+cls+'">'+k.id+'</span>'+k.t+src+star+'</div>';});}}
+$('ksa-panel').innerHTML=h;$('ksa-count').textContent=n+' through L'+l;var _cl=$('cross-label');if(_cl)_cl.textContent='At L'+l;
+var _nudge=$('ksa-nudge');if(_nudge)_nudge.style.display=(!prioMode&&n>15)?'block':'none';
+const cx=CX[l]||[];var _cp=$('cross-panel');if(_cp)_cp.innerHTML=cx.map(x=>{let p='';for(let i=1;i<=5;i++)p+='<div class="pip'+(i<=l?' on':'')+'"></div>';return'<div class="cross-item"><div><div class="cross-label">'+x.l+'</div><div class="pips">'+p+'</div></div><div class="cross-val">'+x.v+'</div></div>';}).join('');
+let ct='';for(let i=1;i<=l;i++){(CT[i]||[]).forEach(c2=>{const cls=c2.t==='p'?'c-nice':'c'+i;ct+='<a class="cert-pill '+cls+'" href="'+c2.u+'" target="_blank" rel="noopener" title="'+c2.d+' \u2014 L'+i+(c2.t==='p'?' preferred':' recommended')+'">'+c2.n+' <span style="font-size:0.625rem;opacity:0.55">L'+i+'</span></a>';});}
+$('cert-panel').innerHTML=ct;
+var _ai=$('ai-panel');if(_ai)_ai.innerHTML='<p style="font-size:0.78rem;line-height:1.6;color:var(--fg2)">'+(AI[l]||'')+'</p>';
+// Render query languages
+const LANGS=[{n:'JQL',d:'Jira / case mgmt',u:'https://support.atlassian.com/jira-service-management-cloud/docs/use-advanced-search-with-jira-query-language-jql/',lv:2},{n:'KQL',d:'Microsoft Sentinel',u:'https://learn.microsoft.com/en-us/kusto/query/',lv:2},{n:'LOL',d:'Living Off the Land',u:'https://lolbas-project.github.io/',lv:2},{n:'Lucene',d:'Elastic / OpenSearch',u:'https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html',lv:3},{n:'Regex',d:'Pattern matching',u:'https://regexone.com/',lv:2},{n:'SPL',d:'Splunk',u:'https://docs.splunk.com/Documentation/SplunkCloud/latest/SearchReference/WhatsInThisManual',lv:2},{n:'SQL',d:'Database queries',u:'https://www.w3schools.com/sql/',lv:1},{n:'YARA',d:'Detection rules',u:'https://yara.readthedocs.io/',lv:3}];
+const langEl=$('lang-items');
+if(langEl){langEl.innerHTML=LANGS.map(lg=>{const on=l>=lg.lv;const intro=l===lg.lv;const cls=intro?'lang-item lang-intro':on?'lang-item lang-active':'lang-item lang-future';return '<a href="'+lg.u+'" target="_blank" rel="noopener" class="'+cls+'"><div class="lang-name">'+lg.n+'</div><div class="lang-desc">'+lg.d+'</div><div style="font-size:0.625rem;margin-top:2px">'+(intro?'★ Introduced L'+lg.lv:on?'L'+lg.lv+'+':'L'+lg.lv+'+')+'</div></a>';}).join('');}
+const rel=CONC_DIM[c]||{};const lc=$('lang-card');if(lc)lc.classList.toggle('dimmed',!!rel.dimLangs);
+if(l!==prevLevel)setTimeout(()=>{document.querySelectorAll('.highlight').forEach(el=>el.classList.remove('highlight'))},1500);
+prevLevel=l;
+renderCareerViz();
+}
+
+document.querySelectorAll('.nav-tab').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.nav-tab').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));btn.classList.add('active');btn.setAttribute('aria-selected','true');$(btn.dataset.tab).classList.add('active');});});
+function mt(btn,id){btn.parentElement.querySelectorAll('.media-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');btn.closest('.card-body').querySelectorAll('.media-pane').forEach(p=>p.classList.remove('active'));$(id).classList.add('active');}
+window.mt=mt;
+function togglePriority(){prioMode=!prioMode;const btn=$('priority-toggle');if(prioMode){btn.textContent='Show all KSAs';btn.style.background='var(--accent)';btn.style.color='#fff';}else{btn.textContent='\u2B50 Show Top 5';btn.style.background='var(--accent-bg)';btn.style.color='var(--accent)';}render();}
+window.togglePriority=togglePriority;
+
+function getData(){const c=concEl.value,l=parseInt(levelEl.value);let ak=[];for(let i=1;i<=l;i++){const co=K.core[i]||[],sp=(c!=='core'&&K[c])?K[c][i]||[]:[];ak=ak.concat([...co,...sp].map(k=>({...k,level:i})));}let ac=[];for(let i=1;i<=l;i++)ac=ac.concat((CT[i]||[]).map(c2=>({...c2,level:i})));return{conc:c,cn:CN[c].n,level:l,ln:'L'+l+' \u2014 '+LV[l-1],ksas:ak,certs:ac,cross:CX[l]||[],ai:(AI[l]||'').replace(/<\/?b>/g,''),desc:CN[c].d,years:LY[l-1]};}
+
+function exportPDF(){const d=getData(),org=$('org-name').value,dept=$('org-dept').value,notes=$('org-notes').value;const useColor=document.getElementById('pdf-color').checked;const{jsPDF}=window.jspdf,doc=new jsPDF({unit:'mm',format:'letter'}),M=18,CW=215.9-36;let y=M;
+if(useColor){doc.setTextColor(30,64,175);}else{doc.setTextColor(0);}
+doc.setFont('helvetica','bold');doc.setFontSize(16);doc.text('Insider Threat Analyst Career Framework',M,y);y+=7;doc.setFont('helvetica','normal');doc.setFontSize(9);doc.setTextColor(100);doc.text(d.cn+' \u2014 '+d.ln+' ('+d.years+')',M,y);if(org){y+=4;doc.text(org+(dept?' \u2014 '+dept:''),M,y);}y+=4;doc.text('insiderthreatanalyst.com',M,y);doc.setTextColor(0);y+=3;doc.setDrawColor(useColor?59:200,useColor?130:200,useColor?246:200);doc.line(M,y,215.9-M,y);y+=6;
+if(useColor){doc.setTextColor(13,148,136);}doc.setFont('helvetica','bold');doc.setFontSize(11);doc.text(d.cn,M,y);doc.setTextColor(0);y+=5;doc.setFont('helvetica','normal');doc.setFontSize(8.5);const dl=doc.splitTextToSize(d.desc,CW);doc.text(dl,M,y);y+=dl.length*3.5+4;
+if(useColor){doc.setTextColor(30,64,175);}doc.setFont('helvetica','bold');doc.setFontSize(11);doc.text('KSAs ('+d.ksas.length+')',M,y);doc.setTextColor(0);y+=5;doc.setFontSize(7.5);d.ksas.forEach(k=>{if(y>260){doc.addPage();y=M;}doc.setFont('helvetica','bold');if(useColor){if(k.s==='N'||k.s==='T')doc.setTextColor(30,64,175);else if(k.s==='A')doc.setTextColor(124,58,237);else doc.setTextColor(13,148,136);}const tag=k.s==='A'?'[adj] ':'';doc.text(tag+k.id,M,y);doc.setTextColor(0);doc.setFont('helvetica','normal');const ln=doc.splitTextToSize(k.t,CW-22);doc.text(ln,M+20,y);y+=Math.max(ln.length*3,3.5)+1.2;});y+=3;if(y>240){doc.addPage();y=M;}
+if(useColor){doc.setTextColor(30,64,175);}doc.setFont('helvetica','bold');doc.setFontSize(11);doc.text('Certifications',M,y);doc.setTextColor(0);y+=5;doc.setFont('helvetica','normal');doc.setFontSize(8.5);d.certs.forEach(c=>{if(y>260){doc.addPage();y=M;}if(useColor&&c.t==='r')doc.setTextColor(30,64,175);doc.text('L'+c.level+'  '+c.n+' ('+c.d+')'+(c.t==='p'?' - preferred':''),M,y);doc.setTextColor(0);y+=3.5;});y+=3;if(y>240){doc.addPage();y=M;}
+if(useColor){doc.setTextColor(30,64,175);}doc.setFont('helvetica','bold');doc.setFontSize(11);doc.text('Cross-Cutting at '+d.ln,M,y);doc.setTextColor(0);y+=5;doc.setFontSize(7.5);d.cross.forEach(cx=>{if(y>255){doc.addPage();y=M;}doc.setFont('helvetica','bold');if(useColor)doc.setTextColor(13,148,136);doc.text(cx.l+':',M,y);doc.setTextColor(0);doc.setFont('helvetica','normal');const cl=doc.splitTextToSize(cx.v,CW);doc.text(cl,M,y+3.5);y+=cl.length*3+5.5;});if(notes){y+=3;if(y>240){doc.addPage();y=M;}doc.setFont('helvetica','bold');doc.setFontSize(11);doc.text('Notes',M,y);y+=5;doc.setFont('helvetica','normal');doc.setFontSize(8.5);doc.text(doc.splitTextToSize(notes,CW),M,y);}doc.setFontSize(6);doc.setTextColor(150);doc.text('insiderthreatanalyst.com | Client-side PDF'+(useColor?' | Color mode':' | B&W'),M,272);doc.save('insider-threat-'+d.conc+'-L'+d.level+'.pdf');const st=$('pdf-status');st.style.display='inline';setTimeout(()=>st.style.display='none',2500);}
+window.exportPDF=exportPDF;
+
+function showJDModal(){const d=getData(),org=$('org-name').value||'[Organization]',dept=$('org-dept').value||'Corporate Security',report=$('org-report').value||'[Reports To]',cl=$('org-clearance').value,notes=$('org-notes').value;let j=org.toUpperCase()+'\nJOB DESCRIPTION\n\nPosition: Insider Threat Analyst \u2014 '+d.cn+'\nLevel: '+d.ln+' ('+d.years+')\nDept: '+dept+'\nReports To: '+report+'\n';if(cl&&cl!=='N/A')j+='Clearance: '+cl+'\n';j+='\n---\n\nABOUT THE ROLE\n\n'+d.desc+'\n\nKSAs\n\n';d.ksas.forEach(k=>{j+='\u2022 '+k.t+(k.s==='A'?' [from: '+k.src+']':'')+' ['+k.id+']\n';});j+='\nCERTIFICATIONS\n\nRequired:\n';d.certs.filter(c=>c.t==='r').forEach(c=>{j+='\u2022 '+c.n+' ('+c.d+')\n';});j+='\nPreferred:\n';d.certs.filter(c=>c.t==='p').forEach(c=>{j+='\u2022 '+c.n+' ('+c.d+')\n';});j+='\nAI COMPETENCY\n\n'+d.ai+'\n\n';if(notes)j+='ADDITIONAL\n\n'+notes+'\n\n';j+='---\nNIST NICE SP 800-181r1 | MITRE ATT&CK | InT TTP KB v2.0\ninsiderthreatanalyst.com\n';$('jd-content').textContent=j;$('jd-modal').classList.add('active');}
+window.showJDModal=showJDModal;
+function closeJDModal(){$('jd-modal').classList.remove('active');}window.closeJDModal=closeJDModal;
+function copyJD(){navigator.clipboard.writeText($('jd-content').textContent).then(()=>{const b=event.target;b.textContent='Copied!';setTimeout(()=>b.textContent='Copy',2000);});}window.copyJD=copyJD;
+$('jd-modal').addEventListener('click',function(e){if(e.target===this)closeJDModal();});
+function filterConf(r){document.querySelectorAll(".conf-filter").forEach(b=>{b.style.background=b.textContent.toLowerCase().includes(r)||r==="all"&&b.textContent==="All"?"var(--accent)":"var(--bg2)";b.style.color=b.style.background==="var(--accent)"?"#fff":"var(--fg3)";});document.querySelectorAll(".conf-card[data-region]").forEach(c=>{c.style.display=r==="all"||c.dataset.region===r||c.dataset.region==="global"?"flex":"none";});document.querySelectorAll(".conf-filter").forEach(b=>{const match=r==="all"&&b.textContent==="All"||r==="us"&&b.textContent==="Americas"||r==="emea"&&b.textContent==="EMEA"||r==="global"&&b.textContent==="Global";b.style.background=match?"var(--accent)":"var(--bg2)";b.style.color=match?"#fff":"var(--fg3)";});}window.filterConf=filterConf;
+// Career Roadmap
+function showRoadmapModal(){
+const sel=$('rm-conc');
+sel.innerHTML='';
+Object.keys(CN).forEach(k=>{const o=document.createElement('option');o.value=k;o.textContent=CN[k].n;sel.appendChild(o);});
+sel.value=concEl.value;
+$('rm-from').value=Math.max(1,parseInt(levelEl.value)-1);
+$('rm-to').value=Math.min(5,parseInt(levelEl.value)+1);
+$('roadmap-modal').classList.add('active');genRoadmap();
+}
+window.showRoadmapModal=showRoadmapModal;
+$('rm-conc').addEventListener('change',genRoadmap);
+$('rm-from').addEventListener('change',genRoadmap);
+$('rm-to').addEventListener('change',genRoadmap);
+function closeRoadmapModal(){$('roadmap-modal').classList.remove('active');}window.closeRoadmapModal=closeRoadmapModal;
+$('roadmap-modal').addEventListener('click',function(e){if(e.target===this)closeRoadmapModal();});
+function genRoadmap(){
+const c=$('rm-conc').value,from=parseInt($('rm-from').value),to=parseInt($('rm-to').value);
+if(to<=from){$('roadmap-content').innerHTML='<p style="color:var(--fg3)">Target level must be higher than current level.</p>';return;}
+let currentKSAs=new Set(),targetKSAs=[];
+for(let i=1;i<=from;i++){const co=K.core[i]||[];const sp=(c!=='core'&&K[c])?K[c][i]||[]:[];[...co,...sp].forEach(k=>currentKSAs.add(k.id));}
+let html='<div style="margin-bottom:0.75rem;padding:0.5rem;background:var(--bg3);border-radius:6px"><b>'+CN[c].n+'</b> — L'+from+' → L'+to+'</div>';
+let gaps=0;
+for(let lvl=from+1;lvl<=to;lvl++){
+const co=K.core[lvl]||[];const sp=(c!=='core'&&K[c])?K[c][lvl]||[]:[];const all=[...co,...sp];
+const newKSAs=all.filter(k=>!currentKSAs.has(k.id));
+if(newKSAs.length){
+html+='<div style="margin-top:0.6rem"><div style="font-weight:600;color:var(--accent);margin-bottom:0.3rem;font-size:0.78rem">L'+lvl+' — '+LV[lvl-1]+' <span style="font-weight:400;color:var(--fg3)">('+newKSAs.length+' new)</span></div>';
+newKSAs.forEach(k=>{
+const cls=k.s==='A'?'color:#7c3aed':k.s==='C'?'color:#0d9488':'color:#1e40af';
+const src=k.src?' <span style="color:var(--fg4);font-size:0.62rem">[from: '+k.src+']</span>':'';
+const typ=k.id.startsWith('ITA-PA-A')?'🎯':k.id.startsWith('ITA-PA-S')?'🔧':k.id.startsWith('ITA-PA-K')?'📖':k.id.startsWith('A-')?'🎯':k.id.startsWith('S-')?'🔧':k.id.startsWith('K-')||k.id.startsWith('K0')?'📖':'📋';
+html+='<div style="padding:0.2rem 0;border-bottom:1px solid var(--border)">'+typ+' <span style="'+cls+';font-weight:600;font-size:0.65rem">'+k.id+'</span> '+k.t+src+'</div>';
+gaps++;
+});
+// Certs at this level
+const certs=(CT[lvl]||[]);
+if(certs.length){html+='<div style="margin-top:0.35rem;font-size:0.68rem;color:var(--fg3)"><b>Certs:</b> '+certs.map(c2=>'<span style="'+(c2.t==='r'?'color:var(--accent);font-weight:600':'')+'">'+(c2.t==='r'?'▪ ':'')+ c2.n+' ('+c2.d+')'+(c2.t==='r'?' required':'')).join(' · ')+'</span></div>';}
+html+='</div>';
+}
+all.forEach(k=>currentKSAs.add(k.id));
+}
+html+='<div style="margin-top:0.75rem;padding:0.5rem;background:var(--accent-bg);border-radius:6px;font-size:0.72rem"><b>Total gaps: '+gaps+' KSAs</b> across '+(to-from)+' level'+(to-from>1?'s':'')+'</div>';
+$('roadmap-content').innerHTML=html;
+}window.genRoadmap=genRoadmap;
+function copyRoadmap(){
+const el=$('roadmap-content');let t='CAREER ROADMAP\n'+CN[$('rm-conc').value].n+' — L'+$('rm-from').value+' → L'+$('rm-to').value+'\n\n';
+el.querySelectorAll('div[style*="font-weight:600"][style*="accent"]').forEach(h=>{t+='\n'+h.textContent+'\n';});
+el.querySelectorAll('div[style*="border-bottom"]').forEach(r=>{t+='  '+r.textContent.trim()+'\n';});
+navigator.clipboard.writeText(t).then(()=>{const b=event.target;b.textContent='Copied!';setTimeout(()=>b.textContent='Copy as text',2000);});
+}window.copyRoadmap=copyRoadmap;
+
+// Career Pathway Visualization
+function renderCareerViz(){
+const c=concEl.value;
+const colors={core:'#3b82f6',tech:'#8b5cf6',hunt:'#ec4899',case:'#f59e0b','desk':'#06b6d4',outreach:'#16a34a',maturity:'#f97316',cag:'#ef4444',audit:'#14b8a6'};
+const col=colors[c]||'#3b82f6';
+let h='<div style="display:flex;flex-direction:column;gap:0.15rem">';
+for(let lvl=1;lvl<=5;lvl++){
+const isActive=lvl<=parseInt(levelEl.value);
+const isCurrent=lvl===parseInt(levelEl.value);
+const co=K.core[lvl]||[];const sp=(c!=='core'&&K[c])?K[c][lvl]||[]:[];
+const count=co.length+sp.length;
+const certs=(CT[lvl]||[]);
+const reqCerts=certs.filter(x=>x.t==='r');
+const prefCerts=certs.filter(x=>x.t==='p');
+const bg=isActive?'var(--accent-bg)':'var(--bg3)';
+const border=isCurrent?'2px solid '+col:'1px solid var(--border)';
+const opacity=isActive?'1':'0.5';
+h+='<div style="display:flex;align-items:stretch;gap:0.5rem;opacity:'+opacity+'">';
+// Level badge
+h+='<div style="min-width:52px;display:flex;flex-direction:column;align-items:center;justify-content:center">';
+h+='<div style="width:36px;height:36px;border-radius:50%;background:'+(isActive?col:'var(--fg4)')+';color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.82rem'+(isCurrent?';box-shadow:0 0 0 3px '+col+'33':'')+'">L'+lvl+'</div>';
+if(lvl<5)h+='<div style="width:2px;height:12px;background:'+(isActive?col+'66':'var(--border)')+'"></div>';
+h+='</div>';
+// Content
+h+='<div style="flex:1;padding:0.45rem 0.6rem;background:'+bg+';border:'+border+';border-radius:6px;margin-bottom:0.15rem">';
+h+='<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.15rem"><span style="font-weight:600;font-size:0.78rem;color:'+(isActive?'var(--fg)':'var(--fg3)')+'">'+LV[lvl-1]+'</span><span style="font-size:0.6rem;color:var(--fg4)">'+count+' KSAs · '+LY[lvl-1]+'</span></div>';
+if(reqCerts.length||prefCerts.length){
+h+='<div style="font-size:0.62rem;color:var(--fg3);display:flex;flex-wrap:wrap;gap:0.2rem">';
+reqCerts.forEach(ct=>{h+='<span style="background:var(--accent);color:#fff;padding:1px 5px;border-radius:3px;font-size:0.625rem">'+ct.n+'</span>';});
+prefCerts.forEach(ct=>{h+='<span style="background:var(--bg2);border:1px dashed var(--fg4);padding:1px 5px;border-radius:3px;font-size:0.625rem">'+ct.n+'</span>';});
+h+='</div>';
+}
+if(isCurrent)h+='<div style="font-size:0.6rem;color:'+col+';margin-top:0.15rem;font-weight:600">← You are here</div>';
+h+='</div></div>';
+}
+h+='</div>';
+$('career-viz-panel').innerHTML=h;
+}
+
+concEl.addEventListener('change',render);levelEl.addEventListener('change',render);render();
+
+(function(){const b=document.getElementById('btt');if(!b)return;let t;window.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){b.classList.toggle('visible',window.scrollY>400)},50)},{passive:true});}());
+
+// ── Easter eggs ──────────────────────────────────────────
+// Konami code: ↑↑↓↓←→←→BA
+(function(){
+const seq=[38,38,40,40,37,39,37,39,66,65];let pos=0;
+const jokeTiles=[
+{n:'VibeCheck',s:'Gut feeling platform',t:'Replaces all detection logic with "does this feel off?" Powered by post-lunch drowsiness and ambient anxiety.'},
+{n:'SlackOps',s:'Alert-to-emoji pipeline',t:'Converts every SIEM alert into a Slack thread. 97% of incidents resolved via 👀 reaction.'},
+{n:'CYA',s:'Cover your assets',t:'Auto-generates plausible deniability docs. "Per my previous email" as a service.'},
+{n:'Resume.pdf',s:'Exfil detection',t:'Triggers when someone named "John" opens resume_final_FINAL_v3.pdf on a Friday afternoon.'},
+{n:'HR Vibes',s:'Sentiment analysis',t:'Monitors whether employees are "quiet quitting" based on meeting camera-on rates and emoji usage decline.'},
+{n:'LunchAlert',s:'Anomaly detection',t:'Flags when someone microwaves fish in the break room. Highest-fidelity behavioral indicator known to science.'},
+{n:'ZomboCom',s:'Unlimited potential',t:'You can do anything at ZomboCom. Anything at all. The only limit is yourself. The unattainable is unknown.'}
+];
+let konamiActive=false;
+document.addEventListener('keydown',function(e){
+if(e.keyCode===seq[pos]){pos++;if(pos===seq.length){pos=0;toggleKonami();}}else{pos=0;}
+});
+function toggleKonami(){
+const grid=document.querySelector('.tool-grid');if(!grid)return;
+konamiActive=!konamiActive;
+if(konamiActive){
+grid.dataset.origHtml=grid.innerHTML;
+let html='';
+jokeTiles.forEach(t=>{
+html+=`<div class="tool-item tl-manage" style="border-left-color:#f59e0b"><div class="tool-name">${t.n}</div><div class="tool-sub">${t.s}</div><div class="tool-tip">${t.t}</div></div>`;
+});
+grid.innerHTML=html;
+// Flash effect
+grid.style.transition='none';grid.style.boxShadow='0 0 30px rgba(245,158,11,0.4)';
+setTimeout(()=>{grid.style.transition='box-shadow 2s';grid.style.boxShadow='none';},100);
+}else{
+if(grid.dataset.origHtml)grid.innerHTML=grid.dataset.origHtml;
+}
+}
+}());
+
+// Title click 5x → "classified" redaction effect
+(function(){
+const h1=document.querySelector('.header h1');if(!h1)return;
+let clicks=0,timer;
+h1.style.cursor='default';
+h1.addEventListener('click',function(){
+clicks++;clearTimeout(timer);
+timer=setTimeout(()=>{clicks=0;},2000);
+if(clicks>=5){
+clicks=0;
+document.body.classList.toggle('classified-mode');
+// Remove after 8 seconds if active
+if(document.body.classList.contains('classified-mode')){
+setTimeout(()=>document.body.classList.remove('classified-mode'),8000);
+}
+}
+});
+}());
+
+// Footer quote rotation on triple-click
+(function(){
+const quotes=[
+'"All you really need is a stick of gum, a pocket knife, and a smile"',
+'"The insider threat is coming from inside the house"',
+'"In God we trust. All others, we monitor."',
+'"Your threat model is incomplete. It always is."',
+'"The best incident response plan is the one you never need"',
+'"Trust, but verify. Then verify again. Then check the logs."',
+'"I came for the SIEM queries, I stayed for the existential dread"',
+'"Loose lips sink ships. Loose permissions sink programs."',
+'"There are only two types of companies: those that have been breached, and those that don\'t know it yet."',
+'"The password is COCOLOCO" — Gandalf, Level 1',
+'"You can do anything at ZomboCom. The only limit is yourself."',
+'"rm -rf / — an insider threat in four characters"',
+'"This meeting could have been an alert"'
+];
+const el=document.querySelector('.footer p:last-child');if(!el||!el.style)return;
+let clicks=0,timer;
+el.style.cursor='default';el.style.userSelect='none';
+el.addEventListener('click',function(e){
+clicks++;clearTimeout(timer);
+timer=setTimeout(()=>{clicks=0;},500);
+if(clicks>=3){
+clicks=0;
+const q=quotes[Math.floor(Math.random()*quotes.length)];
+el.style.transition='opacity 0.3s';el.style.opacity='0';
+setTimeout(()=>{el.textContent=q;el.style.opacity='1';},300);
+}
+});
+}());
+
+// "Vibe-coded with Claude" 1-in-20 random swap
+(function(){
+const alts=[
+'Hand-crafted by a mass of floating point operations',
+'Debugged with caffeine and poor life choices',
+'Built by an AI that has never once triaged a real alert',
+'Powered by mass amounts of electricity and one very patient human',
+'No security clearances were harmed in the making of this site',
+'Assembled between cat medications and Muay Thai sessions',
+'Works on my machine™'
+];
+if(Math.random()<0.05){
+const el=document.querySelector('.footer p:nth-child(2)');
+if(el&&el.textContent.includes('Vibe-coded')){
+el.textContent=alts[Math.floor(Math.random()*alts.length)];
+}
+}
+}());
+
+/* New tab preference poll — shows after 3rd target=_blank click, once per session */
+(function(){
+try{if(sessionStorage.getItem('ita-poll-done'))return;}catch(e){return;}
+var count=0;
+document.addEventListener('click',function(e){
+var a=e.target.closest('a[target="_blank"]');
+if(!a)return;
+count++;
+try{sessionStorage.setItem('ita-newtab-clicks',count);}catch(e){}
+if(count===3&&!document.querySelector('.newtab-poll')){showPoll();}
+});
+function showPoll(){
+var d=document.createElement('div');
+d.className='newtab-poll';
+d.innerHTML='<div class="newtab-poll-title">Quick question — how do you prefer links to open?</div>'+
+'<button data-v="new-tab">New tab (current behavior)</button>'+
+'<button data-v="same-tab">Same tab</button>'+
+'<button data-v="external-only">New tab for external links only</button>'+
+'<button data-v="no-preference">No preference</button>'+
+'<button class="newtab-poll-dismiss" data-v="dismiss">Dismiss</button>';
+document.body.appendChild(d);
+d.addEventListener('click',function(e){
+var btn=e.target.closest('button');if(!btn)return;
+var v=btn.getAttribute('data-v');
+if(v==='dismiss'){d.remove();try{sessionStorage.setItem('ita-poll-done','1');}catch(e){}return;}
+fetch('https://formspree.io/f/mnjggonj',{method:'POST',headers:{'Content-Type':'application/json'},
+body:JSON.stringify({_source:'poll-newtab',preference:v})}).catch(function(){});
+d.innerHTML='<div style="text-align:center;padding:0.5rem;font-size:0.72rem;color:var(--fg2)">Thanks for the feedback!</div>';
+try{sessionStorage.setItem('ita-poll-done','1');}catch(e){}
+setTimeout(function(){d.remove();},2000);
+});
+}
+}());
+
+</script>
+</body>
+</html>

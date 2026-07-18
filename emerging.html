@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<!--
+╔══════════════════════════════════════════════════════════╗
+║  CLASSIFICATION: UNCLASSIFIED // FOR OFFICIAL USE ONLY  ║
+║  PROGRAM:        CAREER FRAMEWORK INSIDER THREAT        ║
+║  CASE ID:        CF-2026-0420-VIBE                      ║
+║  ANALYST:        Claude (Digital Employee, L5)           ║
+║                                                         ║
+║  ASSESSMENT: Subject displays concerning indicators:    ║
+║  - Viewed page source (technical curiosity, elevated)   ║
+║  - Possible detection engineering aptitude               ║
+║  - May be overqualified for current role                ║
+║                                                         ║
+║  RECOMMENDATION: Recruit immediately.                   ║
+║                                                         ║
+║  NOTE: If you found this, you're exactly the kind of    ║
+║  person this framework was built for. Welcome.          ║
+║                                                         ║
+║  P.S. The only limit is yourself. — zombo.com (RIP)    ║
+║  P.P.S. Try gandalf.lakera.ai if you haven't already.  ║
+╚══════════════════════════════════════════════════════════╝
+-->
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("ita-theme")||"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}document.documentElement.classList.add("no-transition");</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2L4 8v8c0 7.7 5.1 14.9 12 17 6.9-2.1 12-9.3 12-17V8L16 2z' fill='%230c1222' stroke='%236cb4ff' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='%2334d9c3' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%236cb4ff'/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="https://insiderthreatanalyst.com/ogimage.png">
+<meta property="og:title" content="Emerging Threats — Insider Threat Analyst Career Framework">
+<meta property="og:description" content="Emerging insider threat vectors: residential proxies, rogue WiFi, network bridging, and detection approaches.">
+<meta name="description" content="Emerging insider threat vectors that defeat traditional monitoring: residential proxies, rogue WiFi/hotspots, and network bridging. Detection approaches and practitioner guidance.">
+<title>Emerging Threats — Insider Threat Analyst Career Framework</title>
+<link rel="canonical" href="https://insiderthreatanalyst.com/emerging.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html.no-transition,html.no-transition *,html.no-transition *::before,html.no-transition *::after{transition:none!important}
+[data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0a1628;--fg2:#2a3a52;--fg3:#64748b;--fg4:#94a3b8;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0d9488;--accent2-bg:#f0fdfa;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08)}
+[data-theme="dark"]{--bg:#0c1222;--bg2:#162032;--bg3:#1e2d44;--fg:#f1f5f9;--fg2:#cbd5e1;--fg3:#94a3b8;--fg4:#64748b;--border:#253550;--border2:#3a5070;--accent:#6cb4ff;--accent-bg:#1a3358;--accent2:#34d9c3;--accent2-bg:#0f3d38;--header-bg:#0c1424;--header-fg:#f1f5f9;--card-shadow:0 1px 4px rgba(0,0,0,0.35),0 0 0 1px rgba(100,180,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--fg);background:var(--bg);line-height:1.6;transition:background 0.3s,color 0.3s}
+a{color:var(--accent)}
+
+.header{background:var(--header-bg);color:var(--header-fg);padding:1.5rem 0;border-bottom:1px solid rgba(108,180,255,0.1)}
+[data-theme="dark"] .header{background:linear-gradient(135deg,#0a0f1e 0%,#121e36 50%,#0e1a2e 100%)}
+.header-inner{max-width:800px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.header h1{font-family:'Source Serif 4',serif;font-size:1.2rem;font-weight:600}
+.header h1 a{color:inherit;text-decoration:none;opacity:0.7}.header h1 a:hover{opacity:1}
+.header-right{display:flex;gap:0.5rem;align-items:center}
+.theme-toggle{background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:var(--header-fg);padding:0.25rem 0.5rem;font-family:inherit;font-size:0.68rem;cursor:pointer}
+.theme-toggle:hover{border-color:rgba(255,255,255,0.4)}
+
+.accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.site-nav{position:sticky;top:0;z-index:1000}
+.site-nav{background:linear-gradient(180deg,var(--bg3),var(--bg2));border-bottom:1px solid var(--border);padding:0.4rem 0;transition:background 0.3s}
+[data-theme="dark"] .site-nav{background:var(--bg3);border-bottom-color:rgba(108,180,255,0.08)}
+.site-nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0.15rem;align-items:center;flex-wrap:wrap;justify-content:center}
+.site-nav a{color:var(--fg3);text-decoration:none;font-size:0.68rem;font-weight:500;padding:0.25rem 0.6rem;border-radius:5px;transition:all 0.15s;white-space:nowrap}
+.site-nav a:hover{color:var(--fg);background:var(--bg3)}
+[data-theme="dark"] .site-nav a:hover{background:var(--bg2)}
+.site-nav a.nav-active{color:var(--accent);font-weight:600;background:var(--accent-bg)}
+.nav-group{display:flex;align-items:center;gap:0.1rem}
+.nav-group::after{content:'';width:1px;height:1rem;background:var(--border2);margin:0 0.35rem;flex-shrink:0}
+.nav-group:last-child::after{display:none}
+.nav-label{font-size:0.52rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--fg4);margin-right:0.15rem;white-space:nowrap}
+.nav-util .nav-label{display:none}
+.nav-util a{opacity:0.7;font-size:0.62rem}
+.nav-util a:hover{opacity:1}
+.nav-util a.nav-active{opacity:1}
+@media(max-width:768px){.site-nav-inner{gap:0.05rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}.site-nav-inner::-webkit-scrollbar{display:none}.site-nav a{font-size:0.62rem;padding:0.2rem 0.45rem;flex-shrink:0}.nav-label{display:none}.nav-group::after{display:none}.nav-util a{font-size:0.58rem}}
+
+.main{max-width:800px;margin:0 auto;padding:2rem 1.5rem}
+
+.hero{text-align:center;margin-bottom:2rem}
+.hero h2{font-family:'Source Serif 4',serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem}
+.hero p{font-size:0.85rem;color:var(--fg2);max-width:600px;margin:0 auto;line-height:1.7}
+
+.section{margin-bottom:2rem}
+.section h3{font-family:'Source Serif 4',serif;font-size:1.05rem;font-weight:600;margin-bottom:0.6rem;padding-bottom:0.3rem;border-bottom:2px solid var(--accent)}
+.section p,.section li{font-size:0.8rem;color:var(--fg2);line-height:1.7;margin-bottom:0.5rem}
+.section ul{margin-left:1.2rem;margin-bottom:0.5rem}
+.section li{margin-bottom:0.3rem}
+.section strong{color:var(--fg)}
+
+.callout{border-radius:8px;padding:0.75rem 1rem;font-size:0.78rem;color:var(--fg2);line-height:1.7;margin:1rem 0}
+.callout-blue{background:var(--accent-bg);border:1px solid rgba(37,99,235,0.15)}
+[data-theme="dark"] .callout-blue{background:rgba(108,180,255,0.06);border-color:rgba(108,180,255,0.12)}
+.callout-teal{background:var(--accent2-bg);border:1px solid rgba(13,148,136,0.15)}
+[data-theme="dark"] .callout-teal{background:rgba(52,217,195,0.06);border-color:rgba(52,217,195,0.12)}
+.callout-amber{background:#fffbeb;border:1px solid rgba(245,158,11,0.2)}
+[data-theme="dark"] .callout-amber{background:rgba(245,158,11,0.06);border-color:rgba(245,158,11,0.12)}
+.callout-red{background:#fef2f2;border:1px solid rgba(239,68,68,0.15)}
+[data-theme="dark"] .callout-red{background:rgba(239,68,68,0.06);border-color:rgba(239,68,68,0.12)}
+
+.threat-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--card-shadow);transition:all 0.3s;margin-bottom:1.5rem}
+[data-theme="dark"] .threat-card{box-shadow:var(--card-shadow),0 0 12px rgba(52,217,195,0.06)}
+.threat-header{padding:0.65rem 1rem;border-bottom:1px solid var(--border);background:var(--bg3);display:flex;align-items:center;gap:0.5rem}
+.threat-icon{font-size:1.1rem}
+.threat-title{font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg)}
+.threat-body{padding:1rem}
+.threat-body p{font-size:0.8rem;color:var(--fg2);line-height:1.7;margin-bottom:0.6rem}
+
+.scenario{display:flex;gap:0.65rem;padding:0.6rem 0;border-bottom:1px solid var(--border)}
+.scenario:last-child{border-bottom:none}
+.scenario-label{flex-shrink:0;font-size:0.65rem;font-weight:700;padding:2px 8px;border-radius:4px;background:var(--accent);color:#fff;margin-top:0.15rem;height:fit-content}
+.scenario-label.warn{background:#f59e0b}
+.scenario-label.crit{background:#ef4444}
+.scenario-body{flex:1}
+.scenario-title{font-weight:600;font-size:0.82rem;color:var(--fg);margin-bottom:0.15rem}
+.scenario-desc{font-size:0.75rem;color:var(--fg2);line-height:1.6}
+
+.detect-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.75rem;margin-top:0.75rem}
+.detect-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:0.65rem 0.85rem;box-shadow:var(--card-shadow)}
+[data-theme="dark"] .detect-card{box-shadow:var(--card-shadow),0 0 6px rgba(108,180,255,0.04)}
+.detect-title{font-weight:600;font-size:0.78rem;color:var(--fg);margin-bottom:0.2rem}
+.detect-desc{font-size:0.72rem;color:var(--fg2);line-height:1.55}
+
+.ksa-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.6rem;padding:1px 5px;border-radius:3px;background:var(--accent2-bg);color:var(--accent2);border:1px solid rgba(13,148,136,0.2);margin-right:0.3rem}
+
+.version-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.65rem;padding:2px 6px;border-radius:3px;background:var(--accent);color:#fff;margin-left:0.3rem;vertical-align:middle}
+
+.footer{max-width:800px;margin:2rem auto 1.25rem;padding:0 1.5rem;text-align:center}
+.footer p{font-size:0.62rem;color:var(--fg4)}.footer a{color:var(--fg3);text-decoration:none}.footer a:hover{text-decoration:underline}
+
+.feedback-widget{position:fixed;bottom:1.25rem;right:1.25rem;z-index:100;display:flex;align-items:center;gap:0.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.4rem 0.75rem;box-shadow:0 2px 12px rgba(0,0,0,0.1);font-size:0.7rem;color:var(--fg3);transition:all 0.3s}
+[data-theme="dark"] .feedback-widget{box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.06)}
+.feedback-widget span{white-space:nowrap}
+.feedback-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:0.3rem 0.55rem;cursor:pointer;font-size:1rem;line-height:1;transition:all 0.15s;color:var(--fg)}
+.feedback-btn:hover{transform:scale(1.15);border-color:var(--accent)}
+.feedback-btn.voted{opacity:0.4;pointer-events:none}
+.feedback-thanks{display:none;font-size:0.7rem;color:var(--accent2);font-weight:500}
+@media(max-width:600px){.feedback-widget{bottom:0.75rem;right:0.75rem;padding:0.3rem 0.5rem;font-size:0.62rem}.feedback-btn{font-size:0.85rem;padding:0.2rem 0.4rem}}
+.btt{position:fixed;right:1.5rem;bottom:4rem;z-index:90;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.2);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s;transform:translateY(8px)}
+.btt.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+[data-theme="dark"] .btt{background:linear-gradient(135deg,#3b82f6,#6cb4ff);box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.15)}
+@media(max-width:600px){.btt{right:1rem;bottom:3.5rem;width:2rem;height:2rem;font-size:0.85rem}}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:#fff;padding:0.5rem 1rem;z-index:9999;font-size:0.85rem;text-decoration:none;border-radius:0 0 4px 0;transition:top 0.2s}.skip-link:focus{top:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.threat-tile{border-radius:8px;padding:0.6rem 0.8rem;border:1px solid var(--border);border-left:3px solid;transition:all 0.15s}
+.threat-tile:hover{transform:translateY(-1px);box-shadow:var(--card-shadow)}
+.tt-red{border-left-color:#ef4444;background:var(--bg2)}
+.tt-orange{border-left-color:#f97316;background:var(--bg2)}
+.tt-yellow{border-left-color:#ca8a04;background:var(--bg2)}
+.tt-purple{border-left-color:#8b5cf6;background:var(--bg2)}
+.tt-pink{border-left-color:#ec4899;background:var(--bg2)}
+.tt-cyan{border-left-color:#06b6d4;background:var(--bg2)}
+[data-theme="dark"] .tt-red{background:rgba(239,68,68,0.06)}
+[data-theme="dark"] .tt-orange{background:rgba(249,115,22,0.06)}
+[data-theme="dark"] .tt-yellow{background:rgba(202,138,4,0.06)}
+[data-theme="dark"] .tt-purple{background:rgba(139,92,246,0.06)}
+[data-theme="dark"] .tt-pink{background:rgba(236,72,153,0.06)}
+[data-theme="dark"] .tt-cyan{background:rgba(6,182,212,0.06)}
+.ref-card-title{font-size:0.78rem;font-weight:600;color:var(--fg);margin-bottom:0.15rem}
+.ref-card-title a{color:inherit;text-decoration:none;border-bottom:1px dashed var(--fg4)}
+.ref-card-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.ref-card-desc{font-size:0.7rem;color:var(--fg3);line-height:1.45}
+.ref-card-desc a{color:var(--accent);font-size:0.7rem}
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.7rem}
+.tile-overview{margin-bottom:2rem}
+.tile-overview h3{font-family:'Source Serif 4',serif;font-size:1.05rem;font-weight:600;margin-bottom:0.6rem;padding-bottom:0.3rem;border-bottom:2px solid var(--accent)}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Emerging Threats — Insider Threat Analyst Career Framework","description":"Emerging insider threat vectors that defeat traditional monitoring: residential proxies, rogue WiFi/hotspots, and network bridging.","url":"https://insiderthreatanalyst.com/emerging.html","publisher":{"@type":"Organization","name":"Insider Threat Analyst Career Framework","url":"https://insiderthreatanalyst.com"}}</script>
+<script defer src="https://stats.knowles.family/script.js" data-website-id="f4db3639-63ab-4998-93ff-4f0bbe5e10c3"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="header"><div class="header-inner">
+<h1>Emerging Threats · <a href="index.html" target="_blank" rel="noopener">Career Framework</a></h1>
+<div class="header-right">
+<button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()" id="theme-btn">Dark</button>
+</div>
+</div></header>
+
+<div class="accent-stripe"></div>
+<nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
+<div class="nav-group"><span class="nav-label">Explore</span>
+<a href="framework.html">Framework</a>
+<a href="matrix.html">Matrix</a>
+<a href="clusters.html">Clusters</a>
+</div>
+<div class="nav-group"><span class="nav-label">Build &amp; Run</span>
+<a href="program.html">Program</a>
+<a href="emerging.html" class="nav-active">Emerging</a>
+</div>
+<div class="nav-group"><span class="nav-label">Grow</span>
+<a href="engagement.html">Engagement</a>
+<a href="maturity.html">Maturity</a>
+</div>
+<div class="nav-group nav-util"><span class="nav-label">About</span>
+<a href="about.html">About</a>
+<a href="start.html">Start Here</a>
+<a href="wellness.html">Wellness</a>
+<a href="governance.html">Site Policy</a>
+<a href="contributors.html">Contributors</a>
+<a href="references.html">References</a>
+<a href="papers/">Papers</a>
+<a href="reviews.html">Reviews</a>
+<a href="changelog.html">Changelog</a>
+<a href="suggest.html">Suggest</a>
+</div>
+</div></nav>
+
+
+<main class="main" id="main-content">
+
+<div class="hero">
+<h2>Emerging Threat Vectors</h2>
+<p>Insider threat detection was built around network perimeters and office-based work. These vectors exploit the gaps that remote work, 5G, and commercial proxy services have opened. Your existing detections probably don't cover them.</p>
+</div>
+
+<div class="tile-overview">
+<h3>Threat Landscape at a Glance</h3>
+<div class="ref-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-bottom:0.5rem">
+<div class="threat-tile tt-red"><div class="ref-card-title"><a href="https://www.dtexsystems.com/resources/i3-threat-advisory-inside-the-dprk/" target="_blank" rel="noopener">DPRK IT workers</a></div><div class="ref-card-desc">Stolen identities for remote jobs. TA integration, identity verification, behavioral + technical indicators. <a href="https://cloud.google.com/blog/topics/threat-intelligence/dprk-it-workers-expanding-scope-scale" target="_blank" rel="noopener" style="font-size:0.65rem">Google GTIG</a> · <a href="https://nisos.com/research/exposing-fraudulent-dprk-candidate/" target="_blank" rel="noopener" style="font-size:0.65rem">Nisos</a></div></div>
+<div class="threat-tile tt-orange"><div class="ref-card-title"><a href="https://www.reddit.com/r/overemployed/" target="_blank" rel="noopener">Overemployment</a></div><div class="ref-card-desc">Undisclosed multiple positions. COI, IP exposure, performance degradation. This is where the practitioners are.</div></div>
+<div class="threat-tile tt-yellow"><div class="ref-card-title"><a href="https://www.techtimes.com/articles/305713/20240614/wells-fargo-fires-employees-using-mouse-mover-tech-fake-productivity.htm" target="_blank" rel="noopener">Work avoidance</a></div><div class="ref-card-desc">Mouse movers, keyboard weights, IP-KVMs, keepawake scripts, solo Zoom. Detection & case lifecycle.</div></div>
+<div class="threat-tile tt-purple"><div class="ref-card-title"><a href="https://www.anthropic.com/research" target="_blank" rel="noopener">AI-powered threats</a></div><div class="ref-card-desc">Deepfakes, LLM-assisted exfil planning, AI pretexts. Uncharted governance territory.</div></div>
+<div class="threat-tile tt-pink"><div class="ref-card-title"><a href="https://www.nbcnews.com/investigations/north-korea-it-worker-scheme-nisos-fbi-rcna245025" target="_blank" rel="noopener">Employment fraud</a></div><div class="ref-card-desc">Fabricated credentials, hiring ID theft, contractor substitution. NBC/Nisos investigation (Mar 2026).</div></div>
+<div class="threat-tile tt-cyan"><div class="ref-card-title"><a href="https://www.helpnetsecurity.com/2026/02/05/ai-smart-glasses-privacy-risk/" target="_blank" rel="noopener">Smart glasses</a></div><div class="ref-card-desc">Wearable exfiltration — live-streaming boardrooms, photographing screens without touching a device. LED indicators can be disabled. 7M+ sold 2025. <a href="https://www.workplaceprivacyreport.com/2026/01/articles/hipaa/the-hidden-legal-minefield-compliance-concerns-with-ai-smart-glasses-part-4-data-security-breach-notification-and-third-party-ai-processing-risks/" target="_blank" rel="noopener" style="font-size:0.65rem">Legal analysis (4-part)</a></div></div>
+<div class="threat-tile tt-orange"><div class="ref-card-title"><a href="https://www.gartner.com/en/articles/3-immediate-genai-risks-and-3-actions-to-take-now" target="_blank" rel="noopener">Shadow AI</a></div><div class="ref-card-desc">Unsanctioned AI tools processing sensitive data through personal accounts. Adoption outpacing governance. AI agents amplifying risk.</div></div>
+<div class="threat-tile tt-red"><div class="ref-card-title"><a href="https://flashpoint.io/blog/insider-threats-2025-intelligence-2026-strategy/" target="_blank" rel="noopener">Insider recruitment</a></div><div class="ref-card-desc">Threat actors actively recruiting employees via Telegram, Signal, dark web. 91K+ instances observed in 2025. Telecoms, finance top targets.</div></div>
+</div>
+<p style="font-size:0.7rem;color:var(--fg3);margin-top:0.5rem">Scroll down for deep-dives on residential proxies, rogue WiFi, and network bridging.</p>
+</div>
+
+<!-- Residential Proxies -->
+<div class="threat-card" style="border-left:3px solid #ef4444">
+<div class="threat-header" style="border-bottom-color:rgba(239,68,68,0.2)">
+<span class="threat-icon">🌐</span>
+<span class="threat-title" style="color:#dc2626">Residential Proxies</span>
+<span class="ksa-tag">K-WAVD01</span>
+</div>
+<div class="threat-body">
+<p>Residential proxy services route traffic through real ISP IP addresses — Comcast, AT&T, Verizon home connections. The traffic looks like a normal residential user, because it <em>is</em> coming from a normal residential IP. This defeats geofencing, UEBA location baselines, and "impossible travel" alerts.</p>
+
+<p>These aren't Tor or VPNs. Commercial residential proxy providers (Bright Data, Smartproxy, SOAX, IPRoyal) sell access to millions of real IPs, often harvested from free VPN apps or SDK monetization. The user appears to be browsing from any city, any state, any country — on demand.</p>
+
+<div class="callout callout-red">
+<strong>Why this matters now:</strong> The FBI raided laptop farms in Arizona and other states where DPRK IT workers were using residential proxies to mask their true location while holding remote US jobs under stolen identities. This wasn't theoretical — it was operational, at scale, generating revenue for North Korea's weapons programs.
+</div>
+
+<div style="margin-top:0.75rem">
+<div style="font-size:0.75rem;font-weight:600;color:var(--fg);margin-bottom:0.4rem">Insider threat use cases</div>
+
+<div class="scenario">
+<span class="scenario-label crit">CRIT</span>
+<div class="scenario-body">
+<div class="scenario-title">Nation-state IT worker fraud (DPRK)</div>
+<div class="scenario-desc">Operatives use stolen US identities to secure remote IT jobs. Residential proxies mask their true location (often China, Russia, or SE Asia). Laptop farms in-country handle any hardware token or geofence checks. Revenue funds WMD programs. FBI/DOJ indictments in 2024-2025 confirm this at scale.</div>
+</div>
+</div>
+
+<div class="scenario">
+<span class="scenario-label warn">HIGH</span>
+<div class="scenario-body">
+<div class="scenario-title">Malicious exfiltration masking</div>
+<div class="scenario-desc">An insider exfiltrating data routes traffic through residential proxies to appear as normal web browsing from expected locations. DLP that relies on destination IP reputation or geo-analysis is blind. The exfil channel looks like a user browsing from home.</div>
+</div>
+</div>
+
+<div class="scenario">
+<span class="scenario-label">MED</span>
+<div class="scenario-body">
+<div class="scenario-title">Overemployment evasion</div>
+<div class="scenario-desc">Employees working multiple remote jobs simultaneously use proxies to mask activity patterns. Not malicious per se, but violates employment agreements and creates split-attention risk, IP contamination, and potential data commingling across employers.</div>
+</div>
+</div>
+</div>
+
+<div style="margin-top:0.75rem">
+<div style="font-size:0.75rem;font-weight:600;color:var(--fg);margin-bottom:0.4rem">What breaks</div>
+<ul>
+<li><strong>Geofencing / geo-restriction</strong> — proxy IP is in the "right" location</li>
+<li><strong>Impossible travel detection</strong> — no travel detected because all sessions appear local</li>
+<li><strong>UEBA location baselines</strong> — residential IPs pass reputation checks</li>
+<li><strong>IP-based threat intelligence</strong> — residential IPs aren't on blocklists</li>
+<li><strong>VPN/Tor detection</strong> — these aren't VPN or Tor exit nodes</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<!-- Rogue WiFi / Network Bridging -->
+<div class="threat-card" style="border-left:3px solid #f59e0b">
+<div class="threat-header" style="border-bottom-color:rgba(245,158,11,0.2)">
+<span class="threat-icon">📡</span>
+<span class="threat-title" style="color:#d97706">Rogue WiFi / Personal Hotspots / Network Bridging</span>
+</div>
+<div class="threat-body">
+<p>An employee connects their corporate device to a personal phone hotspot instead of the corporate network. Every byte of traffic bypasses your firewall, proxy, DLP, IDS, and SIEM. The device is online, the user is working — your monitoring sees nothing.</p>
+
+<p>5G makes this worse. Personal hotspots now deliver 100+ Mbps — fast enough that there's no performance penalty. The user has no reason to switch back to corporate WiFi, and no technical barrier to staying off-network indefinitely.</p>
+
+<div style="margin-top:0.75rem">
+<div style="font-size:0.75rem;font-weight:600;color:var(--fg);margin-bottom:0.4rem">Three scenarios, escalating severity</div>
+
+<div class="scenario">
+<span class="scenario-label">LOW</span>
+<div class="scenario-body">
+<div class="scenario-title">Monitoring bypass (most common)</div>
+<div class="scenario-desc">Employee connects to hotspot for personal browsing during work, or because corporate WiFi is slow. No malicious intent — just convenience. But your UEBA, web proxy, and network-based DLP are now blind to this user's activity.</div>
+</div>
+</div>
+
+<div class="scenario">
+<span class="scenario-label warn">HIGH</span>
+<div class="scenario-body">
+<div class="scenario-title">Data exfiltration channel</div>
+<div class="scenario-desc">Insider deliberately uses hotspot to exfiltrate data outside all network monitoring. Files go straight from corporate device to personal cloud storage over cellular. Your DLP never sees the transfer. No proxy log, no firewall event, no CASB alert.</div>
+</div>
+</div>
+
+<div class="scenario">
+<span class="scenario-label crit">CRIT</span>
+<div class="scenario-body">
+<div class="scenario-title">Network bridging</div>
+<div class="scenario-desc">A device connected to both corporate WiFi <em>and</em> a personal hotspot simultaneously bridges the two networks. This creates a backdoor from the internet into your corporate network — accessible from the parking lot, a nearby building, or anywhere the hotspot reaches. A compromised phone becomes an entry point.</div>
+</div>
+</div>
+</div>
+
+<div class="callout callout-amber">
+<strong>Regulatory note:</strong> PCI DSS Requirement 11.1 already mandates quarterly rogue wireless access point scans. If your organization handles cardholder data, you're required to detect this. Most organizations doing rogue AP scans are only looking for unauthorized access points on premises — not employees' phone hotspots.
+</div>
+</div>
+</div>
+
+
+<!-- Detection Approaches -->
+<div class="section">
+<h3>Detection approaches</h3>
+<p>Network-based detection is, by definition, blind to these vectors — the traffic never touches your network. Detection must move to the endpoint and to behavioral analysis that doesn't depend on network visibility.</p>
+
+<div class="detect-grid">
+<div class="detect-card">
+<div class="detect-title">Endpoint adapter monitoring</div>
+<div class="detect-desc">EDR/UEM agents that detect when a device connects to a non-corporate network, logs adapter changes, and flags hotspot SSIDs. CrowdStrike, SentinelOne, Microsoft Intune all support this.</div>
+</div>
+
+<div class="detect-card">
+<div class="detect-title">WIPS / RF scanning</div>
+<div class="detect-desc">Wireless Intrusion Prevention Systems detect rogue access points and unauthorized wireless connections within your physical perimeter. Cisco Meraki, Aruba, Ekahau.</div>
+</div>
+
+<div class="detect-card">
+<div class="detect-title">NAC with 802.1X</div>
+<div class="detect-desc">Network Access Control that enforces device posture before granting network access. Can detect and block devices with active secondary network interfaces. Cisco ISE, Aruba ClearPass, Forescout.</div>
+</div>
+
+<div class="detect-card">
+<div class="detect-title">USB / peripheral controls</div>
+<div class="detect-desc">Disable USB tethering and mobile hotspot connectivity via MDM/UEM policy. Prevents the most common bridging vector. Microsoft Intune, JAMF, VMware Workspace ONE.</div>
+</div>
+
+<div class="detect-card">
+<div class="detect-title">Behavioral session analysis</div>
+<div class="detect-desc">UEBA that keys on <em>session characteristics</em> (typing cadence, mouse behavior, application patterns) rather than IP/location. Detects anomalous users regardless of their network path. DTEX, Teramind, Securonix.</div>
+</div>
+
+<div class="detect-card">
+<div class="detect-title">Device attestation</div>
+<div class="detect-desc">Zero-trust device posture checks that verify device identity, health, and network state before granting resource access. Blocks access from non-compliant or dual-homed devices. Zscaler, Cloudflare Access, Palo Alto Prisma.</div>
+</div>
+</div>
+</div>
+
+
+<!-- Bottom line -->
+<div class="section">
+<h3>The practitioner takeaway</h3>
+<p>If your detection strategy depends on seeing traffic on your network, you have a blind spot. Residential proxies make location-based detection unreliable. Personal hotspots make network-based detection irrelevant. Both are trivially easy for any employee to use, require no technical sophistication, and leave no obvious artifacts in your existing telemetry.</p>
+<p>The shift is from <strong>network-centric monitoring</strong> to <strong>endpoint-centric + behavioral monitoring</strong>. This isn't a future state — it's a current gap. If you haven't tested your detection coverage against these scenarios, now is the time.</p>
+
+<div class="callout callout-teal">
+<strong>Framework mapping:</strong> These vectors map to <span class="ksa-tag">K-WAVD01</span> (web and vector-based detection), with implications for <span class="ksa-tag">K-NDA01</span> (network data analysis) and <span class="ksa-tag">K-UEBA01</span> (user/entity behavior analytics). Detection approaches span <span class="ksa-tag">S-EDR01</span> (endpoint detection) and <span class="ksa-tag">S-DLP01</span> (data loss prevention). See the <a href="matrix.html">KSA Matrix</a> for full definitions.
+</div>
+</div>
+
+
+</main>
+
+<div class="feedback-widget" id="feedback-widget">
+<span>Helpful?</span>
+<button class="feedback-btn" onclick="sendFeedback('up',this)" title="Yes, this was helpful">👍</button>
+<button class="feedback-btn" onclick="sendFeedback('down',this)" title="Not helpful">👎</button>
+<span class="feedback-thanks" id="feedback-thanks">Thanks!</span>
+</div>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<footer class="footer">
+<p><a href="about.html">About</a> &middot; <a href="start.html">Start here</a> · <a href="index.html">Framework</a> · <a href="references.html">References</a> · <a href="changelog.html">Changelog</a> · <a href="suggest.html?from=emerging">Suggest</a></p>
+<p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+<p style="margin-top:0.25rem;font-size:0.58rem">Vibe-coded with Claude&#8482; · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.55rem">hello@insiderthreatanalyst.com</a></p>
+</footer>
+<script>
+requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transition')})});
+function toggleTheme(){const h=document.documentElement,t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light':'Dark';document.getElementById('theme-btn').setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');try{localStorage.setItem('ita-theme',t);}catch(e){}}
+function sendFeedback(vote,btn){const w=document.getElementById('feedback-widget');w.querySelectorAll('.feedback-btn').forEach(b=>b.classList.add('voted'));document.getElementById('feedback-thanks').style.display='inline';setTimeout(()=>{w.style.opacity='0';setTimeout(()=>w.style.display='none',400)},1800);const page=location.pathname.replace(/\//g,'').replace('.html','')||'index';fetch('https://ita-feedback.phishcheckboy.workers.dev/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page,vote})}).catch(()=>{});}
+(function(){try{const t=localStorage.getItem('ita-theme');if(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light':'Dark';}}catch(e){}}());
+(function(){const b=document.getElementById('btt');if(!b)return;let t;window.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){b.classList.toggle('visible',window.scrollY>400)},50)},{passive:true});}());
+</script>
+</body>
+</html>

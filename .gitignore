@@ -1,0 +1,6 @@
+*.bak*
+.cc-status/
+site_inventory_sop.md
+steerco/
+*.db
+.DS_Store

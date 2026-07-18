@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!--
+╔══════════════════════════════════════════════════════════╗
+║  CLASSIFICATION: UNCLASSIFIED // FOR OFFICIAL USE ONLY  ║
+║  PROGRAM:        CAREER FRAMEWORK INSIDER THREAT        ║
+║  CASE ID:        CF-2026-0420-VIBE                      ║
+║  ANALYST:        Claude (Digital Employee, L5)           ║
+║                                                         ║
+║  ASSESSMENT: Subject displays concerning indicators:    ║
+║  - Viewed page source (technical curiosity, elevated)   ║
+║  - Possible detection engineering aptitude               ║
+║  - May be overqualified for current role                ║
+║                                                         ║
+║  RECOMMENDATION: Recruit immediately.                   ║
+║                                                         ║
+║  NOTE: If you found this, you're exactly the kind of    ║
+║  person this framework was built for. Welcome.          ║
+║                                                         ║
+║  P.S. The only limit is yourself. — zombo.com (RIP)    ║
+║  P.P.S. Try gandalf.lakera.ai if you haven't already.  ║
+╚══════════════════════════════════════════════════════════╝
+-->
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("ita-theme")||"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}document.documentElement.classList.add("no-transition");</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2L4 8v8c0 7.7 5.1 14.9 12 17 6.9-2.1 12-9.3 12-17V8L16 2z' fill='%230c1222' stroke='%236cb4ff' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='%2334d9c3' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%236cb4ff'/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="https://insiderthreatanalyst.com/ogimage.png">
+<meta property="og:title" content="Changelog — Insider Threat Analyst Career Framework">
+<meta property="og:description" content="Version history and changelog for the Insider Threat Analyst Career Framework.">
+<meta name="description" content="Version history and changelog for the Insider Threat Analyst Career Framework.">
+<title>Changelog — Insider Threat Analyst Career Framework</title>
+<link rel="canonical" href="https://insiderthreatanalyst.com/changelog.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html.no-transition,html.no-transition *,html.no-transition *::before,html.no-transition *::after{transition:none!important}
+[data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0a1628;--fg2:#2a3a52;--fg3:#64748b;--fg4:#94a3b8;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0d9488;--accent2-bg:#f0fdfa;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08)}
+[data-theme="dark"]{--bg:#0c1222;--bg2:#162032;--bg3:#1e2d44;--fg:#f1f5f9;--fg2:#cbd5e1;--fg3:#94a3b8;--fg4:#64748b;--border:#253550;--border2:#3a5070;--accent:#6cb4ff;--accent-bg:#1a3358;--accent2:#34d9c3;--accent2-bg:#0f3d38;--header-bg:#0c1424;--header-fg:#f1f5f9;--card-shadow:0 1px 4px rgba(0,0,0,0.35),0 0 0 1px rgba(100,180,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--fg);background:var(--bg);line-height:1.6;transition:background 0.3s,color 0.3s}
+a{color:var(--accent)}
+
+.header{background:var(--header-bg);color:var(--header-fg);padding:1.5rem 0;border-bottom:1px solid rgba(108,180,255,0.1)}
+[data-theme="dark"] .header{background:linear-gradient(135deg,#0a0f1e 0%,#121e36 50%,#0e1a2e 100%)}
+.header-inner{max-width:700px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.header h1{font-family:'Source Serif 4',serif;font-size:1.2rem;font-weight:600}
+.header h1 a{color:inherit;text-decoration:none;opacity:0.7}.header h1 a:hover{opacity:1}
+.header-right{display:flex;gap:0.5rem;align-items:center}
+.theme-toggle{background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:var(--header-fg);padding:0.25rem 0.5rem;font-family:inherit;font-size:0.68rem;cursor:pointer}
+.theme-toggle:hover{border-color:rgba(255,255,255,0.4)}
+
+.accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+.main{max-width:700px;margin:0 auto;padding:2rem 1.5rem}
+
+.hero{text-align:center;margin-bottom:2rem}
+.hero h2{font-family:'Source Serif 4',serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem}
+.hero p{font-size:0.85rem;color:var(--fg2);max-width:550px;margin:0 auto;line-height:1.7}
+
+.version{margin-bottom:2rem}
+.version-header{display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.5rem;padding-bottom:0.35rem;border-bottom:2px solid var(--accent)}
+.version-tag{font-family:'JetBrains Mono',monospace;font-size:0.82rem;font-weight:600;color:var(--accent)}
+.version-date{font-size:0.72rem;color:var(--fg3)}
+.version-body{font-size:0.78rem;color:var(--fg2);line-height:1.7}
+.version-body ul{margin:0.3rem 0 0.3rem 1.2rem;list-style:disc}
+.version-body li{margin-bottom:0.2rem}
+.version-body .change-tag{font-size:0.6rem;padding:1px 5px;border-radius:3px;margin-right:0.3rem;font-weight:600;vertical-align:middle}
+.tag-new{background:#dcfce7;color:#166534}
+.tag-changed{background:#dbeafe;color:#1e40af}
+.tag-fixed{background:#fef3c7;color:#92400e}
+.tag-removed{background:#fee2e2;color:#991b1b}
+[data-theme="dark"] .tag-new{background:#052e16;color:#4ade80}
+[data-theme="dark"] .tag-changed{background:#172e52;color:#7dbaff}
+[data-theme="dark"] .tag-fixed{background:#451a03;color:#fbbf24}
+[data-theme="dark"] .tag-removed{background:#450a0a;color:#fca5a5}
+
+.footer{max-width:700px;margin:2rem auto 1.25rem;padding:0 1.5rem;text-align:center}
+.footer p{font-size:0.62rem;color:var(--fg4)}.footer a{color:var(--fg3);text-decoration:none}.footer a:hover{text-decoration:underline}
+.btt{position:fixed;right:1.5rem;bottom:4rem;z-index:90;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.2);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s;transform:translateY(8px)}
+.btt.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+[data-theme="dark"] .btt{background:linear-gradient(135deg,#3b82f6,#6cb4ff);box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.15)}
+@media(max-width:600px){.btt{right:1rem;bottom:3.5rem;width:2rem;height:2rem;font-size:0.85rem}}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:#fff;padding:0.5rem 1rem;z-index:9999;font-size:0.85rem;text-decoration:none;border-radius:0 0 4px 0;transition:top 0.2s}.skip-link:focus{top:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.site-nav{position:sticky;top:0;z-index:1000}
+.site-nav{background:linear-gradient(180deg,var(--bg3),var(--bg2));border-bottom:1px solid var(--border);padding:0.4rem 0;transition:background 0.3s}
+[data-theme="dark"] .site-nav{background:var(--bg3);border-bottom-color:rgba(108,180,255,0.08)}
+.site-nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0.15rem;align-items:center;flex-wrap:wrap;justify-content:center}
+.site-nav a{color:var(--fg3);text-decoration:none;font-size:0.68rem;font-weight:500;padding:0.25rem 0.6rem;border-radius:5px;transition:all 0.15s;white-space:nowrap}
+.site-nav a:hover{color:var(--fg);background:var(--bg3)}
+[data-theme="dark"] .site-nav a:hover{background:var(--bg2)}
+.site-nav a.nav-active{color:var(--accent);font-weight:600;background:var(--accent-bg)}
+.nav-group{display:flex;align-items:center;gap:0.1rem}
+.nav-group::after{content:'';width:1px;height:1rem;background:var(--border2);margin:0 0.35rem;flex-shrink:0}
+.nav-group:last-child::after{display:none}
+.nav-label{font-size:0.52rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--fg4);margin-right:0.15rem;white-space:nowrap}
+.nav-util .nav-label{display:none}
+.nav-util a{opacity:0.7;font-size:0.62rem}
+.nav-util a:hover{opacity:1}
+.nav-util a.nav-active{opacity:1}
+@media(max-width:768px){.site-nav-inner{gap:0.05rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}.site-nav-inner::-webkit-scrollbar{display:none}.site-nav a{font-size:0.62rem;padding:0.2rem 0.45rem;flex-shrink:0}.nav-label{display:none}.nav-group::after{display:none}.nav-util a{font-size:0.58rem}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Changelog — Insider Threat Analyst Career Framework","description":"Version history and changelog for the Insider Threat Analyst Career Framework.","url":"https://insiderthreatanalyst.com/changelog.html","publisher":{"@type":"Organization","name":"Insider Threat Analyst Career Framework","url":"https://insiderthreatanalyst.com"}}</script>
+<script defer src="https://stats.knowles.family/script.js" data-website-id="f4db3639-63ab-4998-93ff-4f0bbe5e10c3"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="header"><div class="header-inner">
+<h1>📋 Changelog · <a href="index.html">Career Framework</a></h1>
+<div class="header-right">
+<button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()" id="theme-btn">Dark</button>
+</div>
+</div></header>
+
+<div class="accent-stripe"></div>
+<nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
+<div class="nav-group"><span class="nav-label">Explore</span>
+<a href="framework.html">Framework</a>
+<a href="matrix.html">Matrix</a>
+<a href="clusters.html">Clusters</a>
+</div>
+<div class="nav-group"><span class="nav-label">Build &amp; Run</span>
+<a href="program.html">Program</a>
+<a href="emerging.html">Emerging</a>
+</div>
+<div class="nav-group"><span class="nav-label">Grow</span>
+<a href="engagement.html">Engagement</a>
+<a href="maturity.html">Maturity</a>
+</div>
+<div class="nav-group nav-util"><span class="nav-label">About</span>
+<a href="about.html">About</a>
+<a href="start.html">Start Here</a>
+<a href="wellness.html">Wellness</a>
+<a href="governance.html">Site Policy</a>
+<a href="contributors.html">Contributors</a>
+<a href="references.html">References</a>
+<a href="papers/">Papers</a>
+<a href="reviews.html">Reviews</a>
+<a href="changelog.html" class="nav-active">Changelog</a>
+<a href="suggest.html">Suggest</a>
+</div>
+</div></nav>
+
+<main class="main" id="main-content">
+
+<div class="hero">
+<h2>Changelog</h2>
+<p>Version history for the Insider Threat Analyst Career Framework. This site is actively maintained and updated based on community feedback, new research, and evolving practice.</p>
+</div>
+
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.2.1</span>
+<span class="version-date">2026-06-08</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> Add in-deck PDF export hint + button to the presentation decks (OSIT, FS-ISAC BRC).</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.2.0</span>
+<span class="version-date">2026-06-08</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> <a href="papers/">Papers</a> is now linked in the primary site navigation — direct access to the IPKVM detection white paper.</li>
+<li><span class="change-tag tag-new">New</span> <a href="references.html#legal">Regulatory Mandates for Insider Threat Programs</a> added to the References &ldquo;Legal, Privacy &amp; Regulatory&rdquo; section — 10 regulatory and standards references spanning the US (EO 13587, DoDI 5205.16, NISPOM, NRC, NIST SP 800-53), Canada, Australia, Singapore, the UK (NPSA/NCSC), and North American energy (NERC CIP). Contributed by <a href="contributors.html">Oswin Kwok</a>.</li>
+<li><span class="change-tag tag-new">New</span> Presentation decks (OSIT, FS-ISAC BRC) now include a print stylesheet for clean Print-to-PDF export.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.1.5</span>
+<span class="version-date">2026-05-26</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> <a href="about.html">About</a> link added to the top site-navigation strip on every page (under the &ldquo;About&rdquo; group). Already present in the footer; this surfaces it in the header too.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.1.4</span>
+<span class="version-date">2026-05-26</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> <a href="about.html">About page</a> &mdash; who maintains the framework and why it exists. Linked from the footer of every page.</li>
+<li><span class="change-tag tag-new">New</span> Author attribution and CC BY 4.0 license line in the footer of every page.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.1.3</span>
+<span class="version-date">2026-05-15</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-improved">Improved</span> Filter chips on the <a href="matrix.html">KSA matrix</a> now have a per-group all-on / all-off toggle (the small ⇅ next to each filter label). Click toggles between turning every chip in the group on and turning every chip off — handy for the 19-chip Cluster group. Mixed states snap to all-on first.</li>
+<li><span class="change-tag tag-changed">Changed</span> Matrix filter semantics: an empty filter group (zero chips selected) now means &ldquo;no constraint from this dimension&rdquo; rather than &ldquo;match nothing.&rdquo; So if you toggle every section off and then turn on just <em>Knowledge</em> in the Type group, you&rsquo;ll see all Knowledge KSAs across every level, source, concentration, and cluster — standard faceted-search behavior. All-chips-on still shows everything; the only behavior change is around the all-off state.</li>
+<li><span class="change-tag tag-improved">Improved</span> Section counts on the matrix (Knowledge, Skills, Abilities, Tasks) now update live as you filter, rather than showing the full-dataset count. Sections that drop to zero rows under the current filter are hidden entirely so you don&rsquo;t see an empty table.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.1.2</span>
+<span class="version-date">2026-05-14</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> Published <em>Detecting IP-KVM Devices in the Enterprise</em> white paper (Rob Knowles, April 2026, CC&nbsp;BY&nbsp;4.0) at <a href="/papers/ipkvm-detection-white-paper.pdf">/papers/ipkvm-detection-white-paper.pdf</a>. Established the <a href="/papers/">/papers/</a> namespace for future research outputs. Linked from <a href="references.html#research">References → Research Reports &amp; Industry Publications</a>.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.1.1</span>
+<span class="version-date">2026-05-14</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-fixed">Fixed</span> Silenced a pre-existing <code>render()</code> throw on the missing <code>#ai-panel</code> element (present in the JS since v1.0.5, 2026-04-08). The TypeError halted page-load initialization of the in-page Career Pathway visualization, the back-to-top button, and the Konami easter egg. One-line defensive null-check guard at <a href="framework.html">framework.html</a>:709. No functional regression. Adding an actual <code>#ai-panel</code> content area (so per-level AI competency text renders) deferred to v1.2.0 (layout decision).</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.1.0</span>
+<span class="version-date">2026-05-14</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> <b>Program Auditor</b> concentration added to the <a href="framework.html">Framework Explorer</a> — evaluates an insider threat program's maturity, coverage, and effectiveness across detection, visibility, tooling, communications, reporting/metrics, and stakeholder engagement; covers pre-audit self-assessment through external-audit response.</li>
+<li><span class="change-tag tag-new">New</span> <b>Audit &amp; Assessment</b> competency cluster added to <a href="clusters.html">Competency Clusters</a> — methodology, evidence handling, gap analysis, framework mapping, and audit response, mapped to the new concentration.</li>
+<li><span class="change-tag tag-new">New</span> KSAs sourced from NICE Framework v2 work roles OG-WRL-016 (Technology Program Auditing), OG-WRL-012 (Security Control Assessment), OG-WRL-008 (Privacy Compliance), and PD-WRL-005 (Insider Threat Analysis), plus old-NICE-805 IT Program Auditor for federal-pathway continuity and three ITA-PA-* synthesized KSAs for InT-specific maturity dimensions.</li>
+<li><span class="change-tag tag-new">New</span> SEI CERT credentials surfaced in the audit cluster and cert ladder: <a href="https://www.sei.cmu.edu/blog/cert-insider-threat-vulnerability-assessments-itva-training-course-and-itva-certificate-program/" target="_blank" rel="noopener">CERT ITVA</a> (L3 preferred), <a href="https://www.sei.cmu.edu/library/insider-threat-program-evaluator-certificate/" target="_blank" rel="noopener">CERT ITPE</a> (L4 preferred), and IRM-MoE (already present at L4).</li>
+<li><span class="change-tag tag-new">New</span> Contributor: <b>Kasey Olbrych</b> (Proofpoint) suggested the Program Auditor concentration. See <a href="contributors.html">Contributors</a>.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.0.6</span>
+<span class="version-date">2026-05-12</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> CISA "Assembling a Multidisciplinary Insider Threat Management Team" (January 2026) added to <a href="program.html">Program Hub</a> — fusion hub guidance, placed in Standards/Government section near CMU SEI resources</li>
+<li><span class="change-tag tag-new">New</span> OSHA Education Center "Building a Culture of Well-Being" added to <a href="wellness.html">Care &amp; Feeding</a> — organizational well-being culture guidance in Further Reading section</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.0.5</span>
+<span class="version-date">2026-04-08</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> ISACA AAISM added to <a href="clusters.html">AI/ML cluster</a> as cert anchor (not required) alongside CompTIA SecAI+ — program-governance complement to SecAI+'s hands-on focus (community suggestion)</li>
+<li><span class="change-tag tag-new">New</span> <a href="contributors.html">Oswin Kwok</a> added to Contributors page with LinkedIn link — credited for AAISM suggestion</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.0.4</span>
+<span class="version-date">2026-04-06</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> <a href="program.html">Program Hub</a> page — standalone home for program design, tooling, OSINT, resources, communities, and training. Extracted from framework.html tabs into a dedicated Build &amp; Run page</li>
+<li><span class="change-tag tag-new">New</span> <a href="maturity.html">Program Maturity</a> page — audit frameworks, maturity models (CISA IRMPE, NITTF, CMU SEI IRM-MoE), and benchmarks. Moved to Grow section for professional development focus</li>
+<li><span class="change-tag tag-changed">Changed</span> "Find &amp; Analyze" nav group renamed to "Explore" — better describes Framework Explorer, KSA Matrix, and Skill Clusters</li>
+<li><span class="change-tag tag-changed">Changed</span> Analytical Rigor (with bias quiz), Communication &amp; Reporting, and The Analyst's Value Chain moved to framework.html Development tab — these are analyst growth content, not program design</li>
+<li><span class="change-tag tag-changed">Changed</span> Emerging Threats tile overview added to <a href="emerging.html">Emerging Threats</a> page — quick-reference cards above the deep-dives</li>
+<li><span class="change-tag tag-changed">Changed</span> References moved from Grow nav group to utility bar — accessible from every page without taking a primary nav slot</li>
+<li><span class="change-tag tag-fixed">Fixed</span> Navbar added to reviews.html and changelog.html — both were missing site navigation</li>
+<li><span class="change-tag tag-fixed">Fixed</span> "Program" nav link now goes to dedicated program.html instead of framework.html tab anchor</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.0.3</span>
+<span class="version-date">2026-04-06</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-changed">Changed</span> "Governance" renamed to "Site Policy" and moved to utility nav row — avoids confusion with insider threat program governance, which is a distinct practitioner topic</li>
+<li><span class="change-tag tag-changed">Changed</span> Removed duplicate "Development" and "Resources" nav links (both pointed to framework.html tab anchors) — Framework link already covers this page</li>
+<li><span class="change-tag tag-changed">Changed</span> Nav decluttered: main groups reduced to 3 focused groups (Find &amp; Analyze, Build &amp; Run, Grow) with 2–3 items each; utility row carries secondary pages</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.0.2</span>
+<span class="version-date">2026-04-06</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> <a href="emerging.html">Emerging Threats</a> page — standalone deep-dive on residential proxies (DPRK laptop farms, exfil masking, overemployment evasion) and rogue WiFi / network bridging (monitoring bypass, DLP blind spots, network backdoors). Includes six detection approach cards and framework KSA mapping</li>
+<li><span class="change-tag tag-new">New</span> <a href="engagement.html">Stakeholder Engagement</a> page — "How do I get people to care about my program?" NITAM timeline (2019–2025 themes), leadership briefing guidance, workforce awareness toolkit, tabletop exercise playbook, training resource cards (CDSE, CISA, NITTF, CMU SEI, State Dept), and curated media picks for engagement</li>
+<li><span class="change-tag tag-new">New</span> <a href="framework.html">Framework Explorer</a> — the original 178K index.html monolith is now at its own URL. All KSA explorer, tabs, PDF export, and job description generator functionality preserved</li>
+<li><span class="change-tag tag-new">New</span> <a href="index.html">Landing page</a> — signpost-style homepage with three persona-framed entry points: building a program, sharpening tradecraft, staying current on threats</li>
+<li><span class="change-tag tag-changed">Changed</span> Site navigation redesigned — grouped by practitioner intent (Find &amp; Analyze, Build &amp; Run, Grow, About) with subtle group labels and dividers. Applied across all pages</li>
+<li><span class="change-tag tag-fixed">Fixed</span> CMU SEI URLs updated sitewide — <code>insights.sei.cmu.edu</code> migrated to <code>www.sei.cmu.edu</code> equivalents (8 links across 5 pages). SEI restructured their blog; old URLs returned 404</li>
+<li><span class="change-tag tag-fixed">Fixed</span> ITABot: DCSA/DITMAC watchlist URL corrected, browser-like User-Agent added to all HTTP requests (DCSA and DTEX were returning 403 to default Python UA)</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.0.1</span>
+<span class="version-date">2026-03-31</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> DITMAC / BTAC — DOD Insider Threat Management &amp; Analysis Center added to Research card, Behavioral Models card, and annotated bibliography. Includes BTAC Bulletin and Beyond the Bulletin podcast links</li>
+<li><span class="change-tag tag-new">New</span> NITAM (National Insider Threat Awareness Month) — full history 2019–2025 with themes, CDSE/NITTF resources, and stakeholder engagement toolkit links added to annotated bibliography</li>
+<li><span class="change-tag tag-new">New</span> U.S. Department of State Insider Threat Program — Office of the Insider Threat Program, Insider Threat Quarterly, FAM references added to annotated bibliography</li>
+<li><span class="change-tag tag-new">New</span> Steve Crimando, MA, CTM — Behavioral Science Applications, DHS NTER, ATAP, ASIS EPIC. Added to Behavioral Models card and annotated bibliography</li>
+<li><span class="change-tag tag-new">New</span> "Spot the Bias — Practitioner Edition" interactive quiz added to Analytical Rigor section. Eight self-demonstrating bias examples with click-to-reveal answers</li>
+<li><span class="change-tag tag-new">New</span> Reviews page — community feedback and totally unbiased self-assessment. Footer link (⭐)</li>
+<li><span class="change-tag tag-fixed">Fixed</span> FS-ISAC restored to Standards, Government &amp; Professional Bodies card (dropped in v1.0.0 resource reorganization)</li>
+<li><span class="change-tag tag-changed">Changed</span> Robinson (Purdue, 2025) moved from Audit &amp; Maturity card to Research &amp; Vendor Intelligence card — better fit for TTP trend analysis research</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag" style="background:#16a34a">v1.0.0</span>
+<span class="version-date">2026-03-26</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> MVP 1.0 — framework promoted from "In Progress" to MVP status following CMU SEI OSIT presentation</li>
+<li><span class="change-tag tag-new">New</span> International &amp; EMEA resources section — NPSA HoMER, NPSA Influencing Leaders guide, NCSC malicious insider guidance, IRRG publications list, IRPA/Five Eyes alliance, UMD Graduate Certificate in Insider Risk (credit: Mark Handy, Nicholas Tuppen)</li>
+<li><span class="change-tag tag-new">New</span> AI/ML Security Training &amp; Certification section — OWASP Top 10 for LLM Applications, Proofpoint AI Data Security &amp; Agent Security Specialist certifications, 10 AI/ML foundational training platforms (credit: Mark Handy)</li>
+<li><span class="change-tag tag-new">New</span> Stewart &amp; Handy (2024) insider threat maturity model added to annotated bibliography</li>
+<li><span class="change-tag tag-new">New</span> insiderthreatmatrix.com promoted with expanded description as companion resource</li>
+<li><span class="change-tag tag-changed">Changed</span> INSA elevated from single paper to organisation-level entry covering full insider threat white paper series</li>
+<li><span class="change-tag tag-changed">Changed</span> Navigation reordered across all pages: New here? · Framework · KSA Matrix · Clusters · Governance · Wellness · References · Contributors · Suggest</li>
+<li><span class="change-tag tag-changed">Changed</span> Footer restructured: link reorder, vibe-coded line separated from contact email</li>
+<li><span class="change-tag tag-new">New</span> "Latest Updates" chiclet replaces features banner — pulsing orange link to changelog near theme toggle</li>
+<li><span class="change-tag tag-new">New</span> New tab preference poll — appears after 3rd external link click, collects user feedback via Formspree</li>
+<li><span class="change-tag tag-new">New</span> Mark Handy added to Contributors — maturity model co-author, AI/ML training resources, INSA/IRPA/UMD suggestions</li>
+<li><span class="change-tag tag-new">New</span> Nicholas Tuppen (Bank of America) added to Contributors — IRRG publications list, EMEA resources</li>
+<li><span class="change-tag tag-changed">Changed</span> CMU SEI OSIT Working Group moved to prominent position in contributor list</li>
+<li><span class="change-tag tag-fixed">Fixed</span> OG image filename mismatch corrected across all pages (og-image.png → ogimage.png)</li>
+<li><span class="change-tag tag-changed">Changed</span> Internal navigation links no longer force new tabs — same-site links open in same tab</li>
+<li><span class="change-tag tag-new">New</span> IIA GTAG: Auditing Insider Threat Programs added to Standards card, Audit &amp; Maturity card, and annotated bibliography</li>
+<li><span class="change-tag tag-new">New</span> CompTIA SecAI+ (CY0-001) AI security certification added to AI/ML references and cluster training</li>
+<li><span class="change-tag tag-new">New</span> Rowland Bartlett added to Contributors — "Top 5" priority KSA filter idea</li>
+<li><span class="change-tag tag-new">New</span> "Where insider threat fits" section on governance page — HRM, BeTM, and CI relationship framing</li>
+<li><span class="change-tag tag-changed">Changed</span> Resources tab reorganized into three cards: Standards/Government/Professional Bodies, Communities of Practice, Research/Vendor Intelligence</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v0.5.1</span>
+<span class="version-date">2026-03-24</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> Governance page — authorship model, KSA stability commitments, change process, NICE relationship, update cadence, AI/ML emerging threat roadmap, community ecosystem (IRPA/FIRPA, CoEs, OSIT, NITSIG)</li>
+<li><span class="change-tag tag-new">New</span> Community &amp; ecosystem section — IRPA (Five Eyes alliance), Australian/Canadian/US Insider Risk CoEs, CMU SEI OSIT Working Group, NITSIG, DTEX i³</li>
+<li><span class="change-tag tag-changed">Changed</span> A-SYNTH01 wording refined: "multi-source behavioral and technical data" → "multi-source data — endpoint, cloud, HR, physical, identity" for specificity (credit: Bidemi Ologunde)</li>
+<li><span class="change-tag tag-new">New</span> CISA Microsoft Expanded Cloud Logs Playbook added to references and SIEM cluster training</li>
+<li><span class="change-tag tag-new">New</span> OpenID Foundation — Identity Management for Agentic AI added to references and AI/ML cluster training</li>
+<li><span class="change-tag tag-changed">Changed</span> AI/ML emerging cluster description expanded: agentic AI as insider-like access holders, three-dimension threat taxonomy (tool, vector, enabler)</li>
+<li><span class="change-tag tag-new">New</span> Bidemi Ologunde, PhD, CICA added to Contributors — A-SYNTH01 refinement, CISA cloud logs, agentic AI threat vector</li>
+<li><span class="change-tag tag-new">New</span> CMU SEI OSIT Working Group added to Contributors</li>
+<li><span class="change-tag tag-new">New</span> Features banner on framework page linking to clusters, references, governance</li>
+<li><span class="change-tag tag-changed">Changed</span> Navigation updated across all pages — added 📜 Governance link</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v0.5.0</span>
+<span class="version-date">2026-03-22</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> Competency clusters page — 17 skill domains with training paths (free → paid), cert anchors, KSA listings, and concentration relevance. Browse by Technical, Investigative, Intelligence, Program, Cross-cutting, and Emerging groups</li>
+<li><span class="change-tag tag-new">New</span> KSA Matrix — cluster column added with color-coded pills and cluster filter chips (17 clusters filterable)</li>
+<li><span class="change-tag tag-new">New</span> Annotated bibliography / references page — APA-formatted research, reports, and publications with practitioner annotations</li>
+<li><span class="change-tag tag-new">New</span> Changelog page (you're looking at it)</li>
+<li><span class="change-tag tag-new">New</span> Contact email: hello@insiderthreatanalyst.com</li>
+<li><span class="change-tag tag-new">New</span> Frank Greitzer (SOFIT 2.0 / Cogility) added to Contributors — suggested bibliography page and mitigation strategy mapping</li>
+<li><span class="change-tag tag-changed">Changed</span> Navigation updated across all pages — added References link</li>
+<li><span class="change-tag tag-changed">Changed</span> Footer updated across all pages — added changelog link and contact email</li>
+<li><span class="change-tag tag-new">New</span> Competency cluster taxonomy: 122 KSAs mapped to 16 clusters + 1 emerging, with training resources and concentration priority matrix</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v0.4.0</span>
+<span class="version-date">2026-03-20</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> Site-wide navigation bar (secondary nav with active page highlighting)</li>
+<li><span class="change-tag tag-new">New</span> Animated gradient accent stripe (blue → teal shimmer) on all pages</li>
+<li><span class="change-tag tag-new">New</span> 7 new tool tiles (21 total): TIP, Forensic imaging, NDR, CSPM, Data classification, Deception, GRC</li>
+<li><span class="change-tag tag-new">New</span> "Where to start" guidance box with maturity-based tool tiers</li>
+<li><span class="change-tag tag-new">New</span> Gandalf — Lakera AI added to training platforms</li>
+<li><span class="change-tag tag-new">New</span> Tim Schnurr's InT Framework & Maturity Assessment added to Audit & maturity section</li>
+<li><span class="change-tag tag-new">New</span> Section jumper navigation on start.html and wellness.html</li>
+<li><span class="change-tag tag-new">New</span> Back-to-top button on all pages</li>
+<li><span class="change-tag tag-new">New</span> Easter eggs (classified mode, Konami code, footer quotes, source comment)</li>
+<li><span class="change-tag tag-changed">Changed</span> Instruction box simplified to single line</li>
+<li><span class="change-tag tag-changed">Changed</span> All external links now open in new tabs</li>
+<li><span class="change-tag tag-changed">Changed</span> Tools FAQ rewritten with maturity-based guidance</li>
+<li><span class="change-tag tag-changed">Changed</span> Tim Schnurr added to Contributors (DataTheftNews + GitHub project)</li>
+<li><span class="change-tag tag-fixed">Fixed</span> Tool tile tooltips — removed broken tool-tip-up CSS, all tooltips now show below consistently</li>
+<li><span class="change-tag tag-removed">Removed</span> FS-ISAC ★ Recommended badge from conference tile</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v0.3.0</span>
+<span class="version-date">2026-03-16 – 2026-03-18</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> Career Roadmap gap analysis modal with career pathway visualization</li>
+<li><span class="change-tag tag-new">New</span> NICE Framework expansion — adjacent work role mapping</li>
+<li><span class="change-tag tag-new">New</span> Export features for career roadmap and framework data</li>
+<li><span class="change-tag tag-new">New</span> Suggest page with Cloudflare Worker backend for feedback collection</li>
+<li><span class="change-tag tag-new">New</span> Contributors page</li>
+<li><span class="change-tag tag-new">New</span> Feedback widget (thumbs up/down) on all pages</li>
+<li><span class="change-tag tag-fixed">Fixed</span> Comprehensive link audit — broken links repaired, duplicate URLs removed</li>
+<li><span class="change-tag tag-changed">Changed</span> Deployed on Cloudflare Pages at insiderthreatanalyst.com</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v0.2.0</span>
+<span class="version-date">2026-02 – 2026-03</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> KSA Matrix page — full filterable matrix with 122 KSAs across 8 concentrations</li>
+<li><span class="change-tag tag-new">New</span> Wellness page — analyst mental health, burnout prevention, organizational program guidance</li>
+<li><span class="change-tag tag-new">New</span> Start Here page — onboarding guide for new practitioners</li>
+<li><span class="change-tag tag-new">New</span> Dark mode toggle across all pages</li>
+<li><span class="change-tag tag-changed">Changed</span> Framework page expanded with Resources tab, Media tab, and adjacent roles section</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v0.1.0</span>
+<span class="version-date">2026-01</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> Initial framework: 5-level career ladder, 8 concentrations, competency dimensions</li>
+<li><span class="change-tag tag-new">New</span> Certifications & training panel with level-based recommendations</li>
+<li><span class="change-tag tag-new">New</span> Threats & tools tab with insider threat tool landscape</li>
+</ul>
+</div>
+</div>
+
+
+</main>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<footer class="footer">
+<p><a href="about.html">About</a> &middot; <a href="start.html">🚀 Start here</a> · <a href="references.html">📚 References</a> · <a href="contributors.html">🤝 Contributors</a> · <a href="changelog.html">Changelog</a> · <a href="suggest.html?from=changelog">💬 Suggest</a></p>
+<p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+<p style="margin-top:0.25rem;font-size:0.58rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.55rem">hello@insiderthreatanalyst.com</a></p>
+</footer>
+<script>
+requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transition')})});
+function toggleTheme(){const h=document.documentElement,t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light':'Dark';document.getElementById('theme-btn').setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');try{localStorage.setItem('ita-theme',t);}catch(e){}}
+(function(){try{const t=localStorage.getItem('ita-theme');if(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light':'Dark';}}catch(e){}}());
+(function(){const b=document.getElementById('btt');if(!b)return;let t;window.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){b.classList.toggle('visible',window.scrollY>400)},50)},{passive:true});}());
+</script>
+</body>
+</html>

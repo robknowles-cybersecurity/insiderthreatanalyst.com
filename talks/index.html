@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--
+╔══════════════════════════════════════════════════════════╗
+║  CLASSIFICATION: UNCLASSIFIED // FOR OFFICIAL USE ONLY  ║
+║  PROGRAM:        CAREER FRAMEWORK INSIDER THREAT        ║
+║  CASE ID:        CF-2026-0608-TALK                      ║
+║  ANALYST:        Claude (Digital Employee, L5)           ║
+║                                                         ║
+║  NOTE: If you're reading the source of the talks page,  ║
+║  you're our kind of people. The slides reward it too.   ║
+╚══════════════════════════════════════════════════════════╝
+-->
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("ita-theme")||"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}document.documentElement.classList.add("no-transition");</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2L4 8v8c0 7.7 5.1 14.9 12 17 6.9-2.1 12-9.3 12-17V8L16 2z' fill='%230c1222' stroke='%236cb4ff' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='%2334d9c3' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%236cb4ff'/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="https://insiderthreatanalyst.com/ogimage.png">
+<meta property="og:title" content="Talks — Insider Threat Analyst Career Framework">
+<meta property="og:description" content="Conference talks and presentations from the Insider Threat Analyst Career Framework project — view live or download as PDF.">
+<meta name="description" content="Conference talks and presentations from the Insider Threat Analyst Career Framework project. View the live slide decks or download them as PDF.">
+<title>Talks — Insider Threat Analyst Career Framework</title>
+<link rel="canonical" href="https://insiderthreatanalyst.com/talks/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html.no-transition,html.no-transition *,html.no-transition *::before,html.no-transition *::after{transition:none!important}
+[data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0a1628;--fg2:#2a3a52;--fg3:#64748b;--fg4:#94a3b8;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0d9488;--accent2-bg:#f0fdfa;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08)}
+[data-theme="dark"]{--bg:#0c1222;--bg2:#162032;--bg3:#1e2d44;--fg:#f1f5f9;--fg2:#cbd5e1;--fg3:#94a3b8;--fg4:#64748b;--border:#253550;--border2:#3a5070;--accent:#6cb4ff;--accent-bg:#1a3358;--accent2:#34d9c3;--accent2-bg:#0f3d38;--header-bg:#0c1424;--header-fg:#f1f5f9;--card-shadow:0 1px 4px rgba(0,0,0,0.35),0 0 0 1px rgba(100,180,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--fg);background:var(--bg);line-height:1.6;transition:background 0.3s,color 0.3s}
+a{color:var(--accent)}
+
+.header{background:var(--header-bg);color:var(--header-fg);padding:1.5rem 0;border-bottom:1px solid rgba(108,180,255,0.1)}
+[data-theme="dark"] .header{background:linear-gradient(135deg,#0a0f1e 0%,#121e36 50%,#0e1a2e 100%)}
+.header-inner{max-width:900px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.header h1{font-family:'Source Serif 4',serif;font-size:1.2rem;font-weight:600}
+.header h1 a{color:inherit;text-decoration:none;opacity:0.7}.header h1 a:hover{opacity:1}
+.header-right{display:flex;gap:0.5rem;align-items:center}
+.theme-toggle{background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:var(--header-fg);padding:0.25rem 0.5rem;font-family:inherit;font-size:0.68rem;cursor:pointer}
+.theme-toggle:hover{border-color:rgba(255,255,255,0.4)}
+
+.accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+.site-nav{position:sticky;top:0;z-index:1000;background:linear-gradient(180deg,var(--bg3),var(--bg2));border-bottom:1px solid var(--border);padding:0.4rem 0;transition:background 0.3s}
+[data-theme="dark"] .site-nav{background:var(--bg3);border-bottom-color:rgba(108,180,255,0.08)}
+.site-nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0.15rem;align-items:center;flex-wrap:wrap;justify-content:center}
+.site-nav a{color:var(--fg3);text-decoration:none;font-size:0.68rem;font-weight:500;padding:0.25rem 0.6rem;border-radius:5px;transition:all 0.15s;white-space:nowrap}
+.site-nav a:hover{color:var(--fg);background:var(--bg3)}
+[data-theme="dark"] .site-nav a:hover{background:var(--bg2)}
+.site-nav a.nav-active{color:var(--accent);font-weight:600;background:var(--accent-bg)}
+.nav-group{display:flex;align-items:center;gap:0.1rem}
+.nav-group::after{content:'';width:1px;height:1rem;background:var(--border2);margin:0 0.35rem;flex-shrink:0}
+.nav-group:last-child::after{display:none}
+.nav-label{font-size:0.52rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--fg4);margin-right:0.15rem;white-space:nowrap}
+.nav-util .nav-label{display:none}
+.nav-util a{opacity:0.7;font-size:0.62rem}
+.nav-util a:hover{opacity:1}
+@media(max-width:768px){.site-nav-inner{gap:0.05rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}.site-nav-inner::-webkit-scrollbar{display:none}.site-nav a{font-size:0.62rem;padding:0.2rem 0.45rem;flex-shrink:0}.nav-label{display:none}.nav-group::after{display:none}.nav-util a{font-size:0.58rem}}
+
+.main{max-width:900px;margin:0 auto;padding:2rem 1.5rem}
+
+.hero{text-align:center;margin-bottom:2rem}
+.hero h2{font-family:'Source Serif 4',serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem}
+.hero p{font-size:0.85rem;color:var(--fg2);max-width:650px;margin:0 auto;line-height:1.7}
+
+.paper-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.4rem;margin-bottom:1.25rem;box-shadow:var(--card-shadow);transition:all 0.2s}
+[data-theme="dark"] .paper-card{border-left:2px solid var(--accent2)}
+.paper-card:hover{border-color:var(--accent)}
+.paper-title{font-family:'Source Serif 4',serif;font-size:1.15rem;font-weight:600;color:var(--fg);margin-bottom:0.2rem;line-height:1.35}
+.paper-title a{color:inherit;text-decoration:none}
+.paper-title a:hover{color:var(--accent);text-decoration:underline}
+.paper-meta{font-size:0.72rem;color:var(--fg3);margin-bottom:0.65rem;display:flex;flex-wrap:wrap;gap:0.5rem 0.85rem;align-items:center}
+.paper-meta .author{font-weight:600;color:var(--fg2)}
+.paper-meta .sep{color:var(--fg4)}
+.paper-desc{font-size:0.8rem;color:var(--fg2);line-height:1.65;margin-bottom:0.75rem}
+.paper-actions{display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;font-size:0.72rem}
+.paper-btn{display:inline-flex;align-items:center;gap:0.3rem;background:var(--accent);color:#fff;padding:0.35rem 0.75rem;border-radius:6px;text-decoration:none;font-weight:600;transition:all 0.15s}
+.paper-btn:hover{background:var(--fg);color:var(--bg)}
+.paper-btn.secondary{background:var(--bg3);color:var(--fg2);border:1px solid var(--border)}
+.paper-btn.secondary:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.paper-meta-tag{font-size:0.62rem;padding:1px 6px;border-radius:3px;background:var(--bg3);color:var(--fg3);border:1px solid var(--border)}
+
+.info-box{background:var(--accent-bg);border:1px solid rgba(37,99,235,0.15);border-radius:8px;padding:0.85rem 1.1rem;font-size:0.78rem;color:var(--fg2);line-height:1.6;margin-top:2rem}
+[data-theme="dark"] .info-box{background:rgba(108,180,255,0.06);border-color:rgba(108,180,255,0.12)}
+
+.footer{max-width:900px;margin:2rem auto 1.25rem;padding:0 1.5rem;text-align:center}
+.footer p{font-size:0.62rem;color:var(--fg4)}.footer a{color:var(--fg3);text-decoration:none}.footer a:hover{text-decoration:underline}
+
+.btt{position:fixed;right:1.5rem;bottom:4rem;z-index:90;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.2);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s;transform:translateY(8px)}
+.btt.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{opacity:1;transform:translateY(-2px)}
+[data-theme="dark"] .btt{background:linear-gradient(135deg,#3b82f6,#6cb4ff);box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.15)}
+@media(max-width:600px){.btt{right:1rem;bottom:3.5rem;width:2rem;height:2rem;font-size:0.85rem}}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:#fff;padding:0.5rem 1rem;z-index:9999;font-size:0.85rem;text-decoration:none;border-radius:0 0 4px 0;transition:top 0.2s}.skip-link:focus{top:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Talks — Insider Threat Analyst Career Framework","description":"Conference talks and presentations from the Insider Threat Analyst Career Framework project.","url":"https://insiderthreatanalyst.com/talks/","publisher":{"@type":"Organization","name":"Insider Threat Analyst Career Framework","url":"https://insiderthreatanalyst.com"}}</script>
+<script defer src="https://stats.knowles.family/script.js" data-website-id="f4db3639-63ab-4998-93ff-4f0bbe5e10c3"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="header"><div class="header-inner">
+<h1>🎤 Talks · <a href="/" target="_blank" rel="noopener">Career Framework</a></h1>
+<div class="header-right">
+<button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()" id="theme-btn">Dark</button>
+</div>
+</div></header>
+
+<div class="accent-stripe"></div>
+<nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
+<div class="nav-group"><span class="nav-label">Explore</span>
+<a href="/framework.html">Framework</a>
+<a href="/matrix.html">Matrix</a>
+<a href="/clusters.html">Clusters</a>
+</div>
+<div class="nav-group"><span class="nav-label">Build &amp; Run</span>
+<a href="/program.html">Program</a>
+<a href="/emerging.html">Emerging</a>
+</div>
+<div class="nav-group"><span class="nav-label">Grow</span>
+<a href="/engagement.html">Engagement</a>
+<a href="/maturity.html">Maturity</a>
+</div>
+<div class="nav-group nav-util"><span class="nav-label">About</span>
+<a href="/about.html">About</a>
+<a href="/start.html">Start Here</a>
+<a href="/wellness.html">Wellness</a>
+<a href="/governance.html">Site Policy</a>
+<a href="/contributors.html">Contributors</a>
+<a href="/references.html">References</a>
+<a href="/papers/">Papers</a>
+<a href="/talks/" class="nav-active">Talks</a>
+<a href="/reviews.html">Reviews</a>
+<a href="/changelog.html">Changelog</a>
+<a href="/suggest.html">Suggest</a>
+</div>
+</div></nav>
+
+
+<main class="main" id="main-content">
+
+<div class="hero">
+<h2>Talks</h2>
+<p>Conference talks and presentations from the Insider Threat Analyst Career Framework project. View the live slide deck in your browser, or download it as a PDF (decks print cleanly in landscape with background graphics enabled).</p>
+</div>
+
+<!-- ============================================================================
+     OC-520 — DRAFT descriptions below are auto-summarized from each deck's own
+     opening slides. ROB: please review/edit each <div class="paper-desc"> before
+     this page goes live. Dates/venues are taken from the title slides; no event
+     date was stated in either deck, so none is shown — add if desired.
+     PDF links (osit.pdf, fsisac-brc.pdf) are placeholders: the PDF files must be
+     exported (Print-to-PDF) and dropped into /var/www/ita/talks/ at deploy, or
+     the Download buttons will 404.
+     ============================================================================ -->
+
+<article class="paper-card">
+<div class="paper-title"><a href="/osit/" target="_blank" rel="noopener">Insider Threat as a Public Health Problem</a></div>
+<div class="paper-meta">
+<span class="author">Rob Knowles</span>
+<span class="sep">·</span>
+<span>OSIT Summit (CMU SEI)</span>
+<span class="sep">·</span>
+<span>From Incident Response to Organizational Wellness</span>
+</div>
+<!-- DRAFT description — summarized from deck opening; Rob to review/edit -->
+<div class="paper-desc">Reframes insider threat as a public-health problem: shifting the program mindset from incident response to organizational wellness, and using an epidemiological lens — &ldquo;reading the herd&rdquo; — to surface behavioral signals across a whole population rather than chasing individuals one at a time.</div>
+<div class="paper-actions">
+<a class="paper-btn" href="/osit/" target="_blank" rel="noopener">▶ View presentation</a>
+<a class="paper-btn secondary" href="osit.pdf" target="_blank" rel="noopener">⬇ Download PDF</a>
+</div>
+</article>
+
+<article class="paper-card">
+<div class="paper-title">The Risk Domain That Doesn't Exist (Yet)</div>
+<div class="paper-meta">
+<span class="author">Rob Knowles</span>
+<span class="sep">·</span>
+<span>FS-ISAC Business Resilience Committee (COI Americas)</span>
+</div>
+<!-- DRAFT description — summarized from deck opening; Rob to review/edit -->
+<div class="paper-desc">Makes the case that human / insider risk has become its own risk domain. Drawing on the cost and prevalence of insider incidents in financial services (and the &ldquo;8 / 80&rdquo; rule that a small share of people drive most incidents), it asks whether human risk deserves a named place in the enterprise risk taxonomy alongside operational, credit, and market risk — or remains a cross-cutting factor inside each.</div>
+<div class="paper-actions">
+<a class="paper-btn secondary" href="fsisac-brc.pdf" target="_blank" rel="noopener">⬇ Download PDF</a>
+</div>
+</article>
+
+
+<div class="info-box">
+<b>About these decks.</b> The presentations are self-contained HTML slide decks — use <kbd>→</kbd>/<kbd>Space</kbd> to advance and <kbd>?</kbd> for controls. For best results, view in Chrome or Edge. The PDF downloads are print exports of the same decks (landscape, background graphics on). Speaking inquiries: <a href="mailto:hello@insiderthreatanalyst.com">hello@insiderthreatanalyst.com</a>.
+</div>
+
+</main>
+
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<footer class="footer">
+<p><a href="/about.html">About</a> &middot; <a href="/start.html">🚀 Start here</a> · <a href="/references.html">📚 References</a> · <a href="/contributors.html">🤝 Contributors</a> · <a href="/changelog.html">Changelog</a> · <a href="/suggest.html?from=talks">💬 Suggest</a></p>
+<p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+<p style="margin-top:0.25rem;font-size:0.625rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.625rem">hello@insiderthreatanalyst.com</a></p>
+</footer>
+<script>
+requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transition')})});
+function toggleTheme(){const h=document.documentElement,t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light':'Dark';document.getElementById('theme-btn').setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');try{localStorage.setItem('ita-theme',t);}catch(e){}}
+(function(){try{const t=localStorage.getItem('ita-theme');if(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light':'Dark';}}catch(e){}}());
+(function(){const b=document.getElementById('btt');if(!b)return;let t;window.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){b.classList.toggle('visible',window.scrollY>400)},50)},{passive:true});}());
+</script>
+</body>
+</html>
