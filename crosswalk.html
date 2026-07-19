@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!--
+╔══════════════════════════════════════════════════════════╗
+║  CLASSIFICATION: UNCLASSIFIED // FOR OFFICIAL USE ONLY  ║
+║  PROGRAM:        CAREER FRAMEWORK INSIDER THREAT        ║
+║  CASE ID:        CF-2026-0420-VIBE                      ║
+║  ANALYST:        Claude (Digital Employee, L5)           ║
+║                                                         ║
+║  ASSESSMENT: Subject displays concerning indicators:    ║
+║  - Viewed page source (technical curiosity, elevated)   ║
+║  - Possible detection engineering aptitude               ║
+║  - May be overqualified for current role                ║
+║                                                         ║
+║  RECOMMENDATION: Recruit immediately.                   ║
+║                                                         ║
+║  NOTE: If you found this, you're exactly the kind of    ║
+║  person this framework was built for. Welcome.          ║
+║                                                         ║
+║  P.S. The only limit is yourself. — zombo.com (RIP)    ║
+║  P.P.S. Try gandalf.lakera.ai if you haven't already.  ║
+╚══════════════════════════════════════════════════════════╝
+-->
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("ita-theme")||"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}document.documentElement.classList.add("no-transition");</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2L4 8v8c0 7.7 5.1 14.9 12 17 6.9-2.1 12-9.3 12-17V8L16 2z' fill='%230c1222' stroke='%236cb4ff' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='%2334d9c3' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%236cb4ff'/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="https://insiderthreatanalyst.com/ogimage.png">
+<meta property="og:title" content="KSA → NICE Crosswalk (draft) — Insider Threat Analyst Career Framework">
+<meta property="og:description" content="Working draft crosswalk mapping the framework's 144 KSAs to the NICE Framework (NIST SP 800-181r1).">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Working draft (v0.1) crosswalk mapping the Insider Threat Analyst Career Framework's 144 KSAs to the NICE Workforce Framework for Cybersecurity (NIST SP 800-181r1). Not indexed; mapping in progress.">
+<title>KSA → NICE Crosswalk (v0.1 draft) — Insider Threat Analyst Career Framework</title>
+<link rel="canonical" href="https://insiderthreatanalyst.com/crosswalk.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html.no-transition,html.no-transition *,html.no-transition *::before,html.no-transition *::after{transition:none!important}
+[data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0a1628;--fg2:#2a3a52;--fg3:#64748b;--fg4:#64748b;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0d9488;--accent2-bg:#f0fdfa;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08)}
+[data-theme="dark"]{--bg:#0c1222;--bg2:#162032;--bg3:#1e2d44;--fg:#f1f5f9;--fg2:#cbd5e1;--fg3:#94a3b8;--fg4:#94a3b8;--border:#253550;--border2:#3a5070;--accent:#6cb4ff;--accent-bg:#1a3358;--accent2:#34d9c3;--accent2-bg:#0f3d38;--header-bg:#0c1424;--header-fg:#f1f5f9;--card-shadow:0 1px 4px rgba(0,0,0,0.35),0 0 0 1px rgba(100,180,255,0.04)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--fg);background:var(--bg);line-height:1.6;transition:background 0.3s,color 0.3s}
+a{color:var(--accent)}
+.header{background:var(--header-bg);color:var(--header-fg);padding:1.5rem 0;border-bottom:1px solid rgba(108,180,255,0.1)}
+[data-theme="dark"] .header{background:linear-gradient(135deg,#0a0f1e 0%,#121e36 50%,#0e1a2e 100%)}
+.header-inner{max-width:800px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.header h1{font-family:'Source Serif 4',serif;font-size:1.2rem;font-weight:600}
+.header h1 a{color:inherit;text-decoration:none;opacity:0.7}.header h1 a:hover{opacity:1}
+.header-right{display:flex;gap:0.5rem;align-items:center}
+.theme-toggle{background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:var(--header-fg);padding:0.25rem 0.5rem;font-family:inherit;font-size:0.68rem;cursor:pointer}
+.theme-toggle:hover{border-color:rgba(255,255,255,0.4)}
+.accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.site-nav{position:sticky;top:0;z-index:1000}
+.site-nav{background:linear-gradient(180deg,var(--bg3),var(--bg2));border-bottom:1px solid var(--border);padding:0.4rem 0;transition:background 0.3s}
+[data-theme="dark"] .site-nav{background:var(--bg3);border-bottom-color:rgba(108,180,255,0.08)}
+.site-nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0.15rem;align-items:center;flex-wrap:wrap;justify-content:center}
+.site-nav a{color:var(--fg3);text-decoration:none;font-size:0.68rem;font-weight:500;padding:0.25rem 0.6rem;border-radius:5px;transition:all 0.15s;white-space:nowrap}
+.site-nav a:hover{color:var(--fg);background:var(--bg3)}
+[data-theme="dark"] .site-nav a:hover{background:var(--bg2)}
+.site-nav a.nav-active{color:var(--accent);font-weight:600;background:var(--accent-bg)}
+.nav-group{display:flex;align-items:center;gap:0.1rem}
+.nav-group::after{content:'';width:1px;height:1rem;background:var(--border2);margin:0 0.35rem;flex-shrink:0}
+.nav-group:last-child::after{display:none}
+.nav-label{font-size:0.52rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--fg4);margin-right:0.15rem;white-space:nowrap}
+.nav-util .nav-label{display:none}
+.nav-util a{opacity:0.7;font-size:0.62rem}
+.nav-util a:hover{opacity:1}
+.nav-util a.nav-active{opacity:1}
+@media(max-width:768px){.site-nav-inner{gap:0.05rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}.site-nav-inner::-webkit-scrollbar{display:none}.site-nav a{font-size:0.62rem;padding:0.2rem 0.45rem;flex-shrink:0}.nav-label{display:none}.nav-group::after{display:none}.nav-util a{font-size:0.58rem}}
+
+.main{max-width:800px;margin:0 auto;padding:2rem 1.5rem}
+.hero{text-align:center;margin-bottom:2rem}
+.hero h2{font-family:'Source Serif 4',serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem}
+.hero p{font-size:0.85rem;color:var(--fg2);max-width:600px;margin:0 auto;line-height:1.7}
+
+.card{background:var(--bg2);border:1px solid var(--border);border-top:2px solid var(--accent);border-radius:10px;overflow:hidden;box-shadow:var(--card-shadow);margin-bottom:1.5rem}
+[data-theme="dark"] .card{border-color:var(--border);border-left:2px solid var(--accent);box-shadow:var(--card-shadow),0 0 12px rgba(108,180,255,0.08)}
+.card-header{padding:0.55rem 0.9rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg3)}
+.card-title{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg3)}
+.card-body{padding:0.8rem 0.9rem}
+
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.7rem}
+.ref-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.7rem;transition:border-color 0.15s,background 0.3s}
+.ref-card:hover{border-color:var(--accent)}
+.ref-card-title{font-size:0.78rem;font-weight:600;color:var(--fg);margin-bottom:0.15rem}
+.ref-card-title a{color:inherit;text-decoration:none;border-bottom:1px dashed var(--fg4)}
+.ref-card-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.ref-card-desc{font-size:0.7rem;color:var(--fg3);line-height:1.45}
+.ref-card-desc a{color:var(--accent);font-size:0.7rem}
+[data-theme="dark"] .ref-card{border-left:2px solid var(--accent2)}
+[data-theme="dark"] .ref-card:hover{border-left-color:var(--accent)}
+
+.feedback-widget{position:fixed;bottom:1.25rem;right:1.25rem;z-index:100;display:flex;align-items:center;gap:0.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.4rem 0.75rem;box-shadow:0 2px 12px rgba(0,0,0,0.1);font-size:0.7rem;color:var(--fg3);transition:all 0.3s}
+[data-theme="dark"] .feedback-widget{box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.06)}
+.feedback-widget span{white-space:nowrap}
+.feedback-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:0.3rem 0.55rem;cursor:pointer;font-size:1rem;line-height:1;transition:all 0.15s;color:var(--fg)}
+.feedback-btn:hover{transform:scale(1.15);border-color:var(--accent)}
+.feedback-btn.voted{opacity:0.4;pointer-events:none}
+.feedback-thanks{display:none;font-size:0.7rem;color:var(--accent2);font-weight:500}
+@media(max-width:600px){.feedback-widget{bottom:0.75rem;right:0.75rem;padding:0.3rem 0.5rem;font-size:0.62rem}.feedback-btn{font-size:0.85rem;padding:0.2rem 0.4rem}}
+.footer{max-width:800px;margin:2rem auto 1.25rem;padding:0 1.5rem;text-align:center}
+.footer p{font-size:0.62rem;color:var(--fg4)}.footer a{color:var(--fg3);text-decoration:none}.footer a:hover{text-decoration:underline}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:#fff;padding:0.5rem 1rem;z-index:9999;font-size:0.85rem;text-decoration:none;border-radius:0 0 4px 0;transition:top 0.2s}.skip-link:focus{top:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"KSA → NICE Crosswalk (v0.1 draft) — Insider Threat Analyst Career Framework","description":"Working draft crosswalk mapping the framework's 144 KSAs to the NICE Framework (NIST SP 800-181r1).","url":"https://insiderthreatanalyst.com/crosswalk.html","publisher":{"@type":"Organization","name":"Insider Threat Analyst Career Framework","url":"https://insiderthreatanalyst.com"}}</script>
+<script defer src="https://stats.knowles.family/script.js" data-website-id="f4db3639-63ab-4998-93ff-4f0bbe5e10c3"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="header"><div class="header-inner">
+<h1>🔀 KSA → NICE Crosswalk · <a href="index.html">Career Framework</a></h1>
+<div class="header-right">
+<button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()" id="theme-btn">Dark</button>
+</div>
+</div></header>
+
+<div class="accent-stripe"></div>
+<nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
+<div class="nav-group"><span class="nav-label">Explore</span>
+<a href="framework.html">Framework</a>
+<a href="matrix.html">Matrix</a>
+<a href="clusters.html">Clusters</a>
+</div>
+<div class="nav-group"><span class="nav-label">Build &amp; Run</span>
+<a href="program.html">Program</a>
+<a href="emerging.html">Emerging</a>
+</div>
+<div class="nav-group"><span class="nav-label">Grow</span>
+<a href="engagement.html">Engagement</a>
+<a href="maturity.html">Maturity</a>
+</div>
+<div class="nav-group nav-util"><span class="nav-label">About</span>
+<a href="about.html">About</a>
+<a href="start.html">Start Here</a>
+<a href="wellness.html">Wellness</a>
+<a href="governance.html">Site Policy</a>
+<a href="contributors.html">Contributors</a>
+<a href="references.html">References</a>
+<a href="papers/">Papers</a>
+<a href="reviews.html">Reviews</a>
+<a href="changelog.html">Changelog</a>
+<a href="suggest.html">Suggest</a>
+</div>
+</div></nav>
+
+<main class="main" id="main-content">
+
+<style>
+.cw-wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.cw-draft{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.6rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;color:var(--accent2);background:var(--accent2-bg);border:1px solid var(--accent2);border-radius:5px;padding:0.12rem 0.5rem;vertical-align:middle;margin-left:0.5rem}
+.cw-note{font-size:0.72rem;color:var(--fg2);background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:6px;padding:0.7rem 0.9rem;margin:0.9rem 0 1.1rem;line-height:1.55}
+.cw-note b{color:var(--fg)}
+.cw-note code{font-family:'JetBrains Mono',monospace;font-size:0.66rem}
+.cw-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-bottom:1.5rem}
+table.cw{width:100%;border-collapse:collapse;font-size:0.72rem}
+table.cw thead th{position:sticky;top:0;background:var(--header-bg);color:var(--header-fg);text-align:left;padding:0.5rem 0.7rem;font-weight:600;font-size:0.66rem;white-space:nowrap}
+table.cw td{padding:0.45rem 0.7rem;border-top:1px solid var(--border);vertical-align:top}
+table.cw tbody tr:nth-child(even){background:var(--bg3)}
+.cw-id{font-family:'JetBrains Mono',monospace;font-weight:500;color:var(--accent);white-space:nowrap}
+.cw-text{color:var(--fg2);min-width:22rem}
+.cw-tbd{color:var(--fg3);font-style:italic;font-size:0.66rem;white-space:nowrap}
+</style>
+
+<div class="hero cw-wrap">
+<h2>KSA &rarr; NICE Crosswalk <span class="cw-draft">v0.1 &middot; draft</span></h2>
+<p>A working draft mapping the framework's 144 Knowledge, Skill, Ability, and Task statements to the <a href="https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center" target="_blank" rel="noopener">NICE Workforce Framework for Cybersecurity</a> (NIST SP 800-181r1). The NICE Work Role and TKS columns are intentionally blank &mdash; this scaffold captures the KSA rows and the target vocabulary; the mapping itself is pending.</p>
+</div>
+
+<div class="cw-wrap">
+<div class="cw-note"><b>Status &mdash; mapping in progress.</b> This is a structural scaffold (PE-125). The 144 KSA rows below are drawn from the framework's KSA catalogue (<code>framework.html</code>). The <b>NICE Work Role(s)</b> and <b>NICE TKS</b> columns are unpopulated pending a dedicated mapping pass. <b>NICE reference:</b> NICE Framework Components <b>v2.2.0</b> (released 2026-04-28), NIST SP 800-181r1 &mdash; Work Role Categories, Work Roles, Competency Areas, and Task / Knowledge / Skill (TKS) statements. The machine-readable v2.2.0 Work Role and TKS vocabulary is to be ingested from the NIST CPRT export on the mapping pass; it was not retrievable via automated fetch at scaffold time.</div>
+
+<div class="cw-table-wrap">
+<table class="cw">
+<thead><tr><th>KSA ID</th><th>KSA statement</th><th>NICE Work Role(s)</th><th>NICE TKS</th></tr></thead>
+<tbody>
+<tr><td class="cw-id">K0001</td><td class="cw-text">Knowledge of networking (TCP/IP, DNS, DHCP, HTTP/S)</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K0002</td><td class="cw-text">Knowledge of risk management processes and frameworks</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K0784</td><td class="cw-text">Knowledge of insider threat laws and regulations</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K1254</td><td class="cw-text">Knowledge of insider threat hub policies and procedures</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-OS01</td><td class="cw-text">Knowledge of OS fundamentals — user activity logs, file systems, process behavior</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-NET01</td><td class="cw-text">Knowledge of IP addressing, DNS resolution, basic network flow logs</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-BT01</td><td class="cw-text">Skill in recognizing behavioral indicators — affluence, access anomalies, disgruntlement</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-IT01</td><td class="cw-text">Knowledge of program structure, authorities, governance, fusion hub</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-SE01</td><td class="cw-text">Knowledge of social engineering and phishing — how trust is exploited</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-UIT01</td><td class="cw-text">Knowledge of unintentional insider threats — accidental disclosure, phishing victimization, shadow IT</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-CAT01</td><td class="cw-text">Knowledge of CMU threat categories: IP theft, sabotage, fraud, espionage, unintentional</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K0005</td><td class="cw-text">Knowledge of cyber threats and vulnerabilities relevant to org systems</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K0785</td><td class="cw-text">Knowledge of insider threat tools and techniques</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K1253</td><td class="cw-text">Knowledge of information collection tools and techniques</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-SIEM01</td><td class="cw-text">Knowledge of SIEM — log sources, queries (SPL/KQL/Lucene), alert triage</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-EP01</td><td class="cw-text">Knowledge of EDR — alert triage, process trees, forensic artifacts</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-MOB01</td><td class="cw-text">Knowledge of mobile device management and mobile-specific insider vectors</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-GEO01</td><td class="cw-text">Knowledge of geolocation — IP geo, VPN detection, badge/logical correlation, WiFi triangulation</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-MITRE01</td><td class="cw-text">Knowledge of MITRE ATT&amp;CK — TTPs mapped to insider threat scenarios</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-EL01</td><td class="cw-text">Skill in basic elicitation — rapport building, active listening, open-ended questioning</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-FOR01</td><td class="cw-text">Knowledge of evidence handling — chain of custody, preservation, admissibility</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-DLP01</td><td class="cw-text">Knowledge of DLP — network, endpoint, cloud; as one data source in the ecosystem</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-INV01</td><td class="cw-text">Knowledge of investigatory logic — hypotheses, confirmation bias, logical fallacies</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-REM01</td><td class="cw-text">Knowledge of remote/hybrid work insider threat vectors</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-OSINT01</td><td class="cw-text">Knowledge of OSINT concepts — collection, managed attribution, legal boundaries</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-PRIV01</td><td class="cw-text">Awareness of privacy law constraints on monitoring (GDPR, state laws)</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-COMM01</td><td class="cw-text">Skill in clear written communication — case notes, evidence documentation</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K1250</td><td class="cw-text">Knowledge of external org roles (law enforcement, regulators, FS-ISAC)</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K1252</td><td class="cw-text">Knowledge of high value asset characteristics and protection</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">T1439</td><td class="cw-text">Assess behavior of victims, witnesses, or suspects during investigations</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-CTI01</td><td class="cw-text">Knowledge of CTI sources, methods, intelligence lifecycle</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-EL02</td><td class="cw-text">Skill in detecting verbal/nonverbal deception — baselines, stress, cognitive load</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-FOR02</td><td class="cw-text">Knowledge of network forensics — pcap, flow data, DNS, timeline reconstruction</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-BU01</td><td class="cw-text">Ability to collaborate as fusion hub participant</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-MITRE02</td><td class="cw-text">Knowledge of MITRE InT TTP KB — evidence-based techniques, OHIs</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-NET02</td><td class="cw-text">Knowledge of network architecture — VLANs, firewalls, proxies, PAM — trace data end-to-end</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-INV01</td><td class="cw-text">Skill in recognizing own cognitive biases — anchoring, availability, confirmation, groupthink</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-COMM02</td><td class="cw-text">Skill in exec summaries and courtroom-grade case reports</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-OSINT01</td><td class="cw-text">Skill in OSINT investigations — non-attributable accounts, evidence preservation</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-WAVD01</td><td class="cw-text">Knowledge of work avoidance detection — mouse movers, IP-KVMs, overemployment, DPRK TTPs</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-TECH01</td><td class="cw-text">Skill in explaining complex technical scenarios to non-technical audiences</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-MOB01</td><td class="cw-text">Skill in mobile forensics — MDM logs, app sideloading, cloud backup extraction, mobile-specific exfiltration vectors</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-FOR01</td><td class="cw-text">Ability to conduct forensic analysis of digital media — disk, memory, mobile, cloud</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-SYNTH01</td><td class="cw-text">Ability to synthesize multi-source behavioral and technical data into cohesive risk assessments</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-SAT01</td><td class="cw-text">Ability to apply structured analytic techniques (ACH, key assumptions check, red team) under operational pressure</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-MAT01</td><td class="cw-text">Knowledge of maturity models (CMU, NITTF), audit frameworks, regulatory requirements</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-CAG01</td><td class="cw-text">Ability to lead cross-functional crisis action groups</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-DET01</td><td class="cw-text">Skill in designing behavioral detection signatures and UEBA/RBA logic</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-GOV01</td><td class="cw-text">Knowledge of governance — steering committee, oversight mechanisms, investigation thresholds</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-MENT01</td><td class="cw-text">Ability to mentor analysts and develop training curricula</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-FUSE01</td><td class="cw-text">Knowledge of fusion hub design — partnerships, MOUs, liaison programs</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-ETH01</td><td class="cw-text">Knowledge of ethical frameworks — access discipline, confidentiality, oversight</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-OSINT02</td><td class="cw-text">Ability to design OSINT programs with legal guardrails</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-EMRG01</td><td class="cw-text">Knowledge of emerging threats — DPRK, overemployment, AI social engineering, wearable exfiltration (smart glasses), shadow AI, TA integration</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-INTEL01</td><td class="cw-text">Ability to produce finished intelligence products from raw multi-source data</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-EVID01</td><td class="cw-text">Ability to produce courtroom-defensible investigative products with chain-of-custody documentation</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-IRPB01</td><td class="cw-text">Ability to develop and maintain insider-specific incident response playbooks</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-PRG01</td><td class="cw-text">Ability to design and transform programs holistically</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-EXT01</td><td class="cw-text">Skill in external representation — FS-ISAC, SIFMA, government, regulators</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-AI01</td><td class="cw-text">Knowledge of AI/ML for insider threat — "digital employees" as workforce concept</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-EXEC01</td><td class="cw-text">Ability to communicate program value to executives in business terms</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-REG01</td><td class="cw-text">Knowledge of regulatory landscape — SOX, GDPR, CCPA, GLBA, FISMA, NISPOM</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-INTPROG01</td><td class="cw-text">Ability to design intelligence programs — collection plans, requirements, cross-sector sharing leadership</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-TREND01</td><td class="cw-text">Ability to conduct trend analysis across large case datasets to inform enterprise detection strategy</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-T01</td><td class="cw-text">Knowledge of SIEM architecture — onboarding, parsing, extraction</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-T02</td><td class="cw-text">Knowledge of log formats (syslog, WinEvent, JSON, CEF)</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-T01</td><td class="cw-text">Skill in SIEM correlation rules for insider threat</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-T03</td><td class="cw-text">Knowledge of UEBA/RBA — scoring, baselines, anomaly detection</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-T02</td><td class="cw-text">Skill in SPL, KQL, Lucene for complex correlation</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-T04</td><td class="cw-text">Knowledge of DLP architecture — tuning, exceptions, FP reduction</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-T03</td><td class="cw-text">Skill in adapting vendor detection logic to org context</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-T05</td><td class="cw-text">Knowledge of IAM audit — AD, Entra ID, PAM, privilege creep</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-T06</td><td class="cw-text">Knowledge of EDR internals — telemetry, process trees, behavioral engines</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-T01</td><td class="cw-text">Ability to evaluate new detection tech — POC, build-vs-buy</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-T04</td><td class="cw-text">Skill in SOAR/automation for enrichment and triage</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-T02</td><td class="cw-text">Ability to architect enterprise detection strategy</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-T05</td><td class="cw-text">Skill in defining telemetry requirements and coverage metrics</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-H01</td><td class="cw-text">Knowledge of hunting — hypothesis generation, intel vs. data driven</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-H01</td><td class="cw-text">Skill in pivot analysis across SIEM, EDR, IAM, HR, physsec</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-H02</td><td class="cw-text">Knowledge of statistical baselines</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-H02</td><td class="cw-text">Skill in designing detections from hunt findings</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-H03</td><td class="cw-text">Knowledge of persistent insider patterns — slow exfil, staging</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-H04</td><td class="cw-text">Knowledge of network forensic hunting</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-H01</td><td class="cw-text">Ability to lead hunt operations</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-H03</td><td class="cw-text">Skill in hunt reports — technical to business risk</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-H02</td><td class="cw-text">Ability to build a hunting program with metrics</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-C01</td><td class="cw-text">Knowledge of investigation lifecycle</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-C02</td><td class="cw-text">Knowledge of evidence standards</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-C01</td><td class="cw-text">Skill in structured interviews — cognitive method, rapport</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-C03</td><td class="cw-text">Knowledge of elicitation spectrum</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-C02</td><td class="cw-text">Skill in nonverbal analysis — deception cues (Navarro/Houston)</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-C04</td><td class="cw-text">Knowledge of legal constraints on investigations</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-C05</td><td class="cw-text">Knowledge of dead-box forensics sufficient to direct examiners</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-C01</td><td class="cw-text">Ability to manage multi-subject investigations</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-C03</td><td class="cw-text">Skill in courtroom-grade reports</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-C02</td><td class="cw-text">Ability to provide expert testimony and set investigation standards</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-D01</td><td class="cw-text">Knowledge of triage criteria</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-D01</td><td class="cw-text">Skill in scoping investigations</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-D02</td><td class="cw-text">Knowledge of case management systems</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-D02</td><td class="cw-text">Skill in queue management and priority balancing</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-D03</td><td class="cw-text">Knowledge of QA for investigation products</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-D01</td><td class="cw-text">Ability to develop triage frameworks</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-D02</td><td class="cw-text">Ability to design enterprise intake-to-resolution workflows</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-O01</td><td class="cw-text">Knowledge of awareness training and adult learning theory</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-O01</td><td class="cw-text">Skill in targeted awareness campaigns</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-O02</td><td class="cw-text">Knowledge of training regulatory requirements</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-O02</td><td class="cw-text">Skill in external partner engagement</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-O03</td><td class="cw-text">Knowledge of translating technical to business messaging</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-O01</td><td class="cw-text">Ability to build stakeholder programs</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-O02</td><td class="cw-text">Ability to represent program externally</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-M01</td><td class="cw-text">Knowledge of documentation and metrics</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-M01</td><td class="cw-text">Skill in curating research into actionable resources</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-M02</td><td class="cw-text">Skill in maturity assessment</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-M02</td><td class="cw-text">Knowledge of audit processes</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-M01</td><td class="cw-text">Ability to lead audits and produce roadmaps</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-M02</td><td class="cw-text">Ability to design multi-year maturity roadmaps</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-G01</td><td class="cw-text">Knowledge of IR frameworks and escalation</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-G01</td><td class="cw-text">Skill in real-time cross-functional coordination</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S-G02</td><td class="cw-text">Skill in containment decisions under pressure</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K-G02</td><td class="cw-text">Knowledge of legal hold and preservation</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-G01</td><td class="cw-text">Ability to lead CAGs</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">A-G02</td><td class="cw-text">Ability to design and exercise IR playbooks</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K0727</td><td class="cw-text">Knowledge of analysis standards and best practices</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K0835</td><td class="cw-text">Knowledge of risk assessment principles and practices</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S0667</td><td class="cw-text">Skill in assessing security controls</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K0681</td><td class="cw-text">Knowledge of privacy principles and practices</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">T0223</td><td class="cw-text">Review or conduct audits of information technology (IT) programs and projects</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S0085</td><td class="cw-text">Skill in conducting audits or reviews of technical systems</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K0734</td><td class="cw-text">Knowledge of Risk Management Framework (RMF) requirements</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S0423</td><td class="cw-text">Skill in analyzing processes to ensure conformance with procedural requirements</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">S0619</td><td class="cw-text">Skill in auditing technical systems</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">T1306</td><td class="cw-text">Conduct technology program and project audits</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">T1480</td><td class="cw-text">Examine service performance reports for issues and variances</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">T1481</td><td class="cw-text">Initiate corrective actions to service performance issues and variances</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K0800</td><td class="cw-text">Knowledge of evidence admissibility laws and regulations</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">ITA-PA-K01</td><td class="cw-text">Knowledge of insider threat program maturity dimensions — detection, visibility, tooling, communications, reporting/metrics, stakeholder engagement</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">ITA-PA-S01</td><td class="cw-text">Skill in pre-audit program self-assessment and audit-artifact preparation</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K0868</td><td class="cw-text">Knowledge of process improvement principles and practices</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">K0869</td><td class="cw-text">Knowledge of process maturity models and frameworks</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">T1154</td><td class="cw-text">Develop risk, compliance, and assurance monitoring strategies</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">T1155</td><td class="cw-text">Develop risk, compliance, and assurance measurement strategies</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">T1394</td><td class="cw-text">Develop independent cybersecurity audit processes for application software, networks, and systems</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">ITA-PA-A01</td><td class="cw-text">Ability to translate audit findings into prioritized, actionable program improvements</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+<tr><td class="cw-id">ITA-PA-A02</td><td class="cw-text">Ability to serve as primary point of contact during external audit response and remediation</td><td class="cw-tbd">mapping in progress</td><td class="cw-tbd">mapping in progress</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<div class="feedback-widget" id="feedback-widget">
+<span>Helpful?</span>
+<button class="feedback-btn" onclick="sendFeedback('up',this)" title="Yes, this was helpful">👍</button>
+<button class="feedback-btn" onclick="sendFeedback('down',this)" title="Not helpful">👎</button>
+<span class="feedback-thanks" id="feedback-thanks">Thanks!</span>
+</div>
+
+<footer class="footer">
+<p><a href="about.html">About</a> &middot; <a href="program.html">🏛️ Program Hub</a> · <a href="engagement.html">🤝 Engagement</a> · <a href="framework.html">Framework</a> · <a href="suggest.html?from=crosswalk">💬 Suggest</a></p>
+<p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; <a href="https://github.com/robknowles-cybersecurity/insiderthreatanalyst.com" target="_blank" rel="noopener">Source on GitHub&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+<p style="margin-top:0.25rem;font-size:0.58rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.55rem">hello@insiderthreatanalyst.com</a></p>
+</footer>
+<script>
+requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transition')})});
+function toggleTheme(){const h=document.documentElement,t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light':'Dark';document.getElementById('theme-btn').setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');try{localStorage.setItem('ita-theme',t);}catch(e){}}
+function sendFeedback(vote,btn){const w=document.getElementById('feedback-widget');w.querySelectorAll('.feedback-btn').forEach(b=>b.classList.add('voted'));document.getElementById('feedback-thanks').style.display='inline';setTimeout(()=>{w.style.opacity='0';setTimeout(()=>w.style.display='none',400)},1800);const page=location.pathname.replace(/\//g,'').replace('.html','')||'index';fetch('https://ita-feedback.phishcheckboy.workers.dev/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page,vote})}).catch(()=>{});}
+(function(){try{const t=localStorage.getItem('ita-theme');if(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light':'Dark';}}catch(e){}}());
+</script>
+</body>
+</html>
