@@ -36,25 +36,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/ita.css">
 <style>
-html.no-transition,html.no-transition *,html.no-transition *::before,html.no-transition *::after{transition:none!important}
-[data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0a1628;--fg2:#2a3a52;--fg3:#64748b;--fg4:#64748b;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0d9488;--accent2-bg:#f0fdfa;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08)}
-[data-theme="dark"]{--bg:#0c1222;--bg2:#162032;--bg3:#1e2d44;--fg:#f1f5f9;--fg2:#cbd5e1;--fg3:#94a3b8;--fg4:#94a3b8;--border:#253550;--border2:#3a5070;--accent:#6cb4ff;--accent-bg:#1a3358;--accent2:#34d9c3;--accent2-bg:#0f3d38;--header-bg:#0c1424;--header-fg:#f1f5f9;--card-shadow:0 1px 4px rgba(0,0,0,0.35),0 0 0 1px rgba(100,180,255,0.04)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--fg);background:var(--bg);line-height:1.6;transition:background 0.3s,color 0.3s}
-a{color:var(--accent)}
 
-.header{background:var(--header-bg);color:var(--header-fg);padding:1.5rem 0;border-bottom:1px solid rgba(108,180,255,0.1)}
-[data-theme="dark"] .header{background:linear-gradient(135deg,#0a0f1e 0%,#121e36 50%,#0e1a2e 100%)}
 .header-inner{max-width:700px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center}
-.header h1{font-family:'Source Serif 4',serif;font-size:1.2rem;font-weight:600}
-.header h1 a{color:inherit;text-decoration:none;opacity:0.7}.header h1 a:hover{opacity:1}
-.header-right{display:flex;gap:0.5rem;align-items:center}
-.theme-toggle{background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:var(--header-fg);padding:0.25rem 0.5rem;font-family:inherit;font-size:0.68rem;cursor:pointer}
-.theme-toggle:hover{border-color:rgba(255,255,255,0.4)}
 
-.accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
-@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
 .main{max-width:700px;margin:0 auto;padding:2rem 1.5rem}
 
@@ -80,33 +66,9 @@ a{color:var(--accent)}
 [data-theme="dark"] .tag-removed{background:#450a0a;color:#fca5a5}
 
 .footer{max-width:700px;margin:2rem auto 1.25rem;padding:0 1.5rem;text-align:center}
-.footer p{font-size:0.62rem;color:var(--fg4)}.footer a{color:var(--fg3);text-decoration:none}.footer a:hover{text-decoration:underline}
-.btt{position:fixed;right:1.5rem;bottom:4rem;z-index:90;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.2);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s;transform:translateY(8px)}
-.btt.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
-[data-theme="dark"] .btt{background:linear-gradient(135deg,#3b82f6,#6cb4ff);box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.15)}
-@media(max-width:600px){.btt{right:1rem;bottom:3.5rem;width:2rem;height:2rem;font-size:0.85rem}}
-.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:#fff;padding:0.5rem 1rem;z-index:9999;font-size:0.85rem;text-decoration:none;border-radius:0 0 4px 0;transition:top 0.2s}.skip-link:focus{top:0}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-.site-nav{position:sticky;top:0;z-index:1000}
-.site-nav{background:linear-gradient(180deg,var(--bg3),var(--bg2));border-bottom:1px solid var(--border);padding:0.4rem 0;transition:background 0.3s}
 [data-theme="dark"] .site-nav{background:var(--bg3);border-bottom-color:rgba(108,180,255,0.08)}
-.site-nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0.15rem;align-items:center;flex-wrap:wrap;justify-content:center}
-.site-nav a{color:var(--fg3);text-decoration:none;font-size:0.68rem;font-weight:500;padding:0.25rem 0.6rem;border-radius:5px;transition:all 0.15s;white-space:nowrap}
-.site-nav a:hover{color:var(--fg);background:var(--bg3)}
-[data-theme="dark"] .site-nav a:hover{background:var(--bg2)}
-.site-nav a.nav-active{color:var(--accent);font-weight:600;background:var(--accent-bg)}
-.nav-group{display:flex;align-items:center;gap:0.1rem}
-.nav-group::after{content:'';width:1px;height:1rem;background:var(--border2);margin:0 0.35rem;flex-shrink:0}
-.nav-group:last-child::after{display:none}
-.nav-label{font-size:0.52rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--fg4);margin-right:0.15rem;white-space:nowrap}
-.nav-util .nav-label{display:none}
-.nav-util a{opacity:0.7;font-size:0.62rem}
-.nav-util a:hover{opacity:1}
-.nav-util a.nav-active{opacity:1}
-@media(max-width:768px){.site-nav-inner{gap:0.05rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}.site-nav-inner::-webkit-scrollbar{display:none}.site-nav a{font-size:0.62rem;padding:0.2rem 0.45rem;flex-shrink:0}.nav-label{display:none}.nav-group::after{display:none}.nav-util a{font-size:0.58rem}}
 
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Changelog — Insider Threat Analyst Career Framework","description":"Version history and changelog for the Insider Threat Analyst Career Framework.","url":"https://insiderthreatanalyst.com/changelog.html","publisher":{"@type":"Organization","name":"Insider Threat Analyst Career Framework","url":"https://insiderthreatanalyst.com"}}</script>
 <script defer src="https://stats.knowles.family/script.js" data-website-id="f4db3639-63ab-4998-93ff-4f0bbe5e10c3"></script>
@@ -122,33 +84,38 @@ a{color:var(--accent)}
 </div></header>
 
 <div class="accent-stripe"></div>
+<!-- NAV:BEGIN -->
+<!-- GENERATED by tools/build-nav.sh from _nav/nav.html — DO NOT HAND-EDIT.
+     Edit _nav/nav.html and re-run tools/build-nav.sh; changes here are overwritten. -->
 <nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
 <div class="nav-group"><span class="nav-label">Explore</span>
-<a href="framework.html">Framework</a>
-<a href="matrix.html">Matrix</a>
-<a href="clusters.html">Clusters</a>
+<a href="/framework.html">Framework</a>
+<a href="/matrix.html">Matrix</a>
+<a href="/clusters.html">Clusters</a>
 </div>
 <div class="nav-group"><span class="nav-label">Build &amp; Run</span>
-<a href="program.html">Program</a>
-<a href="emerging.html">Emerging</a>
+<a href="/program.html">Program</a>
+<a href="/emerging.html">Emerging</a>
 </div>
 <div class="nav-group"><span class="nav-label">Grow</span>
-<a href="engagement.html">Engagement</a>
-<a href="maturity.html">Maturity</a>
+<a href="/engagement.html">Engagement</a>
+<a href="/maturity.html">Maturity</a>
 </div>
 <div class="nav-group nav-util"><span class="nav-label">About</span>
-<a href="about.html">About</a>
-<a href="start.html">Start Here</a>
-<a href="wellness.html">Wellness</a>
-<a href="governance.html">Site Policy</a>
-<a href="contributors.html">Contributors</a>
-<a href="references.html">References</a>
-<a href="papers/">Papers</a>
-<a href="reviews.html">Reviews</a>
-<a href="changelog.html" class="nav-active">Changelog</a>
-<a href="suggest.html">Suggest</a>
+<a href="/about.html">About</a>
+<a href="/start.html">Start Here</a>
+<a href="/wellness.html">Wellness</a>
+<a href="/governance.html">Site Policy</a>
+<a href="/contributors.html">Contributors</a>
+<a href="/references.html">References</a>
+<a href="/cpe.html">CPE Resources</a>
+<a href="/papers/">Papers</a>
+<a href="/reviews.html">Reviews</a>
+<a href="/changelog.html" class="nav-active">Changelog</a>
+<a href="/suggest.html">Suggest</a>
 </div>
 </div></nav>
+<!-- NAV:END -->
 
 <main class="main" id="main-content">
 
@@ -157,6 +124,84 @@ a{color:var(--accent)}
 <p>Version history for the Insider Threat Analyst Career Framework. This site is actively maintained and updated based on community feedback, new research, and evolving practice.</p>
 </div>
 
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.3.7</span>
+<span class="version-date">2026-08-21</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> <a href="https://insider-intel.net/" target="_blank" rel="noopener">Insider Intel</a> added to the Research &amp; vendor intelligence resources on the <a href="program.html" target="_blank" rel="noopener">Program Hub</a> — insider-threat intelligence distilled from real court cases, mapped to the Insider Threat Matrix.</li>
+<li><span class="change-tag tag-new">New</span> <a href="contributors.html" target="_blank" rel="noopener">Timothy Carreira</a> credited on Contributors for suggesting Insider Intel.</li>
+<li><span class="change-tag tag-fixed">Fixed</span> NITAM theme names in the <a href="references.html" target="_blank" rel="noopener">annotated bibliography</a> brought into line with the v1.3.5/v1.3.6 corrections already made on Stakeholder Engagement — 2021 <strong>Insider Threat and Cultural Awareness</strong> added, 2022 corrected to <strong>Critical Thinking in Digital Spaces</strong>, 2024 corrected to <strong>Detect, Deter, Mitigate</strong>, and the "2026 theme TBD" placeholder replaced with <strong>Protecting Our Potential</strong>.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.3.6</span>
+<span class="version-date">2026-08-12</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-fixed">Fixed</span> Three NITAM theme names on <a href="engagement.html" target="_blank" rel="noopener">Stakeholder Engagement</a> corrected against the CDSE NITAM archives — 2021 is <strong>Insider Threat and Cultural Awareness</strong> (was "Protecting Critical Assets"), 2022 is <strong>Critical Thinking in Digital Spaces</strong> (was "Countering Risk in Digital Spaces"), and 2024 is <strong>Detect, Deter, Mitigate</strong> (the first two pillars had been transposed). The 2024 description now narrates the pillars in the published order.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.3.5</span>
+<span class="version-date">2026-08-12</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-changed">Changed</span> The NITAM timeline on <a href="engagement.html" target="_blank" rel="noopener">Stakeholder Engagement</a> now carries the 2026 theme — <strong>Protecting Our Potential</strong>, under the tagline "One Mission, One Team, One Future" — replacing the TBD placeholder. Entry links through to the CDSE NITAM resources page.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.3.4</span>
+<span class="version-date">2026-08-11</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> Added the Canadian Insider Risk Management Centre of Excellence (CInRM CoE) to <a href="cpe.html" target="_blank" rel="noopener">CPE Resources</a> — a ladder of practical certificates in insider risk management, built with Carleton University's NPSIA, that build toward a professional certificate and carry ASIS-recognized CPE. Suggested by Victor Munro (CInRM CoE Executive Director).</li>
+<li><span class="change-tag tag-new">New</span> Credited Victor Munro on <a href="contributors.html" target="_blank" rel="noopener">Contributors</a>.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.3.3</span>
+<span class="version-date">2026-08-08</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-changed">Changed</span> The combined MITRE entry on <a href="start.html" target="_blank" rel="noopener">Start Here</a> split into two — <strong>MITRE Insider Threat Research &amp; Solutions</strong> (the behavioral risk work) and <strong>MITRE CTID</strong> (the ATT&amp;CK-based TTP work). These are two distinct efforts and had been presented as one. The Insider Threat TTP Knowledge Base link now points to its canonical ctid.mitre.org home.</li>
+<li><span class="change-tag tag-new">New</span> Dr. Deanna D. Caputo (MITRE) added to <a href="contributors.html" target="_blank" rel="noopener">Contributors</a> — identified that the two MITRE efforts were being presented as one.</li>
+<li><span class="change-tag tag-fixed">Fixed</span> <a href="about.html" target="_blank" rel="noopener">About</a> — FS-ISAC Insider Threat Working Group role corrected to <strong>former</strong> chair.</li>
+<li><span class="change-tag tag-changed">Changed</span> Site-wide markup consolidation — the per-page CSS scaffold moved to a single shared stylesheet, and the navigation is now generated from one source file rather than hand-copied into every page. No visible content change.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
+<span class="version-tag">v1.3.2</span>
+<span class="version-date">2026-07-20</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> Jessica Wren added to <a href="contributors.html" target="_blank" rel="noopener">Contributors</a> — suggested the <a href="cpe.html" target="_blank" rel="noopener">CPE Resources</a> page.</li>
+</ul>
+</div>
+</div>
 
 <div class="version">
 <div class="version-header">

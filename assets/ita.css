@@ -1,0 +1,143 @@
+/* ==========================================================================
+   ita.css — shared scaffold stylesheet for insiderthreatanalyst.com
+   PE-176 (shared include) / PE-177 (prose justification)
+
+   WHAT BELONGS HERE
+     The site scaffold that is genuinely common to every page: theme palettes,
+     reset, base typography, the site nav, header/footer chrome, the feedback
+     widget, back-to-top, accessibility affordances, and the .prose class.
+
+   WHAT DOES NOT BELONG HERE
+     Page-specific components (.threat-body, .step, .level-card, .ksa-*, the
+     matrix/framework colour scales, ...). Those stay in each page's inline
+     <style> block.
+
+   CASCADE CONTRACT — IMPORTANT
+     Every page links this file IMMEDIATELY BEFORE its own inline <style>.
+     Same specificity, so source order decides: a page's inline rule always
+     wins over the rule here. That is deliberate. It is how the intentional
+     per-page variations survive this refactor, e.g.
+       - framework.html  keeps its 1.75rem hero-style header
+       - index.html      keeps its 1.5rem centred header
+       - matrix.html     keeps its own --fg/--fg2 palette overrides
+     Those are design intent, not drift. Do not "normalise" them.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   1. THEME PALETTES
+   Base palette, byte-identical across 12 of the 19 top-level pages. Pages
+   that need extra tokens (--green, --ksa-*, --c1..--c5, ...) declare only
+   the additions in their own inline block; they inherit everything here.
+   -------------------------------------------------------------------------- */
+[data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0a1628;--fg2:#2a3a52;--fg3:#64748b;--fg4:#64748b;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0d9488;--accent2-bg:#f0fdfa;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08)}
+[data-theme="dark"]{--bg:#0c1222;--bg2:#162032;--bg3:#1e2d44;--fg:#f1f5f9;--fg2:#cbd5e1;--fg3:#94a3b8;--fg4:#94a3b8;--border:#253550;--border2:#3a5070;--accent:#6cb4ff;--accent-bg:#1a3358;--accent2:#34d9c3;--accent2-bg:#0f3d38;--header-bg:#0c1424;--header-fg:#f1f5f9;--card-shadow:0 1px 4px rgba(0,0,0,0.35),0 0 0 1px rgba(100,180,255,0.04)}
+
+
+/* --------------------------------------------------------------------------
+   2. RESET + BASE TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--fg);background:var(--bg);line-height:1.6;transition:background 0.3s,color 0.3s}
+a{color:var(--accent)}
+html.no-transition,html.no-transition *,html.no-transition *::before,html.no-transition *::after{transition:none!important}
+
+
+/* --------------------------------------------------------------------------
+   3. PROSE  (PE-177)
+   Opt-in body-copy class. Justified WITH hyphenation on desktop only.
+
+   Justify without hyphens:auto produces rivers — inter-word gaps stretched to
+   force a flush edge — which reads worse than ragged-right on this site's
+   link-dense, long-proper-noun copy. The two must ship together. hyphens:auto
+   is also silent without lang="en" on <html>; that is present on all pages.
+
+   Below 769px the measure is too narrow for justification to ever look clean,
+   so mobile stays ragged-right.
+   -------------------------------------------------------------------------- */
+.prose{font-size:0.85rem;color:var(--fg2);line-height:1.75;margin-bottom:1rem}
+@media(min-width:769px){
+  .prose{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+}
+
+
+/* --------------------------------------------------------------------------
+   4. HEADER  (base treatment — framework.html and index.html override)
+   -------------------------------------------------------------------------- */
+.header{background:var(--header-bg);color:var(--header-fg);padding:1.5rem 0;border-bottom:1px solid rgba(108,180,255,0.1)}
+[data-theme="dark"] .header{background:linear-gradient(135deg,#0a0f1e 0%,#121e36 50%,#0e1a2e 100%)}
+.header h1{font-family:'Source Serif 4',serif;font-size:1.2rem;font-weight:600}
+.header h1 a{color:inherit;text-decoration:none;opacity:0.7}.header h1 a:hover{opacity:1}
+.header-right{display:flex;gap:0.5rem;align-items:center}
+.theme-toggle{background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:var(--header-fg);padding:0.25rem 0.5rem;font-family:inherit;font-size:0.68rem;cursor:pointer}
+.theme-toggle:hover{border-color:rgba(255,255,255,0.4)}
+
+
+/* --------------------------------------------------------------------------
+   5. SITE NAV
+   Markup for this is generated — see _nav/nav.html + tools/build-nav.sh.
+   -------------------------------------------------------------------------- */
+.site-nav{position:sticky;top:0;z-index:1000}
+.site-nav{background:linear-gradient(180deg,var(--bg3),var(--bg2));border-bottom:1px solid var(--border);padding:0.4rem 0;transition:background 0.3s}
+.site-nav{background:var(--bg3);border-bottom-color:rgba(108,180,255,0.08)}
+.site-nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0.15rem;align-items:center;flex-wrap:wrap;justify-content:center}
+.site-nav a{color:var(--fg3);text-decoration:none;font-size:0.68rem;font-weight:500;padding:0.25rem 0.6rem;border-radius:5px;transition:all 0.15s;white-space:nowrap}
+.site-nav a:hover{color:var(--fg);background:var(--bg3)}
+[data-theme="dark"] .site-nav a:hover{background:var(--bg2)}
+.site-nav a.nav-active{color:var(--accent);font-weight:600;background:var(--accent-bg)}
+.nav-group{display:flex;align-items:center;gap:0.1rem}
+.nav-group::after{content:'';width:1px;height:1rem;background:var(--border2);margin:0 0.35rem;flex-shrink:0}
+.nav-group:last-child::after{display:none}
+.nav-label{font-size:0.52rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--fg4);margin-right:0.15rem;white-space:nowrap}
+.nav-util .nav-label{display:none}
+.nav-util a{opacity:0.7;font-size:0.62rem}
+.nav-util a:hover{opacity:1}
+.nav-util a.nav-active{opacity:1}
+@media(max-width:768px){.site-nav-inner{gap:0.05rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}.site-nav-inner::-webkit-scrollbar{display:none}.site-nav a{font-size:0.62rem;padding:0.2rem 0.45rem;flex-shrink:0}.nav-label{display:none}.nav-group::after{display:none}.nav-util a{font-size:0.58rem}}
+
+
+/* --------------------------------------------------------------------------
+   6. ACCENT STRIPE
+   -------------------------------------------------------------------------- */
+.accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
+[data-theme="dark"] .accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+
+/* --------------------------------------------------------------------------
+   7. FOOTER
+   -------------------------------------------------------------------------- */
+.footer{max-width:800px;margin:2rem auto 1.25rem;padding:0 1.5rem;text-align:center}
+.footer p{font-size:0.62rem;color:var(--fg4)}.footer a{color:var(--fg3);text-decoration:none}.footer a:hover{text-decoration:underline}
+
+
+/* --------------------------------------------------------------------------
+   8. FEEDBACK WIDGET
+   Absent by design on about.html, changelog.html and reviews.html — these
+   rules simply match nothing there.
+   -------------------------------------------------------------------------- */
+.feedback-widget{position:fixed;bottom:1.25rem;right:1.25rem;z-index:100;display:flex;align-items:center;gap:0.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.4rem 0.75rem;box-shadow:0 2px 12px rgba(0,0,0,0.1);font-size:0.7rem;color:var(--fg3);transition:all 0.3s}
+[data-theme="dark"] .feedback-widget{box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.06)}
+.feedback-widget span{white-space:nowrap}
+.feedback-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:0.3rem 0.55rem;cursor:pointer;font-size:1rem;line-height:1;transition:all 0.15s;color:var(--fg)}
+.feedback-btn:hover{transform:scale(1.15);border-color:var(--accent)}
+.feedback-btn.voted{opacity:0.4;pointer-events:none}
+.feedback-thanks{display:none;font-size:0.7rem;color:var(--accent2);font-weight:500}
+
+
+/* --------------------------------------------------------------------------
+   9. BACK TO TOP
+   -------------------------------------------------------------------------- */
+.btt{position:fixed;right:1.5rem;bottom:4rem;z-index:90;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.2);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s;transform:translateY(8px)}
+.btt.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{opacity:1;transform:translateY(-2px)}
+[data-theme="dark"] .btt{background:linear-gradient(135deg,#3b82f6,#6cb4ff);box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.15)}
+@media(max-width:600px){.btt{right:1rem;bottom:3.5rem;width:2rem;height:2rem;font-size:0.85rem}}
+
+
+/* --------------------------------------------------------------------------
+   10. ACCESSIBILITY
+   -------------------------------------------------------------------------- */
+.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:#fff;padding:0.5rem 1rem;z-index:9999;font-size:0.85rem;text-decoration:none;border-radius:0 0 4px 0;transition:top 0.2s}.skip-link:focus{top:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

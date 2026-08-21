@@ -41,14 +41,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha384-JcnsjUPPylna1s1fvi1u12X5qjY5OL56iySh75FdtrwhO/SWXgMjoVqcKyIIWOLk" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/ita.css">
 <style>
-html.no-transition,html.no-transition *,html.no-transition *::before,html.no-transition *::after{transition:none!important}
 [data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0a1628;--fg2:#2a3a52;--fg3:#64748b;--fg4:#64748b;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0d9488;--accent2-bg:#f0fdfa;--accent2-dark:#115e59;--tab-active:#2563eb;--tab-bg:#f1f5f9;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08);--tooltip-bg:#0f172a;--tooltip-fg:#f1f5f9;--highlight:#fef9c3;--ksa-nice-bg:#dbeafe;--ksa-nice-fg:#1e40af;--ksa-custom-bg:#ccfbf1;--ksa-custom-fg:#115e59;--ksa-adj-bg:#fae8ff;--ksa-adj-fg:#7e22ce;--c1:#dbeafe;--c1f:#1e40af;--c2:#ccfbf1;--c2f:#115e59;--c3:#fef3c7;--c3f:#92400e;--c4:#ede9fe;--c4f:#5b21b6;--c5:#fee2e2;--c5f:#991b1b}
 [data-theme="dark"]{--bg:#0c1222;--bg2:#162032;--bg3:#1e2d44;--fg:#f1f5f9;--fg2:#cbd5e1;--fg3:#94a3b8;--fg4:#94a3b8;--border:#253550;--border2:#3a5070;--accent:#6cb4ff;--accent-bg:#1a3358;--accent2:#34d9c3;--accent2-bg:#0f3d38;--accent2-dark:#5eead4;--tab-active:#6cb4ff;--tab-bg:#162032;--header-bg:linear-gradient(135deg,#0a0f1e 0%,#121e36 50%,#0e1a2e 100%);--header-bg-flat:#0c1424;--header-fg:#f1f5f9;--card-shadow:0 1px 4px rgba(0,0,0,0.35),0 0 0 1px rgba(100,180,255,0.04);--tooltip-bg:#f1f5f9;--tooltip-fg:#0f172a;--highlight:#854d0e;--ksa-nice-bg:#172e52;--ksa-nice-fg:#7dbaff;--ksa-custom-bg:#0e3630;--ksa-custom-fg:#4ae8d0;--ksa-adj-bg:#2d1054;--ksa-adj-fg:#c9a8ff;--c1:#172e52;--c1f:#7dbaff;--c2:#0e3630;--c2f:#4ae8d0;--c3:#5c2d0a;--c3f:#f59e0b;--c4:#2d1054;--c4f:#c4b5fd;--c5:#5c1a1a;--c5f:#fca5a5;--glow-accent:rgba(108,180,255,0.08);--glow-teal:rgba(52,217,195,0.06)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;color:var(--fg);background:var(--bg);line-height:1.6;transition:background 0.3s,color 0.3s}
-a{color:var(--accent)}
 .header{background:var(--header-bg);color:var(--header-fg);padding:2.25rem 0 1.5rem;border-bottom:1px solid rgba(108,180,255,0.1)}
 [data-theme="dark"] .card{border-color:var(--border);border-left:2px solid var(--accent);box-shadow:var(--card-shadow),0 0 12px var(--glow-accent)}
 [data-theme="dark"] .conc-bar{border-left:3px solid var(--accent2);background:linear-gradient(90deg,var(--glow-teal),var(--bg2) 70%)}
@@ -61,26 +59,6 @@ a{color:var(--accent)}
 [data-theme="dark"] .lang-item{border-color:var(--border)}
 [data-theme="dark"] .btn-primary{background:linear-gradient(135deg,#3b82f6,#6cb4ff);border:none}
 [data-theme="dark"] .sticky-controls{border-bottom-color:rgba(108,180,255,0.12);box-shadow:0 2px 12px rgba(0,0,0,0.3)}
-.accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
-@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.site-nav{position:sticky;top:0;z-index:1000}
-.site-nav{background:linear-gradient(180deg,var(--bg3),var(--bg2));border-bottom:1px solid var(--border);padding:0.4rem 0;transition:background 0.3s}
-[data-theme="dark"] .accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
-.site-nav{background:var(--bg3);border-bottom-color:rgba(108,180,255,0.08)}
-.site-nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0.15rem;align-items:center;flex-wrap:wrap;justify-content:center}
-.site-nav a{color:var(--fg3);text-decoration:none;font-size:0.68rem;font-weight:500;padding:0.25rem 0.6rem;border-radius:5px;transition:all 0.15s;white-space:nowrap}
-.site-nav a:hover{color:var(--fg);background:var(--bg3)}
-[data-theme="dark"] .site-nav a:hover{background:var(--bg2)}
-.site-nav a.nav-active{color:var(--accent);font-weight:600;background:var(--accent-bg)}
-.nav-group{display:flex;align-items:center;gap:0.1rem}
-.nav-group::after{content:'';width:1px;height:1rem;background:var(--border2);margin:0 0.35rem;flex-shrink:0}
-.nav-group:last-child::after{display:none}
-.nav-label{font-size:0.52rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--fg4);margin-right:0.15rem;white-space:nowrap}
-.nav-util .nav-label{display:none}
-.nav-util a{opacity:0.7;font-size:0.62rem}
-.nav-util a:hover{opacity:1}
-.nav-util a.nav-active{opacity:1}
-@media(max-width:768px){.site-nav-inner{gap:0.05rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}.site-nav-inner::-webkit-scrollbar{display:none}.site-nav a{font-size:0.62rem;padding:0.2rem 0.45rem;flex-shrink:0}.nav-label{display:none}.nav-group::after{display:none}.nav-util a{font-size:0.58rem}}
 .classified-mode .ksa-item,.classified-mode .ref-card-desc,.classified-mode .tool-tip,.classified-mode .step-desc,.classified-mode .faq-a{color:transparent;background:var(--fg);border-radius:2px;user-select:none;transition:all 0.3s}
 .classified-mode .ksa-item *,.classified-mode .ref-card-desc *{color:transparent}
 .classified-mode .header h1::after{content:' [CLASSIFIED]';color:#ef4444;font-size:0.7em;font-weight:400}
@@ -88,13 +66,7 @@ a{color:var(--accent)}
 @keyframes redact{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
 .classified-mode .ksa-item{animation:redact 0.15s ease forwards}
 [data-theme="dark"] .classified-mode .ksa-item,[data-theme="dark"] .classified-mode .ref-card-desc,[data-theme="dark"] .classified-mode .tool-tip,[data-theme="dark"] .classified-mode .step-desc,[data-theme="dark"] .classified-mode .faq-a{background:#1a0505;border:1px solid rgba(239,68,68,0.3)}
-.feedback-widget{position:fixed;bottom:1.25rem;right:1.25rem;z-index:100;display:flex;align-items:center;gap:0.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.4rem 0.75rem;box-shadow:0 2px 12px rgba(0,0,0,0.1);font-size:0.7rem;color:var(--fg3);transition:all 0.3s}
 .feedback-widget{box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.06)}
-.feedback-widget span{white-space:nowrap}
-.feedback-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:0.3rem 0.55rem;cursor:pointer;font-size:1rem;line-height:1;transition:all 0.15s;color:var(--fg)}
-.feedback-btn:hover{transform:scale(1.15);border-color:var(--accent)}
-.feedback-btn.voted{opacity:0.4;pointer-events:none}
-.feedback-thanks{display:none;font-size:0.7rem;color:var(--accent2);font-weight:500}
 @media(max-width:600px){.accent-stripe{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));background-size:200% 100%;animation:shimmer 8s ease infinite}
 .feedback-widget{bottom:0.75rem;right:0.75rem;padding:0.3rem 0.5rem;font-size:0.62rem}.feedback-btn{font-size:0.85rem;padding:0.2rem 0.4rem}}
 .header-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:flex-start}
@@ -247,7 +219,6 @@ a{color:var(--accent)}
 .form-label{display:block;font-size:0.62rem;font-weight:600;color:var(--fg3);margin-bottom:0.15rem}
 
 .footer{max-width:1100px;margin:2rem auto 1.25rem;padding:0 1.5rem;text-align:center}
-.footer p{font-size:0.62rem;color:var(--fg4)}.footer a{color:var(--fg3);text-decoration:none}.footer a:hover{text-decoration:underline}
 
 .modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:100;align-items:center;justify-content:center}
 .modal-overlay.active{display:flex}
@@ -339,15 +310,7 @@ a{color:var(--accent)}
 .video-title a{color:inherit;text-decoration:none;font-weight:500;border-bottom:1px dashed var(--fg4)}
 .video-title a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .video-desc{font-size:0.7rem;color:var(--fg3);margin-top:0.1rem}
-.btt{position:fixed;right:1.5rem;bottom:4rem;z-index:90;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.2);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s;transform:translateY(8px)}
-.btt.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
-.btt:hover{opacity:1;transform:translateY(-2px)}
-[data-theme="dark"] .btt{background:linear-gradient(135deg,#3b82f6,#6cb4ff);box-shadow:0 2px 12px rgba(0,0,0,0.4),0 0 8px rgba(108,180,255,0.15)}
-@media(max-width:600px){.btt{right:1rem;bottom:3.5rem;width:2rem;height:2rem;font-size:0.85rem}}
-.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:#fff;padding:0.5rem 1rem;z-index:9999;font-size:0.85rem;text-decoration:none;border-radius:0 0 4px 0;transition:top 0.2s}.skip-link:focus{top:0}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Framework Explorer — Insider Threat Analyst Career Framework","description":"Interactive framework explorer: KSAs, certifications, tools, program design, and career pathways for insider threat analysts.","url":"https://insiderthreatanalyst.com/framework.html","publisher":{"@type":"Organization","name":"Insider Threat Analyst Career Framework","url":"https://insiderthreatanalyst.com"}}</script>
 <script defer src="https://stats.knowles.family/script.js" data-website-id="f4db3639-63ab-4998-93ff-4f0bbe5e10c3"></script>
@@ -370,33 +333,38 @@ a{color:var(--accent)}
 </div></header>
 
 <div class="accent-stripe"></div>
+<!-- NAV:BEGIN -->
+<!-- GENERATED by tools/build-nav.sh from _nav/nav.html — DO NOT HAND-EDIT.
+     Edit _nav/nav.html and re-run tools/build-nav.sh; changes here are overwritten. -->
 <nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
 <div class="nav-group"><span class="nav-label">Explore</span>
-<a href="framework.html" class="nav-active">Framework</a>
-<a href="matrix.html">Matrix</a>
-<a href="clusters.html">Clusters</a>
+<a href="/framework.html" class="nav-active">Framework</a>
+<a href="/matrix.html">Matrix</a>
+<a href="/clusters.html">Clusters</a>
 </div>
 <div class="nav-group"><span class="nav-label">Build &amp; Run</span>
-<a href="program.html">Program</a>
-<a href="emerging.html">Emerging</a>
+<a href="/program.html">Program</a>
+<a href="/emerging.html">Emerging</a>
 </div>
 <div class="nav-group"><span class="nav-label">Grow</span>
-<a href="engagement.html">Engagement</a>
-<a href="maturity.html">Maturity</a>
+<a href="/engagement.html">Engagement</a>
+<a href="/maturity.html">Maturity</a>
 </div>
 <div class="nav-group nav-util"><span class="nav-label">About</span>
-<a href="about.html">About</a>
-<a href="start.html">Start Here</a>
-<a href="wellness.html">Wellness</a>
-<a href="governance.html">Site Policy</a>
-<a href="contributors.html">Contributors</a>
-<a href="references.html">References</a>
-<a href="papers/">Papers</a>
-<a href="reviews.html">Reviews</a>
-<a href="changelog.html">Changelog</a>
-<a href="suggest.html">Suggest</a>
+<a href="/about.html">About</a>
+<a href="/start.html">Start Here</a>
+<a href="/wellness.html">Wellness</a>
+<a href="/governance.html">Site Policy</a>
+<a href="/contributors.html">Contributors</a>
+<a href="/references.html">References</a>
+<a href="/cpe.html">CPE Resources</a>
+<a href="/papers/">Papers</a>
+<a href="/reviews.html">Reviews</a>
+<a href="/changelog.html">Changelog</a>
+<a href="/suggest.html">Suggest</a>
 </div>
 </div></nav>
+<!-- NAV:END -->
 
 <div style="max-width:1100px;margin:0 auto;padding:0.5rem 1.5rem 0;font-size:0.78rem;color:var(--fg3);text-align:center;line-height:1.5">
 Pick a concentration and level to explore KSAs, certs, tools, and training for that role.
@@ -670,7 +638,7 @@ w.querySelectorAll('.feedback-btn').forEach(b=>b.classList.add('voted'));
 document.getElementById('feedback-thanks').style.display='inline';
 setTimeout(()=>{w.style.opacity='0';setTimeout(()=>w.style.display='none',400)},1800);
 const page=location.pathname.replace(/\//g,'').replace('.html','')||'index';
-fetch('https://ita-feedback.phishcheckboy.workers.dev/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page,vote})}).catch(()=>{});
+fetch('https://feedback.insiderthreatanalyst.com/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page,vote})}).catch(()=>{});
 }
 
 const LV=['Junior analyst','Analyst','Senior analyst','Lead / principal','Senior principal'],LY=['0-2 years','2-5 years','5-8 years','8-12 years','12+ years'];

@@ -1,0 +1,46 @@
+<!--
+  CANONICAL SITE NAV — single source of truth (PE-176).
+
+  This is the ONLY place the ITA site nav is defined. To change the nav:
+    1. edit this file
+    2. run  tools/build-nav.sh
+    3. commit the result
+
+  Do NOT hand-edit the nav inside individual pages. The generated block in
+  each page is delimited by NAV:BEGIN / NAV:END markers and is overwritten
+  on every build.
+
+  hrefs are ROOT-ABSOLUTE (/framework.html, not framework.html) so this one
+  fragment is correct from any directory depth (papers/, talks/, ...).
+
+  The build script injects class="nav-active" on the link matching the page
+  being generated; do not add nav-active here.
+-->
+<nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
+<div class="nav-group"><span class="nav-label">Explore</span>
+<a href="/framework.html">Framework</a>
+<a href="/matrix.html">Matrix</a>
+<a href="/clusters.html">Clusters</a>
+</div>
+<div class="nav-group"><span class="nav-label">Build &amp; Run</span>
+<a href="/program.html">Program</a>
+<a href="/emerging.html">Emerging</a>
+</div>
+<div class="nav-group"><span class="nav-label">Grow</span>
+<a href="/engagement.html">Engagement</a>
+<a href="/maturity.html">Maturity</a>
+</div>
+<div class="nav-group nav-util"><span class="nav-label">About</span>
+<a href="/about.html">About</a>
+<a href="/start.html">Start Here</a>
+<a href="/wellness.html">Wellness</a>
+<a href="/governance.html">Site Policy</a>
+<a href="/contributors.html">Contributors</a>
+<a href="/references.html">References</a>
+<a href="/cpe.html">CPE Resources</a>
+<a href="/papers/">Papers</a>
+<a href="/reviews.html">Reviews</a>
+<a href="/changelog.html">Changelog</a>
+<a href="/suggest.html">Suggest</a>
+</div>
+</div></nav>
