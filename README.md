@@ -24,6 +24,15 @@ This project is split across two licenses:
 - **Content** (framework text, KSA data, written material) — CC BY 4.0, see
   [`LICENSE-CONTENT.md`](LICENSE-CONTENT.md)
 
+## Search index
+
+On-site search is powered by [Pagefind](https://pagefind.app) 1.5.2, pinned in
+`package.json`. The index itself is a generated build artifact: it is produced at
+deploy time under `/pagefind/` and is **not committed to this repository**, so the
+`/pagefind/` paths referenced by `assets/search.js` will not resolve here. The
+tooling that generates it is not mirrored either — `tools/build-nav.sh` is the only
+build script published.
+
 ## Credits
 
 Contributor credits are maintained on the site at
