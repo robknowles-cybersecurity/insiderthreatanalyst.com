@@ -6,7 +6,7 @@
 .site-nav .nav-search-btn{display:inline-flex;align-items:center;gap:0.35rem;background:none;border:1px solid var(--border);cursor:pointer;font-family:inherit;color:var(--fg3);font-size:0.68rem;font-weight:500;padding:0.22rem 0.6rem;border-radius:5px;transition:all 0.15s;white-space:nowrap}
 .site-nav .nav-search-btn:hover{color:var(--fg);background:var(--bg3);border-color:var(--border2)}
 [data-theme="dark"] .site-nav .nav-search-btn:hover{background:var(--bg2)}
-.site-nav .nav-search-btn kbd{font-family:'JetBrains Mono',monospace;font-size:0.58rem;line-height:1.3;border:1px solid var(--border);border-radius:3px;padding:0 0.25rem;color:var(--fg3)}
+.site-nav .nav-search-btn kbd{font-family:var(--font-mono);font-size:0.58rem;line-height:1.3;border:1px solid var(--border);border-radius:3px;padding:0 0.25rem;color:var(--fg3)}
 @media(max-width:768px){.site-nav .nav-search-btn{font-size:0.62rem;padding:0.2rem 0.45rem;flex-shrink:0}.site-nav .nav-search-btn kbd{display:none}}
 
 /* Overlay + panel */
@@ -14,14 +14,14 @@
 .ita-search-overlay[hidden]{display:none}
 .ita-search-panel{width:100%;max-width:640px;max-height:80vh;overflow:auto;background:var(--bg2);color:var(--fg);border:1px solid var(--border);border-radius:10px;box-shadow:var(--card-shadow),0 12px 40px rgba(0,0,0,0.35);padding:1rem 1.15rem}
 .ita-search-head{display:flex;align-items:center;justify-content:space-between;gap:0.75rem;margin-bottom:0.6rem}
-.ita-search-title{font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;color:var(--fg2);text-transform:uppercase;letter-spacing:0.06em}
+.ita-search-title{font-family:var(--font-sans);font-size:0.78rem;font-weight:600;color:var(--fg2);text-transform:uppercase;letter-spacing:0.06em}
 .ita-search-close{background:none;border:1px solid var(--border);border-radius:5px;color:var(--fg3);font-family:inherit;font-size:0.68rem;padding:0.2rem 0.55rem;cursor:pointer}
 .ita-search-close:hover{color:var(--fg);border-color:var(--border2)}
 .ita-search-status{font-size:0.78rem;color:var(--fg3);padding:0.5rem 0}
 
 /* Pagefind UI theming: map its custom properties onto the site tokens so both
    themes come for free — the tokens themselves flip under [data-theme]. */
-.ita-search-panel .pagefind-ui{--pagefind-ui-scale:0.85;--pagefind-ui-primary:var(--accent);--pagefind-ui-text:var(--fg);--pagefind-ui-background:var(--bg2);--pagefind-ui-border:var(--border);--pagefind-ui-tag:var(--accent-bg);--pagefind-ui-border-width:1px;--pagefind-ui-border-radius:6px;--pagefind-ui-font:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif}
+.ita-search-panel .pagefind-ui{--pagefind-ui-scale:0.85;--pagefind-ui-primary:var(--accent);--pagefind-ui-text:var(--fg);--pagefind-ui-background:var(--bg2);--pagefind-ui-border:var(--border);--pagefind-ui-tag:var(--accent-bg);--pagefind-ui-border-width:1px;--pagefind-ui-border-radius:6px;--pagefind-ui-font:var(--font-sans)}
 
 /* PE-247: sub-results. PagefindUI nests up to three matching sections under a
    result; the vendored stylesheet leaves them almost unstyled, so without this

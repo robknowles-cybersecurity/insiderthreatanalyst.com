@@ -38,7 +38,14 @@
    2. RESET + BASE TYPOGRAPHY
    -------------------------------------------------------------------------- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--fg);background:var(--bg);line-height:1.6;transition:background 0.3s,color 0.3s}
+/* System font stacks — PE-125 v1.5.0. The site loads NO third-party fonts.
+   No external origin is contacted for typography on any page: the Google
+   Fonts links and preconnects were removed sitewide in v1.5.0. Defined once,
+   here, and referenced as var(--font-*) by every page and by search.css.
+   Keep it that way — adding a hosted-font <link> reintroduces an external
+   origin and the v1.5.0 verifier will fail on it. */
+:root{--font-sans:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif;--font-serif:Georgia,Cambria,'Times New Roman',Times,serif;--font-mono:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);color:var(--fg);background:var(--bg);line-height:1.6;transition:background 0.3s,color 0.3s}
 a{color:var(--accent)}
 html.no-transition,html.no-transition *,html.no-transition *::before,html.no-transition *::after{transition:none!important}
 
@@ -66,7 +73,7 @@ html.no-transition,html.no-transition *,html.no-transition *::before,html.no-tra
    -------------------------------------------------------------------------- */
 .header{background:var(--header-bg);color:var(--header-fg);padding:1.5rem 0;border-bottom:1px solid rgba(108,180,255,0.1)}
 [data-theme="dark"] .header{background:linear-gradient(135deg,#0a0f1e 0%,#121e36 50%,#0e1a2e 100%)}
-.header h1{font-family:'Source Serif 4',serif;font-size:1.2rem;font-weight:600}
+.header h1{font-family:var(--font-serif);font-size:1.2rem;font-weight:600}
 .header h1 a{color:inherit;text-decoration:none;opacity:0.7}.header h1 a:hover{opacity:1}
 .header-right{display:flex;gap:0.5rem;align-items:center}
 .theme-toggle{background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:var(--header-fg);padding:0.25rem 0.5rem;font-family:inherit;font-size:0.68rem;cursor:pointer}

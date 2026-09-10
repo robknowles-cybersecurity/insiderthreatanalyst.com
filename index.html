@@ -35,21 +35,18 @@
 <meta property="og:description" content="The practitioner's swiss army knife for insider threat. KSAs, certs, tools, program design, and career paths.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://insiderthreatanalyst.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/ita.css">
 <style>
 
 .header{background:var(--header-bg);color:var(--header-fg);padding:2rem 0;border-bottom:1px solid rgba(108,180,255,0.1)}
 .header-inner{max-width:800px;margin:0 auto;padding:0 1.5rem;text-align:center}
-.header h1{font-family:'Source Serif 4',serif;font-size:1.5rem;font-weight:600;margin-bottom:0.35rem}
+.header h1{font-family:var(--font-serif);font-size:1.5rem;font-weight:600;margin-bottom:0.35rem}
 .header .subtitle{font-size:0.82rem;color:rgba(248,250,252,0.7);line-height:1.5;max-width:550px;margin:0 auto}
 .header-right{display:flex;gap:0.5rem;align-items:center;justify-content:center;margin-top:0.75rem}
 .header-right a{color:var(--header-fg);text-decoration:none;font-size:0.68rem;opacity:0.7;padding:0.2rem 0.55rem;border:1px solid rgba(255,255,255,0.15);border-radius:6px}
 .header-right a:hover{opacity:1;border-color:rgba(255,255,255,0.4)}
 .theme-toggle{background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:var(--header-fg);padding:0.2rem 0.55rem;font-family:inherit;font-size:0.68rem;cursor:pointer}
-.badge{font-family:'JetBrains Mono',monospace;font-size:0.6rem;padding:2px 6px;border-radius:3px;background:#16a34a;color:#fff;vertical-align:middle;margin-left:0.3rem}
+.badge{font-family:var(--font-mono);font-size:0.6rem;padding:2px 6px;border-radius:3px;background:#16a34a;color:#fff;vertical-align:middle;margin-left:0.3rem}
 
 [data-theme="dark"] .site-nav{background:var(--bg3);border-bottom-color:rgba(108,180,255,0.08)}
 
@@ -60,7 +57,7 @@
 .pathway:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
 [data-theme="dark"] .pathway{box-shadow:var(--card-shadow),0 0 12px rgba(52,217,195,0.04)}
 [data-theme="dark"] .pathway:hover{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 12px rgba(108,180,255,0.08)}
-.pathway-q{font-family:'Source Serif 4',serif;font-size:1rem;font-weight:600;color:var(--fg);margin-bottom:0.5rem;line-height:1.4}
+.pathway-q{font-family:var(--font-serif);font-size:1rem;font-weight:600;color:var(--fg);margin-bottom:0.5rem;line-height:1.4}
 .pathway-links{display:flex;flex-wrap:wrap;gap:0.35rem}
 .pathway-link{display:inline-flex;align-items:center;gap:0.25rem;padding:0.3rem 0.65rem;font-size:0.72rem;font-weight:500;color:var(--fg2);background:var(--bg3);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:all 0.15s}
 .pathway-link:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-bg)}
@@ -70,12 +67,12 @@
 
 .quick-stats{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin:1.5rem 0 0.5rem;padding:0.75rem 0}
 .stat{text-align:center}
-.stat-num{font-family:'JetBrains Mono',monospace;font-size:1.25rem;font-weight:600;color:var(--accent)}
+.stat-num{font-family:var(--font-mono);font-size:1.25rem;font-weight:600;color:var(--accent)}
 [data-theme="dark"] .stat-num{color:var(--accent2)}
 .stat-label{font-size:0.65rem;color:var(--fg3);margin-top:0.1rem}
 
 .section{margin:2rem 0}
-.section h3{font-family:'Source Serif 4',serif;font-size:1rem;font-weight:600;margin-bottom:0.5rem;color:var(--fg)}
+.section h3{font-family:var(--font-serif);font-size:1rem;font-weight:600;margin-bottom:0.5rem;color:var(--fg)}
 .section p{font-size:0.8rem;color:var(--fg2);line-height:1.7;margin-bottom:0.5rem}
 /* PE-177: justify body prose on desktop; mobile stays ragged-right */
 @media(min-width:769px){.section p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}}
@@ -108,6 +105,7 @@
 <a href="/framework">Framework</a>
 <a href="/matrix">Matrix</a>
 <a href="/clusters">Clusters</a>
+<a href="/crosswalk">Crosswalk</a>
 </div>
 <div class="nav-group"><span class="nav-label">Build &amp; Run</span>
 <a href="/program">Program</a>

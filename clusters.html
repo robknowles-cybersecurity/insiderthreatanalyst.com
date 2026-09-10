@@ -33,9 +33,6 @@
 <meta name="description" content="Competency clusters for the Insider Threat Analyst Career Framework. Browse training, certifications, and KSAs by skill domain.">
 <title>Competency Clusters — Insider Threat Analyst Career Framework</title>
 <link rel="canonical" href="https://insiderthreatanalyst.com/clusters">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/ita.css">
 <style>
 [data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0a1628;--fg2:#2a3a52;--fg3:#64748b;--fg4:#64748b;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0d9488;--accent2-bg:#f0fdfa;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08);--check:#16a34a}
@@ -48,12 +45,12 @@
 .main{max-width:1100px;margin:0 auto;padding:2rem 1.5rem}
 
 .hero{text-align:center;margin-bottom:1.5rem}
-.hero h2{font-family:'Source Serif 4',serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem}
+.hero h2{font-family:var(--font-serif);font-size:1.5rem;font-weight:600;margin-bottom:0.5rem}
 .hero p{font-size:0.85rem;color:var(--fg2);max-width:700px;margin:0 auto;line-height:1.7}
 
 .pathbuilder{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.5rem;box-shadow:var(--card-shadow)}
 [data-theme="dark"] .pathbuilder{border-color:rgba(108,180,255,0.12);box-shadow:var(--card-shadow),0 0 12px rgba(52,217,195,0.04)}
-.pb-title{font-family:'Source Serif 4',serif;font-size:1rem;font-weight:600;margin-bottom:0.5rem}
+.pb-title{font-family:var(--font-serif);font-size:1rem;font-weight:600;margin-bottom:0.5rem}
 .pb-controls{display:flex;gap:0.75rem;flex-wrap:wrap;align-items:flex-end;margin-bottom:0.75rem}
 .pb-group{display:flex;flex-direction:column;gap:0.2rem}
 .pb-label{font-size:0.62rem;font-weight:600;color:var(--fg3);text-transform:uppercase;letter-spacing:0.04em}
@@ -85,7 +82,7 @@
 .jumper-pill.active{background:var(--accent);color:#fff;border-color:var(--accent)}
 
 .group-section{margin-bottom:2.5rem}
-.group-title{font-family:'Source Serif 4',serif;font-size:1.15rem;font-weight:600;margin-bottom:1rem;padding-bottom:0.35rem;border-bottom:2px solid var(--accent)}
+.group-title{font-family:var(--font-serif);font-size:1.15rem;font-weight:600;margin-bottom:1rem;padding-bottom:0.35rem;border-bottom:2px solid var(--accent)}
 .group-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem}
 @media(max-width:700px){.group-grid{grid-template-columns:1fr}}
 
@@ -113,7 +110,7 @@
 .cc-sub{font-size:0.62rem;font-weight:600;color:var(--fg3);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.3rem;margin-top:0.6rem}
 .cc-ksa-count{font-size:0.65rem;color:var(--fg4);margin-bottom:0.3rem}
 .cc-ksas{font-size:0.68rem;color:var(--fg3);line-height:1.5}
-.cc-ksa-id{font-family:'JetBrains Mono',monospace;font-size:0.625rem;color:var(--fg4)}
+.cc-ksa-id{font-family:var(--font-mono);font-size:0.625rem;color:var(--fg4)}
 
 .train-list{list-style:none;padding:0;margin:0}
 .train-item{display:flex;align-items:baseline;gap:0.4rem;padding:0.2rem 0;font-size:0.7rem;border-bottom:1px solid var(--border)}
@@ -175,6 +172,7 @@
 <a href="/framework">Framework</a>
 <a href="/matrix">Matrix</a>
 <a href="/clusters" class="nav-active">Clusters</a>
+<a href="/crosswalk">Crosswalk</a>
 </div>
 <div class="nav-group"><span class="nav-label">Build &amp; Run</span>
 <a href="/program">Program</a>
@@ -282,7 +280,7 @@ function sendFeedback(vote,btn){const w=document.getElementById('feedback-widget
 const CLUSTERS=[
 {id:'net',name:'Networking & Infrastructure',group:'technical',icon:'🌐',
 desc:'TCP/IP, DNS, network flow analysis, geolocation, VPN detection. The technical foundation that everything else builds on.',
-ksas:['K0001','K-NET01','K-NET02','K-GEO01'],
+ksas:['K0674','K-NET01','K-NET02','K-GEO01'],
 training:[
 {n:'Google Cybersecurity Certificate',u:'https://grow.google/certificates/cybersecurity/',cost:'free',note:'Network fundamentals, strong L1 prep'},
 {n:'Professor Messer — Network+',u:'https://www.professormesser.com/',cost:'free',note:'YouTube — universally recommended exam prep'},
@@ -353,7 +351,7 @@ conc:{case:'core',core:'supporting',tech:'supporting',hunt:'supporting',cag:'sup
 },
 {id:'behavioral',name:'Behavioral Analysis & InT Fundamentals',group:'investigative',icon:'🧠',
 desc:'Behavioral indicators, threat categories, social engineering, unintentional threats, work avoidance detection. The core of what makes insider threat a distinct discipline.',
-ksas:['S-BT01','K-SE01','K-UIT01','K-CAT01','K0005','K0785','K-REM01','T1439','A-SYNTH01','K-WAVD01','K-EMRG01'],
+ksas:['S-BT01','K-SE01','K-UIT01','K-CAT01','K0682','K0785','K-REM01','T1439','A-SYNTH01','K-WAVD01','K-EMRG01'],
 training:[
 {n:'CDSE InT Awareness (INT101/201)',u:'https://www.cdse.edu/',cost:'free',note:'Required L1 — government fundamentals'},
 {n:'CISA Insider Threat Mitigation Guide',u:'https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide',cost:'free',note:'Case-study approach, foundational'},
@@ -440,7 +438,7 @@ conc:{case:'core',maturity:'core',cag:'core',core:'supporting',desk:'supporting'
 },
 {id:'program',name:'Governance, Program & Maturity',group:'program',icon:'🏛️',
 desc:'Program structure, governance, maturity models, fusion hub design, audits, metrics, documentation. Building and running the machine.',
-ksas:['K-IT01','K1254','K0002','K1250','K1252','K-GOV01','K-MAT01','K-FUSE01','A-PRG01','A-BU01','K-M01','S-M01','S-M02','K-M02','A-M01','A-M02'],
+ksas:['K-IT01','K1254','K0721','K1250','K1252','K-GOV01','K-MAT01','K-FUSE01','A-PRG01','A-BU01','K-M01','S-M01','S-M02','K-M02','A-M01','A-M02'],
 training:[
 {n:'CISA IRMPE',u:'https://www.cisa.gov/resources-tools/resources/insider-risk-mitigation-program-evaluation-irmpe',cost:'free',note:'Self-assessment, MIL 0-5. Start here'},
 {n:'CDSE InT Toolkit',u:'https://www.cdse.edu/Training/Toolkits/Insider-Threat-Toolkit/',cost:'free',note:'Program building fundamentals'},
@@ -471,7 +469,7 @@ conc:{desk:'core',case:'core',core:'supporting',cag:'supporting'}
 },
 {id:'crisis',name:'Crisis Response & Incident Management',group:'program',icon:'🚨',
 desc:'IR frameworks, real-time coordination, containment decisions, crisis action groups, insider-specific playbooks.',
-ksas:['K-G01','S-G01','S-G02','A-CAG01','A-G01','A-G02','A-IRPB01'],
+ksas:['K-G01','S-G01','S-G02','A-CAG01','A-IRPB01'],
 training:[
 {n:'NIST SP 800-61 (IR Guide)',u:'https://csrc.nist.gov/pubs/sp/800/61/r2/final',cost:'free',note:'Foundational IR framework'},
 {n:'CISA IR resources',u:'https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety',cost:'free',note:'Government-backed'},
@@ -514,7 +512,7 @@ conc:{outreach:'core',case:'core',cag:'core',core:'supporting',desk:'supporting'
 },
 {id:'audit',name:'Audit & Assessment',group:'program',icon:'📋',
 desc:'Methodology for evaluating an insider threat program — maturity assessment, gap analysis, framework mapping, evidence handling for audit artifacts, pre-audit self-assessment, and external-audit response and remediation.',
-ksas:['K0727','K0734','K0835','K0868','K0869','K0800','K0681','S0423','S0619','S0667','S0085','T1154','T1155','T1306','T1394','T1480','T1481','T0223','ITA-PA-K01','ITA-PA-S01','ITA-PA-A01','ITA-PA-A02'],
+ksas:['K0727','K0734','K0835','K0868','K0869','K0800','K0681','S0423','S0619','S0667','S-AUD01','T1154','T1155','T1306','T1394','T1480','T1481','T-AUD01','ITA-PA-K01','ITA-PA-S01','ITA-PA-A01','ITA-PA-A02'],
 training:[
 {n:'CISA IRMPE',u:'https://www.cisa.gov/resources-tools/resources/insider-risk-mitigation-program-evaluation-irmpe',cost:'free',note:'Self-assessment scoring, MIL 0-5. Start here'},
 {n:'CMU SEI — ITVA training',u:'https://www.sei.cmu.edu/blog/cert-insider-threat-vulnerability-assessments-itva-training-course-and-itva-certificate-program/',cost:'$$$',note:'CERT methodology for technical-vulnerability + business-process + management-practice assessment. Sponsorship by an approved SEI Partner organization is required for the certificate path'},

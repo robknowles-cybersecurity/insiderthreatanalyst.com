@@ -33,9 +33,6 @@
 <meta name="description" content="Version history and changelog for the Insider Threat Analyst Career Framework.">
 <title>Changelog — Insider Threat Analyst Career Framework</title>
 <link rel="canonical" href="https://insiderthreatanalyst.com/changelog">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/ita.css">
 <style>
 
@@ -45,12 +42,12 @@
 .main{max-width:700px;margin:0 auto;padding:2rem 1.5rem}
 
 .hero{text-align:center;margin-bottom:2rem}
-.hero h2{font-family:'Source Serif 4',serif;font-size:1.5rem;font-weight:600;margin-bottom:0.5rem}
+.hero h2{font-family:var(--font-serif);font-size:1.5rem;font-weight:600;margin-bottom:0.5rem}
 .hero p{font-size:0.85rem;color:var(--fg2);max-width:550px;margin:0 auto;line-height:1.7}
 
 .version{margin-bottom:2rem}
 .version-header{display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.5rem;padding-bottom:0.35rem;border-bottom:2px solid var(--accent)}
-.version-tag{font-family:'JetBrains Mono',monospace;font-size:0.82rem;font-weight:600;color:var(--accent)}
+.version-tag{font-family:var(--font-mono);font-size:0.82rem;font-weight:600;color:var(--accent)}
 .version-date{font-size:0.72rem;color:var(--fg3)}
 .version-body{font-size:0.78rem;color:var(--fg2);line-height:1.7}
 .version-body ul{margin:0.3rem 0 0.3rem 1.2rem;list-style:disc}
@@ -92,6 +89,7 @@
 <a href="/framework">Framework</a>
 <a href="/matrix">Matrix</a>
 <a href="/clusters">Clusters</a>
+<a href="/crosswalk">Crosswalk</a>
 </div>
 <div class="nav-group"><span class="nav-label">Build &amp; Run</span>
 <a href="/program">Program</a>
@@ -131,6 +129,24 @@
 
 <div class="version">
 <div class="version-header">
+<span class="version-tag">v1.5.0</span>
+<span class="version-date">2026-09-04</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-new">New</span> <strong>The KSA &rarr; NICE crosswalk is published.</strong> Every active KSA is now mapped to <a href="crosswalk" target="_blank" rel="noopener">NICE Framework Components v2.2.0</a> (NIST SP 800-181r1), with the primary work role, the specific TKS statements cited, a confidence rating, and which review tier decided each row. The page carries its own provenance block: source file, sha256, download date, and the method in full. It is versioned, indexed, and in the nav for the first time &mdash; it had been an unlinked scaffold since v1.3.1.</li>
+<li><span class="change-tag tag-changed">Changed</span> <strong>Retired NICE identifiers remapped to their v2.2.0 successors (PE-253).</strong> All five: <code>K0001</code>&rarr;<code>K0674</code>, <code>K0002</code>&rarr;<code>K0721</code>, <code>K0005</code>&rarr;<code>K0682</code>. The last two needed a different treatment. The successors for <code>S0085</code> and <code>T0223</code> &mdash; <code>S0619</code> and <code>T1306</code> &mdash; already existed here as separate KSAs: they are the Level&nbsp;3 audit statements, while <code>S0085</code> and <code>T0223</code> are the Level&nbsp;2 pair. Both levels are kept; nothing was merged away. The two Level&nbsp;2 rows now carry ITA-native identifiers in this framework’s own scheme, <code>S-AUD01</code> and <code>T-AUD01</code>, and cite <code>S0619</code> and <code>T1306</code> as their NICE source. Every retired id still resolves &mdash; old links and searches land on the renamed row.</li>
+<li><span class="change-tag tag-removed">Removed</span> <strong><code>A-G02</code> merged into <code>A-IRPB01</code>.</strong> Both described designing insider-specific incident response playbooks; the more precise statement survives.</li>
+<li><span class="change-tag tag-removed">Removed</span> <strong><code>A-G01</code> merged into <code>A-CAG01</code>.</strong> Both described leading crisis action groups; <code>A-CAG01</code> survives because it spells the term out instead of leaving the acronym unexpanded. Merged ids are <em>tombstoned, never reused</em> &mdash; they keep their place on the framework and matrix pages, and links to them still resolve.</li>
+<li><span class="change-tag tag-changed">Changed</span> <strong>Active KSA count is now 143</strong> (+2 merged). It was 145 at v1.4.0.</li>
+<li><span class="change-tag tag-changed">Changed</span> <strong>ATT&amp;CK v19 unmappable techniques resolved from the pinned source.</strong> The five carried over from the July v19.1 re-tag were resolved against the pinned <code>enterprise-attack-19.1.json</code> bundle, its sha256 verified against the July pin before anything was read from it. Four were revoked with a single unambiguous successor and have been remapped: <code>T1070.001</code>&rarr;<code>T1685.005</code>, <code>T1562</code>&rarr;<code>T1685</code>, <code>T1562.001</code>&rarr;<code>T1685</code>, <code>T1562.011</code>&rarr;<code>T1685.003</code>. Because <code>T1562</code> and <code>T1562.001</code> both revoke into <code>T1685</code>, their two entries collapsed into one carrying the union of their SOFIT indicators, so Category&nbsp;B is now 43. The fifth, <code>T1548</code>, turned out not to be revoked at all &mdash; only its <code>defense-evasion</code> tactic tag, which v19 retired, needed correcting to <code>privilege-escalation</code>. No <code>defense-evasion</code> tags remain.</li>
+<li><span class="change-tag tag-removed">Removed</span> <strong>No third-party fonts.</strong> Every page now renders in a system font stack, defined once in the shared stylesheet. The hosted-webfont stylesheet links and their preconnect hints have been removed site-wide: there are zero external origins for fonts anywhere on this site, and no font request leaves the reader’s machine. The crosswalk page shipped this way; it is now the site standard.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
 <span class="version-tag">v1.4.0</span>
 <span class="version-date">2026-09-04</span>
 </div>
@@ -139,7 +155,7 @@
 <li><span class="change-tag tag-new">New</span> <strong>Site search.</strong> Every public page is searchable now — the Search button in the nav, or press <code>/</code>. It is full text, and it reaches the content the <a href="framework" target="_blank" rel="noopener">Framework Explorer</a>, <a href="matrix" target="_blank" rel="noopener">KSA matrix</a>, and <a href="clusters" target="_blank" rel="noopener">competency clusters</a> render from JavaScript rather than ship as HTML — the part of this site that no search had ever been able to see. Results link to the section that matched, not to the top of the page, and the term you searched for is highlighted where you land. Built with <a href="https://pagefind.app/" target="_blank" rel="noopener">Pagefind</a>, served from this site: the index is a static file, the search runs in your browser, and no query is sent anywhere.</li>
 <li><span class="change-tag tag-new">New</span> <a href="https://alessandroaledda.com/intra/" target="_blank" rel="noopener">INTRA</a> (Insider Threat and Risk Architecture) added to the standards and professional bodies resources on the <a href="program" target="_blank" rel="noopener">Program Hub</a> — a European jurisdiction layer for insider risk. 110 measures across nine pillars, mapped to 34 jurisdictions, with a read source on every row, published as browsable pages and as JSON. Free, CC BY 4.0.</li>
 <li><span class="change-tag tag-new">New</span> <a href="contributors" target="_blank" rel="noopener">Alessandro Aledda</a> credited on Contributors for INTRA.</li>
-<li><span class="change-tag tag-new">New</span> The site carries its first named, attributed review: Alessandro Aledda, who works this problem in a different jurisdiction and built his own framework for it, called this the best map of the field he has found. Quoted with his permission, on <a href="contributors" target="_blank" rel="noopener">Contributors</a> — the <a href="reviews" target="_blank" rel="noopener">reviews page</a> is a joke and a real review does not belong in it.</li>
+<li><span class="change-tag tag-new">New</span> The site carries its first named, attributed review: Alessandro Aledda, who works this problem in a different jurisdiction and built his own framework for it, called this the best map of the field he has found. Quoted with his permission, on <a href="contributors" target="_blank" rel="noopener">Contributors</a> — the <a href="reviews" target="_blank" rel="noopener">reviews page</a> is tongue in cheek, and a real review does not belong in it.</li>
 <li><span class="change-tag tag-new">New</span> <strong>A-AGENT01</strong> — <em>Ability to investigate AI agents as non-human insiders</em>. The framework has described AI agents as insider-like access holders since v1.3.2; this is the first KSA that says what an analyst actually does about it: attribute agent actions to a unique agent identity and its accountable human sponsor, reconstruct the input to tool-call to data-access chain, and find over-privilege, agent sprawl, indirect prompt injection, and unauthorized tool use. Level 4, custom source, <a href="clusters#cl-aiml" target="_blank" rel="noopener">AI/ML cluster</a>. Two sources added to that cluster with it: Microsoft's <a href="https://www.microsoft.com/en-us/security/blog/2026/07/16/least-privilege-for-ai-agents-identity-access-and-tool-binding/" target="_blank" rel="noopener">Least privilege for AI agents</a> and <a href="https://arxiv.org/pdf/2603.15714" target="_blank" rel="noopener">How Vulnerable Are AI Agents to Indirect Prompt Injections?</a>. KSA count is now <strong>145</strong>; the <a href="crosswalk" target="_blank" rel="noopener">NICE crosswalk</a> and <a href="start" target="_blank" rel="noopener">Start Here</a> counts follow.</li>
 <li><span class="change-tag tag-changed">Changed</span> <a href="contributors" target="_blank" rel="noopener">Bidemi Ologunde</a>'s entry now records the second round — the investigative half of the AI-agent question, which became A-AGENT01, and the sources behind it.</li>
 </ul>
