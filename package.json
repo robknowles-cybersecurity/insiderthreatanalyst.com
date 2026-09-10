@@ -1,0 +1,10 @@
+{
+  "name": "ita-site",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Insider Threat Analyst Career Framework — static site. Build tooling only: the site ships no npm runtime dependency, and nothing here is served. The site's version of record is changelog.html, not this file.",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "pagefind": "1.5.2"
+  }
+}

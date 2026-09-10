@@ -145,32 +145,24 @@ table.cw tbody tr:nth-child(even){background:var(--bg3)}
 .cw-quiet{color:var(--fg3);font-size:0.9em}
 .cw-prov{font-size:0.74rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1.1rem;margin-bottom:1.2rem}
 .cw-prov h3{font-size:0.8rem;margin:0 0 0.6rem}
-.cw-prov dl{margin:0;display:grid;grid-template-columns:9rem 1fr;gap:0.35rem 0.9rem}
-.cw-prov dt{color:var(--fg3);font-weight:600}.cw-prov dd{margin:0;color:var(--fg2);max-width:52rem}
+.cw-prov p{margin:0;color:var(--fg2);max-width:60rem;line-height:1.65}
 .cw-prov code,.cw-tombs code{font-family:var(--font-mono);font-size:0.66rem;word-break:break-all}
 .cw-tombs{margin:1.2rem 0}.cw-tombs .tomb-row{margin-top:0.4rem;opacity:0.85}
 .cw-foot{font-size:0.74rem;margin:1.4rem 0 2rem}.cw-foot h3{font-size:0.8rem;margin:0 0 0.4rem}
 .cw-foot ol{margin:0.5rem 0 0;padding-left:1.2rem}.cw-foot li{margin-bottom:0.5rem;color:var(--fg2);max-width:52rem}
 @media(max-width:900px){table.cw{table-layout:auto;min-width:46rem}.cw-text{min-width:15rem}table.cw thead th{white-space:nowrap}}
-@media(max-width:760px){.cw-prov dl{grid-template-columns:1fr}}
 </style>
 
 <div class="hero cw-wrap">
-<h2>KSA &rarr; NICE Crosswalk <span class="cw-draft">v1.5.1 &middot; NICE v2.2.0</span></h2>
+<h2>KSA &rarr; NICE Crosswalk <span class="cw-draft">v1.5.2 &middot; NICE v2.2.0</span></h2>
 <p>Every one of the framework's <b>143 active</b> Knowledge, Skill, Ability, and Task statements, mapped to NICE Framework Components <b>v2.2.0</b> (NIST SP 800-181r1) <span class="cw-quiet">(+2 merged, see <a href="changelog">changelog</a>)</span>. Each row names the primary NICE work role, the specific TKS statements cited, and how confident the mapping is. Where NICE has no equivalent, the row says so and points at a footnote rather than reaching for a nearest fit.</p>
 </div>
 
 <div class="cw-wrap">
 <div class="cw-prov" id="provenance">
 <h3>Provenance</h3>
-<dl>
-<dt>Target framework</dt><dd>NICE Framework Components <b>v2.2.0</b> (<code>SP_800_181_2_2_0</code>), NIST SP 800-181 Rev. 1 &mdash; 42 work roles, 11 competency areas, 2,211 TKS statements.</dd>
-<dt>Source file</dt><dd><code>v2-2-0_nf_components.json</code>, 2,674,252 bytes, from <code>csrc.nist.gov/csrc/media/Projects/cprt/documents/nice/v2-2-0_nf_components.json</code> <span class="cw-quiet">(cited as text, not linked &mdash; this page loads nothing from any external origin)</span></dd>
-<dt>sha256</dt><dd><code>3ad1d9d7e0d6b32895cb569f86c3bc05af2937a68e96eab4d1c9b3d9fa6e575e</code></dd>
-<dt>Downloaded</dt><dd>2026-09-04</dd>
-<dt>KSA source</dt><dd>The framework's own catalogue at v1.4.0 (<code>framework.html</code> and <code>matrix.html</code>, extracted independently and cross-checked; 0 disagreements).</dd>
-<dt>Method</dt><dd>Every one of the framework's 145 KSAs was drafted against v2.2.0 by model, citing one to four NICE statements per row and naming a primary work role. The draft was then triaged in two tiers: a mechanical tier that pre-accepted rows whose mapping was unambiguous, and a judgment tier that re-read the contestable ones and either affirmed them or set them aside. Across all 145 drafted rows the split was <b>42 Rob-reviewed</b>, <b>70 auto-high</b> and <b>33 auto-medium-affirmed</b>. Rob read his 42 individually &mdash; accepting 41 and rejecting one as a duplicate &mdash; alongside a blind 10-row spot-check of the pre-accepted set, all ten of which he accepted. Rob's rulings are final and override the automated tiers; the automated decision stands wherever he did not rule. Two rows were then merged away (see the tombstones below), so the 143 rows in the table carry 41 Rob-reviewed, 70 auto-high and 32 auto-medium-affirmed decisions. The deciding tier is recorded per row in the page source and in the published decision record; it is no longer shown as its own column.</dd>
-</dl></div>
+<p>Decisions across the 145 drafted rows: <b>42 Rob-reviewed</b>, <b>70 auto-high</b> and <b>33 auto-medium-affirmed</b>; after the two v1.5.0 merges the 143 rows in the table carry 41 Rob-reviewed, 70 auto-high and 32 auto-medium-affirmed. Mapped against NICE Framework Components <b>v2.2.0</b> (<code>SP_800_181_2_2_0</code>), taken from <code>csrc.nist.gov/csrc/media/Projects/cprt/documents/nice/v2-2-0_nf_components.json</code>, sha256 <code>3ad1d9d7e0d6b32895cb569f86c3bc05af2937a68e96eab4d1c9b3d9fa6e575e</code>, downloaded <b>2026-09-04</b>. The deciding tier is recorded per row as <code>data-tier</code>.</p>
+</div>
 
 <div class="cw-table-wrap">
 <table class="cw">
