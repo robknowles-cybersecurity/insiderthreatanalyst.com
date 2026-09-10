@@ -10,37 +10,55 @@
   each page is delimited by NAV:BEGIN / NAV:END markers and is overwritten
   on every build.
 
-  hrefs are ROOT-ABSOLUTE (/framework.html, not framework.html) so this one
-  fragment is correct from any directory depth (papers/, talks/, ...).
+  On-site hrefs are ROOT-ABSOLUTE (/framework.html, not framework.html) so this
+  one fragment is correct from any directory depth (papers/, talks/, ...).
+
+  Sister ITA-estate properties on their own subdomains (TTX Builder) are
+  absolute https:// URLs and carry target/rel like every other off-site link on
+  the site. They never match a page's canonical URL, so the build script's
+  nav-active pass correctly leaves them unmarked.
+
+  THE EVENTS CALENDAR IS NOT IN THIS NAV, and its absence is deliberate (PE-204,
+  2026-08-31). The calendar and its subscribe machinery belong to the US InRM
+  CoE, not to this site; it is hosted on events.insiderthreatanalyst.com only
+  until the CoE's own domain is ready. A nav slot here would keep asserting it
+  is an ITA property. It is still named, as an outside resource, in the "What
+  else is here?" answer on the homepage, and the route to submitting an event
+  goes through that link. Do not restore this entry to make the nav look
+  symmetrical — the asymmetry is the point.
 
   The build script injects class="nav-active" on the link matching the page
   being generated; do not add nav-active here.
 -->
 <nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
 <div class="nav-group"><span class="nav-label">Explore</span>
-<a href="/framework.html">Framework</a>
-<a href="/matrix.html">Matrix</a>
-<a href="/clusters.html">Clusters</a>
+<a href="/framework">Framework</a>
+<a href="/matrix">Matrix</a>
+<a href="/clusters">Clusters</a>
 </div>
 <div class="nav-group"><span class="nav-label">Build &amp; Run</span>
-<a href="/program.html">Program</a>
-<a href="/emerging.html">Emerging</a>
+<a href="/program">Program</a>
+<a href="/emerging">Emerging</a>
+<a href="https://ttx.insiderthreatanalyst.com/" target="_blank" rel="noopener">TTX Builder</a>
 </div>
 <div class="nav-group"><span class="nav-label">Grow</span>
-<a href="/engagement.html">Engagement</a>
-<a href="/maturity.html">Maturity</a>
+<a href="/engagement">Engagement</a>
+<a href="/maturity">Maturity</a>
 </div>
 <div class="nav-group nav-util"><span class="nav-label">About</span>
-<a href="/about.html">About</a>
-<a href="/start.html">Start Here</a>
-<a href="/wellness.html">Wellness</a>
-<a href="/governance.html">Site Policy</a>
-<a href="/contributors.html">Contributors</a>
-<a href="/references.html">References</a>
-<a href="/cpe.html">CPE Resources</a>
+<a href="/about">About</a>
+<a href="/start">Start Here</a>
+<a href="/wellness">Wellness</a>
+<a href="/governance">Site Policy</a>
+<a href="/contributors">Contributors</a>
+<a href="/references">References</a>
+<a href="/cpe">CPE Resources</a>
 <a href="/papers/">Papers</a>
-<a href="/reviews.html">Reviews</a>
-<a href="/changelog.html">Changelog</a>
-<a href="/suggest.html">Suggest</a>
+<a href="/reviews">Reviews</a>
+<a href="/changelog">Changelog</a>
+<a href="/suggest">Suggest</a>
 </div>
+<div class="nav-group nav-search"><button type="button" class="nav-search-btn" id="ita-search-open" title="Search the site — press /" aria-haspopup="dialog" aria-expanded="false">Search <kbd aria-hidden="true">/</kbd></button></div>
 </div></nav>
+<link rel="stylesheet" href="/assets/search.css">
+<script src="/assets/search.js" defer></script>

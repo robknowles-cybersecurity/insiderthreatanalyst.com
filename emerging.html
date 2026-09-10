@@ -32,7 +32,7 @@
 <meta property="og:description" content="Emerging insider threat vectors: residential proxies, rogue WiFi, network bridging, and detection approaches.">
 <meta name="description" content="Emerging insider threat vectors that defeat traditional monitoring: residential proxies, rogue WiFi/hotspots, and network bridging. Detection approaches and practitioner guidance.">
 <title>Emerging Threats — Insider Threat Analyst Career Framework</title>
-<link rel="canonical" href="https://insiderthreatanalyst.com/emerging.html">
+<link rel="canonical" href="https://insiderthreatanalyst.com/emerging">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -129,7 +129,7 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="header"><div class="header-inner">
-<h1>Emerging Threats · <a href="index.html" target="_blank" rel="noopener">Career Framework</a></h1>
+<h1>Emerging Threats · <a href="/" target="_blank" rel="noopener">Career Framework</a></h1>
 <div class="header-right">
 <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()" id="theme-btn">Dark</button>
 </div>
@@ -141,32 +141,36 @@
      Edit _nav/nav.html and re-run tools/build-nav.sh; changes here are overwritten. -->
 <nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
 <div class="nav-group"><span class="nav-label">Explore</span>
-<a href="/framework.html">Framework</a>
-<a href="/matrix.html">Matrix</a>
-<a href="/clusters.html">Clusters</a>
+<a href="/framework">Framework</a>
+<a href="/matrix">Matrix</a>
+<a href="/clusters">Clusters</a>
 </div>
 <div class="nav-group"><span class="nav-label">Build &amp; Run</span>
-<a href="/program.html">Program</a>
-<a href="/emerging.html" class="nav-active">Emerging</a>
+<a href="/program">Program</a>
+<a href="/emerging" class="nav-active">Emerging</a>
+<a href="https://ttx.insiderthreatanalyst.com/" target="_blank" rel="noopener">TTX Builder</a>
 </div>
 <div class="nav-group"><span class="nav-label">Grow</span>
-<a href="/engagement.html">Engagement</a>
-<a href="/maturity.html">Maturity</a>
+<a href="/engagement">Engagement</a>
+<a href="/maturity">Maturity</a>
 </div>
 <div class="nav-group nav-util"><span class="nav-label">About</span>
-<a href="/about.html">About</a>
-<a href="/start.html">Start Here</a>
-<a href="/wellness.html">Wellness</a>
-<a href="/governance.html">Site Policy</a>
-<a href="/contributors.html">Contributors</a>
-<a href="/references.html">References</a>
-<a href="/cpe.html">CPE Resources</a>
+<a href="/about">About</a>
+<a href="/start">Start Here</a>
+<a href="/wellness">Wellness</a>
+<a href="/governance">Site Policy</a>
+<a href="/contributors">Contributors</a>
+<a href="/references">References</a>
+<a href="/cpe">CPE Resources</a>
 <a href="/papers/">Papers</a>
-<a href="/reviews.html">Reviews</a>
-<a href="/changelog.html">Changelog</a>
-<a href="/suggest.html">Suggest</a>
+<a href="/reviews">Reviews</a>
+<a href="/changelog">Changelog</a>
+<a href="/suggest">Suggest</a>
 </div>
+<div class="nav-group nav-search"><button type="button" class="nav-search-btn" id="ita-search-open" title="Search the site — press /" aria-haspopup="dialog" aria-expanded="false">Search <kbd aria-hidden="true">/</kbd></button></div>
 </div></nav>
+<link rel="stylesheet" href="/assets/search.css">
+<script src="/assets/search.js" defer></script>
 <!-- NAV:END -->
 
 
@@ -178,7 +182,7 @@
 </div>
 
 <div class="tile-overview">
-<h3>Threat Landscape at a Glance</h3>
+<h3 id="threat-landscape">Threat Landscape at a Glance</h3>
 <div class="ref-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-bottom:0.5rem">
 <div class="threat-tile tt-red"><div class="ref-card-title"><a href="https://www.dtexsystems.com/resources/i3-threat-advisory-inside-the-dprk/" target="_blank" rel="noopener">DPRK IT workers</a></div><div class="ref-card-desc">Stolen identities for remote jobs. TA integration, identity verification, behavioral + technical indicators. <a href="https://cloud.google.com/blog/topics/threat-intelligence/dprk-it-workers-expanding-scope-scale" target="_blank" rel="noopener" style="font-size:0.65rem">Google GTIG</a> · <a href="https://nisos.com/research/exposing-fraudulent-dprk-candidate/" target="_blank" rel="noopener" style="font-size:0.65rem">Nisos</a></div></div>
 <div class="threat-tile tt-orange"><div class="ref-card-title"><a href="https://www.reddit.com/r/overemployed/" target="_blank" rel="noopener">Overemployment</a></div><div class="ref-card-desc">Undisclosed multiple positions. COI, IP exposure, performance degradation. This is where the practitioners are.</div></div>
@@ -353,7 +357,7 @@
 
 <!-- Detection Approaches -->
 <div class="section">
-<h3>Detection approaches</h3>
+<h3 id="detection-approaches">Detection approaches</h3>
 <p>Network-based detection is, by definition, blind to these vectors — the traffic never touches your network. Detection must move to the endpoint and to behavioral analysis that doesn't depend on network visibility.</p>
 
 <div class="detect-grid">
@@ -392,12 +396,12 @@
 
 <!-- Bottom line -->
 <div class="section">
-<h3>The practitioner takeaway</h3>
+<h3 id="practitioner-takeaway">The practitioner takeaway</h3>
 <p>If your detection strategy depends on seeing traffic on your network, you have a blind spot. Residential proxies make location-based detection unreliable. Personal hotspots make network-based detection irrelevant. Both are trivially easy for any employee to use, require no technical sophistication, and leave no obvious artifacts in your existing telemetry.</p>
 <p>The shift is from <strong>network-centric monitoring</strong> to <strong>endpoint-centric + behavioral monitoring</strong>. This isn't a future state — it's a current gap. If you haven't tested your detection coverage against these scenarios, now is the time.</p>
 
 <div class="callout callout-teal">
-<strong>Framework mapping:</strong> These vectors map to <span class="ksa-tag">K-WAVD01</span> (web and vector-based detection), with implications for <span class="ksa-tag">K-NDA01</span> (network data analysis) and <span class="ksa-tag">K-UEBA01</span> (user/entity behavior analytics). Detection approaches span <span class="ksa-tag">S-EDR01</span> (endpoint detection) and <span class="ksa-tag">S-DLP01</span> (data loss prevention). See the <a href="matrix.html">KSA Matrix</a> for full definitions.
+<strong>Framework mapping:</strong> These vectors map to <span class="ksa-tag">K-WAVD01</span> (web and vector-based detection), with implications for <span class="ksa-tag">K-NDA01</span> (network data analysis) and <span class="ksa-tag">K-UEBA01</span> (user/entity behavior analytics). Detection approaches span <span class="ksa-tag">S-EDR01</span> (endpoint detection) and <span class="ksa-tag">S-DLP01</span> (data loss prevention). See the <a href="matrix">KSA Matrix</a> for full definitions.
 </div>
 </div>
 
@@ -413,7 +417,7 @@
 
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
 <footer class="footer">
-<p><a href="about.html">About</a> &middot; <a href="start.html">Start here</a> · <a href="index.html">Framework</a> · <a href="references.html">References</a> · <a href="changelog.html">Changelog</a> · <a href="suggest.html?from=emerging">Suggest</a></p>
+<p><a href="about">About</a> &middot; <a href="start">Start here</a> · <a href="/">Framework</a> · <a href="references">References</a> · <a href="changelog">Changelog</a> · <a href="suggest?from=emerging">Suggest</a></p>
 <p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; <a href="https://github.com/robknowles-cybersecurity/insiderthreatanalyst.com" target="_blank" rel="noopener">Source on GitHub&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
 <p style="margin-top:0.25rem;font-size:0.58rem">Vibe-coded with Claude&#8482; · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.55rem">hello@insiderthreatanalyst.com</a></p>
 </footer>

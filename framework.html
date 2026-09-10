@@ -28,14 +28,14 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2L4 8v8c0 7.7 5.1 14.9 12 17 6.9-2.1 12-9.3 12-17V8L16 2z' fill='%230c1222' stroke='%236cb4ff' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='%2334d9c3' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%236cb4ff'/%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Framework Explorer — Insider Threat Analyst Career Framework</title>
-<link rel="canonical" href="https://insiderthreatanalyst.com/framework.html">
+<link rel="canonical" href="https://insiderthreatanalyst.com/framework">
 <meta property="og:image" content="https://insiderthreatanalyst.com/ogimage.png">
 <meta name="description" content="Interactive framework explorer: KSAs, certifications, tools, program design, and career pathways for insider threat analysts. Filter by concentration and level.">
 <meta name="keywords" content="insider threat, career framework, NICE, KSA, cybersecurity, analyst, FS-ISAC, UEBA, detection engineering, insider risk">
 <meta property="og:title" content="Framework Explorer — Insider Threat Analyst Career Framework">
 <meta property="og:description" content="Interactive framework explorer: KSAs, certs, tools, and career paths for insider threat analysts.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://insiderthreatanalyst.com/framework.html">
+<meta property="og:url" content="https://insiderthreatanalyst.com/framework">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -322,12 +322,9 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);background:var(--bg);line-
 <div class="header-left">
 <h1>Insider Threat Analyst Career Framework</h1>
 <div class="subtitle">A competency model for building, staffing, and maturing insider threat analysis programs</div>
-<div class="meta">
-<span><span class="badge badge-progress">MVP 1.0</span></span>
-</div>
 </div>
 <div class="header-right">
-<a href="changelog.html" class="latest-updates">Latest Updates</a>
+<a href="changelog" class="latest-updates">Latest Updates</a>
 <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()" id="theme-btn">Dark mode</button>
 </div>
 </div></header>
@@ -338,32 +335,36 @@ body{font-family:'DM Sans',sans-serif;color:var(--fg);background:var(--bg);line-
      Edit _nav/nav.html and re-run tools/build-nav.sh; changes here are overwritten. -->
 <nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
 <div class="nav-group"><span class="nav-label">Explore</span>
-<a href="/framework.html" class="nav-active">Framework</a>
-<a href="/matrix.html">Matrix</a>
-<a href="/clusters.html">Clusters</a>
+<a href="/framework" class="nav-active">Framework</a>
+<a href="/matrix">Matrix</a>
+<a href="/clusters">Clusters</a>
 </div>
 <div class="nav-group"><span class="nav-label">Build &amp; Run</span>
-<a href="/program.html">Program</a>
-<a href="/emerging.html">Emerging</a>
+<a href="/program">Program</a>
+<a href="/emerging">Emerging</a>
+<a href="https://ttx.insiderthreatanalyst.com/" target="_blank" rel="noopener">TTX Builder</a>
 </div>
 <div class="nav-group"><span class="nav-label">Grow</span>
-<a href="/engagement.html">Engagement</a>
-<a href="/maturity.html">Maturity</a>
+<a href="/engagement">Engagement</a>
+<a href="/maturity">Maturity</a>
 </div>
 <div class="nav-group nav-util"><span class="nav-label">About</span>
-<a href="/about.html">About</a>
-<a href="/start.html">Start Here</a>
-<a href="/wellness.html">Wellness</a>
-<a href="/governance.html">Site Policy</a>
-<a href="/contributors.html">Contributors</a>
-<a href="/references.html">References</a>
-<a href="/cpe.html">CPE Resources</a>
+<a href="/about">About</a>
+<a href="/start">Start Here</a>
+<a href="/wellness">Wellness</a>
+<a href="/governance">Site Policy</a>
+<a href="/contributors">Contributors</a>
+<a href="/references">References</a>
+<a href="/cpe">CPE Resources</a>
 <a href="/papers/">Papers</a>
-<a href="/reviews.html">Reviews</a>
-<a href="/changelog.html">Changelog</a>
-<a href="/suggest.html">Suggest</a>
+<a href="/reviews">Reviews</a>
+<a href="/changelog">Changelog</a>
+<a href="/suggest">Suggest</a>
 </div>
+<div class="nav-group nav-search"><button type="button" class="nav-search-btn" id="ita-search-open" title="Search the site — press /" aria-haspopup="dialog" aria-expanded="false">Search <kbd aria-hidden="true">/</kbd></button></div>
 </div></nav>
+<link rel="stylesheet" href="/assets/search.css">
+<script src="/assets/search.js" defer></script>
 <!-- NAV:END -->
 
 <div style="max-width:1100px;margin:0 auto;padding:0.5rem 1.5rem 0;font-size:0.78rem;color:var(--fg3);text-align:center;line-height:1.5">
@@ -409,7 +410,7 @@ Pick a concentration and level to explore KSAs, certs, tools, and training for t
 <!-- TAB 1: KSAs -->
 <div class="tab-pane active" id="tab-ksas" role="tabpanel" aria-labelledby="btn-tab-ksas">
 <div class="grid">
-<div class="card section-full"><div class="card-header"><span class="card-title">Knowledge, skills & abilities</span> <a href="matrix.html" target="_blank" rel="noopener" style="font-size:0.65rem;font-weight:400;margin-left:0.5rem">View full matrix →</a><button class="btn" id="priority-toggle" onclick="togglePriority()" style="margin-left:auto;font-size:0.62rem;padding:0.2rem 0.6rem;background:var(--accent-bg);color:var(--accent);border:1px solid rgba(37,99,235,0.2)">⭐ Show Top 5</button><span class="card-count" id="ksa-count"></span></div><div class="card-body">
+<div class="card section-full"><div class="card-header"><span class="card-title">Knowledge, skills & abilities</span> <a href="matrix" target="_blank" rel="noopener" style="font-size:0.65rem;font-weight:400;margin-left:0.5rem">View full matrix →</a><button class="btn" id="priority-toggle" onclick="togglePriority()" style="margin-left:auto;font-size:0.62rem;padding:0.2rem 0.6rem;background:var(--accent-bg);color:var(--accent);border:1px solid rgba(37,99,235,0.2)">⭐ Show Top 5</button><span class="card-count" id="ksa-count"></span></div><div class="card-body">
 <div class="ksa-legend">
 <div class="ksa-legend-item"><div class="ksa-legend-dot" style="background:var(--ksa-nice-bg);border:1px solid var(--ksa-nice-fg)"></div> NICE Framework (Insider Threat Analysis)</div>
 <div class="ksa-legend-item"><div class="ksa-legend-dot" style="background:var(--ksa-custom-bg);border:1px solid var(--ksa-custom-fg)"></div> InT-specific (custom)</div>
@@ -536,7 +537,7 @@ el.appendChild(d);
 <div class="media-item"><div class="media-title"><a href="https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2/" target="_blank" rel="noopener">Psychology of Intelligence Analysis</a> <span class="media-rating">★ 4.00 GR</span></div><div class="media-meta">Richards J. Heuer Jr. (CIA)</div><div class="media-note">The foundational text on cognitive biases in analysis. Free from CIA. Chapter 8 (ACH) is the single most important chapter for insider threat analysts.</div></div>
 <div class="media-item"><div class="media-title"><a href="https://bookshop.org/books/anticipating-surprise-analysis-for-strategic-warning/9780761829522" target="_blank" rel="noopener">Anticipating Surprise</a> <span class="media-rating">★ 4.06 GR</span></div><div class="media-meta">Cynthia Grabo</div><div class="media-note">Strategic warning analysis. Pattern recognition across weak signals — directly applicable to insider threat indicator correlation.</div></div>
 <div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/true-believer-inside-the-investigation-and-capture-of-ana-montes-cuba-s-master-spy-scott-carmichael/88192d64e3f7ecb9" target="_blank" rel="noopener">True Believer</a> <span class="media-rating">★ 3.86 GR</span></div><div class="media-meta">Scott Carmichael (DIA)</div><div class="media-note">The investigation and capture of Ana Montes, Cuba's master spy inside DIA. First-person counterintelligence case study.</div></div>
-<div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/the-body-keeps-the-score-brain-mind-and-body-in-the-healing-of-trauma-bessel-van-der-kolk-m-d/9e63236863805513" target="_blank" rel="noopener">The Body Keeps the Score</a> <span class="media-rating">★ 4.38 GR</span></div><div class="media-meta">Bessel van der Kolk</div><div class="media-note">How trauma reshapes the body and brain. Essential for anyone in chronic-stress fields. See also: <a href="wellness.html" target="_blank" rel="noopener">♡ Analyst Wellness</a></div></div>
+<div class="media-item"><div class="media-title"><a href="https://bookshop.org/p/books/the-body-keeps-the-score-brain-mind-and-body-in-the-healing-of-trauma-bessel-van-der-kolk-m-d/9e63236863805513" target="_blank" rel="noopener">The Body Keeps the Score</a> <span class="media-rating">★ 4.38 GR</span></div><div class="media-meta">Bessel van der Kolk</div><div class="media-note">How trauma reshapes the body and brain. Essential for anyone in chronic-stress fields. See also: <a href="wellness" target="_blank" rel="noopener">♡ Analyst Wellness</a></div></div>
 </div>
 <div class="media-pane" id="mp-pods">
 <div class="media-item"><div class="media-title"><a href="https://thecyberwire.com/podcasts/daily-podcast" target="_blank" rel="noopener">Cyberwire Daily</a></div><div class="media-note">Threat landscape in 20 min/day.</div></div>
@@ -573,7 +574,7 @@ el.appendChild(d);
 <div class="tab-pane" id="tab-program" role="tabpanel" aria-labelledby="btn-tab-program">
 <div style="text-align:center;padding:2rem 1rem">
 <p style="font-size:1rem;margin-bottom:0.5rem">🏛️ Program design, threats & tools, and resources have moved to their own page.</p>
-<a href="program.html" style="display:inline-block;padding:0.5rem 1.2rem;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85rem;margin-top:0.5rem">Go to Program Hub →</a>
+<a href="program" style="display:inline-block;padding:0.5rem 1.2rem;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85rem;margin-top:0.5rem">Go to Program Hub →</a>
 </div>
 </div>
 
@@ -608,11 +609,11 @@ el.appendChild(d);
 
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
 <footer class="footer">
-<p><a href="about.html">About</a> &middot; <a href="start.html">🚀 Start here</a> · <a href="references.html">📚 References</a> · <a href="contributors.html">🤝 Contributors</a> · <a href="changelog.html">Changelog</a> · <a href="suggest.html?from=framework">💬 Suggest</a></p>
+<p><a href="about">About</a> &middot; <a href="start">🚀 Start here</a> · <a href="references">📚 References</a> · <a href="contributors">🤝 Contributors</a> · <a href="changelog">Changelog</a> · <a href="suggest?from=framework">💬 Suggest</a></p>
 <p style="margin-top:0.25rem;font-size:0.625rem">Vibe-coded with Claude™ · No AI analysts were harmed · Deployed via double-ROT13 encryption<a href="https://html5zombo.com/" target="_blank" rel="noopener" style="opacity:0.3;margin-left:0.3rem" title="The only limit is yourself">∞</a></p>
 <p style="margin-top:0.15rem;font-size:0.625rem"><a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6">hello@insiderthreatanalyst.com</a></p>
 <p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; <a href="https://github.com/robknowles-cybersecurity/insiderthreatanalyst.com" target="_blank" rel="noopener">Source on GitHub&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
-<p style="margin-top:0.25rem;font-size:0.625rem;font-style:italic">"All you really need is a stick of gum, a pocket knife, and a smile" · <a href="reviews.html" style="opacity:0.4;font-style:normal">⭐</a></p>
+<p style="margin-top:0.25rem;font-size:0.625rem;font-style:italic">"All you really need is a stick of gum, a pocket knife, and a smile" · <a href="reviews" style="opacity:0.4;font-style:normal">⭐</a></p>
 </footer>
 
 <div class="modal-overlay" id="jd-modal"><div class="modal"><h3>Generated job description</h3><div id="jd-content" style="white-space:pre-wrap;line-height:1.6;font-family:'JetBrains Mono',monospace;font-size:0.68rem"></div><div style="display:flex;gap:0.4rem;margin-top:0.65rem"><button class="btn btn-primary" onclick="copyJD()">Copy</button><button class="btn" onclick="closeJDModal()">Close</button></div></div></div>
@@ -649,7 +650,7 @@ const CN={core:{n:'Core analyst',d:'Foundation role. Behavioral analysis, techni
 const K={core:{1:[{id:'K0001',t:'Knowledge of networking (TCP/IP, DNS, DHCP, HTTP/S)',s:'N'},{id:'K0002',t:'Knowledge of risk management processes and frameworks',s:'N'},{id:'K0784',t:'Knowledge of insider threat laws and regulations',s:'N'},{id:'K1254',t:'Knowledge of insider threat hub policies and procedures',s:'N'},{id:'K-OS01',t:'Knowledge of OS fundamentals — user activity logs, file systems, process behavior',s:'C'},{id:'K-NET01',t:'Knowledge of IP addressing, DNS resolution, basic network flow logs',s:'C'},{id:'S-BT01',t:'Skill in recognizing behavioral indicators — affluence, access anomalies, disgruntlement',s:'C'},{id:'K-IT01',t:'Knowledge of program structure, authorities, governance, fusion hub',s:'C'},{id:'K-SE01',t:'Knowledge of social engineering and phishing — how trust is exploited',s:'C'},{id:'K-UIT01',t:'Knowledge of unintentional insider threats — accidental disclosure, phishing victimization, shadow IT',s:'C'},{id:'K-CAT01',t:'Knowledge of CMU threat categories: IP theft, sabotage, fraud, espionage, unintentional',s:'C'}],
 2:[{id:'K0005',t:'Knowledge of cyber threats and vulnerabilities relevant to org systems',s:'N'},{id:'K0785',t:'Knowledge of insider threat tools and techniques',s:'N'},{id:'K1253',t:'Knowledge of information collection tools and techniques',s:'N'},{id:'K-SIEM01',t:'Knowledge of SIEM — log sources, queries (SPL/KQL/Lucene), alert triage',s:'C'},{id:'K-EP01',t:'Knowledge of EDR — alert triage, process trees, forensic artifacts',s:'C'},{id:'K-MOB01',t:'Knowledge of mobile device management and mobile-specific insider vectors',s:'C'},{id:'K-GEO01',t:'Knowledge of geolocation — IP geo, VPN detection, badge/logical correlation, WiFi triangulation',s:'C'},{id:'K-MITRE01',t:'Knowledge of MITRE ATT&CK — TTPs mapped to insider threat scenarios',s:'C'},{id:'S-EL01',t:'Skill in basic elicitation — rapport building, active listening, open-ended questioning',s:'C'},{id:'K-FOR01',t:'Knowledge of evidence handling — chain of custody, preservation, admissibility',s:'A',src:'Digital Evidence Analysis'},{id:'K-DLP01',t:'Knowledge of DLP — network, endpoint, cloud; as one data source in the ecosystem',s:'C'},{id:'K-INV01',t:'Knowledge of investigatory logic — hypotheses, confirmation bias, logical fallacies',s:'C'},{id:'K-REM01',t:'Knowledge of remote/hybrid work insider threat vectors',s:'C'},{id:'K-OSINT01',t:'Knowledge of OSINT concepts — collection, managed attribution, legal boundaries',s:'C'},{id:'K-PRIV01',t:'Awareness of privacy law constraints on monitoring (GDPR, state laws)',s:'C'},{id:'S-COMM01',t:'Skill in clear written communication — case notes, evidence documentation',s:'C'}],
 3:[{id:'K1250',t:'Knowledge of external org roles (law enforcement, regulators, FS-ISAC)',s:'N'},{id:'K1252',t:'Knowledge of high value asset characteristics and protection',s:'N'},{id:'T1439',t:'Assess behavior of victims, witnesses, or suspects during investigations',s:'T'},{id:'K-CTI01',t:'Knowledge of CTI sources, methods, intelligence lifecycle',s:'A',src:'Threat Analysis'},{id:'S-EL02',t:'Skill in detecting verbal/nonverbal deception — baselines, stress, cognitive load',s:'C'},{id:'K-FOR02',t:'Knowledge of network forensics — pcap, flow data, DNS, timeline reconstruction',s:'A',src:'Digital Evidence Analysis'},{id:'A-BU01',t:'Ability to collaborate as fusion hub participant',s:'C'},{id:'K-MITRE02',t:'Knowledge of MITRE InT TTP KB — evidence-based techniques, OHIs',s:'C'},{id:'K-NET02',t:'Knowledge of network architecture — VLANs, firewalls, proxies, PAM — trace data end-to-end',s:'C'},{id:'S-INV01',t:'Skill in recognizing own cognitive biases — anchoring, availability, confirmation, groupthink',s:'C'},{id:'S-COMM02',t:'Skill in exec summaries and courtroom-grade case reports',s:'C'},{id:'S-OSINT01',t:'Skill in OSINT investigations — non-attributable accounts, evidence preservation',s:'C'},{id:'K-WAVD01',t:'Knowledge of work avoidance detection — mouse movers, IP-KVMs, overemployment, DPRK TTPs',s:'C'},{id:'S-TECH01',t:'Skill in explaining complex technical scenarios to non-technical audiences',s:'C'},{id:'S-MOB01',t:'Skill in mobile forensics — MDM logs, app sideloading, cloud backup extraction, mobile-specific exfiltration vectors',s:'C'},{id:'A-FOR01',t:'Ability to conduct forensic analysis of digital media — disk, memory, mobile, cloud',s:'A',src:'Digital Evidence Analysis'},{id:'A-SYNTH01',t:'Ability to synthesize multi-source behavioral and technical data into cohesive risk assessments',s:'C'},{id:'A-SAT01',t:'Ability to apply structured analytic techniques (ACH, key assumptions check, red team) under operational pressure',s:'C'}],
-4:[{id:'K-MAT01',t:'Knowledge of maturity models (CMU, NITTF), audit frameworks, regulatory requirements',s:'C'},{id:'A-CAG01',t:'Ability to lead cross-functional crisis action groups',s:'C'},{id:'S-DET01',t:'Skill in designing behavioral detection signatures and UEBA/RBA logic',s:'C'},{id:'K-GOV01',t:'Knowledge of governance — steering committee, oversight mechanisms, investigation thresholds',s:'C'},{id:'A-MENT01',t:'Ability to mentor analysts and develop training curricula',s:'C'},{id:'K-FUSE01',t:'Knowledge of fusion hub design — partnerships, MOUs, liaison programs',s:'C'},{id:'K-ETH01',t:'Knowledge of ethical frameworks — access discipline, confidentiality, oversight',s:'C'},{id:'A-OSINT02',t:'Ability to design OSINT programs with legal guardrails',s:'C'},{id:'K-EMRG01',t:'Knowledge of emerging threats — DPRK, overemployment, AI social engineering, wearable exfiltration (smart glasses), shadow AI, TA integration',s:'C'},{id:'A-INTEL01',t:'Ability to produce finished intelligence products from raw multi-source data',s:'A',src:'Threat Analysis'},{id:'A-EVID01',t:'Ability to produce courtroom-defensible investigative products with chain-of-custody documentation',s:'C'},{id:'A-IRPB01',t:'Ability to develop and maintain insider-specific incident response playbooks',s:'A',src:'Incident Response'}],
+4:[{id:'K-MAT01',t:'Knowledge of maturity models (CMU, NITTF), audit frameworks, regulatory requirements',s:'C'},{id:'A-CAG01',t:'Ability to lead cross-functional crisis action groups',s:'C'},{id:'S-DET01',t:'Skill in designing behavioral detection signatures and UEBA/RBA logic',s:'C'},{id:'K-GOV01',t:'Knowledge of governance — steering committee, oversight mechanisms, investigation thresholds',s:'C'},{id:'A-MENT01',t:'Ability to mentor analysts and develop training curricula',s:'C'},{id:'K-FUSE01',t:'Knowledge of fusion hub design — partnerships, MOUs, liaison programs',s:'C'},{id:'K-ETH01',t:'Knowledge of ethical frameworks — access discipline, confidentiality, oversight',s:'C'},{id:'A-OSINT02',t:'Ability to design OSINT programs with legal guardrails',s:'C'},{id:'K-EMRG01',t:'Knowledge of emerging threats — DPRK, overemployment, AI social engineering, wearable exfiltration (smart glasses), shadow AI, TA integration',s:'C'},{id:'A-INTEL01',t:'Ability to produce finished intelligence products from raw multi-source data',s:'A',src:'Threat Analysis'},{id:'A-EVID01',t:'Ability to produce courtroom-defensible investigative products with chain-of-custody documentation',s:'C'},{id:'A-IRPB01',t:'Ability to develop and maintain insider-specific incident response playbooks',s:'A',src:'Incident Response'},{id:'A-AGENT01',t:'Ability to investigate AI agents as non-human insiders — attribute agent actions to a unique agent identity and its accountable human sponsor, reconstruct input → tool-call → data-access chains by correlating agent, IAM, cloud-collaboration, API/MCP, DLP and endpoint telemetry, and identify over-privilege, agent sprawl, indirect prompt injection, unauthorized tool use and exfiltration — treating agents as lifecycle-managed principals with least-privilege access and behavioral baselines distinct from humans',s:'C'}],
 5:[{id:'A-PRG01',t:'Ability to design and transform programs holistically',s:'C'},{id:'S-EXT01',t:'Skill in external representation — FS-ISAC, SIFMA, government, regulators',s:'C'},{id:'K-AI01',t:'Knowledge of AI/ML for insider threat — "digital employees" as workforce concept',s:'C'},{id:'A-EXEC01',t:'Ability to communicate program value to executives in business terms',s:'C'},{id:'K-REG01',t:'Knowledge of regulatory landscape — SOX, GDPR, CCPA, GLBA, FISMA, NISPOM',s:'C'},{id:'A-INTPROG01',t:'Ability to design intelligence programs — collection plans, requirements, cross-sector sharing leadership',s:'A',src:'Threat Analysis'},{id:'A-TREND01',t:'Ability to conduct trend analysis across large case datasets to inform enterprise detection strategy',s:'A',src:'Threat Analysis'}]},
 tech:{1:[{id:'K-T01',t:'Knowledge of SIEM architecture — onboarding, parsing, extraction',s:'C'},{id:'K-T02',t:'Knowledge of log formats (syslog, WinEvent, JSON, CEF)',s:'C'}],2:[{id:'S-T01',t:'Skill in SIEM correlation rules for insider threat',s:'C'},{id:'K-T03',t:'Knowledge of UEBA/RBA — scoring, baselines, anomaly detection',s:'C'},{id:'S-T02',t:'Skill in SPL, KQL, Lucene for complex correlation',s:'C'},{id:'K-T04',t:'Knowledge of DLP architecture — tuning, exceptions, FP reduction',s:'C'}],3:[{id:'S-T03',t:'Skill in adapting vendor detection logic to org context',s:'C'},{id:'K-T05',t:'Knowledge of IAM audit — AD, Entra ID, PAM, privilege creep',s:'C'},{id:'K-T06',t:'Knowledge of EDR internals — telemetry, process trees, behavioral engines',s:'C'}],4:[{id:'A-T01',t:'Ability to evaluate new detection tech — POC, build-vs-buy',s:'C'},{id:'S-T04',t:'Skill in SOAR/automation for enrichment and triage',s:'C'}],5:[{id:'A-T02',t:'Ability to architect enterprise detection strategy',s:'C'},{id:'S-T05',t:'Skill in defining telemetry requirements and coverage metrics',s:'C'}]},
 hunt:{1:[{id:'K-H01',t:'Knowledge of hunting — hypothesis generation, intel vs. data driven',s:'C'}],2:[{id:'S-H01',t:'Skill in pivot analysis across SIEM, EDR, IAM, HR, physsec',s:'C'},{id:'K-H02',t:'Knowledge of statistical baselines',s:'C'}],3:[{id:'S-H02',t:'Skill in designing detections from hunt findings',s:'C'},{id:'K-H03',t:'Knowledge of persistent insider patterns — slow exfil, staging',s:'C'},{id:'K-H04',t:'Knowledge of network forensic hunting',s:'A',src:'Digital Evidence Analysis'}],4:[{id:'A-H01',t:'Ability to lead hunt operations',s:'C'},{id:'S-H03',t:'Skill in hunt reports — technical to business risk',s:'C'}],5:[{id:'A-H02',t:'Ability to build a hunting program with metrics',s:'C'}]},

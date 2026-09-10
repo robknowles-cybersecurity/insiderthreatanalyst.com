@@ -32,7 +32,7 @@
 <meta property="og:description" content="Governance model for the Insider Threat Analyst Career Framework.">
 <meta name="description" content="Site policy for the Insider Threat Analyst Career Framework. How changes are made, how KSAs are managed, and how to contribute.">
 <title>Site Policy — Insider Threat Analyst Career Framework</title>
-<link rel="canonical" href="https://insiderthreatanalyst.com/governance.html">
+<link rel="canonical" href="https://insiderthreatanalyst.com/governance">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -77,7 +77,7 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="header"><div class="header-inner">
-<h1>📜 Site Policy · <a href="index.html" target="_blank" rel="noopener">Career Framework</a></h1>
+<h1>📜 Site Policy · <a href="/" target="_blank" rel="noopener">Career Framework</a></h1>
 <div class="header-right">
 <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()" id="theme-btn">Dark</button>
 </div>
@@ -89,56 +89,60 @@
      Edit _nav/nav.html and re-run tools/build-nav.sh; changes here are overwritten. -->
 <nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
 <div class="nav-group"><span class="nav-label">Explore</span>
-<a href="/framework.html">Framework</a>
-<a href="/matrix.html">Matrix</a>
-<a href="/clusters.html">Clusters</a>
+<a href="/framework">Framework</a>
+<a href="/matrix">Matrix</a>
+<a href="/clusters">Clusters</a>
 </div>
 <div class="nav-group"><span class="nav-label">Build &amp; Run</span>
-<a href="/program.html">Program</a>
-<a href="/emerging.html">Emerging</a>
+<a href="/program">Program</a>
+<a href="/emerging">Emerging</a>
+<a href="https://ttx.insiderthreatanalyst.com/" target="_blank" rel="noopener">TTX Builder</a>
 </div>
 <div class="nav-group"><span class="nav-label">Grow</span>
-<a href="/engagement.html">Engagement</a>
-<a href="/maturity.html">Maturity</a>
+<a href="/engagement">Engagement</a>
+<a href="/maturity">Maturity</a>
 </div>
 <div class="nav-group nav-util"><span class="nav-label">About</span>
-<a href="/about.html">About</a>
-<a href="/start.html">Start Here</a>
-<a href="/wellness.html">Wellness</a>
-<a href="/governance.html" class="nav-active">Site Policy</a>
-<a href="/contributors.html">Contributors</a>
-<a href="/references.html">References</a>
-<a href="/cpe.html">CPE Resources</a>
+<a href="/about">About</a>
+<a href="/start">Start Here</a>
+<a href="/wellness">Wellness</a>
+<a href="/governance" class="nav-active">Site Policy</a>
+<a href="/contributors">Contributors</a>
+<a href="/references">References</a>
+<a href="/cpe">CPE Resources</a>
 <a href="/papers/">Papers</a>
-<a href="/reviews.html">Reviews</a>
-<a href="/changelog.html">Changelog</a>
-<a href="/suggest.html">Suggest</a>
+<a href="/reviews">Reviews</a>
+<a href="/changelog">Changelog</a>
+<a href="/suggest">Suggest</a>
 </div>
+<div class="nav-group nav-search"><button type="button" class="nav-search-btn" id="ita-search-open" title="Search the site — press /" aria-haspopup="dialog" aria-expanded="false">Search <kbd aria-hidden="true">/</kbd></button></div>
 </div></nav>
+<link rel="stylesheet" href="/assets/search.css">
+<script src="/assets/search.js" defer></script>
 <!-- NAV:END -->
 
 
 <main class="main" id="main-content">
 
 <div class="hero">
-<h2>How This Framework Is Governed</h2>
+<h2 id="governance">How This Framework Is Governed</h2>
 <p>This page describes how the Insider Threat Analyst Career Framework is authored, how changes are made, how KSAs are managed, and how you can contribute. Transparency is the point.</p>
 </div>
 
 
 <div class="section">
-<h3>Authorship &amp; authority</h3>
+<h3 id="authorship">Authorship &amp; authority</h3>
 <p>This framework is authored and maintained by a single practitioner, informed by peer review from the <a href="https://www.fsisac.com/" target="_blank" rel="noopener">FS-ISAC</a> Insider Threat Working Group and contributions from the broader insider threat community. It is not a committee product, a vendor initiative, or a regulatory standard. It is a practitioner tool built by practitioners.</p>
 <p>Community contributions — resource suggestions, KSA refinements, corrections, new content — are welcomed, evaluated, and credited. But contributions don't automatically become part of the framework. Every change goes through editorial review to ensure consistency with the framework's scope, structure, and quality standard.</p>
 </div>
 
 
 <div class="section">
-<h3>KSA stability</h3>
+<h3 id="ksa-stability">KSA stability</h3>
 <p>Practitioners, hiring managers, and training programs need to know that when they reference a KSA by its ID, it means what they think it means. The framework makes these commitments:</p>
 <ul>
 <li><strong>IDs are stable.</strong> Once a KSA is published with an ID (e.g., K-SIEM01, A-SYNTH01), that ID will not be reassigned to a different concept.</li>
-<li><strong>Wording may be refined for clarity.</strong> The description text may be updated to improve specificity or readability without changing the KSA's scope. All wording changes are documented in the <a href="changelog.html" target="_blank" rel="noopener">changelog</a>.</li>
+<li><strong>Wording may be refined for clarity.</strong> The description text may be updated to improve specificity or readability without changing the KSA's scope. All wording changes are documented in the <a href="changelog" target="_blank" rel="noopener">changelog</a>.</li>
 <li><strong>Scope changes get new IDs.</strong> If a KSA's meaning needs to materially change, the original ID is deprecated and a new ID is created. The old ID remains in the data model as deprecated — never silently replaced.</li>
 <li><strong>Deprecation, not deletion.</strong> If a KSA becomes redundant or obsolete, it is marked deprecated, not removed. Downstream references don't break.</li>
 </ul>
@@ -150,10 +154,10 @@
 
 
 <div class="section">
-<h3>Relationship to NICE</h3>
+<h3 id="nice-relationship">Relationship to NICE</h3>
 <p>The framework's KSA model extends the <a href="https://niccs.cisa.gov/workforce-development/nice-framework" target="_blank" rel="noopener">NICE Framework</a> (SP 800-181r1) Insider Threat Analyst work role. It does not replace it.</p>
 <ul>
-<li><strong>NICE InT KSAs</strong> are inherited as-is, tagged with source "NICE InT" in the <a href="matrix.html" target="_blank" rel="noopener">KSA Matrix</a>.</li>
+<li><strong>NICE InT KSAs</strong> are inherited as-is, tagged with source "NICE InT" in the <a href="matrix" target="_blank" rel="noopener">KSA Matrix</a>.</li>
 <li><strong>Custom KSAs</strong> fill gaps the NICE framework doesn't cover — behavioral analysis, detection engineering, elicitation, program maturity, and emerging threats. These are written by insider threat practitioners based on operational experience, industry research, and published frameworks (CMU SEI, SIFMA, MITRE, SOFIT, CPIR).</li>
 <li><strong>Adjacent role KSAs</strong> are borrowed from other NICE work roles (Digital Evidence Analysis, Threat Analysis, Incident Response) and attributed to their source.</li>
 </ul>
@@ -162,20 +166,20 @@
 
 
 <div class="section">
-<h3>How changes happen today</h3>
+<h3 id="how-changes-happen">How changes happen today</h3>
 <p>The framework is in active development. Changes follow this process:</p>
 <ul>
-<li><strong>Suggestions</strong> come in via the <a href="suggest.html" target="_blank" rel="noopener">suggestion form</a> or <a href="mailto:hello@insiderthreatanalyst.com">hello@insiderthreatanalyst.com</a>.</li>
+<li><strong>Suggestions</strong> come in via the <a href="suggest" target="_blank" rel="noopener">suggestion form</a> or <a href="mailto:hello@insiderthreatanalyst.com">hello@insiderthreatanalyst.com</a>.</li>
 <li><strong>Evaluation:</strong> Each suggestion is reviewed against the framework's existing coverage, scope, and quality bar. Not everything gets added — but everything gets considered.</li>
-<li><strong>Implementation:</strong> Accepted changes ship in versioned releases. Every change is documented in the <a href="changelog.html" target="_blank" rel="noopener">changelog</a> with rationale and attribution.</li>
-<li><strong>Credit:</strong> Contributors are listed on the <a href="contributors.html" target="_blank" rel="noopener">Contributors</a> page by name (or anonymously, their choice).</li>
+<li><strong>Implementation:</strong> Accepted changes ship in versioned releases. Every change is documented in the <a href="changelog" target="_blank" rel="noopener">changelog</a> with rationale and attribution.</li>
+<li><strong>Credit:</strong> Contributors are listed on the <a href="contributors" target="_blank" rel="noopener">Contributors</a> page by name (or anonymously, their choice).</li>
 </ul>
 <p>There is no formal RFC process today. The framework has a single editor who makes final calls informed by practitioner feedback. This works at the current scale. If it stops working, the process will evolve.</p>
 </div>
 
 
 <div class="section">
-<h3>Update cadence</h3>
+<h3 id="update-cadence">Update cadence</h3>
 <p><strong>Current pace:</strong> Weekly updates during active development. Community suggestions are reviewed as they arrive and incorporated into the next release when appropriate.</p>
 <p><strong>Future pace:</strong> Monthly releases once the framework stabilizes. All changes documented in the changelog regardless of cadence.</p>
 <p>The goal is to be nimble early — respond to feedback quickly, iterate visibly, and show contributors that their input matters — without letting maintenance become unsustainable.</p>
@@ -183,22 +187,22 @@
 
 
 <div class="section">
-<h3>AI/ML and emerging threats</h3>
+<h3 id="ai-ml">AI/ML and emerging threats</h3>
 
 <div class="callout callout-amber">
-<strong>This domain is moving faster than governance processes can keep up with.</strong> The framework includes an <a href="clusters.html#cl-aiml" target="_blank" rel="noopener">AI/ML emerging cluster</a> with a single KSA today (K-AI01). This is deliberately minimal. The intersection of AI/ML and insider threat is evolving across at least three dimensions simultaneously:
+<strong>This domain is moving faster than governance processes can keep up with.</strong> The framework includes an <a href="clusters#cl-aiml" target="_blank" rel="noopener">AI/ML emerging cluster</a> with a single KSA today (K-AI01). This is deliberately minimal. The intersection of AI/ML and insider threat is evolving across at least three dimensions simultaneously:
 <ul style="margin-top:0.4rem">
 <li><strong>AI as detection tool</strong> — LLM-assisted triage, automated timeline generation, behavioral anomaly detection (K-AI01 today)</li>
 <li><strong>AI as threat vector</strong> — autonomous agents with delegated access to internal systems, APIs, and collaboration platforms that bypass traditional behavioral baselines. These are insider-like access holders with no human behavioral patterns to anchor detection against.</li>
 <li><strong>AI as attack enabler</strong> — GenAI-assisted social engineering, deepfake-based impersonation, LLM-powered data exfiltration</li>
 </ul>
-<p style="margin-top:0.5rem;margin-bottom:0">New KSAs <strong>will</strong> be added to this cluster as the field matures and practitioner consensus develops around what competencies are required. This is the governance model in action: identify the domain, document it, solicit input, and formalize KSAs when the practice catches up to the threat. If you work in this space, <a href="suggest.html?from=governance" target="_blank" rel="noopener">we want to hear from you</a>.</p>
+<p style="margin-top:0.5rem;margin-bottom:0">New KSAs <strong>will</strong> be added to this cluster as the field matures and practitioner consensus develops around what competencies are required. This is the governance model in action: identify the domain, document it, solicit input, and formalize KSAs when the practice catches up to the threat. If you work in this space, <a href="suggest?from=governance" target="_blank" rel="noopener">we want to hear from you</a>.</p>
 </div>
 </div>
 
 
 <div class="section">
-<h3>Where this is headed</h3>
+<h3 id="roadmap">Where this is headed</h3>
 <p>If this framework grows into a community-maintained standard — used across organizations, cited in job postings, referenced in training programs — a more formal governance process will be needed. That might include:</p>
 <ul>
 <li>Proposed changes published with rationale for community review</li>
@@ -206,12 +210,12 @@
 <li>A small practitioner advisory board for contested decisions</li>
 <li>Semantic versioning (breaking changes increment the major version)</li>
 </ul>
-<p>That process doesn't exist yet because it would be premature. The framework has <a href="changelog.html" target="_blank" rel="noopener">a changelog</a>, <a href="contributors.html" target="_blank" rel="noopener">credited contributors</a>, and stable KSA IDs. That's the right level of governance for where it is today.</p>
+<p>That process doesn't exist yet because it would be premature. The framework has <a href="changelog" target="_blank" rel="noopener">a changelog</a>, <a href="contributors" target="_blank" rel="noopener">credited contributors</a>, and stable KSA IDs. That's the right level of governance for where it is today.</p>
 </div>
 
 
 <div class="section">
-<h3>Where insider threat fits</h3>
+<h3 id="where-int-fits">Where insider threat fits</h3>
 <p>Insider threat programs don't exist in a vacuum. The field overlaps with several adjacent disciplines, and understanding these relationships helps practitioners communicate their value — especially to leadership who may be hearing different terminology from analysts, vendors, and consultants.</p>
 <ul>
 <li><strong>Human Risk Management (HRM)</strong> — the Gartner/Proofpoint framing that treats security awareness, DLP, phishing prevention, and insider threat as facets of one workforce risk discipline. Insider threat is the sharpest edge of HRM — the specialized capability that makes the broader program actually work.</li>
@@ -223,8 +227,8 @@
 
 
 <div class="section">
-<h3>Community &amp; ecosystem</h3>
-<p>This framework exists in a growing ecosystem of insider threat practitioner resources. The full directory — organized by standards bodies, communities of practice, and research/vendor intelligence — lives on the <a href="index.html">framework page's Resources tab</a>. Key communities include:</p>
+<h3 id="community">Community &amp; ecosystem</h3>
+<p>This framework exists in a growing ecosystem of insider threat practitioner resources. The full directory — organized by standards bodies, communities of practice, and research/vendor intelligence — lives on the <a href="/">framework page's Resources tab</a>. Key communities include:</p>
 <ul>
 <li><a href="https://www.sei.cmu.edu/our-work/insider-threat/" target="_blank" rel="noopener">CMU SEI National Insider Threat Center / OSIT Working Group</a> — 250+ members, 130+ organizations, the primary research and information-sharing community for practitioners building insider threat programs</li>
 <li><a href="https://www.irpa.org" target="_blank" rel="noopener">IRPA</a> — Insider Risk Practitioner Alliance (formerly FIRPA), the Five Eyes alliance with Centres of Excellence in Australia, Canada, and the US</li>
@@ -236,12 +240,12 @@
 
 
 <div class="section">
-<h3>Contribute</h3>
+<h3 id="contribute">Contribute</h3>
 <p>This framework improves when practitioners engage with it. Here's what's most valuable:</p>
 <ul>
 <li><strong>KSA refinements</strong> — wording improvements, scope questions, gap identification</li>
 <li><strong>Training resources</strong> — courses, certifications, or free materials that map to specific competency clusters</li>
-<li><strong>Research &amp; publications</strong> — academic papers, industry reports, case studies for the <a href="references.html" target="_blank" rel="noopener">annotated bibliography</a></li>
+<li><strong>Research &amp; publications</strong> — academic papers, industry reports, case studies for the <a href="references" target="_blank" rel="noopener">annotated bibliography</a></li>
 <li><strong>Emerging threat intelligence</strong> — new vectors, TTPs, or detection challenges that may warrant new KSAs</li>
 <li><strong>Practitioner validation</strong> — does this match your experience? Where does it diverge? What's missing?</li>
 </ul>
@@ -249,10 +253,10 @@
 <div class="callout callout-teal">
 <strong>We especially welcome input from:</strong> thought leaders, researchers, and practitioners working in insider threat, insider risk management, behavioral science, counterintelligence, and adjacent disciplines. If your work has informed how organizations detect, investigate, or prevent insider threats, there's a place for it here. This is a community project — the more perspectives that shape it, the more useful it becomes.
 <br><br>
-<a href="suggest.html?from=governance" target="_blank" rel="noopener">Submit a suggestion →</a> &nbsp;or&nbsp; <a href="mailto:hello@insiderthreatanalyst.com">hello@insiderthreatanalyst.com</a>
+<a href="suggest?from=governance" target="_blank" rel="noopener">Submit a suggestion →</a> &nbsp;or&nbsp; <a href="mailto:hello@insiderthreatanalyst.com">hello@insiderthreatanalyst.com</a>
 </div>
 
-<p style="font-size:0.7rem;color:var(--fg3);margin-top:0.75rem"><strong>Privacy note:</strong> Suggestions sent through the <a href="suggest.html?from=governance" target="_blank" rel="noopener">suggestion form</a> are delivered via <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Formspree</a>, a third-party form processor — any name or email you choose to include transits Formspree's servers on the way to us. Both fields are optional, and anonymous submissions are welcome. The 👍/👎 feedback buttons record only the page and the vote — nothing that identifies you.</p>
+<p style="font-size:0.7rem;color:var(--fg3);margin-top:0.75rem"><strong>Privacy note:</strong> Suggestions sent through the <a href="suggest?from=governance" target="_blank" rel="noopener">suggestion form</a> are delivered via <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Formspree</a>, a third-party form processor — any name or email you choose to include transits Formspree's servers on the way to us. Both fields are optional, and anonymous submissions are welcome. The 👍/👎 feedback buttons record only the page and the vote — nothing that identifies you.</p>
 </div>
 
 
@@ -267,7 +271,7 @@
 
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
 <footer class="footer">
-<p><a href="about.html">About</a> &middot; <a href="start.html">🚀 Start here</a> · <a href="references.html">📚 References</a> · <a href="contributors.html">🤝 Contributors</a> · <a href="changelog.html">Changelog</a> · <a href="suggest.html?from=governance">💬 Suggest</a></p>
+<p><a href="about">About</a> &middot; <a href="start">🚀 Start here</a> · <a href="references">📚 References</a> · <a href="contributors">🤝 Contributors</a> · <a href="changelog">Changelog</a> · <a href="suggest?from=governance">💬 Suggest</a></p>
 <p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; <a href="https://github.com/robknowles-cybersecurity/insiderthreatanalyst.com" target="_blank" rel="noopener">Source on GitHub&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
 <p style="margin-top:0.25rem;font-size:0.58rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.55rem">hello@insiderthreatanalyst.com</a></p>
 </footer>

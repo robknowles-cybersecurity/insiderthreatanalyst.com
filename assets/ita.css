@@ -141,3 +141,18 @@ html.no-transition,html.no-transition *,html.no-transition *::before,html.no-tra
 .skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:#fff;padding:0.5rem 1rem;z-index:9999;font-size:0.85rem;text-decoration:none;border-radius:0 0 4px 0;transition:top 0.2s}.skip-link:focus{top:0}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+
+/* --------------------------------------------------------------------------
+   11. SEARCH TERM HIGHLIGHT  (PE-248)
+   A visitor arriving from a search result lands with ?highlight=<term> in the
+   URL; assets/search.js loads the vendored pagefind-highlight.js, which wraps
+   each occurrence in <mark class="pagefind-highlight">. The colours are the
+   overlay's on purpose: inside the panel Pagefind resets its excerpt <mark> to
+   the browser default (.pagefind-ui--reset mark{all:revert} — yellow ground,
+   black text), so the term the reader clicked looks the same on the page they
+   land on. Black on yellow reads in both themes, which is why it is not
+   themed. Scoped to the class, so a <mark> a page author writes is untouched.
+   -------------------------------------------------------------------------- */
+mark.pagefind-highlight{background:#fde047;color:#0a1628;padding:0 0.1em;border-radius:2px}
+[data-theme="dark"] mark.pagefind-highlight{background:#facc15;color:#0a1628}

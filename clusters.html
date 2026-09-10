@@ -32,7 +32,7 @@
 <meta property="og:description" content="Competency clusters for the Insider Threat Analyst Career Framework. Browse training, certifications, and KSAs by skill domain.">
 <meta name="description" content="Competency clusters for the Insider Threat Analyst Career Framework. Browse training, certifications, and KSAs by skill domain.">
 <title>Competency Clusters — Insider Threat Analyst Career Framework</title>
-<link rel="canonical" href="https://insiderthreatanalyst.com/clusters.html">
+<link rel="canonical" href="https://insiderthreatanalyst.com/clusters">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -160,7 +160,7 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="header"><div class="header-inner">
-<h1>🧭 Competency Clusters · <a href="index.html" target="_blank" rel="noopener">Career Framework</a></h1>
+<h1>🧭 Competency Clusters · <a href="/" target="_blank" rel="noopener">Career Framework</a></h1>
 <div class="header-right">
 <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()" id="theme-btn">Dark</button>
 </div>
@@ -172,32 +172,36 @@
      Edit _nav/nav.html and re-run tools/build-nav.sh; changes here are overwritten. -->
 <nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
 <div class="nav-group"><span class="nav-label">Explore</span>
-<a href="/framework.html">Framework</a>
-<a href="/matrix.html">Matrix</a>
-<a href="/clusters.html" class="nav-active">Clusters</a>
+<a href="/framework">Framework</a>
+<a href="/matrix">Matrix</a>
+<a href="/clusters" class="nav-active">Clusters</a>
 </div>
 <div class="nav-group"><span class="nav-label">Build &amp; Run</span>
-<a href="/program.html">Program</a>
-<a href="/emerging.html">Emerging</a>
+<a href="/program">Program</a>
+<a href="/emerging">Emerging</a>
+<a href="https://ttx.insiderthreatanalyst.com/" target="_blank" rel="noopener">TTX Builder</a>
 </div>
 <div class="nav-group"><span class="nav-label">Grow</span>
-<a href="/engagement.html">Engagement</a>
-<a href="/maturity.html">Maturity</a>
+<a href="/engagement">Engagement</a>
+<a href="/maturity">Maturity</a>
 </div>
 <div class="nav-group nav-util"><span class="nav-label">About</span>
-<a href="/about.html">About</a>
-<a href="/start.html">Start Here</a>
-<a href="/wellness.html">Wellness</a>
-<a href="/governance.html">Site Policy</a>
-<a href="/contributors.html">Contributors</a>
-<a href="/references.html">References</a>
-<a href="/cpe.html">CPE Resources</a>
+<a href="/about">About</a>
+<a href="/start">Start Here</a>
+<a href="/wellness">Wellness</a>
+<a href="/governance">Site Policy</a>
+<a href="/contributors">Contributors</a>
+<a href="/references">References</a>
+<a href="/cpe">CPE Resources</a>
 <a href="/papers/">Papers</a>
-<a href="/reviews.html">Reviews</a>
-<a href="/changelog.html">Changelog</a>
-<a href="/suggest.html">Suggest</a>
+<a href="/reviews">Reviews</a>
+<a href="/changelog">Changelog</a>
+<a href="/suggest">Suggest</a>
 </div>
+<div class="nav-group nav-search"><button type="button" class="nav-search-btn" id="ita-search-open" title="Search the site — press /" aria-haspopup="dialog" aria-expanded="false">Search <kbd aria-hidden="true">/</kbd></button></div>
 </div></nav>
+<link rel="stylesheet" href="/assets/search.css">
+<script src="/assets/search.js" defer></script>
 <!-- NAV:END -->
 
 
@@ -205,7 +209,7 @@
 
 <div class="hero">
 <h2>Competency Clusters</h2>
-<p>Not sure what to learn? Browse by skill domain. Each cluster groups related KSAs with a training path from free to paid, relevant certifications, and which concentrations need it most. <a href="matrix.html" target="_blank" rel="noopener">Filter the full KSA matrix by cluster →</a></p>
+<p>Not sure what to learn? Browse by skill domain. Each cluster groups related KSAs with a training path from free to paid, relevant certifications, and which concentrations need it most. <a href="matrix" target="_blank" rel="noopener">Filter the full KSA matrix by cluster →</a></p>
 </div>
 
 <div class="pathbuilder" id="pathbuilder">
@@ -245,7 +249,7 @@
 <div id="clusters"></div>
 
 <div class="info-box">
-<b>How this connects to the framework:</b> Each cluster maps to KSAs in the <a href="matrix.html" target="_blank" rel="noopener">KSA Matrix</a> (filter by cluster to see them). Certifications are listed in the Framework's <a href="index.html" target="_blank" rel="noopener">Certs &amp; Training</a> panel. Training resources link to the <a href="references.html" target="_blank" rel="noopener">annotated bibliography</a> for research depth. Missing something? <a href="suggest.html?from=clusters" target="_blank" rel="noopener">Suggest it</a> or email <a href="mailto:hello@insiderthreatanalyst.com">hello@insiderthreatanalyst.com</a>.
+<b>How this connects to the framework:</b> Each cluster maps to KSAs in the <a href="matrix" target="_blank" rel="noopener">KSA Matrix</a> (filter by cluster to see them). Certifications are listed in the Framework's <a href="/" target="_blank" rel="noopener">Certs &amp; Training</a> panel. Training resources link to the <a href="references" target="_blank" rel="noopener">annotated bibliography</a> for research depth. Missing something? <a href="suggest?from=clusters" target="_blank" rel="noopener">Suggest it</a> or email <a href="mailto:hello@insiderthreatanalyst.com">hello@insiderthreatanalyst.com</a>.
 </div>
 
 </main>
@@ -260,7 +264,7 @@
 
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
 <footer class="footer">
-<p><a href="about.html">About</a> &middot; <a href="start.html">🚀 Start here</a> · <a href="references.html">📚 References</a> · <a href="contributors.html">🤝 Contributors</a> · <a href="changelog.html">Changelog</a> · <a href="suggest.html?from=clusters">💬 Suggest</a></p>
+<p><a href="about">About</a> &middot; <a href="start">🚀 Start here</a> · <a href="references">📚 References</a> · <a href="contributors">🤝 Contributors</a> · <a href="changelog">Changelog</a> · <a href="suggest?from=clusters">💬 Suggest</a></p>
 <p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; <a href="https://github.com/robknowles-cybersecurity/insiderthreatanalyst.com" target="_blank" rel="noopener">Source on GitHub&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
 <p style="margin-top:0.25rem;font-size:0.625rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.625rem">hello@insiderthreatanalyst.com</a></p>
 </footer>
@@ -525,7 +529,7 @@ conc:{audit:'core',maturity:'supporting',core:'awareness'}
 },
 {id:'aiml',name:'AI/ML for Insider Threat',group:'emerging',icon:'🔮',
 desc:'LLM-assisted triage, behavioral anomaly detection, natural language log queries, automated timeline generation. Also emerging: AI agents as insider-like access holders — autonomous systems with delegated access to internal data, APIs, and collaboration platforms that bypass traditional behavioral baselines. The field is moving faster than training programs can follow.',
-ksas:['K-AI01'],
+ksas:['K-AI01','A-AGENT01'],
 training:[
 {n:'CompTIA SecAI+ (CY0-001)',u:'https://www.comptia.org/en-us/certifications/secai/',cost:'$$',note:'First vendor-neutral AI security cert. AI threat modeling, secure deployment, GRC for AI. Launched Feb 2026'},
 {n:'OWASP Top 10 for LLM Applications',u:'https://owasp.org/www-project-top-10-for-large-language-model-applications/',cost:'free',note:'Emerging standard for LLM security risks — sensitive info disclosure directly relevant to insider threat'},
@@ -534,6 +538,8 @@ training:[
 {n:'Google AI/ML Crash Course',u:'https://developers.google.com/machine-learning/crash-course',cost:'free',note:'ML fundamentals for non-data-scientists'},
 {n:'Anthropic / OpenAI research blogs',u:'https://www.anthropic.com/research',cost:'free',note:'State of the art in AI capabilities'},
 {n:'DTEX i³ research',u:'https://www.dtexsystems.com/resources/',cost:'free',note:'AI for insider threat — vendor perspective'},
+{n:'Microsoft — Least privilege for AI agents',u:'https://www.microsoft.com/en-us/security/blog/2026/07/16/least-privilege-for-ai-agents-identity-access-and-tool-binding/',cost:'free',note:'Agent identity, task-scoped access, tool binding, end-to-end auditability. The control side of A-AGENT01'},
+{n:'How Vulnerable Are AI Agents to Indirect Prompt Injections?',u:'https://arxiv.org/pdf/2603.15714',cost:'free',note:'Large-scale public competition. Concealed injection — the agent is compromised and the final response shows no clue'},
 {n:'OpenID Foundation — Identity Management for Agentic AI',u:'https://openid.net/wp-content/uploads/2025/10/Identity-Management-for-Agentic-AI.pdf',cost:'free',note:'AI agents as insider-like access holders — identity, delegation, controls'},
 {n:'Andrew Ng — ML Specialization',u:'https://www.coursera.org/specializations/machine-learning-introduction',cost:'free/$',note:'Gold standard ML foundations'},
 {n:'Anthropic Academy',u:'https://anthropic.skilljar.com',cost:'free',note:'AI safety and responsible deployment'},
@@ -579,7 +585,7 @@ if(!cls.length)return;
 html+=`<div class="group-section" id="${g.id}">`;
 html+=`<div class="group-title">${g.name}</div>`;
 if(g.id==='emerging'){
-html+=`<div class="emerging-banner"><strong>This cluster is emerging.</strong> The intersection of AI/ML and insider threat is evolving faster than any training program can keep up with. Today's practical applications include LLM-assisted alert summarization, behavioral anomaly detection, natural language querying across log data, and automated timeline generation. On the horizon: autonomous AI agents with delegated access to internal systems represent a new class of insider-like risk that existing behavioral models weren't built for. This cluster will grow — new KSAs will be added through the <a href="governance.html" target="_blank" rel="noopener">governance process</a> as the field matures. Watch this space.</div>`;
+html+=`<div class="emerging-banner"><strong>This cluster is emerging.</strong> The intersection of AI/ML and insider threat is evolving faster than any training program can keep up with. Today's practical applications include LLM-assisted alert summarization, behavioral anomaly detection, natural language querying across log data, and automated timeline generation. On the horizon: autonomous AI agents with delegated access to internal systems represent a new class of insider-like risk that existing behavioral models weren't built for. This cluster will grow — new KSAs will be added through the <a href="governance" target="_blank" rel="noopener">governance process</a> as the field matures. Watch this space.</div>`;
 }
 html+=`<div class="group-grid">`;
 cls.forEach(c=>{
@@ -594,7 +600,7 @@ html+=`<div class="cc-ksas">`;
 c.ksas.forEach((id,i)=>{
 html+=`<span class="cc-ksa-id">${id}</span>${i<c.ksas.length-1?' · ':''}`;
 });
-html+=` <a href="matrix.html" target="_blank" rel="noopener" style="font-size:0.6rem;margin-left:0.3rem">View in matrix →</a></div>`;
+html+=` <a href="matrix" target="_blank" rel="noopener" style="font-size:0.6rem;margin-left:0.3rem">View in matrix →</a></div>`;
 
 // Training
 html+=`<div class="cc-sub">Training path <span style="font-weight:400;text-transform:none">(free → paid)</span></div>`;

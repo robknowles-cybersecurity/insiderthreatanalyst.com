@@ -32,7 +32,7 @@
 <meta property="og:description" content="Program design, tooling, resources, and operational guidance for building and running insider threat programs.">
 <meta name="description" content="Program design, tooling, resources, and operational guidance for building and running insider threat programs. Governance, behavioral models, frameworks, tools, OSINT, standards, communities, and training.">
 <title>Program Hub — Insider Threat Analyst Career Framework</title>
-<link rel="canonical" href="https://insiderthreatanalyst.com/program.html">
+<link rel="canonical" href="https://insiderthreatanalyst.com/program">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -146,7 +146,7 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="header"><div class="header-inner">
-<h1>🏛️ Program Hub · <a href="index.html">Career Framework</a></h1>
+<h1>🏛️ Program Hub · <a href="/">Career Framework</a></h1>
 <div class="header-right">
 <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()" id="theme-btn">Dark</button>
 </div>
@@ -158,39 +158,43 @@
      Edit _nav/nav.html and re-run tools/build-nav.sh; changes here are overwritten. -->
 <nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
 <div class="nav-group"><span class="nav-label">Explore</span>
-<a href="/framework.html">Framework</a>
-<a href="/matrix.html">Matrix</a>
-<a href="/clusters.html">Clusters</a>
+<a href="/framework">Framework</a>
+<a href="/matrix">Matrix</a>
+<a href="/clusters">Clusters</a>
 </div>
 <div class="nav-group"><span class="nav-label">Build &amp; Run</span>
-<a href="/program.html" class="nav-active">Program</a>
-<a href="/emerging.html">Emerging</a>
+<a href="/program" class="nav-active">Program</a>
+<a href="/emerging">Emerging</a>
+<a href="https://ttx.insiderthreatanalyst.com/" target="_blank" rel="noopener">TTX Builder</a>
 </div>
 <div class="nav-group"><span class="nav-label">Grow</span>
-<a href="/engagement.html">Engagement</a>
-<a href="/maturity.html">Maturity</a>
+<a href="/engagement">Engagement</a>
+<a href="/maturity">Maturity</a>
 </div>
 <div class="nav-group nav-util"><span class="nav-label">About</span>
-<a href="/about.html">About</a>
-<a href="/start.html">Start Here</a>
-<a href="/wellness.html">Wellness</a>
-<a href="/governance.html">Site Policy</a>
-<a href="/contributors.html">Contributors</a>
-<a href="/references.html">References</a>
-<a href="/cpe.html">CPE Resources</a>
+<a href="/about">About</a>
+<a href="/start">Start Here</a>
+<a href="/wellness">Wellness</a>
+<a href="/governance">Site Policy</a>
+<a href="/contributors">Contributors</a>
+<a href="/references">References</a>
+<a href="/cpe">CPE Resources</a>
 <a href="/papers/">Papers</a>
-<a href="/reviews.html">Reviews</a>
-<a href="/changelog.html">Changelog</a>
-<a href="/suggest.html">Suggest</a>
+<a href="/reviews">Reviews</a>
+<a href="/changelog">Changelog</a>
+<a href="/suggest">Suggest</a>
 </div>
+<div class="nav-group nav-search"><button type="button" class="nav-search-btn" id="ita-search-open" title="Search the site — press /" aria-haspopup="dialog" aria-expanded="false">Search <kbd aria-hidden="true">/</kbd></button></div>
 </div></nav>
+<link rel="stylesheet" href="/assets/search.css">
+<script src="/assets/search.js" defer></script>
 <!-- NAV:END -->
 
 <main class="main" id="main-content">
 
 <div class="hero">
-<h2>Build &amp; Run Your Program</h2>
-<p>Everything you need to design, staff, and operate an insider threat program — from governance and behavioral models to tooling, resources, and community. For the analyst competency model and KSA explorer, see the <a href="framework.html">Framework Explorer</a>.</p>
+<h2 id="build-and-run">Build &amp; Run Your Program</h2>
+<p>Everything you need to design, staff, and operate an insider threat program — from governance and behavioral models to tooling, resources, and community. For the analyst competency model and KSA explorer, see the <a href="framework">Framework Explorer</a>.</p>
 </div>
 
 <h3 class="section-heading" id="program-design">🏗️ Program Design</h3>
@@ -317,6 +321,7 @@
 <div class="ref-card"><div class="ref-card-title"><a href="https://www.fsisac.com/" target="_blank" rel="noopener">FS-ISAC</a></div><div class="ref-card-desc">Financial Services Information Sharing and Analysis Center. Sector-specific threat intelligence, insider threat working group, peer networking. Global membership.</div></div>
 <div class="ref-card"><div class="ref-card-title"><a href="https://www.theiia.org/en/content/guidance/recommended/supplemental/gtags/gtag-auditing-insider-threat-programs/" target="_blank" rel="noopener">IIA GTAG</a></div><div class="ref-card-desc">Auditing Insider Threat Programs. Bridges insider threat and internal audit using CMU SEI, NIST, INSA frameworks. Free for IIA members.</div></div>
 <div class="ref-card"><div class="ref-card-title"><a href="https://www.insaonline.org/insider-threat/" target="_blank" rel="noopener">INSA</a></div><div class="ref-card-desc">Insider threat white paper series. Measuring effectiveness, cross-sector collaboration. Government–private sector bridge.</div></div>
+<div class="ref-card"><div class="ref-card-title"><a href="https://alessandroaledda.com/intra/" target="_blank" rel="noopener">INTRA</a></div><div class="ref-card-desc">Insider Threat and Risk Architecture. European jurisdiction layer for insider risk — 110 measures across 9 pillars, mapped to 34 jurisdictions, one source per row. Browsable pages plus a published JSON. Free, CC BY 4.0.</div></div>
 <div class="ref-card"><div class="ref-card-title"><a href="https://www.iso.org/standard/27001" target="_blank" rel="noopener">ISO 27001/27002:2022</a></div><div class="ref-card-desc">Global ISMS standard. 93 controls across 4 themes. Annex A includes insider-relevant controls.</div></div>
 <div class="ref-card"><div class="ref-card-title"><a href="https://www.ncfta.net/" target="_blank" rel="noopener">NCFTA</a></div><div class="ref-card-desc">Cross-sector training and intel sharing.</div></div>
 <div class="ref-card"><div class="ref-card-title"><a href="https://www.dni.gov/index.php/ncsc-how-we-work/ncsc-nittf" target="_blank" rel="noopener">NITTF</a></div><div class="ref-card-desc">Minimum standards, maturity framework.</div></div>
@@ -411,7 +416,7 @@
 
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
 <footer class="footer">
-<p><a href="about.html">About</a> &middot; <a href="start.html">🚀 Start here</a> · <a href="framework.html">Framework</a> · <a href="references.html">📚 References</a> · <a href="changelog.html">Changelog</a> · <a href="suggest.html?from=program">💬 Suggest</a></p>
+<p><a href="about">About</a> &middot; <a href="start">🚀 Start here</a> · <a href="framework">Framework</a> · <a href="references">📚 References</a> · <a href="changelog">Changelog</a> · <a href="suggest?from=program">💬 Suggest</a></p>
 <p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; <a href="https://github.com/robknowles-cybersecurity/insiderthreatanalyst.com" target="_blank" rel="noopener">Source on GitHub&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
 <p style="margin-top:0.25rem;font-size:0.58rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.55rem">hello@insiderthreatanalyst.com</a></p>
 </footer>
