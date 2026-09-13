@@ -98,20 +98,6 @@
     "verification": "confirmed on the institution's own domain"
   },
   {
-    "institution": "Penn State Great Valley",
-    "program_name": "Graduate Certificate in Cyber Threat Analytics and Prevention",
-    "group": "us_academic_credit",
-    "field": "core insider risk",
-    "format": "multi-session",
-    "credit": "credit",
-    "cost": "unknown",
-    "url": "https://greatvalley.psu.edu/files/pdf/4271/2019/06/05/gv-ctap-certificate-program-6-23-23.pdf",
-    "note": "12 credits; includes internal/insider threat and surveillance topics. Source URL is a 2023-dated PDF rather than a program page - replace with the live program page.",
-    "venue": "directory",
-    "parent_program": null,
-    "verification": "needs primary-source verification"
-  },
-  {
     "institution": "Bellevue University",
     "program_name": "M.S. in Threat Assessment and Management",
     "group": "us_academic_credit",
