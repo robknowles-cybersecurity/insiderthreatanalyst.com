@@ -196,34 +196,6 @@
     "verification": "confirmed on the institution's own domain"
   },
   {
-    "institution": "Johns Hopkins University (Advanced Academic Programs)",
-    "program_name": "M.A. in Global Security Studies",
-    "group": "us_academic_credit",
-    "field": "personnel security and counterintelligence",
-    "format": "degree",
-    "credit": "credit",
-    "cost": "unknown",
-    "url": "https://advanced.jhu.edu/academics/graduate/ma-global-security-studies/",
-    "note": "Counterintelligence and insider risk appear inside a broader security curriculum, not as named courses.",
-    "venue": "directory",
-    "parent_program": null,
-    "verification": "needs primary-source verification"
-  },
-  {
-    "institution": "Johns Hopkins SAIS",
-    "program_name": "M.A. in Strategy, Cybersecurity, and Intelligence (MASCI)",
-    "group": "us_academic_credit",
-    "field": "personnel security and counterintelligence",
-    "format": "degree",
-    "credit": "credit",
-    "cost": "unknown",
-    "url": "https://sais.jhu.edu/academics/master-degrees/master-arts-strategy-cybersecurity-and-intelligence-masci",
-    "note": "One-year accelerated cyber/intelligence strategy degree; insider risk is embedded.",
-    "venue": "directory",
-    "parent_program": null,
-    "verification": "needs primary-source verification"
-  },
-  {
     "institution": "George Washington University",
     "program_name": "M.P.S. in Homeland Security",
     "group": "us_academic_credit",
@@ -365,31 +337,17 @@
   },
   {
     "institution": "Carnegie Mellon University (SEI/CERT)",
-    "program_name": "Insider Threat Vulnerability Assessor (ITVA) Certificate",
+    "program_name": "CERT Insider Risk Management Measures of Effectiveness (IRM-MoE) Certificate",
     "group": "university_affiliated_noncredit",
     "field": "core insider risk",
     "format": "multi-session",
     "credit": "non-credit",
     "cost": "paid",
-    "url": "https://www.sei.cmu.edu/credentials/",
-    "note": "NEW this pass. Trains practitioners to run CERT-methodology insider threat vulnerability assessments, including tool licensing. No current per-credential page surfaced - pointing at the SEI credentials index, which does resolve. Placed in group 2 on provider type. Not found on the institution's site as of 2026-09-13; URL returned 200 — see PE-279.",
+    "url": "https://www.sei.cmu.edu/credentials/cert-insider-risk-management-measures-of-effectiveness-certificate/",
+    "note": "Four components: the Overview of Insider Threat Concepts and Activities and Building an Insider Threat Program eLearning courses, the three-day instructor-led Insider Risk Management: Measures of Effectiveness course (classroom or live-online), and a 6-hour online certificate exam. Teaches practitioners to assess an organisation's insider threat prevention, detection and response capabilities and to build metrics that trace back to its insider risk management goals. Does not expire; the four-component package is $3,000-$4,000 depending on sector. Added 2026-09-13; verified same day.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
-  },
-  {
-    "institution": "Carnegie Mellon University (SEI/CERT)",
-    "program_name": "Insider Threat Program Evaluator (ITPE) Training",
-    "group": "university_affiliated_noncredit",
-    "field": "core insider risk",
-    "format": "multi-session",
-    "credit": "non-credit",
-    "cost": "paid",
-    "url": "https://www.sei.cmu.edu/credentials/",
-    "note": "NEW this pass. 3-day instructor-led certificate course on measuring and evaluating an operational insider threat program. Same URL caveat and group placement as ITVA. Not found on the institution's site as of 2026-09-13; URL returned 200 — see PE-279.",
-    "venue": "directory",
-    "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Georgia Tech Professional Education",
@@ -442,10 +400,10 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://ready.uic.edu/planning/violence-prevention/threat-assessment-and-management-courses/",
-    "note": "Master Trainer delivery of the DHS NTER Threat Evaluation and Reporting curriculum (see the DHS NTER Program Office entry). 3-hour, 1-day and 3-day options delivered by NTER-certified Master Trainers - i.e. a university delivery of the DHS NTER curriculum, not a separate syllabus.",
+    "note": "Master Trainer delivery of the DHS NTER Threat Evaluation and Reporting curriculum (see the DHS NTER Program Office entry). 3-hour, 1-day and 3-day options delivered by NTER-certified Master Trainers - i.e. a university delivery of the DHS NTER curriculum, not a separate syllabus. Verified 2026-09-13 (browser read; site blocks automated fetches).",
     "venue": "directory_with_dated_instances",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "North Carolina State University",
