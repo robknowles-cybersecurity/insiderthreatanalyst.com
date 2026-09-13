@@ -28,7 +28,7 @@ NAV_SRC="_nav/nav.html"
 # ---------------------------------------------------------------------------
 PAGES=(
   about.html changelog.html clusters.html contributors.html cpe.html
-  crosswalk.html emerging.html engagement.html framework.html governance.html
+  crosswalk.html education.html emerging.html engagement.html framework.html governance.html
   index.html matrix.html maturity.html program.html references.html
   reviews.html start.html suggest.html wellness.html
   papers/index.html talks/index.html
