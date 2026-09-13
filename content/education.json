@@ -8,10 +8,10 @@
     "credit": "credit",
     "cost": "unknown",
     "url": "https://academiccatalog.umd.edu/graduate/courses/bsst/",
-    "note": "3-credit graduate course; first course of the START/ARLIS insider risk sequence.",
+    "note": "3-credit graduate course; first course of the START/ARLIS insider risk sequence. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": "Graduate Certificate in Insider Risk Management and Mitigation",
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "University of Maryland",
@@ -22,10 +22,10 @@
     "credit": "credit",
     "cost": "unknown",
     "url": "https://academiccatalog.umd.edu/graduate/courses/bsst/",
-    "note": "3-credit graduate course. URL normalised to the BSST course catalog; the source document pointed at a program PDF rather than a course page.",
+    "note": "3-credit graduate course. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": "Graduate Certificate in Insider Risk Management and Mitigation",
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "University of Maryland",
@@ -36,10 +36,10 @@
     "credit": "credit",
     "cost": "unknown",
     "url": "https://academiccatalog.umd.edu/graduate/courses/bsst/",
-    "note": "Threat assessment, mitigation, oversight and accountability.",
+    "note": "Threat assessment, mitigation, oversight and accountability. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": "Graduate Certificate in Insider Risk Management and Mitigation",
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "University of Maryland",
@@ -50,10 +50,10 @@
     "credit": "credit",
     "cost": "unknown",
     "url": "https://academiccatalog.umd.edu/graduate/courses/bsst/",
-    "note": "Critical thinking and analytic tradecraft for insider risk analysts.",
+    "note": "Critical thinking and analytic tradecraft for insider risk analysts. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": "Graduate Certificate in Insider Risk Management and Mitigation",
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "University of Maryland (START)",
@@ -64,10 +64,10 @@
     "credit": "credit",
     "cost": "unknown",
     "url": "https://www.start.umd.edu/education/graduate-certificate-insider-risk-management-and-mitigation",
-    "note": "Four-course sequence (BSST650-653); START/ARLIS collaboration, synchronous online, evenings; 1 yr full-time / 2 yr part-time. Parent of the four BSST rows.",
+    "note": "Four-course sequence (BSST650-653); START/ARLIS collaboration, synchronous online, evenings; 1 yr full-time / 2 yr part-time. Parent of the four BSST rows. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "University of Maryland Global Campus",
@@ -78,10 +78,10 @@
     "credit": "credit",
     "cost": "unknown",
     "url": "https://umgc.edu/academic-programs/course-information.cfm?course=inms630",
-    "note": "Espionage case studies including insider threat. Legacy .cfm URL carried from the source document and not re-tested this pass.",
+    "note": "Espionage case studies including insider threat. Legacy .cfm URL redirects on-domain to the current UMGC course page. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Georgia Institute of Technology",
@@ -92,10 +92,10 @@
     "credit": "credit",
     "cost": "unknown",
     "url": "https://syllabus.gatech.edu/node/16993",
-    "note": "Insider threat is an embedded module, not the subject of the course. Node-style URL carried from the source document and not re-tested.",
+    "note": "Insider threat is an embedded module, not the subject of the course. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Penn State Great Valley",
@@ -118,12 +118,12 @@
     "field": "behavioral threat assessment",
     "format": "degree",
     "credit": "credit",
-    "cost": "unknown",
+    "cost": "paid",
     "url": "https://www.bellevue.edu/degrees/master/threat-assessment-ms/",
-    "note": "Cohort-based graduate degree with three embedded certificates. Parent of TAM 530.",
+    "note": "Cohort-based graduate degree with three embedded certificates. Parent of TAM 530. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Bellevue University",
@@ -132,12 +132,12 @@
     "field": "personnel security and counterintelligence",
     "format": "multi-session",
     "credit": "credit",
-    "cost": "unknown",
+    "cost": "paid",
     "url": "https://www.bellevue.edu/programs/masters-degrees/threat-assessment-and-management/online-accelerated/",
-    "note": "4-credit course inside the M.S. Threat Assessment & Management program.",
+    "note": "4-credit course inside the M.S. Threat Assessment & Management program. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": "M.S. in Threat Assessment and Management",
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Alliant International University",
@@ -148,10 +148,10 @@
     "credit": "credit",
     "cost": "unknown",
     "url": "https://www.alliant.edu/forensics/forensic-certificates/threat-assessment-management",
-    "note": "Behavioral threat assessment, violence risk assessment, forensic victimology. Credit status inferred from its placement in the forensic certificate suite - confirm.",
+    "note": "Behavioral threat assessment, violence risk assessment, forensic victimology. Credit status inferred from its placement in the forensic certificate suite - confirm. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Rider University",
@@ -162,10 +162,10 @@
     "credit": "credit",
     "cost": "unknown",
     "url": "https://www.rider.edu/academics/colleges-schools/norm-brodsky-college-business/certificates/fraud-business-forensics",
-    "note": "Adjacent field: employee/insider fraud schemes and detection technique.",
+    "note": "Adjacent field: employee/insider fraud schemes and detection technique. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Franklin University",
@@ -174,12 +174,12 @@
     "field": "fraud and financial crime",
     "format": "degree",
     "credit": "credit",
-    "cost": "unknown",
+    "cost": "paid",
     "url": "https://www.franklin.edu/degrees/bachelors/business-forensics",
-    "note": "Adjacent field: occupational fraud, internal controls, corporate governance.",
+    "note": "Adjacent field: occupational fraud, internal controls, corporate governance. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Utica University",
@@ -188,12 +188,12 @@
     "field": "fraud and financial crime",
     "format": "multi-session",
     "credit": "credit",
-    "cost": "unknown",
+    "cost": "paid",
     "url": "https://www.utica.edu/academics/programs/online/financial-crime-investigation-certificate",
-    "note": "Adjacent field; builds on Utica's long-standing Economic Crime / CIMIP tradition.",
+    "note": "Adjacent field; builds on Utica's long-standing Economic Crime / CIMIP tradition. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Johns Hopkins University (Advanced Academic Programs)",
@@ -274,10 +274,10 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://gcitp.umd.edu/",
-    "note": "Training plus proctored exam. First C-InT certification open to both government and private industry; developed with OUSD(I&S).",
+    "note": "Training plus proctored exam. First C-InT certification open to both government and private industry; developed with OUSD(I&S). Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Carnegie Mellon University (SEI/CERT)",
@@ -288,10 +288,10 @@
     "credit": "non-credit",
     "cost": "paid",
     "url": "https://www.sei.cmu.edu/credentials/cert-insider-threat-program-manager-certificate/",
-    "note": "Does not expire; explicitly not academic credit. Parent of the three component courses and the certificate exam. URL carried from the source document; the /credentials/ index resolves but this slug was not re-tested.",
+    "note": "Does not expire; explicitly not academic credit. Parent of the three component courses and the certificate exam. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Carnegie Mellon University (SEI)",
@@ -301,11 +301,11 @@
     "format": "self-paced",
     "credit": "non-credit",
     "cost": "paid",
-    "url": "https://sei.cmu.edu/insider-threat/",
-    "note": "3-hour online course. FLAG: the source URL is SEI's insider threat topic landing page, not the course page - needs replacing with the course record.",
+    "url": "https://www.sei.cmu.edu/training/overview-insider-threat-concepts-activities/",
+    "note": "3-hour online course. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": "CERT Insider Threat Program Manager (ITPM) Certificate",
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Carnegie Mellon University (SEI)",
@@ -372,7 +372,7 @@
     "credit": "non-credit",
     "cost": "paid",
     "url": "https://www.sei.cmu.edu/credentials/",
-    "note": "NEW this pass. Trains practitioners to run CERT-methodology insider threat vulnerability assessments, including tool licensing. No current per-credential page surfaced - pointing at the SEI credentials index, which does resolve. Placed in group 2 on provider type; see the deviation note in the summary.",
+    "note": "NEW this pass. Trains practitioners to run CERT-methodology insider threat vulnerability assessments, including tool licensing. No current per-credential page surfaced - pointing at the SEI credentials index, which does resolve. Placed in group 2 on provider type. Not found on the institution's site as of 2026-09-13; URL returned 200 — see PE-279.",
     "venue": "directory",
     "parent_program": null,
     "verification": "needs primary-source verification"
@@ -386,7 +386,7 @@
     "credit": "non-credit",
     "cost": "paid",
     "url": "https://www.sei.cmu.edu/credentials/",
-    "note": "NEW this pass. 3-day instructor-led certificate course on measuring and evaluating an operational insider threat program. Same URL caveat and group placement as ITVA.",
+    "note": "NEW this pass. 3-day instructor-led certificate course on measuring and evaluating an operational insider threat program. Same URL caveat and group placement as ITVA. Not found on the institution's site as of 2026-09-13; URL returned 200 — see PE-279.",
     "venue": "directory",
     "parent_program": null,
     "verification": "needs primary-source verification"
@@ -414,10 +414,10 @@
     "credit": "non-credit",
     "cost": "free",
     "url": "https://www.chds.us/c/insider-threats/",
-    "note": "Open-access CHDS self-study course.",
+    "note": "Open-access CHDS self-study course. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "University of Vermont",
@@ -428,10 +428,10 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://www.uvm.edu/dsc/vermontviolenceprotection/threat-assessment-online-course",
-    "note": "Adjacent field; explicitly covers insider threat alongside workplace and campus violence.",
+    "note": "Adjacent field; explicitly covers insider threat alongside workplace and campus violence. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "University of Illinois Chicago",
@@ -456,10 +456,10 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://vptm.ehps.ncsu.edu/trainings-and-events/",
-    "note": "Master Trainer delivery of the DHS NTER Threat Evaluation and Reporting curriculum (see the DHS NTER Program Office entry). 1-day (8-hour) DHS-certified Master Trainer delivery of the NTER B-TERC.",
+    "note": "Master Trainer delivery of the DHS NTER Threat Evaluation and Reporting curriculum (see the DHS NTER Program Office entry). 1-day (8-hour) DHS-certified Master Trainer delivery of the NTER B-TERC. Verified 2026-09-13.",
     "venue": "directory_with_dated_instances",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "North Carolina State University",
@@ -470,10 +470,10 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://vptm.ehps.ncsu.edu/trainings-and-events/",
-    "note": "Master Trainer delivery of the DHS NTER Threat Evaluation and Reporting curriculum (see the DHS NTER Program Office entry). 3-hour awareness-level delivery of the NTER TERO. Shares a landing page with B-TERC.",
+    "note": "Master Trainer delivery of the DHS NTER Threat Evaluation and Reporting curriculum (see the DHS NTER Program Office entry). 3-hour awareness-level delivery of the NTER TERO. Shares a landing page with B-TERC. Verified 2026-09-13.",
     "venue": "directory_with_dated_instances",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Purdue University (CERIAS)",
@@ -540,7 +540,7 @@
     "credit": "non-credit",
     "cost": "free",
     "url": "https://www.cdse.edu/Training/Curricula/INT311/",
-    "note": "NEW this pass. Non-academic. Specialised curriculum for analysts and operations personnel; built from component eLearning courses, so it is the parent of those rows.",
+    "note": "NEW this pass. Non-academic. Specialised curriculum for analysts and operations personnel, built from component eLearning courses.",
     "venue": "directory",
     "parent_program": null,
     "verification": "confirmed on the institution's own domain"
@@ -624,7 +624,7 @@
     "credit": "non-credit",
     "cost": "free",
     "url": "https://www.dhs.gov/threat-evaluation-and-reporting-course-training-suite",
-    "note": "NEW this pass. Non-academic, adjacent field. TERO 3 hours, B-TERC 1 day, TERC 3 days; delivered exclusively by NTER-Certified Master Trainers, which is why the NCSU and UIC rows point back here as parent. Dated deliveries by state and host agency are calendar material.",
+    "note": "NEW this pass. Non-academic, adjacent field. TERO 3 hours, B-TERC 1 day, TERC 3 days; delivered exclusively by NTER-Certified Master Trainers; the NCSU and UIC entries are university deliveries of this suite. Dated deliveries by state and host agency are calendar material.",
     "venue": "directory_with_dated_instances",
     "parent_program": null,
     "verification": "confirmed on the institution's own domain"
@@ -692,12 +692,12 @@
     "field": "personnel security and counterintelligence",
     "format": "multi-session",
     "credit": "non-credit",
-    "cost": "unknown",
+    "cost": "paid",
     "url": "https://www.graduateschool.edu/courses/counterintelligence-for-information-security-assessment-and-protection",
-    "note": "Instructor-led, online and Washington DC. Detecting and countering insider threats and foreign espionage. GROUP CALL: Graduate School USA is an independent non-profit training institution, not university-affiliated and not a government agency, so it sits here rather than in group 2 or 3.",
+    "note": "Instructor-led, online and Washington DC. Detecting and countering insider threats and foreign espionage. GROUP CALL: Graduate School USA is an independent non-profit training institution, not university-affiliated and not a government agency, so it sits here rather than in group 2 or 3. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Graduate School USA",
@@ -706,12 +706,12 @@
     "field": "core insider risk",
     "format": "self-paced",
     "credit": "non-credit",
-    "cost": "unknown",
+    "cost": "paid",
     "url": "https://www.graduateschool.edu/courses/insider-threat-awareness-self-paced",
-    "note": "Federal-workforce-focused awareness course. Same group call as the row above.",
+    "note": "Federal-workforce-focused awareness course. Same group call as the row above. Verified 2026-09-13.",
     "venue": "directory",
     "parent_program": null,
-    "verification": "needs primary-source verification"
+    "verification": "confirmed on the institution's own domain"
   },
   {
     "institution": "Canadian Insider Risk Management Centre of Excellence (C-InRM CoE)",
