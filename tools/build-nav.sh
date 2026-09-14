@@ -16,6 +16,14 @@
 #
 # Usage:  tools/build-nav.sh          regenerate
 #         tools/build-nav.sh --check  verify up to date, change nothing (exit 1 if stale)
+#         tools/build-nav.sh --list   print the PAGES manifest, one per line (after preflight)
+#
+# ONE PAGE LIST (PE-279 4b): PAGES below is the site's single page manifest.
+# tools/build-search.sh (what gets indexed) and tools/verify-anchors.mjs (URL ->
+# source map) read it through --list; neither keeps a copy. A new page is added
+# HERE and nowhere else. Preflight also refuses to run while any top-level
+# *.html, or any page carrying NAV markers, is in neither PAGES nor EXCLUDED —
+# the 2026-09-13 rebuild failed quietly on exactly that kind of omission.
 #
 set -euo pipefail
 
@@ -42,8 +50,9 @@ PAGES=(
 #    carries its own in-page nav. Redacted from the public mirror.)
 EXCLUDED=( osit/index.html fsisacbrc/index.html )
 
-CHECK_ONLY=0
+CHECK_ONLY=0; LIST_ONLY=0
 [[ "${1:-}" == "--check" ]] && CHECK_ONLY=1
+[[ "${1:-}" == "--list" ]] && LIST_ONLY=1
 
 [[ -f "$NAV_SRC" ]] || { echo "ERROR: missing $NAV_SRC" >&2; exit 1; }
 
@@ -63,6 +72,16 @@ for p in "${PAGES[@]}"; do
     problems=1
   fi
 done
+# Unlisted pages: every top-level *.html and every page carrying the nav markers
+# must be in PAGES or EXCLUDED. A page in neither is the silent omission this
+# single manifest exists to prevent, so name it and stop.
+listed() { local x; for x in "${PAGES[@]}" "${EXCLUDED[@]}"; do [[ "$x" == "$1" ]] && return 0; done; return 1; }
+while IFS= read -r f; do
+  f=${f#./}
+  listed "$f" || { echo "ERROR: $f is not in the page manifest — add page $f to PAGES in tools/build-nav.sh (nav, search index and anchor check all read that one list), or to EXCLUDED with a reason" >&2; problems=1; }
+done < <( { find . -maxdepth 1 -name '*.html' -print
+            grep -rl --include='*.html' --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=pagefind -- '<!-- NAV:BEGIN -->' . ; } | sed 's#^\./##' | sort -u )
+
 if [[ "$problems" -ne 0 ]]; then
   echo "" >&2
   echo "Refusing to build. Fix the pages named above, or move them to EXCLUDED" >&2
@@ -76,6 +95,11 @@ for x in "${EXCLUDED[@]}"; do
     [[ "$x" == "$p" ]] && { echo "ERROR: $x is in both PAGES and EXCLUDED" >&2; exit 1; }
   done
 done
+
+if [[ "$LIST_ONLY" -eq 1 ]]; then
+  printf '%s\n' "${PAGES[@]}"
+  exit 0
+fi
 
 # ---------------------------------------------------------------------------
 # Canonical nav markup = $NAV_SRC from its first <nav onward (the leading
