@@ -1,0 +1,1140 @@
+{
+  "meta": {
+    "title": "High-Risk Roles",
+    "last_reviewed": "2026-11-06",
+    "license": "CC BY 4.0",
+    "attribution": "Insider Threat Analyst Career Framework, insiderthreatanalyst.com",
+    "scope_note": "A starting register of roles whose access, trust and opportunity make insider risk more consequential. Role is one factor in insider risk, never a judgment about the people who hold the role. Sources are cited per role; where a source is copyrighted, this file cites control or practice numbers and paraphrases rather than reproducing text."
+  },
+  "sources": [
+    {
+      "id": "cisa-itmg-2026",
+      "title": "Insider Threat Mitigation Guide (2026 edition)",
+      "publisher": "Cybersecurity and Infrastructure Security Agency (CISA)",
+      "year": "2026",
+      "url": "https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide",
+      "license": "us-gov",
+      "what_it_says": "Program-building guide for critical infrastructure. The September 2026 update, as CISA announced it, adds material on access control, visitor screening, hybrid and remote work, and managing risk from adverse employee separations. Treats critical assets and the people with access to them as the starting point.",
+      "gives_list": "no",
+      "confidence": "corroborated",
+      "confidence_note": "Edition and new topics confirmed from two independent trade-press reports of CISA's announcement; the full 2026 text was not re-read for this page."
+    },
+    {
+      "id": "nist-800-53",
+      "title": "SP 800-53 Rev. 5, Security and Privacy Controls for Information Systems and Organizations (release 5.2.0)",
+      "publisher": "National Institute of Standards and Technology (NIST)",
+      "year": "2020, updated",
+      "url": "https://doi.org/10.6028/NIST.SP.800-53r5",
+      "license": "us-gov",
+      "what_it_says": "PS-2 requires a risk designation for every organizational position, screening criteria for those positions, and periodic review of the designations. PS-3 (screening and rescreening), PS-4 (termination), PS-5 (transfer), PS-6 (access agreements) and PS-7 (external personnel) follow from it. AC-2(13) disables accounts of individuals on discovery of significant risk; AC-5 separation of duties; AC-6 least privilege, with AC-6(5) restricting privileged accounts, AC-6(7) reviewing privileges, AC-6(9) logging privileged functions. PM-12 is the insider threat program control.",
+      "gives_list": "no",
+      "confidence": "verified",
+      "confidence_note": "Control statements read from the FedRAMP Rev 5 control reference, which reproduces the NIST OSCAL catalog 5.2.0."
+    },
+    {
+      "id": "cfr-5-731-106",
+      "title": "5 CFR 731.106, Designation of public trust positions and investigative requirements",
+      "publisher": "U.S. Office of Personnel Management (Code of Federal Regulations)",
+      "year": "current",
+      "url": "https://www.ecfr.gov/current/title-5/chapter-I/subchapter-B/part-731/subpart-A/section-731.106",
+      "license": "us-gov",
+      "what_it_says": "Every federal competitive-service position is designated high, moderate or low risk by its potential for adverse impact on the efficiency or integrity of the service. High and moderate risk positions are public trust positions, which may involve policy making, major program responsibility, public safety and health, law enforcement, fiduciary responsibilities, access to or control of financial records, or significant risk of causing damage or realizing personal gain.",
+      "gives_list": "partial",
+      "confidence": "verified",
+      "confidence_note": "Read on the Cornell LII copy of the regulation."
+    },
+    {
+      "id": "opm-pds",
+      "title": "Position Designation System and Position Designation Tool",
+      "publisher": "U.S. Office of Personnel Management and Defense Counterintelligence and Security Agency",
+      "year": "current",
+      "url": "https://www.opm.gov/suitability/suitability-executive-agent/position-designation-tool",
+      "license": "us-gov",
+      "what_it_says": "The federal method for turning a position's duties into a risk and sensitivity designation and an investigation level. A critical-sensitive or special-sensitive national security designation automatically confers high-risk public trust; noncritical-sensitive confers at least moderate risk.",
+      "gives_list": "no",
+      "confidence": "verified",
+      "confidence_note": "Read on opm.gov. The full Position Designation System document was not retrieved.",
+      "context_only": true
+    },
+    {
+      "id": "dodm-8140-03",
+      "title": "DoD Manual 8140.03, Cyberspace Workforce Qualification and Management Program",
+      "publisher": "U.S. Department of Defense",
+      "year": "2023",
+      "url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/814003p.PDF",
+      "license": "us-gov",
+      "what_it_says": "Tracks, per position, whether the position requires designation as an IT Privileged User, and per person whether that requirement is met. Requires cyberspace personnel to meet security and sensitivity levels commensurate with the position.",
+      "gives_list": "no",
+      "confidence": "verified",
+      "confidence_note": "Read on esd.whs.mil. The separate DoD IT privileged user memorandum on cyberworkforce.mil could not be retrieved."
+    },
+    {
+      "id": "cnssd-504",
+      "title": "CNSSD 504, Directive on Protecting National Security Systems from Insider Threat (with Annex C)",
+      "publisher": "Committee on National Security Systems",
+      "year": "2016 version",
+      "url": "https://archive.dni.gov/index.php/ncsc-how-we-work/ncsc-nittf/nittf-technical",
+      "license": "not-public",
+      "what_it_says": "Sets user activity monitoring requirements for national security systems. NITTF's technical page lists a 2016 version that adds Annex C, Privileged User and Privileged Access Controls. That version is not public; the link goes to NITTF's listing, not the directive.",
+      "gives_list": "no",
+      "confidence": "single-source",
+      "confidence_note": "Existence of Annex C confirmed only from NITTF's own listing; its content could not be read."
+    },
+    {
+      "id": "nitp-2012",
+      "title": "National Insider Threat Policy and Minimum Standards for Executive Branch Insider Threat Programs (Presidential Memorandum)",
+      "publisher": "The White House",
+      "year": "2012",
+      "url": "https://www.govinfo.gov/content/pkg/DCPD-201200905/html/DCPD-201200905.htm",
+      "license": "us-gov",
+      "what_it_says": "Requires executive branch programs to gather and analyze threat-related information, monitor employee use of classified networks, and train the workforce. Applies monitoring to everyone with access to classified networks rather than to a list of roles.",
+      "gives_list": "no",
+      "confidence": "verified",
+      "confidence_note": "Transmittal memorandum read on govinfo.gov; the minimum standards annex itself was not re-read.",
+      "context_only": true
+    },
+    {
+      "id": "sei-csg-7",
+      "title": "Common Sense Guide to Mitigating Insider Threats, Seventh Edition",
+      "publisher": "Carnegie Mellon University Software Engineering Institute (CERT Division)",
+      "year": "2022",
+      "url": "https://www.sei.cmu.edu/library/common-sense-guide-to-mitigating-insider-threats-seventh-edition/",
+      "license": "copyright",
+      "what_it_says": "Twenty-two best practices. The ones most tied to roles: Practice 1 (know and protect critical assets), Practice 6 (include insiders and trusted external entities in enterprise risk assessments), Practice 11 (stringent access controls and monitoring on privileged users), Practice 15 (separation of duties and least privilege) and Practice 20 (a comprehensive termination procedure).",
+      "gives_list": "no",
+      "confidence": "verified",
+      "confidence_note": "Practice numbers and topics read from the public-release copy on DTIC. Copyright Carnegie Mellon University; cited by practice number only."
+    },
+    {
+      "id": "npsa-rbsra",
+      "title": "Role-based security risk assessment (insider risk)",
+      "publisher": "National Protective Security Authority (NPSA), United Kingdom",
+      "year": "2023",
+      "url": "https://www.npsa.gov.uk/insider-risks/role-based-security-risk-assessment",
+      "license": "crown-copyright",
+      "what_it_says": "A six-step method: identify critical assets, identify threats by intent and capability, estimate likelihood and impact, check existing countermeasures, and propose proportionate new ones. Roles that enable a risk are noted against it so extra measures can be considered. Recommends reviewing the risk register at least annually, or sooner after a change in threat, a major incident, a change to critical assets or a new mitigation. Names five insider risk types: unauthorised disclosure, process corruption, facilitation of third-party access, physical sabotage, and IT or electronic sabotage.",
+      "gives_list": "no",
+      "confidence": "verified",
+      "confidence_note": "Web page and the Spring 2023 PDF guidance read on npsa.gov.uk. Marked Crown Copyright 2023; no Open Government Licence statement found on the documents."
+    },
+    {
+      "id": "nydfs-2022",
+      "title": "Industry Letter: Absence from the Office as an Internal Control Safeguard",
+      "publisher": "New York State Department of Financial Services",
+      "year": "2022",
+      "url": "https://www.dfs.ny.gov/industry_guidance/industry_letters/il20221115_absence",
+      "license": "state-gov",
+      "what_it_says": "The closest thing to a regulator's role list found. Sensitive positions should at a minimum include people who can change official books, records or transactions (or influence others to), people with privileged access to information systems including authority to alter them, and people in specialized higher-risk products. Absence means no physical or electronic access. Addressed to state-chartered banks, thrifts, credit unions and foreign bank branches.",
+      "gives_list": "partial",
+      "confidence": "verified",
+      "confidence_note": "Read on dfs.ny.gov. Corroborated by a law-firm summary."
+    },
+    {
+      "id": "frb-sr-96-37",
+      "title": "SR 96-37, Supervisory Guidance on Required Absences from Sensitive Positions",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "year": "1996, revised 2025",
+      "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR9637.htm",
+      "license": "us-gov",
+      "what_it_says": "Mandatory time away as an internal control, because most frauds and embezzlements require the wrongdoer's continual presence. Names trading and wire transfer as examples of sensitive key positions and asks each organization to assess its own significant risk areas. Duties are not to be performed physically or electronically during the absence.",
+      "gives_list": "partial",
+      "confidence": "verified",
+      "confidence_note": "Read on federalreserve.gov."
+    },
+    {
+      "id": "ffiec-is-2006",
+      "title": "FFIEC IT Examination Handbook, Information Security booklet (July 2006)",
+      "publisher": "Federal Financial Institutions Examination Council",
+      "year": "2006",
+      "url": "https://webarchive.library.unt.edu/web/20090808024303/http://www.ffiec.gov/ffiecinfobase/booklets/information_security/information_security.pdf",
+      "license": "us-gov",
+      "what_it_says": "Personnel security section: the sensitivity of a job or access level may warrant additional background and credit checks; contractors should be subject to similar screening; managers should stay alert to changes in personal circumstances after hire. Superseded by the 2016 booklet.",
+      "gives_list": "no",
+      "confidence": "verified",
+      "confidence_note": "Read on an archived copy. The current (2016) booklet could not be retrieved, so its equivalent language is not confirmed."
+    },
+    {
+      "id": "ncua-205d",
+      "title": "Section 205(d) of the Federal Credit Union Act and 12 CFR Part 752",
+      "publisher": "National Credit Union Administration",
+      "year": "current",
+      "url": "https://ncua.gov/regulation-supervision/regulatory-compliance-resources/fair-hiring-banking-act-section-205d",
+      "license": "us-gov",
+      "what_it_says": "Generally prohibits people convicted of certain crimes involving dishonesty or breach of trust from working at or participating in the affairs of a federally insured credit union without NCUA consent. Amended by the Fair Hiring in Banking Act in 2022. Banks have a parallel rule in Section 19 of the FDI Act.",
+      "gives_list": "no",
+      "confidence": "verified",
+      "confidence_note": "Read on ncua.gov. The Section 19 parallel is stated from general knowledge and was not re-read for this page."
+    },
+    {
+      "id": "hipaa-164-308",
+      "title": "45 CFR 164.308, HIPAA Security Rule administrative safeguards",
+      "publisher": "U.S. Department of Health and Human Services (Code of Federal Regulations)",
+      "year": "current",
+      "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308",
+      "license": "us-gov",
+      "what_it_says": "Workforce security: authorization and supervision of workforce members who work with ePHI, a workforce clearance procedure to determine that access is appropriate, termination procedures, information access management, and regular review of information system activity.",
+      "gives_list": "no",
+      "confidence": "verified",
+      "confidence_note": "Read on govinfo.gov (2021 CFR edition)."
+    },
+    {
+      "id": "cfr-21-1301-76",
+      "title": "21 CFR 1301.76, Other security controls for practitioners (controlled substances)",
+      "publisher": "Drug Enforcement Administration (Code of Federal Regulations)",
+      "year": "current",
+      "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1301/subject-group-ECFRa7ff8142033a7a2/section-1301.76",
+      "license": "us-gov",
+      "what_it_says": "A registrant may not employ, in a role with access to controlled substances, a person convicted of a felony relating to controlled substances or whose DEA registration was denied, revoked or surrendered for cause. Theft or significant loss must be reported to DEA within one business day.",
+      "gives_list": "no",
+      "confidence": "verified",
+      "confidence_note": "Read on the Cornell LII copy of the regulation."
+    },
+    {
+      "id": "iso-27002-2022",
+      "title": "ISO/IEC 27002:2022 (and Annex A of ISO/IEC 27001:2022)",
+      "publisher": "ISO/IEC",
+      "year": "2022",
+      "url": "https://www.iso.org/standard/75652.html",
+      "license": "copyright",
+      "what_it_says": "Relevant controls by number and title: 5.3 Segregation of duties; 5.18 Access rights; 5.19 Information security in supplier relationships; 6.1 Screening; 6.2 Terms and conditions of employment; 6.5 Responsibilities after termination or change of employment; 6.6 Confidentiality or non-disclosure agreements; 8.2 Privileged access rights; 8.16 Monitoring activities.",
+      "gives_list": "no",
+      "confidence": "corroborated",
+      "confidence_note": "Control numbers and titles confirmed from secondary mappings; the standard itself is paywalled and was not read. Cited by number and title only."
+    },
+    {
+      "id": "aicpa-tsc",
+      "title": "2017 Trust Services Criteria (with revised points of focus, 2022), basis of SOC 2",
+      "publisher": "AICPA & CIMA",
+      "year": "2022",
+      "url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "license": "copyright",
+      "what_it_says": "The logical access criteria CC6.1 to CC6.3 cover access provisioning, removal, and role-based access designed around least privilege and segregation of duties. Cited by criterion ID only.",
+      "gives_list": "no",
+      "confidence": "unverified",
+      "confidence_note": "Criterion text could not be read for this page; IDs and topics are from general knowledge. Check against the AICPA download before relying on the wording."
+    },
+    {
+      "id": "pci-dss-4",
+      "title": "PCI DSS v4.0.1",
+      "publisher": "PCI Security Standards Council",
+      "year": "2024",
+      "url": "https://www.pcisecuritystandards.org/document_library/",
+      "license": "copyright",
+      "what_it_says": "Requirement 12.7.1: people who will have access to the cardholder data environment are screened before hire, within local law. For roles such as cashiers who see one card number at a time, it is a recommendation only. Requirement 7 restricts access to cardholder data by business need to know.",
+      "gives_list": "partial",
+      "confidence": "single-source",
+      "confidence_note": "Requirement text read on a third-party mirror, not the PCI SSC document library. Paraphrased here; check against the official v4.0.1 PDF."
+    },
+    {
+      "id": "nice-800-181",
+      "title": "SP 800-181 Rev. 1, Workforce Framework for Cybersecurity (NICE Framework)",
+      "publisher": "National Institute of Standards and Technology (NIST)",
+      "year": "2020, components updated",
+      "url": "https://doi.org/10.6028/NIST.SP.800-181r1",
+      "license": "us-gov",
+      "what_it_says": "Describes cybersecurity work as work roles built from tasks, knowledge and skills. It describes the work, not the risk of the person doing it, so it does not rank roles. Useful for naming technical roles consistently; this site's KSA to NICE crosswalk is at /crosswalk.",
+      "gives_list": "no",
+      "confidence": "verified",
+      "confidence_note": "NICE Framework structure already used by this site's crosswalk.",
+      "context_only": true
+    },
+    {
+      "id": "mitre-ctid-itkb",
+      "title": "Insider Threat TTP Knowledge Base",
+      "publisher": "MITRE Center for Threat-Informed Defense",
+      "year": "2024",
+      "url": "https://ctid.mitre.org/projects/insider-threat-ttp-knowledge-base",
+      "license": "apache-2.0",
+      "what_it_says": "Insider tactics, techniques and procedures built from incident data and ATT&CK. Organized by behavior, not by role, so it helps choose what to monitor for a role rather than which roles to designate.",
+      "gives_list": "no",
+      "confidence": "verified",
+      "confidence_note": "Repository license (Apache 2.0) read on GitHub; ATT&CK content inside it carries the separate ATT&CK terms of use."
+    },
+    {
+      "id": "forscie-itm",
+      "title": "The Insider Threat Matrix",
+      "publisher": "Forscie",
+      "year": "2026",
+      "url": "https://insiderthreatmatrix.org/",
+      "license": "unverified",
+      "what_it_says": "A framework of insider behaviors and the detections and preventions that map to them. Like the MITRE knowledge base it is organized by behavior, not role.",
+      "gives_list": "no",
+      "confidence": "unverified",
+      "confidence_note": "Already listed in this site's References. Its license was not confirmed for this page, so it is linked only.",
+      "context_only": true
+    }
+  ],
+  "categories": [
+    {
+      "id": "technology",
+      "name": "Technology and privileged access",
+      "summary": "People who can change the systems everyone else depends on, including the logs and controls that would show what they did.",
+      "roles": [
+        {
+          "id": "sysadmins",
+          "name": "System and network administrators",
+          "sector": "all",
+          "why": {
+            "access": "Administrative rights on servers, endpoints, network gear and backups, often across the whole estate.",
+            "trust": "Trusted to act without per-action approval, frequently out of hours.",
+            "opportunity": "Can create accounts, change configurations, disable logging and touch backups; sabotage and data theft both fit inside normal-looking work.",
+            "pressure": "On-call load, layoffs and outsourcing hit this group; grievances about being undervalued are a recurring theme in IT sabotage cases."
+          },
+          "typical_access": [
+            "Domain or root administrator",
+            "Hypervisor and storage consoles",
+            "Backup systems",
+            "Firewall, VPN and remote-access management",
+            "Log and monitoring pipelines"
+          ],
+          "indicators": [
+            "Privileged sessions with no matching change ticket",
+            "New accounts, keys or scheduled tasks created outside the change process",
+            "Logging, EDR or backup jobs disabled or reconfigured",
+            "Unapproved remote-access tools or tunnels",
+            "Access to systems outside the person's assigned scope"
+          ],
+          "controls": {
+            "screening": "Elevated pre-hire screening proportionate to the role, rescreening on promotion into wider admin scope.",
+            "privileged_access": "Separate admin accounts, just-in-time elevation, vaulted credentials, no standing domain-wide rights.",
+            "separation_of_duties": "No single admin can both change and approve production changes, or both administer and erase the logs that record them.",
+            "monitoring": "Session recording or command logging for privileged sessions, shipped to a log store the admin cannot alter.",
+            "offboarding": "Same-day revocation of every privileged credential, key and token; rotate shared secrets the person knew."
+          },
+          "sources": [
+            "nist-800-53",
+            "sei-csg-7",
+            "nydfs-2022",
+            "dodm-8140-03",
+            "cnssd-504",
+            "iso-27002-2022"
+          ]
+        },
+        {
+          "id": "cloud-identity-admins",
+          "name": "Cloud, SaaS and identity administrators",
+          "sector": "all",
+          "why": {
+            "access": "Tenant-wide control of cloud accounts, identity providers, email and collaboration platforms.",
+            "trust": "Can grant themselves or others access to almost anything, usually through a web console from anywhere.",
+            "opportunity": "One role assignment, mailbox delegation or API token can expose an entire tenant; actions can look like routine administration.",
+            "pressure": "Same pressures as other administrators, plus a high outside market value that makes them recruitment targets."
+          },
+          "typical_access": [
+            "Identity provider global or privileged role administrator",
+            "Cloud organization owner or root account",
+            "Email and collaboration tenant admin",
+            "SaaS super-admin roles",
+            "API keys and service principals"
+          ],
+          "indicators": [
+            "Self-assigned or temporary role grants that are not removed",
+            "Mail forwarding rules, delegation or eDiscovery searches without a case",
+            "New OAuth apps, service principals or long-lived keys",
+            "Conditional-access or MFA policy exceptions",
+            "Console sign-ins from unusual locations or devices"
+          ],
+          "controls": {
+            "screening": "As for system administrators.",
+            "privileged_access": "Privileged identity management with time-bound, approved activation; break-glass accounts sealed and alerted on.",
+            "separation_of_duties": "Role assignment and policy changes for privileged roles require a second approver.",
+            "monitoring": "Tenant audit logs exported to a store outside the admins' control; alert on privileged role changes and mailbox access by admins.",
+            "offboarding": "Remove role assignments, revoke sessions and refresh tokens, and inventory keys and apps the person created."
+          },
+          "sources": [
+            "nist-800-53",
+            "sei-csg-7",
+            "iso-27002-2022",
+            "aicpa-tsc"
+          ]
+        },
+        {
+          "id": "developers-prod",
+          "name": "Developers and DevOps engineers with production access",
+          "sector": "all",
+          "why": {
+            "access": "Source code, build pipelines, deployment rights, secrets and sometimes production data.",
+            "trust": "Code they write runs with the organization's authority, and review is often lighter than assumed.",
+            "opportunity": "Logic bombs, backdoors, data exfiltration through code or pipelines, and theft of source code as intellectual property.",
+            "pressure": "Departure to competitors, disputes over ownership of work, and layoffs."
+          },
+          "typical_access": [
+            "Source repositories",
+            "CI/CD pipelines and deployment credentials",
+            "Secrets managers",
+            "Production shells or debugging access",
+            "Copies of production data in lower environments"
+          ],
+          "indicators": [
+            "Commits that bypass review or land outside normal hours just before departure",
+            "Pipeline or branch-protection changes",
+            "Bulk cloning of repositories outside the person's projects",
+            "Secrets read that the person's services do not use",
+            "Production data copied to personal or unmanaged locations"
+          ],
+          "controls": {
+            "screening": "Standard screening; elevated for engineers with standing production or secrets access.",
+            "privileged_access": "No standing production access; time-bound break-glass with approval and recording.",
+            "separation_of_duties": "Mandatory peer review and protected branches so no one ships alone; deploy rights separate from approve rights.",
+            "monitoring": "Repository, pipeline and secrets-access audit logs; watch for bulk clone and archive activity.",
+            "offboarding": "Revoke Git, cloud and pipeline credentials; rotate secrets the person could read; review their recent commits."
+          },
+          "sources": [
+            "sei-csg-7",
+            "nist-800-53",
+            "mitre-ctid-itkb",
+            "iso-27002-2022"
+          ]
+        },
+        {
+          "id": "dbas-data-engineers",
+          "name": "Database administrators and data engineers",
+          "sector": "all",
+          "why": {
+            "access": "Direct access to the data itself, below the application controls that normally limit what a user sees.",
+            "trust": "Expected to query, copy and move large datasets as part of the job.",
+            "opportunity": "Bulk extraction of customer, financial or health records, and quiet alteration of records.",
+            "pressure": "Data has a ready resale market; this role is an obvious target for outside recruitment."
+          },
+          "typical_access": [
+            "Database owner or sysadmin roles",
+            "Data warehouse and lake administration",
+            "ETL and replication jobs",
+            "Backups and exports"
+          ],
+          "indicators": [
+            "Queries pulling full tables of sensitive fields with no matching request",
+            "New exports, replication targets or scheduled jobs to unfamiliar destinations",
+            "Direct edits to records that normally change only through applications",
+            "Database audit settings changed"
+          ],
+          "controls": {
+            "screening": "Elevated screening where the data includes financial, health or other regulated records.",
+            "privileged_access": "Named accounts, not shared ones; just-in-time elevation to owner roles.",
+            "separation_of_duties": "Changes to production data through approved change paths, not ad hoc DML.",
+            "monitoring": "Database activity monitoring on sensitive tables, shipped off the database server.",
+            "offboarding": "Revoke database and pipeline access; review recent exports and jobs."
+          },
+          "sources": [
+            "sei-csg-7",
+            "nist-800-53",
+            "hipaa-164-308",
+            "pci-dss-4"
+          ]
+        },
+        {
+          "id": "non-human",
+          "name": "Service accounts, automation and AI agents acting for someone",
+          "sector": "all",
+          "why": {
+            "access": "Often holds broader and longer-lived access than any person, because it was set up once and never revisited.",
+            "trust": "Its actions are attributed to a system, not a person, so they draw less scrutiny.",
+            "opportunity": "A person who controls the account or the agent's instructions can act through it; an agent can also act wrongly on its own.",
+            "pressure": "Not applicable to the account; applies to whoever controls it."
+          },
+          "typical_access": [
+            "Service principals and API keys",
+            "Automation and RPA bots",
+            "AI agents with tool or data access",
+            "Scheduled jobs with stored credentials"
+          ],
+          "indicators": [
+            "Interactive sign-in by an account that should only run unattended",
+            "Agent or bot actions outside its defined task",
+            "Credential or prompt changes by someone who does not own the account"
+          ],
+          "controls": {
+            "screening": "Not applicable; screen and record the human owner.",
+            "privileged_access": "Every non-human identity has a named human owner, least privilege, and an expiry.",
+            "separation_of_duties": "The person who builds an agent or bot does not alone approve its permissions.",
+            "monitoring": "Log agent and service actions with the owning human recorded; see A-AGENT01 in the framework.",
+            "offboarding": "When an owner leaves, reassign or disable their service accounts and agents the same day."
+          },
+          "sources": [
+            "nist-800-53",
+            "cisa-itmg-2026"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Security and oversight functions",
+      "summary": "The people who watch everyone else. They need the same controls, applied by someone outside their own chain.",
+      "roles": [
+        {
+          "id": "security-analysts",
+          "name": "SOC, insider risk and investigations analysts",
+          "sector": "all",
+          "why": {
+            "access": "Monitoring data about everyone: user activity, email, HR case notes, investigation files.",
+            "trust": "Trusted to look at sensitive information about colleagues and to keep it confidential.",
+            "opportunity": "Curiosity lookups, leaking an investigation, tipping off a subject, or tuning detections to blind the tooling.",
+            "pressure": "Exposure to distressing material, workload and moral injury; see the Wellness page."
+          },
+          "typical_access": [
+            "SIEM and UAM consoles",
+            "DLP and email review tools",
+            "Case management systems",
+            "HR and badge data feeds",
+            "Detection rule and allow-list configuration"
+          ],
+          "indicators": [
+            "Searches on colleagues with no open case or tasking",
+            "Exports of case material",
+            "Detection rules, exclusions or allow-lists changed without review",
+            "Alerts about the analyst's own activity closed by the analyst"
+          ],
+          "controls": {
+            "screening": "Elevated screening and periodic rescreening, as for other privileged roles.",
+            "privileged_access": "Access tied to assigned cases; no standing access to every subject's data.",
+            "separation_of_duties": "No analyst reviews alerts on themselves or their own team; detection changes reviewed by a second person.",
+            "monitoring": "Audit the auditors: a separate function reviews analyst queries and case access.",
+            "offboarding": "Immediate removal from tools and cases; hand off open investigations under supervision."
+          },
+          "sources": [
+            "sei-csg-7",
+            "nist-800-53",
+            "cnssd-504"
+          ]
+        },
+        {
+          "id": "legal-compliance-audit",
+          "name": "Legal, compliance, internal audit and ethics staff",
+          "sector": "all",
+          "why": {
+            "access": "Privileged legal material, regulatory correspondence, audit findings, whistleblower reports, M&A plans.",
+            "trust": "Often have broad read access by design so they can test or advise anywhere.",
+            "opportunity": "Leaking privileged or market-moving information, suppressing findings, or trading on what they know.",
+            "pressure": "Conflicts between loyalty and duty, and outside interest in what they hold."
+          },
+          "typical_access": [
+            "Matter and contract management systems",
+            "Audit work papers",
+            "Hotline and ethics case data",
+            "Board and regulator correspondence"
+          ],
+          "indicators": [
+            "Access to matters outside the person's assignments",
+            "Downloads of deal or regulatory material near personal trading windows",
+            "Findings or hotline cases closed without the normal review"
+          ],
+          "controls": {
+            "screening": "Standard screening; elevated for staff on market-sensitive deals.",
+            "privileged_access": "Matter-based access and ethical walls rather than blanket read rights.",
+            "separation_of_duties": "Findings and hotline closures need a second reviewer; auditors do not audit work they performed.",
+            "monitoring": "Monitor access to deal rooms and hotline data; pair with personal trading pre-clearance where relevant.",
+            "offboarding": "Revoke matter access and remind of continuing confidentiality obligations."
+          },
+          "sources": [
+            "cfr-5-731-106",
+            "iso-27002-2022",
+            "sei-csg-7"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "money",
+      "name": "Money movement and finance",
+      "summary": "Roles that can move, record or approve money. Regulators have treated these as sensitive positions for decades.",
+      "roles": [
+        {
+          "id": "payments-treasury",
+          "name": "Wire, payments and treasury staff",
+          "sector": "all",
+          "why": {
+            "access": "Can initiate, approve or release funds transfers and change beneficiary details.",
+            "trust": "Trusted with large sums and urgent requests.",
+            "opportunity": "Fraudulent transfers, beneficiary changes, or collusion with outside fraudsters, including business email compromise.",
+            "pressure": "Personal financial strain, gambling, or coercion by outside criminals."
+          },
+          "typical_access": [
+            "Wire and ACH origination systems",
+            "Treasury management portals",
+            "Payment approval queues",
+            "Beneficiary and vendor bank detail records"
+          ],
+          "indicators": [
+            "Transfers just under approval thresholds",
+            "Beneficiary changes followed quickly by payments",
+            "Overrides of callback or verification steps",
+            "Reluctance to take leave or let others cover the desk"
+          ],
+          "controls": {
+            "screening": "Elevated screening including credit history where lawful; rescreen on promotion to approver.",
+            "privileged_access": "Payment entitlements by role, reviewed at least quarterly.",
+            "separation_of_duties": "Dual control: one person initiates, another approves, and beneficiary changes are verified out of band.",
+            "monitoring": "Payment anomaly monitoring and review of overrides; mandatory time away with no system access.",
+            "offboarding": "Remove payment entitlements and tokens before notice is announced where practical."
+          },
+          "sources": [
+            "frb-sr-96-37",
+            "nydfs-2022",
+            "cfr-5-731-106",
+            "sei-csg-7"
+          ]
+        },
+        {
+          "id": "ap-ar-gl",
+          "name": "Accounts payable, receivable and general ledger staff",
+          "sector": "all",
+          "why": {
+            "access": "Vendor master data, invoices, journal entries and reconciliations.",
+            "trust": "Trusted to keep the books accurate with limited line-by-line review.",
+            "opportunity": "Fictitious vendors, invoice and refund schemes, and journal entries that hide losses.",
+            "pressure": "Personal financial pressure; pressure to hit targets."
+          },
+          "typical_access": [
+            "ERP accounts payable and receivable modules",
+            "Vendor master file",
+            "Journal entry and close processes",
+            "Bank reconciliation"
+          ],
+          "indicators": [
+            "Vendors created and paid by the same person",
+            "Vendor bank details matching employee details",
+            "Manual journal entries near period end without support",
+            "Reconciliations always done by one person who resists help"
+          ],
+          "controls": {
+            "screening": "Standard screening; elevated where the role can both create and pay vendors.",
+            "privileged_access": "Restrict vendor master changes to a small group outside AP.",
+            "separation_of_duties": "Separate vendor setup, invoice entry, payment approval and reconciliation.",
+            "monitoring": "Vendor-employee data matching and journal entry analytics.",
+            "offboarding": "Revoke ERP roles and review the person's recent vendor and journal activity."
+          },
+          "sources": [
+            "nydfs-2022",
+            "frb-sr-96-37",
+            "iso-27002-2022",
+            "sei-csg-7"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "people-data",
+      "name": "People data",
+      "summary": "Roles that hold information about everyone else, including the information an insider risk program depends on.",
+      "roles": [
+        {
+          "id": "hr-payroll",
+          "name": "HR, payroll and benefits staff",
+          "sector": "all",
+          "why": {
+            "access": "Personal data on the whole workforce: identity documents, salaries, bank details, medical and disciplinary records.",
+            "trust": "Trusted with confidential employee matters, including upcoming terminations and investigations.",
+            "opportunity": "Ghost employees, pay changes, identity theft, leaking terminations or tipping off a subject.",
+            "pressure": "Exposure to conflict and difficult cases; personal relationships with affected staff."
+          },
+          "typical_access": [
+            "HRIS and payroll systems",
+            "Employee relations case files",
+            "Benefits and leave records",
+            "Background check results"
+          ],
+          "indicators": [
+            "Pay or bank detail changes made and approved by the same person",
+            "Records viewed for employees outside the person's client group",
+            "Employees added without a matching requisition",
+            "Early knowledge of terminations showing up elsewhere"
+          ],
+          "controls": {
+            "screening": "Elevated screening for payroll and employee relations roles.",
+            "privileged_access": "Field-level access so most HR staff cannot see bank details or medical records.",
+            "separation_of_duties": "Payroll changes entered by one person and approved by another; new hires reconciled to requisitions.",
+            "monitoring": "Audit access to sensitive HR records and payroll changes.",
+            "offboarding": "Revoke HRIS access promptly; HR staff are also the people who start everyone else's offboarding, so plan who starts theirs."
+          },
+          "sources": [
+            "cfr-5-731-106",
+            "nist-800-53",
+            "iso-27002-2022",
+            "sei-csg-7"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "leadership",
+      "name": "Leadership and the people around them",
+      "summary": "Authority, not technical access, is what makes these roles high consequence.",
+      "roles": [
+        {
+          "id": "executives",
+          "name": "Executives and board members",
+          "sector": "all",
+          "why": {
+            "access": "Strategy, M&A, financial results, and authority to approve exceptions.",
+            "trust": "Rarely subject to the controls they approve for others.",
+            "opportunity": "Overriding controls, insider trading, leaking strategy, or directing others to act improperly.",
+            "pressure": "High stakes, public scrutiny, and targeting by foreign intelligence, activists and criminals."
+          },
+          "typical_access": [
+            "Board materials",
+            "Deal rooms",
+            "Exception and override authority",
+            "Delegated access through assistants"
+          ],
+          "indicators": [
+            "Requests to bypass normal approvals for urgency",
+            "Exceptions granted to themselves or close associates",
+            "Unusual access to deal or results information outside their remit"
+          ],
+          "controls": {
+            "screening": "Elevated screening at appointment, proportionate to role and law.",
+            "privileged_access": "Executives do not hold standing administrator rights.",
+            "separation_of_duties": "Exceptions and overrides by executives are logged and reviewed by the board or audit committee.",
+            "monitoring": "Governance oversight rather than routine activity monitoring; protect them as targets too.",
+            "offboarding": "Plan departures in advance, including board materials, devices and delegated access."
+          },
+          "sources": [
+            "cfr-5-731-106",
+            "nydfs-2022",
+            "sei-csg-7"
+          ]
+        },
+        {
+          "id": "exec-assistants",
+          "name": "Executive assistants and chiefs of staff",
+          "sector": "all",
+          "why": {
+            "access": "Delegated access to an executive's email, calendar, files and sometimes approval authority.",
+            "trust": "Act on the executive's behalf every day; their actions look like the executive's.",
+            "opportunity": "Leaking calendars and board material, approving in the executive's name, or being the route a social engineer uses.",
+            "pressure": "Long hours, proximity to power without its rewards, and direct targeting by outsiders."
+          },
+          "typical_access": [
+            "Mailbox and calendar delegation",
+            "Executive document stores",
+            "Expense and travel approval",
+            "Board portal administration"
+          ],
+          "indicators": [
+            "Delegated mailbox access used outside working patterns",
+            "Forwarding or sharing executive material externally",
+            "Approvals in the executive's name the executive does not recognize"
+          ],
+          "controls": {
+            "screening": "Screen to the level of the executive they support.",
+            "privileged_access": "Scope delegation to what the job needs and review it when either person changes role.",
+            "separation_of_duties": "Assistants do not approve their own expenses or changes to their own access.",
+            "monitoring": "Audit delegated access to executive mailboxes and files.",
+            "offboarding": "Remove delegations the same day; tell the executive."
+          },
+          "sources": [
+            "nist-800-53",
+            "sei-csg-7"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "third-party-spend",
+      "name": "Procurement and vendor management",
+      "summary": "Roles that decide who gets paid and who gets let in.",
+      "roles": [
+        {
+          "id": "procurement",
+          "name": "Procurement and vendor management staff",
+          "sector": "all",
+          "why": {
+            "access": "Contract award, vendor onboarding, and often the decision to give a supplier access to systems or sites.",
+            "trust": "Trusted to choose suppliers fairly.",
+            "opportunity": "Kickbacks, bid rigging, conflicts of interest, and onboarding a supplier that then becomes an access path.",
+            "pressure": "Outside inducements from suppliers."
+          },
+          "typical_access": [
+            "Sourcing and contract systems",
+            "Vendor onboarding workflow",
+            "Supplier risk assessments"
+          ],
+          "indicators": [
+            "Repeated awards to the same supplier without competition",
+            "Undisclosed relationships with suppliers",
+            "Supplier access approved without the normal risk review"
+          ],
+          "controls": {
+            "screening": "Standard screening plus annual conflict-of-interest declarations.",
+            "privileged_access": "Separate the authority to award from the authority to grant supplier system access.",
+            "separation_of_duties": "Requisition, award, receipt and payment handled by different people.",
+            "monitoring": "Spend analytics and conflict-of-interest data matching.",
+            "offboarding": "Hand over open sourcing events under supervision."
+          },
+          "sources": [
+            "iso-27002-2022",
+            "sei-csg-7",
+            "nist-800-53"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "physical",
+      "name": "Physical security and facilities",
+      "summary": "Roles that control who and what gets into buildings, and can move unescorted where others cannot.",
+      "roles": [
+        {
+          "id": "physical-facilities",
+          "name": "Physical security, facilities and maintenance staff",
+          "sector": "all",
+          "why": {
+            "access": "Badge systems, keys, cameras, plant rooms, data centers and after-hours access.",
+            "trust": "Trusted to be anywhere, at any time, often unescorted.",
+            "opportunity": "Theft, sabotage, letting others in, or deleting camera footage.",
+            "pressure": "Often lower-paid and contracted out, with less connection to the organization."
+          },
+          "typical_access": [
+            "Physical access control administration",
+            "Master keys",
+            "CCTV systems",
+            "Building management and plant systems",
+            "Data center floors"
+          ],
+          "indicators": [
+            "Badge rights granted outside the request process",
+            "Camera gaps or deleted footage",
+            "After-hours presence in areas unrelated to work orders",
+            "Tailgating or propping doors for others"
+          ],
+          "controls": {
+            "screening": "Elevated screening for access-control administrators and staff with data center or vault access.",
+            "privileged_access": "Badge administration separate from badge request approval; key control logs.",
+            "separation_of_duties": "No one both grants and audits physical access.",
+            "monitoring": "Correlate badge, camera and work-order data; review access-control admin changes.",
+            "offboarding": "Recover badges and keys and re-key where needed; remove access-control admin rights."
+          },
+          "sources": [
+            "cisa-itmg-2026",
+            "npsa-rbsra",
+            "nist-800-53"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "external",
+      "name": "Contractors and third parties",
+      "summary": "Insiders by access, outsiders by employer. NPSA lists facilitation of third-party access as one of its five insider risk types.",
+      "roles": [
+        {
+          "id": "contractors",
+          "name": "Contractors, consultants, MSPs and outsourced staff with standing access",
+          "sector": "all",
+          "why": {
+            "access": "Often the same system and site access as employees, sometimes more, through managed-service tooling.",
+            "trust": "Trusted under a contract, but screened and supervised by someone else.",
+            "opportunity": "Access that outlives the engagement, weak supervision, and shared accounts.",
+            "pressure": "Short tenures, lower loyalty, and pressures the hiring organization cannot see."
+          },
+          "typical_access": [
+            "Named or shared accounts",
+            "Remote management tools from the provider",
+            "Badges",
+            "Copies of data in the provider's environment"
+          ],
+          "indicators": [
+            "Access continuing after the engagement end date",
+            "Shared or generic accounts in use",
+            "Provider remote tools connecting outside agreed windows"
+          ],
+          "controls": {
+            "screening": "Contract requires screening equivalent to employees in comparable roles, with evidence.",
+            "privileged_access": "Named accounts, time-bound, with an internal sponsor who reviews them.",
+            "separation_of_duties": "Contractors do not approve their own access or work.",
+            "monitoring": "Same monitoring scope as employees in the equivalent role, stated in the contract.",
+            "offboarding": "Provider must notify transfers and terminations within an agreed time; sponsor confirms removal."
+          },
+          "sources": [
+            "nist-800-53",
+            "sei-csg-7",
+            "ffiec-is-2006",
+            "iso-27002-2022",
+            "npsa-rbsra"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transient",
+      "name": "Transient high-risk states",
+      "summary": "Not roles but moments. Anyone can pass through them, and the risk attaches to the moment, not the person.",
+      "roles": [
+        {
+          "id": "departing",
+          "name": "Departing employees (resignation, notice period, termination, layoff)",
+          "sector": "all",
+          "why": {
+            "access": "Still holds full access while their attachment to the organization ends.",
+            "trust": "Trust is often unchanged in systems even when the relationship has changed.",
+            "opportunity": "Taking data, customer lists or code to the next job; sabotage after an adverse separation.",
+            "pressure": "Grievance, financial worry, or a new employer's expectations."
+          },
+          "typical_access": [
+            "Whatever the person held in their role"
+          ],
+          "indicators": [
+            "Bulk downloads, printing or uploads to personal storage after notice",
+            "Access to material unrelated to handover",
+            "Forwarding work email to personal accounts",
+            "Deleting files or changing passwords on shared resources"
+          ],
+          "controls": {
+            "screening": "Not applicable.",
+            "privileged_access": "Reduce privileges at notice; remove admin rights before an adverse separation is announced.",
+            "separation_of_duties": "Handover is supervised by the manager, not done alone.",
+            "monitoring": "A defined, disclosed look-back and look-forward window around departure, with HR notifying security at notice.",
+            "offboarding": "Same-day revocation, asset recovery, exit interview covering continuing obligations, and retained access to the person's data for the organization."
+          },
+          "sources": [
+            "sei-csg-7",
+            "nist-800-53",
+            "cisa-itmg-2026",
+            "iso-27002-2022"
+          ]
+        },
+        {
+          "id": "role-change",
+          "name": "People changing roles or teams",
+          "sector": "all",
+          "why": {
+            "access": "Old access is often kept while new access is added.",
+            "trust": "Accumulated access is rarely questioned.",
+            "opportunity": "Combinations of access that no single role should hold, breaking separation of duties.",
+            "pressure": "Usually none; this is a control gap more than a behavior risk."
+          },
+          "typical_access": [
+            "Union of every role the person has held"
+          ],
+          "indicators": [
+            "Entitlements from a previous role still in use",
+            "Access combinations that break separation of duties"
+          ],
+          "controls": {
+            "screening": "Rescreen if the new role carries a higher designation.",
+            "privileged_access": "Review and remove prior-role access at transfer.",
+            "separation_of_duties": "Check the new combination against separation-of-duties rules.",
+            "monitoring": "Access recertification by the new manager.",
+            "offboarding": "Not applicable."
+          },
+          "sources": [
+            "nist-800-53",
+            "iso-27002-2022"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "financial-institutions",
+      "name": "Financial institutions",
+      "summary": "Banks and credit unions add roles with direct access to member or customer money and data. Section 205(d) and its bank equivalent already bar some people from these institutions entirely.",
+      "roles": [
+        {
+          "id": "tellers-branch",
+          "name": "Tellers, branch staff and vault custodians",
+          "sector": "financial",
+          "why": {
+            "access": "Cash, negotiable instruments and account maintenance at the point of service.",
+            "trust": "Trusted with cash every day and with members' identity documents.",
+            "opportunity": "Cash theft, unauthorized withdrawals from dormant or elderly members' accounts, and helping outsiders open fraudulent accounts.",
+            "pressure": "Lower pay, personal financial strain, and recruitment by organized fraud rings."
+          },
+          "typical_access": [
+            "Teller drawers and vault",
+            "Core banking account maintenance",
+            "Address and contact detail changes",
+            "New account opening"
+          ],
+          "indicators": [
+            "Cash differences that recur",
+            "Transactions on dormant accounts",
+            "Address or phone changes followed by withdrawals",
+            "Overrides requested from the same supervisor repeatedly"
+          ],
+          "controls": {
+            "screening": "Section 205(d) or Section 19 checks as required, plus standard screening.",
+            "privileged_access": "Override and maintenance rights limited and logged.",
+            "separation_of_duties": "Dual control on vaults and high-value transactions.",
+            "monitoring": "Teller differences, override and dormant-account monitoring; mandatory time away.",
+            "offboarding": "Balance and recover cash and keys; revoke core access."
+          },
+          "sources": [
+            "ncua-205d",
+            "frb-sr-96-37",
+            "nydfs-2022"
+          ]
+        },
+        {
+          "id": "lending",
+          "name": "Loan officers, underwriters and loan servicing",
+          "sector": "financial",
+          "why": {
+            "access": "Credit decisions, collateral records and loan modifications.",
+            "trust": "Trusted to apply credit policy and to waive or modify terms.",
+            "opportunity": "Fraudulent loans to associates or straw borrowers, kickbacks, and hiding delinquencies.",
+            "pressure": "Production incentives and relationships with borrowers or brokers."
+          },
+          "typical_access": [
+            "Loan origination system",
+            "Underwriting exceptions",
+            "Servicing and modification tools"
+          ],
+          "indicators": [
+            "Loans to related parties without disclosure",
+            "Repeated policy exceptions for the same broker or borrower group",
+            "Modifications or extensions that hide delinquency"
+          ],
+          "controls": {
+            "screening": "Section 205(d) or Section 19 checks plus elevated screening for lenders with approval authority.",
+            "privileged_access": "Lending limits by role; exceptions above limits require a second approver.",
+            "separation_of_duties": "Origination, underwriting approval and funding by different people.",
+            "monitoring": "Related-party and exception reporting; loan review sampling.",
+            "offboarding": "Review the officer's recent approvals and exceptions."
+          },
+          "sources": [
+            "ncua-205d",
+            "nydfs-2022",
+            "cfr-5-731-106"
+          ]
+        },
+        {
+          "id": "fraud-bsa",
+          "name": "Fraud operations and BSA/AML analysts",
+          "sector": "financial",
+          "why": {
+            "access": "Fraud and AML alerts, investigation files, and in some cases authority to release holds or close alerts.",
+            "trust": "Trusted to recognize and stop financial crime.",
+            "opportunity": "Clearing alerts for collaborators, tipping off subjects, or leaking SAR-related information.",
+            "pressure": "High alert volumes and targeting by the criminals they work against."
+          },
+          "typical_access": [
+            "Fraud and AML case management",
+            "Transaction monitoring rules and thresholds",
+            "Hold and release authority"
+          ],
+          "indicators": [
+            "Alerts on connected parties closed by the same analyst",
+            "Threshold or rule changes without review",
+            "Case lookups with no assigned alert"
+          ],
+          "controls": {
+            "screening": "Elevated screening; Section 205(d) or Section 19 checks.",
+            "privileged_access": "Rule and threshold changes restricted and logged.",
+            "separation_of_duties": "Quality review of closed alerts by someone else; no one works alerts involving people they know.",
+            "monitoring": "Audit case access and alert dispositions.",
+            "offboarding": "Reassign open cases under supervision."
+          },
+          "sources": [
+            "ncua-205d",
+            "sei-csg-7",
+            "nist-800-53"
+          ]
+        },
+        {
+          "id": "contact-center",
+          "name": "Contact center agents with account access",
+          "sector": "financial",
+          "why": {
+            "access": "Look up and change member or customer accounts, often in high volume and remotely.",
+            "trust": "Trusted to verify callers and act on their behalf.",
+            "opportunity": "Selling account data, enabling account takeover by changing contact details or resetting credentials, and SIM-swap-style collusion.",
+            "pressure": "Lower pay, high turnover, and active recruitment by fraud groups, including through social media."
+          },
+          "typical_access": [
+            "Customer account lookup",
+            "Contact detail and credential reset",
+            "Card controls and limits"
+          ],
+          "indicators": [
+            "Lookups on accounts with no matching inbound contact",
+            "Contact or credential changes followed by fraud",
+            "Screen capture or photos of screens in remote settings"
+          ],
+          "controls": {
+            "screening": "Section 205(d) or Section 19 checks plus standard screening.",
+            "privileged_access": "Account access tied to an active contact; high-risk changes require step-up verification.",
+            "separation_of_duties": "High-risk changes reviewed or confirmed out of band.",
+            "monitoring": "Lookup-without-contact analytics and linkage to downstream fraud.",
+            "offboarding": "Revoke access at end of shift on notice; collect remote equipment."
+          },
+          "sources": [
+            "ncua-205d",
+            "nydfs-2022",
+            "pci-dss-4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "healthcare",
+      "name": "Healthcare and clinical",
+      "summary": "Included briefly because many practitioners support hospitals and health plans; the same reasoning extends further.",
+      "roles": [
+        {
+          "id": "clinical-ehr",
+          "name": "Clinical and administrative staff with EHR access",
+          "sector": "healthcare",
+          "why": {
+            "access": "Patient records, often with broad break-the-glass access for emergencies.",
+            "trust": "Trusted to look only at patients they care for.",
+            "opportunity": "Snooping on celebrities, colleagues or family, and selling records for identity or insurance fraud.",
+            "pressure": "Burnout and personal curiosity; outside offers for records."
+          },
+          "typical_access": [
+            "Electronic health record",
+            "Break-the-glass access",
+            "Billing and claims systems"
+          ],
+          "indicators": [
+            "Records opened with no care relationship",
+            "Same-surname or VIP record access",
+            "Break-the-glass use without a matching event"
+          ],
+          "controls": {
+            "screening": "Workforce clearance procedure under the HIPAA Security Rule.",
+            "privileged_access": "Role-based EHR access with break-the-glass logged and reviewed.",
+            "separation_of_duties": "Billing changes and record corrections reviewed.",
+            "monitoring": "Regular review of information system activity, including access-pattern analytics.",
+            "offboarding": "Termination procedures that end ePHI access promptly."
+          },
+          "sources": [
+            "hipaa-164-308"
+          ]
+        },
+        {
+          "id": "controlled-substances",
+          "name": "Pharmacy and staff with access to controlled substances",
+          "sector": "healthcare",
+          "why": {
+            "access": "Controlled substance stock, dispensing cabinets and records.",
+            "trust": "Trusted to handle and record drugs with diversion value.",
+            "opportunity": "Diversion for personal use or sale, and falsifying waste or count records.",
+            "pressure": "Substance use disorder, which calls for a clinical and supportive response as well as a security one."
+          },
+          "typical_access": [
+            "Automated dispensing cabinets",
+            "Pharmacy vaults",
+            "Waste and count records"
+          ],
+          "indicators": [
+            "Dispensing or waste patterns well above peers",
+            "Waste without a witness",
+            "Count discrepancies on the same shifts"
+          ],
+          "controls": {
+            "screening": "Registrants may not employ certain people in roles with controlled substance access under 21 CFR 1301.76.",
+            "privileged_access": "Cabinet access by role and unit.",
+            "separation_of_duties": "Witnessed waste and independent counts.",
+            "monitoring": "Diversion analytics on dispensing data; theft or significant loss reported to DEA within one business day.",
+            "offboarding": "Revoke cabinet and vault access immediately."
+          },
+          "sources": [
+            "cfr-21-1301-76",
+            "hipaa-164-308"
+          ]
+        }
+      ]
+    }
+  ]
+}
