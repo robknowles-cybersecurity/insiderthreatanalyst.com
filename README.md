@@ -30,8 +30,9 @@ On-site search is powered by [Pagefind](https://pagefind.app) 1.5.2, pinned in
 `package.json`. The index itself is a generated build artifact: it is produced at
 deploy time under `/pagefind/` and is **not committed to this repository**, so the
 `/pagefind/` paths referenced by `assets/search.js` will not resolve here. The
-tooling that generates it is not mirrored either — `tools/build-nav.sh` is the only
-build script published.
+tooling that generates it is not mirrored either. The build scripts published here are
+`tools/build-nav.sh` (site nav) and `tools/build-high-risk-roles.mjs` (the High-Risk Roles
+register, generated from `content/high-risk-roles.json`).
 
 ## Credits
 
