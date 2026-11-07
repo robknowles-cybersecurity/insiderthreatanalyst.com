@@ -1,0 +1,44 @@
+# SITE PAGE MANIFEST (PE-279 item 4b): the one list of the site's pages.
+#
+# tools/build-nav.sh reads this file. Everything else that needs the page list
+# (search index, anchor check, sitemap) asks build-nav.sh for it with --list,
+# so a new page is added HERE and nowhere else.
+#
+# Format, one entry per line:
+#   page <path>               a page that carries the site nav
+#   exclude <path> <reason>   a page under the webroot that deliberately has no
+#                             site nav; the reason is required
+# Blank lines and lines starting with # are ignored. Paths are relative to the
+# site root. Anything else is an error, and build-nav.sh names the line.
+#
+# A page whose path must not appear in this public file excludes itself
+# instead, with  <!-- NAV:NONE: <reason> -->  in its own HTML. That keeps this
+# file and tools/build-nav.sh identical on the hub and on the public mirror,
+# with no redacted copy to hand-edit.
+
+page about.html
+page changelog.html
+page clusters.html
+page contributors.html
+page cpe.html
+page crosswalk.html
+page education.html
+page emerging.html
+page engagement.html
+page framework.html
+page governance.html
+page high-risk-roles.html
+page index.html
+page matrix.html
+page maturity.html
+page program.html
+page references.html
+page reviews.html
+page start.html
+page suggest.html
+page wellness.html
+page papers/index.html
+page talks/index.html
+
+exclude osit/index.html standalone deliverable microsite; has no site nav by design
+exclude fsisacbrc/index.html standalone deliverable microsite; has no site nav by design

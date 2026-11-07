@@ -11,19 +11,24 @@
 #   FAIL CLOSED — a page in the manifest that is missing either marker, or has
 #                 duplicate markers, is a hard ERROR that names the page. No
 #                 page is ever silently skipped.
-#   EXPLICIT    — pages that intentionally carry no site nav are listed in
-#                 EXCLUDED below with a reason, not omitted quietly.
+#   EXPLICIT:   pages that intentionally carry no site nav are listed as
+#                 'exclude' in _nav/pages.txt with a reason, or carry their own
+#                 <!-- NAV:NONE: reason --> marker, never omitted quietly.
 #
 # Usage:  tools/build-nav.sh          regenerate
 #         tools/build-nav.sh --check  verify up to date, change nothing (exit 1 if stale)
 #         tools/build-nav.sh --list   print the PAGES manifest, one per line (after preflight)
 #
-# ONE PAGE LIST (PE-279 4b): PAGES below is the site's single page manifest.
-# tools/build-search.sh (what gets indexed) and tools/verify-anchors.mjs (URL ->
-# source map) read it through --list; neither keeps a copy. A new page is added
-# HERE and nowhere else. Preflight also refuses to run while any top-level
-# *.html, or any page carrying NAV markers, is in neither PAGES nor EXCLUDED —
-# the 2026-09-13 rebuild failed quietly on exactly that kind of omission.
+# ONE PAGE LIST (PE-279 4b): the site's pages are listed in _nav/pages.txt and
+# nowhere else; this script loads PAGES and EXCLUDED from it. A page that must
+# not be named in a public file declares its own exclusion with a NAV:NONE
+# marker instead (see MANIFEST below), so this script and the manifest are the
+# same on the hub and on the public mirror, with no redacted copy.
+# tools/build-search.sh (what gets indexed), tools/verify-anchors.mjs (URL ->
+# source map) and the sitemap read the list through --list; none of them keeps
+# a copy. Preflight also refuses to run while any top-level *.html, or any page
+# carrying NAV markers, is in neither PAGES nor EXCLUDED: the 2026-09-13
+# rebuild failed quietly on exactly that kind of omission.
 #
 set -euo pipefail
 
@@ -32,23 +37,51 @@ ROOT="$PWD"
 NAV_SRC="_nav/nav.html"
 
 # ---------------------------------------------------------------------------
-# MANIFEST — every page that carries the site nav.
+# MANIFEST: loaded from _nav/pages.txt.
+#   page <path>               carries the site nav -> PAGES
+#   exclude <path> <reason>   deliberately has no site nav -> EXCLUDED
+# A malformed line is a hard ERROR that names the file and line.
+# A page may also exclude itself with  <!-- NAV:NONE: <reason> -->  in its own
+# HTML (reason required). That is for a page whose path must not appear in the
+# public manifest; it can never also carry NAV:BEGIN/NAV:END.
 # ---------------------------------------------------------------------------
-PAGES=(
-  about.html changelog.html clusters.html contributors.html cpe.html
-  crosswalk.html education.html emerging.html engagement.html framework.html governance.html
-  high-risk-roles.html index.html matrix.html maturity.html program.html references.html
-  reviews.html start.html suggest.html wellness.html
-  papers/index.html talks/index.html
-)
-
-# EXCLUDED — pages under the webroot that deliberately do NOT carry the site
-# nav. Listed explicitly so the omission is a decision on record, not a gap.
-#   osit/index.html       standalone deliverable microsite; has no site nav by design
-#   fsisacbrc/index.html  standalone deliverable microsite; has no site nav by design
-#   (one further page under the webroot is excluded for the same reason: it
-#    carries its own in-page nav. Redacted from the public mirror.)
-EXCLUDED=( osit/index.html fsisacbrc/index.html )
+MANIFEST="_nav/pages.txt"
+[[ -f "$MANIFEST" ]] || { echo "ERROR: missing $MANIFEST (the site page manifest)" >&2; exit 1; }
+PAGES=(); EXCLUDED=(); bad=0
+load_manifest() {
+  local file="$1" n=0 line kind path reason
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    n=$((n + 1))
+    line="${line%$'\r'}"
+    [[ -z "${line//[[:space:]]/}" || "$line" =~ ^[[:space:]]*# ]] && continue
+    read -r kind path reason <<< "$line"
+    case "$kind" in
+      page)
+        if [[ -z "$path" || -n "$reason" ]]; then
+          echo "ERROR: $file:$n: expected 'page <path>', got: $line" >&2; bad=1
+        else PAGES+=("$path"); fi ;;
+      exclude)
+        if [[ -z "$path" || -z "$reason" ]]; then
+          echo "ERROR: $file:$n: expected 'exclude <path> <reason>' (the reason is required), got: $line" >&2; bad=1
+        else EXCLUDED+=("$path"); fi ;;
+      *)
+        echo "ERROR: $file:$n: unknown entry '$kind' (use 'page' or 'exclude'): $line" >&2; bad=1 ;;
+    esac
+  done < "$file"
+}
+load_manifest "$MANIFEST"
+while IFS= read -r f; do
+  f=${f#./}
+  if ! grep -qE -- '<!-- NAV:NONE: *[^ -][^>]*-->' "$f"; then
+    echo "ERROR: $f: NAV:NONE marker needs a reason: <!-- NAV:NONE: <reason> -->" >&2; bad=1
+  elif grep -q -- '<!-- NAV:BEGIN -->' "$f"; then
+    echo "ERROR: $f: carries both NAV:NONE and NAV:BEGIN" >&2; bad=1
+  else EXCLUDED+=("$f"); fi
+done < <(grep -rl --include='*.html' --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=pagefind -- '<!-- NAV:NONE' . | sort)
+[[ "$bad" -eq 0 ]] || { echo "Refusing to build: fix the manifest problems named above." >&2; exit 1; }
+[[ ${#PAGES[@]} -gt 0 ]] || { echo "ERROR: $MANIFEST lists no pages" >&2; exit 1; }
+dups=$(printf '%s\n' "${PAGES[@]}" "${EXCLUDED[@]}" | sort | uniq -d)
+[[ -z "$dups" ]] || { echo "ERROR: listed more than once in the page manifest: $dups" >&2; exit 1; }
 
 CHECK_ONLY=0; LIST_ONLY=0
 [[ "${1:-}" == "--check" ]] && CHECK_ONLY=1
@@ -78,14 +111,14 @@ done
 listed() { local x; for x in "${PAGES[@]}" "${EXCLUDED[@]}"; do [[ "$x" == "$1" ]] && return 0; done; return 1; }
 while IFS= read -r f; do
   f=${f#./}
-  listed "$f" || { echo "ERROR: $f is not in the page manifest — add page $f to PAGES in tools/build-nav.sh (nav, search index and anchor check all read that one list), or to EXCLUDED with a reason" >&2; problems=1; }
+  listed "$f" || { echo "ERROR: $f is not in the page manifest. Add the line 'page $f' to _nav/pages.txt (nav, search index, anchor check and sitemap all read that one list), or 'exclude $f <reason>' if it should not carry the site nav" >&2; problems=1; }
 done < <( { find . -maxdepth 1 -name '*.html' -print
             grep -rl --include='*.html' --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=pagefind -- '<!-- NAV:BEGIN -->' . ; } | sed 's#^\./##' | sort -u )
 
 if [[ "$problems" -ne 0 ]]; then
   echo "" >&2
-  echo "Refusing to build. Fix the pages named above, or move them to EXCLUDED" >&2
-  echo "in tools/build-nav.sh if they legitimately should not carry the nav." >&2
+  echo "Refusing to build. Fix the pages named above, or list them as 'exclude'" >&2
+  echo "in _nav/pages.txt if they legitimately should not carry the nav." >&2
   exit 1
 fi
 

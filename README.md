@@ -32,7 +32,8 @@ deploy time under `/pagefind/` and is **not committed to this repository**, so t
 `/pagefind/` paths referenced by `assets/search.js` will not resolve here. The
 tooling that generates it is not mirrored either. The build scripts published here are
 `tools/build-nav.sh` (site nav) and `tools/build-high-risk-roles.mjs` (the High-Risk Roles
-register, generated from `content/high-risk-roles.json`).
+register, generated from `content/high-risk-roles.json`). The site's page list lives in one
+file, `_nav/pages.txt`; add a new page there and nowhere else.
 
 ## Credits
 
