@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("ita-theme")||"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}document.documentElement.classList.add("no-transition");</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2L4 8v8c0 7.7 5.1 14.9 12 17 6.9-2.1 12-9.3 12-17V8L16 2z' fill='%230c1222' stroke='%236cb4ff' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='%2334d9c3' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%236cb4ff'/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="https://insiderthreatanalyst.com/ogimage.png">
+<meta property="og:title" content="High-Risk Roles | Insider Threat Analyst Career Framework">
+<meta property="og:description" content="Roles where insider risk is most consequential, from privileged IT and payments to HR, executives, contractors and departing employees, with why each is high-risk, typical access, role-specific indicators, recommended controls and public sources.">
+<meta name="description" content="Roles where insider risk is most consequential, from privileged IT and payments to HR, executives, contractors and departing employees, with why each is high-risk, typical access, role-specific indicators, recommended controls and public sources.">
+<title>High-Risk Roles</title>
+<link rel="canonical" href="https://insiderthreatanalyst.com/high-risk-roles">
+<link rel="stylesheet" href="/assets/ita.css">
+<style>
+
+.header-inner{max-width:880px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center}
+
+[data-theme="dark"] .site-nav{background:var(--bg3);border-bottom-color:rgba(108,180,255,0.08)}
+
+.main{max-width:880px;margin:0 auto;padding:2rem 1.5rem}
+
+.hero{text-align:center;margin-bottom:2rem}
+.hero p{font-size:0.85rem;color:var(--fg2);max-width:640px;margin:0 auto;line-height:1.7}
+
+.section{margin-bottom:2rem}
+.section h2{font-family:var(--font-serif);font-size:1.15rem;font-weight:600;margin-bottom:0.6rem;padding-bottom:0.3rem;border-bottom:2px solid var(--accent)}
+.section p,.section li{font-size:0.8rem;color:var(--fg2);line-height:1.7;margin-bottom:0.5rem}
+@media(min-width:769px){.section p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}}
+.section ul{margin-left:1.2rem;margin-bottom:0.5rem}
+.section li{margin-bottom:0.3rem}
+.section strong{color:var(--fg)}
+
+.callout{border-radius:8px;padding:0.75rem 1rem;font-size:0.78rem;color:var(--fg2);line-height:1.7;margin:1rem 0}
+.callout-blue{background:var(--accent-bg);border:1px solid rgba(37,99,235,0.15)}
+[data-theme="dark"] .callout-blue{background:rgba(108,180,255,0.06);border-color:rgba(108,180,255,0.12)}
+
+.callout-amber{background:#fffbeb;border:1px solid rgba(245,158,11,0.2)}
+[data-theme="dark"] .callout-amber{background:rgba(245,158,11,0.06);border-color:rgba(245,158,11,0.12)}
+
+/* High-Risk Roles register. Scoped to .hrr-* so nothing here can leak into
+   /assets/ita.css consumers. The markup inside HRR:BEGIN/HRR:END is generated
+   by tools/build-high-risk-roles.mjs from content/high-risk-roles.json. */
+.hrr-principle strong{color:var(--fg)}
+.hrr-total{font-size:0.75rem;color:var(--fg3);margin-bottom:0.5rem}
+.hrr-toc{border:1px solid var(--border);border-radius:8px;padding:0.6rem 1rem;margin:0.5rem 0 1rem;background:var(--bg2)}
+.hrr-toc ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0.3rem 1.1rem}
+.hrr-toc li{font-size:0.76rem;line-height:1.6}
+.hrr-toc a{color:var(--accent);text-decoration:none}
+.hrr-toc a:hover{text-decoration:underline}
+.hrr-count{font-family:var(--font-sans);font-size:0.68rem;font-weight:500;color:var(--fg3)}
+.hrr-controls{border:1px solid var(--border);border-radius:8px;padding:0.65rem 1rem;margin:0 0 2rem;background:var(--bg2)}
+.hrr-filter-group{display:flex;flex-wrap:wrap;align-items:center;gap:0.35rem;margin-bottom:0.45rem}
+.hrr-filter-label{font-size:0.66rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg3);min-width:4.2rem}
+.hrr-chip,.hrr-clear,.hrr-bulk{font:inherit;font-size:0.72rem;line-height:1.4;padding:0.2rem 0.65rem;border-radius:999px;border:1px solid var(--border2);background:var(--bg);color:var(--fg2);cursor:pointer}
+.hrr-chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.hrr-clear{border-style:dashed}
+.hrr-clear:disabled,.hrr-bulk:disabled{opacity:0.45;cursor:default}
+.hrr-chip:focus-visible,.hrr-clear:focus-visible,.hrr-bulk:focus-visible,.hrr-role>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hrr-bulk-row{display:flex;flex-wrap:wrap;gap:0.35rem}
+.hrr-status{font-size:0.72rem;color:var(--fg3);margin:0.4rem 0 0}
+.hrr-group{margin-bottom:2.25rem}
+.hrr-group h2,.hrr-sources h2{font-family:var(--font-serif);font-size:1.15rem;font-weight:600;margin-bottom:0.4rem;padding-bottom:0.3rem;border-bottom:2px solid var(--accent);display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:0.2rem 0.75rem}
+.hrr-summary{font-size:0.8rem;color:var(--fg2);line-height:1.7;margin:0 0 0.6rem}
+.hrr-role{border-bottom:1px solid var(--border);padding:0.15rem 0}
+.hrr-role:last-of-type{border-bottom:0}
+.hrr-role>summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:0.25rem 0.6rem;padding:0.55rem 0;cursor:pointer;list-style:none}
+.hrr-role>summary::-webkit-details-marker{display:none}
+.hrr-role>summary::before{content:"";flex:none;align-self:center;width:0.42em;height:0.42em;margin:0 0.2rem 0 0.15rem;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg);transition:transform .15s}
+.hrr-role[open]>summary::before{transform:rotate(45deg)}
+.hrr-role-name{font-size:0.88rem;font-weight:600;line-height:1.45;flex:1 1 14rem}
+.hrr-pill{font-size:0.64rem;line-height:1.5;padding:0.05rem 0.45rem;border-radius:4px;background:var(--bg2);border:1px solid var(--border);color:var(--fg2)}
+.hrr-pill-sector{background:var(--accent2-bg);border-color:transparent;color:var(--accent2)}
+.hrr-body{padding:0 0 0.9rem 1.25rem}
+.hrr-body h3{font-size:0.74rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--fg3);margin:0.8rem 0 0.35rem}
+.hrr-body ul{margin:0 0 0 1.1rem}
+.hrr-body li{font-size:0.78rem;color:var(--fg2);line-height:1.65;margin-bottom:0.15rem}
+.hrr-dl{display:grid;grid-template-columns:minmax(7.5rem,auto) 1fr;gap:0.3rem 0.9rem;margin:0}
+.hrr-dl dt{font-size:0.74rem;font-weight:600;color:var(--fg)}
+.hrr-dl dd{font-size:0.78rem;color:var(--fg2);line-height:1.65;margin:0}
+.hrr-cites{font-size:0.72rem;color:var(--fg3);margin:0.8rem 0 0;line-height:1.7}
+.hrr-cites span{font-weight:600}
+.hrr-cites a{color:var(--accent)}
+.hrr-sources{margin:2.5rem 0 2rem}
+.hrr-src-list{margin:0 0 0 1.4rem;padding:0}
+.hrr-src{border-bottom:1px solid var(--border);padding:0.7rem 0;font-size:0.78rem;color:var(--fg2)}
+.hrr-src:last-child{border-bottom:0}
+.hrr-src:target{background:var(--accent-bg);border-radius:6px}
+.hrr-src p{margin:0 0 0.3rem;line-height:1.65}
+.hrr-src-title{font-size:0.85rem;font-weight:600}
+.hrr-src-pub{color:var(--fg3);font-size:0.74rem}
+.hrr-meta{display:flex;flex-wrap:wrap;gap:0.3rem}
+.hrr-pill.hrr-conf-verified{background:var(--accent2-bg);border-color:transparent;color:var(--accent2)}
+.hrr-pill.hrr-conf-unverified,.hrr-pill.hrr-conf-single-source{background:#fffbeb;border-color:rgba(245,158,11,0.3);color:#92400e}
+[data-theme="dark"] .hrr-pill.hrr-conf-unverified,[data-theme="dark"] .hrr-pill.hrr-conf-single-source{background:rgba(245,158,11,0.08);color:#fbbf24}
+.hrr-src-note{font-size:0.72rem;color:var(--fg3);font-style:italic}
+.hrr-steps{margin-left:1.3rem}
+.hrr-steps>li{margin-bottom:0.55rem}
+.hrr-steps ul{margin-top:0.3rem}
+.hrr-data{font-size:0.72rem;color:var(--fg3)}
+.hrr-controls[hidden],.hrr-group[hidden],.hrr-group [hidden],.hrr-role[hidden]{display:none!important}
+@media(max-width:600px){.hrr-body{padding-left:0}.hrr-dl{grid-template-columns:1fr;gap:0.1rem}.hrr-dl dd{margin-bottom:0.45rem}.hrr-src-list{margin-left:1.1rem}}
+
+
+@media(max-width:600px){.feedback-widget{bottom:0.75rem;right:0.75rem;padding:0.3rem 0.5rem;font-size:0.62rem}.feedback-btn{font-size:0.85rem;padding:0.2rem 0.4rem}}
+
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"High-Risk Roles","description":"Roles where insider risk is most consequential, from privileged IT and payments to HR, executives, contractors and departing employees, with why each is high-risk, typical access, role-specific indicators, recommended controls and public sources.","url":"https://insiderthreatanalyst.com/high-risk-roles","publisher":{"@type":"Organization","name":"Insider Threat Analyst Career Framework","url":"https://insiderthreatanalyst.com"}}</script>
+<script defer src="https://stats.knowles.family/script.js" data-website-id="f4db3639-63ab-4998-93ff-4f0bbe5e10c3"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="header"><div class="header-inner">
+<h1>🎯 High-Risk Roles · <a href="/" target="_blank" rel="noopener">Career Framework</a></h1>
+<div class="header-right">
+<button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()" id="theme-btn">Dark</button>
+</div>
+</div></header>
+
+<div class="accent-stripe"></div>
+<!-- NAV:BEGIN -->
+<!-- GENERATED by tools/build-nav.sh from _nav/nav.html — DO NOT HAND-EDIT.
+     Edit _nav/nav.html and re-run tools/build-nav.sh; changes here are overwritten. -->
+<nav class="site-nav" aria-label="Site navigation"><div class="site-nav-inner">
+<div class="nav-group"><span class="nav-label">Explore</span>
+<a href="/framework">Framework</a>
+<a href="/matrix">Matrix</a>
+<a href="/clusters">Clusters</a>
+<a href="/crosswalk">Crosswalk</a>
+</div>
+<div class="nav-group"><span class="nav-label">Build &amp; Run</span>
+<a href="/program">Program</a>
+<a href="/high-risk-roles" class="nav-active">High-Risk Roles</a>
+<a href="/emerging">Emerging</a>
+<a href="https://ttx.insiderthreatanalyst.com/" target="_blank" rel="noopener">TTX Builder</a>
+</div>
+<div class="nav-group"><span class="nav-label">Grow</span>
+<a href="/engagement">Engagement</a>
+<a href="/maturity">Maturity</a>
+</div>
+<div class="nav-group nav-util"><span class="nav-label">About</span>
+<a href="/about">About</a>
+<a href="/start">Start Here</a>
+<a href="/wellness">Wellness</a>
+<a href="/governance">Site Policy</a>
+<a href="/contributors">Contributors</a>
+<a href="/references">References</a>
+<a href="/cpe">CPE Resources</a>
+<a href="/education">Education &amp; Training</a>
+<a href="/papers/">Papers</a>
+<a href="/reviews">Reviews</a>
+<a href="/changelog">Changelog</a>
+<a href="/suggest">Suggest</a>
+</div>
+<div class="nav-group nav-search"><button type="button" class="nav-search-btn" id="ita-search-open" title="Search the site — press /" aria-haspopup="dialog" aria-expanded="false">Search <kbd aria-hidden="true">/</kbd></button></div>
+</div></nav>
+<link rel="stylesheet" href="/assets/search.css">
+<script src="/assets/search.js" defer></script>
+<!-- NAV:END -->
+
+
+<main class="main" id="main-content">
+
+<div class="hero">
+<p>A starting register of the roles where insider risk is most consequential: people whose access, trust and opportunity mean a bad day, a bad decision or a bad actor would do the most damage. Each role says why it carries more risk, what access usually comes with it, which indicators matter more there, and which controls fit, with the public sources behind it. Use it to start your own register, not to replace one.</p>
+</div>
+
+<div class="callout callout-amber hrr-principle">
+<strong>Role is one factor, not a judgment about people.</strong> Most people in every role below are the reason the organization works. A role lands on this list because of what it can reach and change, not because of who holds it. Designating a role high-risk should change the controls around the role: screening, privileges, separation of duties, monitoring scope and offboarding. It should not, by itself, be a reason for suspicion of or adverse action against any person. Tell people which roles are designated and why, keep monitoring proportionate, and bring legal, privacy and HR in before you start.
+</div>
+
+<div class="section">
+<h2 id="how-to-read">How to read this register</h2>
+<ul>
+<li><strong>No public source gives a cross-sector list.</strong> The research behind this page looked for one in U.S. federal policy, financial regulators, CERT, NIST, ISO, PCI, SOC 2 and UK NPSA guidance. What exists are methods for designating positions (OPM's risk and sensitivity designations, NIST PS-2, NPSA's role-based assessment) and a few short regulator lists, the clearest being New York DFS's three categories of sensitive positions. This register is a synthesis of those sources plus practitioner experience; each role cites what supports it.</li>
+<li><strong>Four drivers.</strong> Every role is described by <em>access</em> (what it can reach), <em>trust</em> (how much it is allowed to do without checks), <em>opportunity</em> (what misuse would look like and how easy it is to hide) and <em>pressure</em> (what pushes people in this role, or makes outsiders target them). Pressure describes the situation around the role, never a trait of the person in it.</li>
+<li><strong>Indicators are role-specific observables,</strong> things that mean more in this role than elsewhere. They are prompts for review, not evidence of wrongdoing; most have innocent explanations.</li>
+<li><strong>Controls are starting points.</strong> Scale them to your organization, your law and your risk register. Monitoring scope in particular must follow your jurisdiction's privacy and employment law.</li>
+<li><strong>Sectors.</strong> Most roles apply anywhere. Financial institution and healthcare roles are tagged; use the sector filter to show only those.</li>
+</ul>
+</div>
+
+<!-- HRR:BEGIN -->
+<!-- GENERATED by tools/build-high-risk-roles.mjs from content/high-risk-roles.json. DO NOT HAND-EDIT.
+     Edit the dataset and re-run the script; changes here are overwritten. -->
+<p class="hrr-total">23 roles in 11 categories, drawn from 21 sources.</p>
+<nav class="hrr-toc" aria-label="Role categories"><ul>
+<li><a href="#technology">Technology and privileged access</a> <span class="hrr-count">5</span></li>
+<li><a href="#security">Security and oversight functions</a> <span class="hrr-count">2</span></li>
+<li><a href="#money">Money movement and finance</a> <span class="hrr-count">2</span></li>
+<li><a href="#people-data">People data</a> <span class="hrr-count">1</span></li>
+<li><a href="#leadership">Leadership and the people around them</a> <span class="hrr-count">2</span></li>
+<li><a href="#third-party-spend">Procurement and vendor management</a> <span class="hrr-count">1</span></li>
+<li><a href="#physical">Physical security and facilities</a> <span class="hrr-count">1</span></li>
+<li><a href="#external">Contractors and third parties</a> <span class="hrr-count">1</span></li>
+<li><a href="#transient">Transient high-risk states</a> <span class="hrr-count">2</span></li>
+<li><a href="#financial-institutions">Financial institutions</a> <span class="hrr-count">4</span></li>
+<li><a href="#healthcare">Healthcare and clinical</a> <span class="hrr-count">2</span></li>
+<li><a href="#sources">Sources and licenses</a> <span class="hrr-count">21</span></li>
+</ul></nav>
+<div class="hrr-controls" id="hrr-controls" data-pagefind-ignore hidden>
+<div class="hrr-filter-group" role="group" aria-labelledby="hrr-f-sector"><span class="hrr-filter-label" id="hrr-f-sector">Sector</span> <button type="button" class="hrr-chip" data-sector="all" aria-pressed="false">Cross-sector</button> <button type="button" class="hrr-chip" data-sector="financial" aria-pressed="false">Financial institutions</button> <button type="button" class="hrr-chip" data-sector="healthcare" aria-pressed="false">Healthcare</button> <button type="button" class="hrr-clear" id="hrr-clear">Show all</button></div>
+<div class="hrr-bulk-row"><button type="button" class="hrr-bulk" id="hrr-expand-all">Expand all</button> <button type="button" class="hrr-bulk" id="hrr-collapse-all">Collapse all</button></div>
+<p class="hrr-status" id="hrr-status" aria-live="polite">Showing all 23 roles</p>
+</div>
+<section class="hrr-group" data-category="technology">
+<h2 id="technology">Technology and privileged access <span class="hrr-count" data-total="5">5 roles</span></h2>
+<p class="hrr-summary">People who can change the systems everyone else depends on, including the logs and controls that would show what they did.</p>
+<details class="hrr-role" id="sysadmins" data-sector="all">
+<summary><span class="hrr-role-name">System and network administrators</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Administrative rights on servers, endpoints, network gear and backups, often across the whole estate.</dd>
+<dt>Trust</dt><dd>Trusted to act without per-action approval, frequently out of hours.</dd>
+<dt>Opportunity</dt><dd>Can create accounts, change configurations, disable logging and touch backups; sabotage and data theft both fit inside normal-looking work.</dd>
+<dt>Pressure</dt><dd>On-call load, layoffs and outsourcing hit this group; grievances about being undervalued are a recurring theme in IT sabotage cases.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Domain or root administrator</li><li>Hypervisor and storage consoles</li><li>Backup systems</li><li>Firewall, VPN and remote-access management</li><li>Log and monitoring pipelines</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Privileged sessions with no matching change ticket</li><li>New accounts, keys or scheduled tasks created outside the change process</li><li>Logging, EDR or backup jobs disabled or reconfigured</li><li>Unapproved remote-access tools or tunnels</li><li>Access to systems outside the person's assigned scope</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Elevated pre-hire screening proportionate to the role, rescreening on promotion into wider admin scope.</dd>
+<dt>Privileged access</dt><dd>Separate admin accounts, just-in-time elevation, vaulted credentials, no standing domain-wide rights.</dd>
+<dt>Separation of duties</dt><dd>No single admin can both change and approve production changes, or both administer and erase the logs that record them.</dd>
+<dt>Monitoring scope</dt><dd>Session recording or command logging for privileged sessions, shipped to a log store the admin cannot alter.</dd>
+<dt>Offboarding</dt><dd>Same-day revocation of every privileged credential, key and token; rotate shared secrets the person knew.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a>, <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a>, <a href="#src-nydfs-2022">[10] New York State Department of Financial Services</a>, <a href="#src-dodm-8140-03">[5] U.S. Department of Defense</a>, <a href="#src-cnssd-504">[6] Committee on National Security Systems</a>, <a href="#src-iso-27002-2022">[16] ISO/IEC</a></p>
+</div></details>
+<details class="hrr-role" id="cloud-identity-admins" data-sector="all">
+<summary><span class="hrr-role-name">Cloud, SaaS and identity administrators</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Tenant-wide control of cloud accounts, identity providers, email and collaboration platforms.</dd>
+<dt>Trust</dt><dd>Can grant themselves or others access to almost anything, usually through a web console from anywhere.</dd>
+<dt>Opportunity</dt><dd>One role assignment, mailbox delegation or API token can expose an entire tenant; actions can look like routine administration.</dd>
+<dt>Pressure</dt><dd>Same pressures as other administrators, plus a high outside market value that makes them recruitment targets.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Identity provider global or privileged role administrator</li><li>Cloud organization owner or root account</li><li>Email and collaboration tenant admin</li><li>SaaS super-admin roles</li><li>API keys and service principals</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Self-assigned or temporary role grants that are not removed</li><li>Mail forwarding rules, delegation or eDiscovery searches without a case</li><li>New OAuth apps, service principals or long-lived keys</li><li>Conditional-access or MFA policy exceptions</li><li>Console sign-ins from unusual locations or devices</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>As for system administrators.</dd>
+<dt>Privileged access</dt><dd>Privileged identity management with time-bound, approved activation; break-glass accounts sealed and alerted on.</dd>
+<dt>Separation of duties</dt><dd>Role assignment and policy changes for privileged roles require a second approver.</dd>
+<dt>Monitoring scope</dt><dd>Tenant audit logs exported to a store outside the admins' control; alert on privileged role changes and mailbox access by admins.</dd>
+<dt>Offboarding</dt><dd>Remove role assignments, revoke sessions and refresh tokens, and inventory keys and apps the person created.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a>, <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a>, <a href="#src-iso-27002-2022">[16] ISO/IEC</a>, <a href="#src-aicpa-tsc">[17] AICPA &amp; CIMA</a></p>
+</div></details>
+<details class="hrr-role" id="developers-prod" data-sector="all">
+<summary><span class="hrr-role-name">Developers and DevOps engineers with production access</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Source code, build pipelines, deployment rights, secrets and sometimes production data.</dd>
+<dt>Trust</dt><dd>Code they write runs with the organization's authority, and review is often lighter than assumed.</dd>
+<dt>Opportunity</dt><dd>Logic bombs, backdoors, data exfiltration through code or pipelines, and theft of source code as intellectual property.</dd>
+<dt>Pressure</dt><dd>Departure to competitors, disputes over ownership of work, and layoffs.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Source repositories</li><li>CI/CD pipelines and deployment credentials</li><li>Secrets managers</li><li>Production shells or debugging access</li><li>Copies of production data in lower environments</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Commits that bypass review or land outside normal hours just before departure</li><li>Pipeline or branch-protection changes</li><li>Bulk cloning of repositories outside the person's projects</li><li>Secrets read that the person's services do not use</li><li>Production data copied to personal or unmanaged locations</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Standard screening; elevated for engineers with standing production or secrets access.</dd>
+<dt>Privileged access</dt><dd>No standing production access; time-bound break-glass with approval and recording.</dd>
+<dt>Separation of duties</dt><dd>Mandatory peer review and protected branches so no one ships alone; deploy rights separate from approve rights.</dd>
+<dt>Monitoring scope</dt><dd>Repository, pipeline and secrets-access audit logs; watch for bulk clone and archive activity.</dd>
+<dt>Offboarding</dt><dd>Revoke Git, cloud and pipeline credentials; rotate secrets the person could read; review their recent commits.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a>, <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a>, <a href="#src-mitre-ctid-itkb">[20] MITRE Center for Threat-Informed Defense</a>, <a href="#src-iso-27002-2022">[16] ISO/IEC</a></p>
+</div></details>
+<details class="hrr-role" id="dbas-data-engineers" data-sector="all">
+<summary><span class="hrr-role-name">Database administrators and data engineers</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Direct access to the data itself, below the application controls that normally limit what a user sees.</dd>
+<dt>Trust</dt><dd>Expected to query, copy and move large datasets as part of the job.</dd>
+<dt>Opportunity</dt><dd>Bulk extraction of customer, financial or health records, and quiet alteration of records.</dd>
+<dt>Pressure</dt><dd>Data has a ready resale market; this role is an obvious target for outside recruitment.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Database owner or sysadmin roles</li><li>Data warehouse and lake administration</li><li>ETL and replication jobs</li><li>Backups and exports</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Queries pulling full tables of sensitive fields with no matching request</li><li>New exports, replication targets or scheduled jobs to unfamiliar destinations</li><li>Direct edits to records that normally change only through applications</li><li>Database audit settings changed</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Elevated screening where the data includes financial, health or other regulated records.</dd>
+<dt>Privileged access</dt><dd>Named accounts, not shared ones; just-in-time elevation to owner roles.</dd>
+<dt>Separation of duties</dt><dd>Changes to production data through approved change paths, not ad hoc DML.</dd>
+<dt>Monitoring scope</dt><dd>Database activity monitoring on sensitive tables, shipped off the database server.</dd>
+<dt>Offboarding</dt><dd>Revoke database and pipeline access; review recent exports and jobs.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a>, <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a>, <a href="#src-hipaa-164-308">[14] U.S. Department of Health and Human Services</a>, <a href="#src-pci-dss-4">[18] PCI Security Standards Council</a></p>
+</div></details>
+<details class="hrr-role" id="non-human" data-sector="all">
+<summary><span class="hrr-role-name">Service accounts, automation and AI agents acting for someone</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Often holds broader and longer-lived access than any person, because it was set up once and never revisited.</dd>
+<dt>Trust</dt><dd>Its actions are attributed to a system, not a person, so they draw less scrutiny.</dd>
+<dt>Opportunity</dt><dd>A person who controls the account or the agent's instructions can act through it; an agent can also act wrongly on its own.</dd>
+<dt>Pressure</dt><dd>Not applicable to the account; applies to whoever controls it.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Service principals and API keys</li><li>Automation and RPA bots</li><li>AI agents with tool or data access</li><li>Scheduled jobs with stored credentials</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Interactive sign-in by an account that should only run unattended</li><li>Agent or bot actions outside its defined task</li><li>Credential or prompt changes by someone who does not own the account</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Not applicable; screen and record the human owner.</dd>
+<dt>Privileged access</dt><dd>Every non-human identity has a named human owner, least privilege, and an expiry.</dd>
+<dt>Separation of duties</dt><dd>The person who builds an agent or bot does not alone approve its permissions.</dd>
+<dt>Monitoring scope</dt><dd>Log agent and service actions with the owning human recorded; see A-AGENT01 in the framework.</dd>
+<dt>Offboarding</dt><dd>When an owner leaves, reassign or disable their service accounts and agents the same day.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a>, <a href="#src-cisa-itmg-2026">[1] Cybersecurity and Infrastructure Security Agency</a></p>
+</div></details>
+</section>
+<section class="hrr-group" data-category="security">
+<h2 id="security">Security and oversight functions <span class="hrr-count" data-total="2">2 roles</span></h2>
+<p class="hrr-summary">The people who watch everyone else. They need the same controls, applied by someone outside their own chain.</p>
+<details class="hrr-role" id="security-analysts" data-sector="all">
+<summary><span class="hrr-role-name">SOC, insider risk and investigations analysts</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Monitoring data about everyone: user activity, email, HR case notes, investigation files.</dd>
+<dt>Trust</dt><dd>Trusted to look at sensitive information about colleagues and to keep it confidential.</dd>
+<dt>Opportunity</dt><dd>Curiosity lookups, leaking an investigation, tipping off a subject, or tuning detections to blind the tooling.</dd>
+<dt>Pressure</dt><dd>Exposure to distressing material, workload and moral injury; see the Wellness page.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>SIEM and UAM consoles</li><li>DLP and email review tools</li><li>Case management systems</li><li>HR and badge data feeds</li><li>Detection rule and allow-list configuration</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Searches on colleagues with no open case or tasking</li><li>Exports of case material</li><li>Detection rules, exclusions or allow-lists changed without review</li><li>Alerts about the analyst's own activity closed by the analyst</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Elevated screening and periodic rescreening, as for other privileged roles.</dd>
+<dt>Privileged access</dt><dd>Access tied to assigned cases; no standing access to every subject's data.</dd>
+<dt>Separation of duties</dt><dd>No analyst reviews alerts on themselves or their own team; detection changes reviewed by a second person.</dd>
+<dt>Monitoring scope</dt><dd>Audit the auditors: a separate function reviews analyst queries and case access.</dd>
+<dt>Offboarding</dt><dd>Immediate removal from tools and cases; hand off open investigations under supervision.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a>, <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a>, <a href="#src-cnssd-504">[6] Committee on National Security Systems</a></p>
+</div></details>
+<details class="hrr-role" id="legal-compliance-audit" data-sector="all">
+<summary><span class="hrr-role-name">Legal, compliance, internal audit and ethics staff</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Privileged legal material, regulatory correspondence, audit findings, whistleblower reports, M&amp;A plans.</dd>
+<dt>Trust</dt><dd>Often have broad read access by design so they can test or advise anywhere.</dd>
+<dt>Opportunity</dt><dd>Leaking privileged or market-moving information, suppressing findings, or trading on what they know.</dd>
+<dt>Pressure</dt><dd>Conflicts between loyalty and duty, and outside interest in what they hold.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Matter and contract management systems</li><li>Audit work papers</li><li>Hotline and ethics case data</li><li>Board and regulator correspondence</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Access to matters outside the person's assignments</li><li>Downloads of deal or regulatory material near personal trading windows</li><li>Findings or hotline cases closed without the normal review</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Standard screening; elevated for staff on market-sensitive deals.</dd>
+<dt>Privileged access</dt><dd>Matter-based access and ethical walls rather than blanket read rights.</dd>
+<dt>Separation of duties</dt><dd>Findings and hotline closures need a second reviewer; auditors do not audit work they performed.</dd>
+<dt>Monitoring scope</dt><dd>Monitor access to deal rooms and hotline data; pair with personal trading pre-clearance where relevant.</dd>
+<dt>Offboarding</dt><dd>Revoke matter access and remind of continuing confidentiality obligations.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-cfr-5-731-106">[3] U.S. Office of Personnel Management</a>, <a href="#src-iso-27002-2022">[16] ISO/IEC</a>, <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a></p>
+</div></details>
+</section>
+<section class="hrr-group" data-category="money">
+<h2 id="money">Money movement and finance <span class="hrr-count" data-total="2">2 roles</span></h2>
+<p class="hrr-summary">Roles that can move, record or approve money. Regulators have treated these as sensitive positions for decades.</p>
+<details class="hrr-role" id="payments-treasury" data-sector="all">
+<summary><span class="hrr-role-name">Wire, payments and treasury staff</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Can initiate, approve or release funds transfers and change beneficiary details.</dd>
+<dt>Trust</dt><dd>Trusted with large sums and urgent requests.</dd>
+<dt>Opportunity</dt><dd>Fraudulent transfers, beneficiary changes, or collusion with outside fraudsters, including business email compromise.</dd>
+<dt>Pressure</dt><dd>Personal financial strain, gambling, or coercion by outside criminals.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Wire and ACH origination systems</li><li>Treasury management portals</li><li>Payment approval queues</li><li>Beneficiary and vendor bank detail records</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Transfers just under approval thresholds</li><li>Beneficiary changes followed quickly by payments</li><li>Overrides of callback or verification steps</li><li>Reluctance to take leave or let others cover the desk</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Elevated screening including credit history where lawful; rescreen on promotion to approver.</dd>
+<dt>Privileged access</dt><dd>Payment entitlements by role, reviewed at least quarterly.</dd>
+<dt>Separation of duties</dt><dd>Dual control: one person initiates, another approves, and beneficiary changes are verified out of band.</dd>
+<dt>Monitoring scope</dt><dd>Payment anomaly monitoring and review of overrides; mandatory time away with no system access.</dd>
+<dt>Offboarding</dt><dd>Remove payment entitlements and tokens before notice is announced where practical.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-frb-sr-96-37">[11] Board of Governors of the Federal Reserve System</a>, <a href="#src-nydfs-2022">[10] New York State Department of Financial Services</a>, <a href="#src-cfr-5-731-106">[3] U.S. Office of Personnel Management</a>, <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a></p>
+</div></details>
+<details class="hrr-role" id="ap-ar-gl" data-sector="all">
+<summary><span class="hrr-role-name">Accounts payable, receivable and general ledger staff</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Vendor master data, invoices, journal entries and reconciliations.</dd>
+<dt>Trust</dt><dd>Trusted to keep the books accurate with limited line-by-line review.</dd>
+<dt>Opportunity</dt><dd>Fictitious vendors, invoice and refund schemes, and journal entries that hide losses.</dd>
+<dt>Pressure</dt><dd>Personal financial pressure; pressure to hit targets.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>ERP accounts payable and receivable modules</li><li>Vendor master file</li><li>Journal entry and close processes</li><li>Bank reconciliation</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Vendors created and paid by the same person</li><li>Vendor bank details matching employee details</li><li>Manual journal entries near period end without support</li><li>Reconciliations always done by one person who resists help</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Standard screening; elevated where the role can both create and pay vendors.</dd>
+<dt>Privileged access</dt><dd>Restrict vendor master changes to a small group outside AP.</dd>
+<dt>Separation of duties</dt><dd>Separate vendor setup, invoice entry, payment approval and reconciliation.</dd>
+<dt>Monitoring scope</dt><dd>Vendor-employee data matching and journal entry analytics.</dd>
+<dt>Offboarding</dt><dd>Revoke ERP roles and review the person's recent vendor and journal activity.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-nydfs-2022">[10] New York State Department of Financial Services</a>, <a href="#src-frb-sr-96-37">[11] Board of Governors of the Federal Reserve System</a>, <a href="#src-iso-27002-2022">[16] ISO/IEC</a>, <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a></p>
+</div></details>
+</section>
+<section class="hrr-group" data-category="people-data">
+<h2 id="people-data">People data <span class="hrr-count" data-total="1">1 role</span></h2>
+<p class="hrr-summary">Roles that hold information about everyone else, including the information an insider risk program depends on.</p>
+<details class="hrr-role" id="hr-payroll" data-sector="all">
+<summary><span class="hrr-role-name">HR, payroll and benefits staff</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Personal data on the whole workforce: identity documents, salaries, bank details, medical and disciplinary records.</dd>
+<dt>Trust</dt><dd>Trusted with confidential employee matters, including upcoming terminations and investigations.</dd>
+<dt>Opportunity</dt><dd>Ghost employees, pay changes, identity theft, leaking terminations or tipping off a subject.</dd>
+<dt>Pressure</dt><dd>Exposure to conflict and difficult cases; personal relationships with affected staff.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>HRIS and payroll systems</li><li>Employee relations case files</li><li>Benefits and leave records</li><li>Background check results</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Pay or bank detail changes made and approved by the same person</li><li>Records viewed for employees outside the person's client group</li><li>Employees added without a matching requisition</li><li>Early knowledge of terminations showing up elsewhere</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Elevated screening for payroll and employee relations roles.</dd>
+<dt>Privileged access</dt><dd>Field-level access so most HR staff cannot see bank details or medical records.</dd>
+<dt>Separation of duties</dt><dd>Payroll changes entered by one person and approved by another; new hires reconciled to requisitions.</dd>
+<dt>Monitoring scope</dt><dd>Audit access to sensitive HR records and payroll changes.</dd>
+<dt>Offboarding</dt><dd>Revoke HRIS access promptly; HR staff are also the people who start everyone else's offboarding, so plan who starts theirs.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-cfr-5-731-106">[3] U.S. Office of Personnel Management</a>, <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a>, <a href="#src-iso-27002-2022">[16] ISO/IEC</a>, <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a></p>
+</div></details>
+</section>
+<section class="hrr-group" data-category="leadership">
+<h2 id="leadership">Leadership and the people around them <span class="hrr-count" data-total="2">2 roles</span></h2>
+<p class="hrr-summary">Authority, not technical access, is what makes these roles high consequence.</p>
+<details class="hrr-role" id="executives" data-sector="all">
+<summary><span class="hrr-role-name">Executives and board members</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Strategy, M&amp;A, financial results, and authority to approve exceptions.</dd>
+<dt>Trust</dt><dd>Rarely subject to the controls they approve for others.</dd>
+<dt>Opportunity</dt><dd>Overriding controls, insider trading, leaking strategy, or directing others to act improperly.</dd>
+<dt>Pressure</dt><dd>High stakes, public scrutiny, and targeting by foreign intelligence, activists and criminals.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Board materials</li><li>Deal rooms</li><li>Exception and override authority</li><li>Delegated access through assistants</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Requests to bypass normal approvals for urgency</li><li>Exceptions granted to themselves or close associates</li><li>Unusual access to deal or results information outside their remit</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Elevated screening at appointment, proportionate to role and law.</dd>
+<dt>Privileged access</dt><dd>Executives do not hold standing administrator rights.</dd>
+<dt>Separation of duties</dt><dd>Exceptions and overrides by executives are logged and reviewed by the board or audit committee.</dd>
+<dt>Monitoring scope</dt><dd>Governance oversight rather than routine activity monitoring; protect them as targets too.</dd>
+<dt>Offboarding</dt><dd>Plan departures in advance, including board materials, devices and delegated access.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-cfr-5-731-106">[3] U.S. Office of Personnel Management</a>, <a href="#src-nydfs-2022">[10] New York State Department of Financial Services</a>, <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a></p>
+</div></details>
+<details class="hrr-role" id="exec-assistants" data-sector="all">
+<summary><span class="hrr-role-name">Executive assistants and chiefs of staff</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Delegated access to an executive's email, calendar, files and sometimes approval authority.</dd>
+<dt>Trust</dt><dd>Act on the executive's behalf every day; their actions look like the executive's.</dd>
+<dt>Opportunity</dt><dd>Leaking calendars and board material, approving in the executive's name, or being the route a social engineer uses.</dd>
+<dt>Pressure</dt><dd>Long hours, proximity to power without its rewards, and direct targeting by outsiders.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Mailbox and calendar delegation</li><li>Executive document stores</li><li>Expense and travel approval</li><li>Board portal administration</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Delegated mailbox access used outside working patterns</li><li>Forwarding or sharing executive material externally</li><li>Approvals in the executive's name the executive does not recognize</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Screen to the level of the executive they support.</dd>
+<dt>Privileged access</dt><dd>Scope delegation to what the job needs and review it when either person changes role.</dd>
+<dt>Separation of duties</dt><dd>Assistants do not approve their own expenses or changes to their own access.</dd>
+<dt>Monitoring scope</dt><dd>Audit delegated access to executive mailboxes and files.</dd>
+<dt>Offboarding</dt><dd>Remove delegations the same day; tell the executive.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a>, <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a></p>
+</div></details>
+</section>
+<section class="hrr-group" data-category="third-party-spend">
+<h2 id="third-party-spend">Procurement and vendor management <span class="hrr-count" data-total="1">1 role</span></h2>
+<p class="hrr-summary">Roles that decide who gets paid and who gets let in.</p>
+<details class="hrr-role" id="procurement" data-sector="all">
+<summary><span class="hrr-role-name">Procurement and vendor management staff</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Contract award, vendor onboarding, and often the decision to give a supplier access to systems or sites.</dd>
+<dt>Trust</dt><dd>Trusted to choose suppliers fairly.</dd>
+<dt>Opportunity</dt><dd>Kickbacks, bid rigging, conflicts of interest, and onboarding a supplier that then becomes an access path.</dd>
+<dt>Pressure</dt><dd>Outside inducements from suppliers.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Sourcing and contract systems</li><li>Vendor onboarding workflow</li><li>Supplier risk assessments</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Repeated awards to the same supplier without competition</li><li>Undisclosed relationships with suppliers</li><li>Supplier access approved without the normal risk review</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Standard screening plus annual conflict-of-interest declarations.</dd>
+<dt>Privileged access</dt><dd>Separate the authority to award from the authority to grant supplier system access.</dd>
+<dt>Separation of duties</dt><dd>Requisition, award, receipt and payment handled by different people.</dd>
+<dt>Monitoring scope</dt><dd>Spend analytics and conflict-of-interest data matching.</dd>
+<dt>Offboarding</dt><dd>Hand over open sourcing events under supervision.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-iso-27002-2022">[16] ISO/IEC</a>, <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a>, <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a></p>
+</div></details>
+</section>
+<section class="hrr-group" data-category="physical">
+<h2 id="physical">Physical security and facilities <span class="hrr-count" data-total="1">1 role</span></h2>
+<p class="hrr-summary">Roles that control who and what gets into buildings, and can move unescorted where others cannot.</p>
+<details class="hrr-role" id="physical-facilities" data-sector="all">
+<summary><span class="hrr-role-name">Physical security, facilities and maintenance staff</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Badge systems, keys, cameras, plant rooms, data centers and after-hours access.</dd>
+<dt>Trust</dt><dd>Trusted to be anywhere, at any time, often unescorted.</dd>
+<dt>Opportunity</dt><dd>Theft, sabotage, letting others in, or deleting camera footage.</dd>
+<dt>Pressure</dt><dd>Often lower-paid and contracted out, with less connection to the organization.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Physical access control administration</li><li>Master keys</li><li>CCTV systems</li><li>Building management and plant systems</li><li>Data center floors</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Badge rights granted outside the request process</li><li>Camera gaps or deleted footage</li><li>After-hours presence in areas unrelated to work orders</li><li>Tailgating or propping doors for others</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Elevated screening for access-control administrators and staff with data center or vault access.</dd>
+<dt>Privileged access</dt><dd>Badge administration separate from badge request approval; key control logs.</dd>
+<dt>Separation of duties</dt><dd>No one both grants and audits physical access.</dd>
+<dt>Monitoring scope</dt><dd>Correlate badge, camera and work-order data; review access-control admin changes.</dd>
+<dt>Offboarding</dt><dd>Recover badges and keys and re-key where needed; remove access-control admin rights.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-cisa-itmg-2026">[1] Cybersecurity and Infrastructure Security Agency</a>, <a href="#src-npsa-rbsra">[9] National Protective Security Authority (NPSA), United Kingdom</a>, <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a></p>
+</div></details>
+</section>
+<section class="hrr-group" data-category="external">
+<h2 id="external">Contractors and third parties <span class="hrr-count" data-total="1">1 role</span></h2>
+<p class="hrr-summary">Insiders by access, outsiders by employer. NPSA lists facilitation of third-party access as one of its five insider risk types.</p>
+<details class="hrr-role" id="contractors" data-sector="all">
+<summary><span class="hrr-role-name">Contractors, consultants, MSPs and outsourced staff with standing access</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Often the same system and site access as employees, sometimes more, through managed-service tooling.</dd>
+<dt>Trust</dt><dd>Trusted under a contract, but screened and supervised by someone else.</dd>
+<dt>Opportunity</dt><dd>Access that outlives the engagement, weak supervision, and shared accounts.</dd>
+<dt>Pressure</dt><dd>Short tenures, lower loyalty, and pressures the hiring organization cannot see.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Named or shared accounts</li><li>Remote management tools from the provider</li><li>Badges</li><li>Copies of data in the provider's environment</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Access continuing after the engagement end date</li><li>Shared or generic accounts in use</li><li>Provider remote tools connecting outside agreed windows</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Contract requires screening equivalent to employees in comparable roles, with evidence.</dd>
+<dt>Privileged access</dt><dd>Named accounts, time-bound, with an internal sponsor who reviews them.</dd>
+<dt>Separation of duties</dt><dd>Contractors do not approve their own access or work.</dd>
+<dt>Monitoring scope</dt><dd>Same monitoring scope as employees in the equivalent role, stated in the contract.</dd>
+<dt>Offboarding</dt><dd>Provider must notify transfers and terminations within an agreed time; sponsor confirms removal.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a>, <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a>, <a href="#src-ffiec-is-2006">[12] Federal Financial Institutions Examination Council</a>, <a href="#src-iso-27002-2022">[16] ISO/IEC</a>, <a href="#src-npsa-rbsra">[9] National Protective Security Authority (NPSA), United Kingdom</a></p>
+</div></details>
+</section>
+<section class="hrr-group" data-category="transient">
+<h2 id="transient">Transient high-risk states <span class="hrr-count" data-total="2">2 roles</span></h2>
+<p class="hrr-summary">Not roles but moments. Anyone can pass through them, and the risk attaches to the moment, not the person.</p>
+<details class="hrr-role" id="departing" data-sector="all">
+<summary><span class="hrr-role-name">Departing employees (resignation, notice period, termination, layoff)</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Still holds full access while their attachment to the organization ends.</dd>
+<dt>Trust</dt><dd>Trust is often unchanged in systems even when the relationship has changed.</dd>
+<dt>Opportunity</dt><dd>Taking data, customer lists or code to the next job; sabotage after an adverse separation.</dd>
+<dt>Pressure</dt><dd>Grievance, financial worry, or a new employer's expectations.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Whatever the person held in their role</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Bulk downloads, printing or uploads to personal storage after notice</li><li>Access to material unrelated to handover</li><li>Forwarding work email to personal accounts</li><li>Deleting files or changing passwords on shared resources</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Not applicable.</dd>
+<dt>Privileged access</dt><dd>Reduce privileges at notice; remove admin rights before an adverse separation is announced.</dd>
+<dt>Separation of duties</dt><dd>Handover is supervised by the manager, not done alone.</dd>
+<dt>Monitoring scope</dt><dd>A defined, disclosed look-back and look-forward window around departure, with HR notifying security at notice.</dd>
+<dt>Offboarding</dt><dd>Same-day revocation, asset recovery, exit interview covering continuing obligations, and retained access to the person's data for the organization.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a>, <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a>, <a href="#src-cisa-itmg-2026">[1] Cybersecurity and Infrastructure Security Agency</a>, <a href="#src-iso-27002-2022">[16] ISO/IEC</a></p>
+</div></details>
+<details class="hrr-role" id="role-change" data-sector="all">
+<summary><span class="hrr-role-name">People changing roles or teams</span> <span class="hrr-pill">Cross-sector</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Old access is often kept while new access is added.</dd>
+<dt>Trust</dt><dd>Accumulated access is rarely questioned.</dd>
+<dt>Opportunity</dt><dd>Combinations of access that no single role should hold, breaking separation of duties.</dd>
+<dt>Pressure</dt><dd>Usually none; this is a control gap more than a behavior risk.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Union of every role the person has held</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Entitlements from a previous role still in use</li><li>Access combinations that break separation of duties</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Rescreen if the new role carries a higher designation.</dd>
+<dt>Privileged access</dt><dd>Review and remove prior-role access at transfer.</dd>
+<dt>Separation of duties</dt><dd>Check the new combination against separation-of-duties rules.</dd>
+<dt>Monitoring scope</dt><dd>Access recertification by the new manager.</dd>
+<dt>Offboarding</dt><dd>Not applicable.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a>, <a href="#src-iso-27002-2022">[16] ISO/IEC</a></p>
+</div></details>
+</section>
+<section class="hrr-group" data-category="financial-institutions">
+<h2 id="financial-institutions">Financial institutions <span class="hrr-count" data-total="4">4 roles</span></h2>
+<p class="hrr-summary">Banks and credit unions add roles with direct access to member or customer money and data. Section 205(d) and its bank equivalent already bar some people from these institutions entirely.</p>
+<details class="hrr-role" id="tellers-branch" data-sector="financial">
+<summary><span class="hrr-role-name">Tellers, branch staff and vault custodians</span> <span class="hrr-pill hrr-pill-sector">Financial institutions</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Cash, negotiable instruments and account maintenance at the point of service.</dd>
+<dt>Trust</dt><dd>Trusted with cash every day and with members' identity documents.</dd>
+<dt>Opportunity</dt><dd>Cash theft, unauthorized withdrawals from dormant or elderly members' accounts, and helping outsiders open fraudulent accounts.</dd>
+<dt>Pressure</dt><dd>Lower pay, personal financial strain, and recruitment by organized fraud rings.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Teller drawers and vault</li><li>Core banking account maintenance</li><li>Address and contact detail changes</li><li>New account opening</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Cash differences that recur</li><li>Transactions on dormant accounts</li><li>Address or phone changes followed by withdrawals</li><li>Overrides requested from the same supervisor repeatedly</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Section 205(d) or Section 19 checks as required, plus standard screening.</dd>
+<dt>Privileged access</dt><dd>Override and maintenance rights limited and logged.</dd>
+<dt>Separation of duties</dt><dd>Dual control on vaults and high-value transactions.</dd>
+<dt>Monitoring scope</dt><dd>Teller differences, override and dormant-account monitoring; mandatory time away.</dd>
+<dt>Offboarding</dt><dd>Balance and recover cash and keys; revoke core access.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-ncua-205d">[13] National Credit Union Administration</a>, <a href="#src-frb-sr-96-37">[11] Board of Governors of the Federal Reserve System</a>, <a href="#src-nydfs-2022">[10] New York State Department of Financial Services</a></p>
+</div></details>
+<details class="hrr-role" id="lending" data-sector="financial">
+<summary><span class="hrr-role-name">Loan officers, underwriters and loan servicing</span> <span class="hrr-pill hrr-pill-sector">Financial institutions</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Credit decisions, collateral records and loan modifications.</dd>
+<dt>Trust</dt><dd>Trusted to apply credit policy and to waive or modify terms.</dd>
+<dt>Opportunity</dt><dd>Fraudulent loans to associates or straw borrowers, kickbacks, and hiding delinquencies.</dd>
+<dt>Pressure</dt><dd>Production incentives and relationships with borrowers or brokers.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Loan origination system</li><li>Underwriting exceptions</li><li>Servicing and modification tools</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Loans to related parties without disclosure</li><li>Repeated policy exceptions for the same broker or borrower group</li><li>Modifications or extensions that hide delinquency</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Section 205(d) or Section 19 checks plus elevated screening for lenders with approval authority.</dd>
+<dt>Privileged access</dt><dd>Lending limits by role; exceptions above limits require a second approver.</dd>
+<dt>Separation of duties</dt><dd>Origination, underwriting approval and funding by different people.</dd>
+<dt>Monitoring scope</dt><dd>Related-party and exception reporting; loan review sampling.</dd>
+<dt>Offboarding</dt><dd>Review the officer's recent approvals and exceptions.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-ncua-205d">[13] National Credit Union Administration</a>, <a href="#src-nydfs-2022">[10] New York State Department of Financial Services</a>, <a href="#src-cfr-5-731-106">[3] U.S. Office of Personnel Management</a></p>
+</div></details>
+<details class="hrr-role" id="fraud-bsa" data-sector="financial">
+<summary><span class="hrr-role-name">Fraud operations and BSA/AML analysts</span> <span class="hrr-pill hrr-pill-sector">Financial institutions</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Fraud and AML alerts, investigation files, and in some cases authority to release holds or close alerts.</dd>
+<dt>Trust</dt><dd>Trusted to recognize and stop financial crime.</dd>
+<dt>Opportunity</dt><dd>Clearing alerts for collaborators, tipping off subjects, or leaking SAR-related information.</dd>
+<dt>Pressure</dt><dd>High alert volumes and targeting by the criminals they work against.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Fraud and AML case management</li><li>Transaction monitoring rules and thresholds</li><li>Hold and release authority</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Alerts on connected parties closed by the same analyst</li><li>Threshold or rule changes without review</li><li>Case lookups with no assigned alert</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Elevated screening; Section 205(d) or Section 19 checks.</dd>
+<dt>Privileged access</dt><dd>Rule and threshold changes restricted and logged.</dd>
+<dt>Separation of duties</dt><dd>Quality review of closed alerts by someone else; no one works alerts involving people they know.</dd>
+<dt>Monitoring scope</dt><dd>Audit case access and alert dispositions.</dd>
+<dt>Offboarding</dt><dd>Reassign open cases under supervision.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-ncua-205d">[13] National Credit Union Administration</a>, <a href="#src-sei-csg-7">[8] Carnegie Mellon University Software Engineering Institute</a>, <a href="#src-nist-800-53">[2] National Institute of Standards and Technology</a></p>
+</div></details>
+<details class="hrr-role" id="contact-center" data-sector="financial">
+<summary><span class="hrr-role-name">Contact center agents with account access</span> <span class="hrr-pill hrr-pill-sector">Financial institutions</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Look up and change member or customer accounts, often in high volume and remotely.</dd>
+<dt>Trust</dt><dd>Trusted to verify callers and act on their behalf.</dd>
+<dt>Opportunity</dt><dd>Selling account data, enabling account takeover by changing contact details or resetting credentials, and SIM-swap-style collusion.</dd>
+<dt>Pressure</dt><dd>Lower pay, high turnover, and active recruitment by fraud groups, including through social media.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Customer account lookup</li><li>Contact detail and credential reset</li><li>Card controls and limits</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Lookups on accounts with no matching inbound contact</li><li>Contact or credential changes followed by fraud</li><li>Screen capture or photos of screens in remote settings</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Section 205(d) or Section 19 checks plus standard screening.</dd>
+<dt>Privileged access</dt><dd>Account access tied to an active contact; high-risk changes require step-up verification.</dd>
+<dt>Separation of duties</dt><dd>High-risk changes reviewed or confirmed out of band.</dd>
+<dt>Monitoring scope</dt><dd>Lookup-without-contact analytics and linkage to downstream fraud.</dd>
+<dt>Offboarding</dt><dd>Revoke access at end of shift on notice; collect remote equipment.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-ncua-205d">[13] National Credit Union Administration</a>, <a href="#src-nydfs-2022">[10] New York State Department of Financial Services</a>, <a href="#src-pci-dss-4">[18] PCI Security Standards Council</a></p>
+</div></details>
+</section>
+<section class="hrr-group" data-category="healthcare">
+<h2 id="healthcare">Healthcare and clinical <span class="hrr-count" data-total="2">2 roles</span></h2>
+<p class="hrr-summary">Included briefly because many practitioners support hospitals and health plans; the same reasoning extends further.</p>
+<details class="hrr-role" id="clinical-ehr" data-sector="healthcare">
+<summary><span class="hrr-role-name">Clinical and administrative staff with EHR access</span> <span class="hrr-pill hrr-pill-sector">Healthcare</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Patient records, often with broad break-the-glass access for emergencies.</dd>
+<dt>Trust</dt><dd>Trusted to look only at patients they care for.</dd>
+<dt>Opportunity</dt><dd>Snooping on celebrities, colleagues or family, and selling records for identity or insurance fraud.</dd>
+<dt>Pressure</dt><dd>Burnout and personal curiosity; outside offers for records.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Electronic health record</li><li>Break-the-glass access</li><li>Billing and claims systems</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Records opened with no care relationship</li><li>Same-surname or VIP record access</li><li>Break-the-glass use without a matching event</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Workforce clearance procedure under the HIPAA Security Rule.</dd>
+<dt>Privileged access</dt><dd>Role-based EHR access with break-the-glass logged and reviewed.</dd>
+<dt>Separation of duties</dt><dd>Billing changes and record corrections reviewed.</dd>
+<dt>Monitoring scope</dt><dd>Regular review of information system activity, including access-pattern analytics.</dd>
+<dt>Offboarding</dt><dd>Termination procedures that end ePHI access promptly.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-hipaa-164-308">[14] U.S. Department of Health and Human Services</a></p>
+</div></details>
+<details class="hrr-role" id="controlled-substances" data-sector="healthcare">
+<summary><span class="hrr-role-name">Pharmacy and staff with access to controlled substances</span> <span class="hrr-pill hrr-pill-sector">Healthcare</span></summary>
+<div class="hrr-body">
+<h3>Why it is high-risk</h3><dl class="hrr-dl">
+<dt>Access</dt><dd>Controlled substance stock, dispensing cabinets and records.</dd>
+<dt>Trust</dt><dd>Trusted to handle and record drugs with diversion value.</dd>
+<dt>Opportunity</dt><dd>Diversion for personal use or sale, and falsifying waste or count records.</dd>
+<dt>Pressure</dt><dd>Substance use disorder, which calls for a clinical and supportive response as well as a security one.</dd>
+</dl>
+<h3>Typical access and privileges</h3><ul><li>Automated dispensing cabinets</li><li>Pharmacy vaults</li><li>Waste and count records</li></ul>
+<h3>Indicators that matter more in this role</h3><ul><li>Dispensing or waste patterns well above peers</li><li>Waste without a witness</li><li>Count discrepancies on the same shifts</li></ul>
+<h3>Recommended controls</h3><dl class="hrr-dl">
+<dt>Screening</dt><dd>Registrants may not employ certain people in roles with controlled substance access under 21 CFR 1301.76.</dd>
+<dt>Privileged access</dt><dd>Cabinet access by role and unit.</dd>
+<dt>Separation of duties</dt><dd>Witnessed waste and independent counts.</dd>
+<dt>Monitoring scope</dt><dd>Diversion analytics on dispensing data; theft or significant loss reported to DEA within one business day.</dd>
+<dt>Offboarding</dt><dd>Revoke cabinet and vault access immediately.</dd>
+</dl>
+<p class="hrr-cites"><span>Sources:</span> <a href="#src-cfr-21-1301-76">[15] Drug Enforcement Administration</a>, <a href="#src-hipaa-164-308">[14] U.S. Department of Health and Human Services</a></p>
+</div></details>
+</section>
+<section class="hrr-sources" aria-labelledby="sources">
+<h2 id="sources">Sources and licenses</h2>
+<p class="hrr-summary">What each source says about high-risk roles, whether it gives a list, and how this page may use it. Confidence labels say how each was checked on the review date.</p>
+<ol class="hrr-src-list">
+<li class="hrr-src" id="src-cisa-itmg-2026">
+<p class="hrr-src-title"><a href="https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide" target="_blank" rel="noopener">Insider Threat Mitigation Guide (2026 edition)</a></p>
+<p class="hrr-src-pub">Cybersecurity and Infrastructure Security Agency (CISA), 2026</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-corroborated">Corroborated: two independent secondary sources</span></p>
+<p class="hrr-src-says">Program-building guide for critical infrastructure. The September 2026 update, as CISA announced it, adds material on access control, visitor screening, hybrid and remote work, and managing risk from adverse employee separations. Treats critical assets and the people with access to them as the starting point.</p>
+<p class="hrr-src-note">Edition and new topics confirmed from two independent trade-press reports of CISA's announcement; the full 2026 text was not re-read for this page.</p>
+</li>
+<li class="hrr-src" id="src-nist-800-53">
+<p class="hrr-src-title"><a href="https://doi.org/10.6028/NIST.SP.800-53r5" target="_blank" rel="noopener">SP 800-53 Rev. 5, Security and Privacy Controls for Information Systems and Organizations (release 5.2.0)</a></p>
+<p class="hrr-src-pub">National Institute of Standards and Technology (NIST), 2020, updated</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">PS-2 requires a risk designation for every organizational position, screening criteria for those positions, and periodic review of the designations. PS-3 (screening and rescreening), PS-4 (termination), PS-5 (transfer), PS-6 (access agreements) and PS-7 (external personnel) follow from it. AC-2(13) disables accounts of individuals on discovery of significant risk; AC-5 separation of duties; AC-6 least privilege, with AC-6(5) restricting privileged accounts, AC-6(7) reviewing privileges, AC-6(9) logging privileged functions. PM-12 is the insider threat program control.</p>
+<p class="hrr-src-note">Control statements read from the FedRAMP Rev 5 control reference, which reproduces the NIST OSCAL catalog 5.2.0.</p>
+</li>
+<li class="hrr-src" id="src-cfr-5-731-106">
+<p class="hrr-src-title"><a href="https://www.ecfr.gov/current/title-5/chapter-I/subchapter-B/part-731/subpart-A/section-731.106" target="_blank" rel="noopener">5 CFR 731.106, Designation of public trust positions and investigative requirements</a></p>
+<p class="hrr-src-pub">U.S. Office of Personnel Management (Code of Federal Regulations), current</p>
+<p class="hrr-meta"><span class="hrr-pill">Gives a partial list or examples</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">Every federal competitive-service position is designated high, moderate or low risk by its potential for adverse impact on the efficiency or integrity of the service. High and moderate risk positions are public trust positions, which may involve policy making, major program responsibility, public safety and health, law enforcement, fiduciary responsibilities, access to or control of financial records, or significant risk of causing damage or realizing personal gain.</p>
+<p class="hrr-src-note">Read on the Cornell LII copy of the regulation.</p>
+</li>
+<li class="hrr-src" id="src-opm-pds">
+<p class="hrr-src-title"><a href="https://www.opm.gov/suitability/suitability-executive-agent/position-designation-tool" target="_blank" rel="noopener">Position Designation System and Position Designation Tool</a></p>
+<p class="hrr-src-pub">U.S. Office of Personnel Management and Defense Counterintelligence and Security Agency, current</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">The federal method for turning a position's duties into a risk and sensitivity designation and an investigation level. A critical-sensitive or special-sensitive national security designation automatically confers high-risk public trust; noncritical-sensitive confers at least moderate risk.</p>
+<p class="hrr-src-note">Read on opm.gov. The full Position Designation System document was not retrieved.</p>
+</li>
+<li class="hrr-src" id="src-dodm-8140-03">
+<p class="hrr-src-title"><a href="https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/814003p.PDF" target="_blank" rel="noopener">DoD Manual 8140.03, Cyberspace Workforce Qualification and Management Program</a></p>
+<p class="hrr-src-pub">U.S. Department of Defense, 2023</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">Tracks, per position, whether the position requires designation as an IT Privileged User, and per person whether that requirement is met. Requires cyberspace personnel to meet security and sensitivity levels commensurate with the position.</p>
+<p class="hrr-src-note">Read on esd.whs.mil. The separate DoD IT privileged user memorandum on cyberworkforce.mil could not be retrieved.</p>
+</li>
+<li class="hrr-src" id="src-cnssd-504">
+<p class="hrr-src-title"><a href="https://archive.dni.gov/index.php/ncsc-how-we-work/ncsc-nittf/nittf-technical" target="_blank" rel="noopener">CNSSD 504, Directive on Protecting National Security Systems from Insider Threat (with Annex C)</a></p>
+<p class="hrr-src-pub">Committee on National Security Systems, 2016 version</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-not-public">Not publicly released; existence cited only</span> <span class="hrr-pill hrr-conf-single-source">Single source</span></p>
+<p class="hrr-src-says">Sets user activity monitoring requirements for national security systems. NITTF's technical page lists a 2016 version that adds Annex C, Privileged User and Privileged Access Controls. That version is not public; the link goes to NITTF's listing, not the directive.</p>
+<p class="hrr-src-note">Existence of Annex C confirmed only from NITTF's own listing; its content could not be read.</p>
+</li>
+<li class="hrr-src" id="src-nitp-2012">
+<p class="hrr-src-title"><a href="https://www.govinfo.gov/content/pkg/DCPD-201200905/html/DCPD-201200905.htm" target="_blank" rel="noopener">National Insider Threat Policy and Minimum Standards for Executive Branch Insider Threat Programs (Presidential Memorandum)</a></p>
+<p class="hrr-src-pub">The White House, 2012</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">Requires executive branch programs to gather and analyze threat-related information, monitor employee use of classified networks, and train the workforce. Applies monitoring to everyone with access to classified networks rather than to a list of roles.</p>
+<p class="hrr-src-note">Transmittal memorandum read on govinfo.gov; the minimum standards annex itself was not re-read.</p>
+</li>
+<li class="hrr-src" id="src-sei-csg-7">
+<p class="hrr-src-title"><a href="https://www.sei.cmu.edu/library/common-sense-guide-to-mitigating-insider-threats-seventh-edition/" target="_blank" rel="noopener">Common Sense Guide to Mitigating Insider Threats, Seventh Edition</a></p>
+<p class="hrr-src-pub">Carnegie Mellon University Software Engineering Institute (CERT Division), 2022</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-copyright">Copyrighted; cited by number and paraphrased, not reproduced</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">Twenty-two best practices. The ones most tied to roles: Practice 1 (know and protect critical assets), Practice 6 (include insiders and trusted external entities in enterprise risk assessments), Practice 11 (stringent access controls and monitoring on privileged users), Practice 15 (separation of duties and least privilege) and Practice 20 (a comprehensive termination procedure).</p>
+<p class="hrr-src-note">Practice numbers and topics read from the public-release copy on DTIC. Copyright Carnegie Mellon University; cited by practice number only.</p>
+</li>
+<li class="hrr-src" id="src-npsa-rbsra">
+<p class="hrr-src-title"><a href="https://www.npsa.gov.uk/insider-risks/role-based-security-risk-assessment" target="_blank" rel="noopener">Role-based security risk assessment (insider risk)</a></p>
+<p class="hrr-src-pub">National Protective Security Authority (NPSA), United Kingdom, 2023</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-crown-copyright">Crown copyright; Open Government Licence not confirmed, linked and paraphrased</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">A six-step method: identify critical assets, identify threats by intent and capability, estimate likelihood and impact, check existing countermeasures, and propose proportionate new ones. Roles that enable a risk are noted against it so extra measures can be considered. Recommends reviewing the risk register at least annually, or sooner after a change in threat, a major incident, a change to critical assets or a new mitigation. Names five insider risk types: unauthorised disclosure, process corruption, facilitation of third-party access, physical sabotage, and IT or electronic sabotage.</p>
+<p class="hrr-src-note">Web page and the Spring 2023 PDF guidance read on npsa.gov.uk. Marked Crown Copyright 2023; no Open Government Licence statement found on the documents.</p>
+</li>
+<li class="hrr-src" id="src-nydfs-2022">
+<p class="hrr-src-title"><a href="https://www.dfs.ny.gov/industry_guidance/industry_letters/il20221115_absence" target="_blank" rel="noopener">Industry Letter: Absence from the Office as an Internal Control Safeguard</a></p>
+<p class="hrr-src-pub">New York State Department of Financial Services, 2022</p>
+<p class="hrr-meta"><span class="hrr-pill">Gives a partial list or examples</span> <span class="hrr-pill hrr-lic-state-gov">State government publication; reuse terms not confirmed, quoted minimally</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">The closest thing to a regulator's role list found. Sensitive positions should at a minimum include people who can change official books, records or transactions (or influence others to), people with privileged access to information systems including authority to alter them, and people in specialized higher-risk products. Absence means no physical or electronic access. Addressed to state-chartered banks, thrifts, credit unions and foreign bank branches.</p>
+<p class="hrr-src-note">Read on dfs.ny.gov. Corroborated by a law-firm summary.</p>
+</li>
+<li class="hrr-src" id="src-frb-sr-96-37">
+<p class="hrr-src-title"><a href="https://www.federalreserve.gov/supervisionreg/srletters/SR9637.htm" target="_blank" rel="noopener">SR 96-37, Supervisory Guidance on Required Absences from Sensitive Positions</a></p>
+<p class="hrr-src-pub">Board of Governors of the Federal Reserve System, 1996, revised 2025</p>
+<p class="hrr-meta"><span class="hrr-pill">Gives a partial list or examples</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">Mandatory time away as an internal control, because most frauds and embezzlements require the wrongdoer's continual presence. Names trading and wire transfer as examples of sensitive key positions and asks each organization to assess its own significant risk areas. Duties are not to be performed physically or electronically during the absence.</p>
+<p class="hrr-src-note">Read on federalreserve.gov.</p>
+</li>
+<li class="hrr-src" id="src-ffiec-is-2006">
+<p class="hrr-src-title"><a href="https://webarchive.library.unt.edu/web/20090808024303/http://www.ffiec.gov/ffiecinfobase/booklets/information_security/information_security.pdf" target="_blank" rel="noopener">FFIEC IT Examination Handbook, Information Security booklet (July 2006)</a></p>
+<p class="hrr-src-pub">Federal Financial Institutions Examination Council, 2006</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">Personnel security section: the sensitivity of a job or access level may warrant additional background and credit checks; contractors should be subject to similar screening; managers should stay alert to changes in personal circumstances after hire. Superseded by the 2016 booklet.</p>
+<p class="hrr-src-note">Read on an archived copy. The current (2016) booklet could not be retrieved, so its equivalent language is not confirmed.</p>
+</li>
+<li class="hrr-src" id="src-ncua-205d">
+<p class="hrr-src-title"><a href="https://ncua.gov/regulation-supervision/regulatory-compliance-resources/fair-hiring-banking-act-section-205d" target="_blank" rel="noopener">Section 205(d) of the Federal Credit Union Act and 12 CFR Part 752</a></p>
+<p class="hrr-src-pub">National Credit Union Administration, current</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">Generally prohibits people convicted of certain crimes involving dishonesty or breach of trust from working at or participating in the affairs of a federally insured credit union without NCUA consent. Amended by the Fair Hiring in Banking Act in 2022. Banks have a parallel rule in Section 19 of the FDI Act.</p>
+<p class="hrr-src-note">Read on ncua.gov. The Section 19 parallel is stated from general knowledge and was not re-read for this page.</p>
+</li>
+<li class="hrr-src" id="src-hipaa-164-308">
+<p class="hrr-src-title"><a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308" target="_blank" rel="noopener">45 CFR 164.308, HIPAA Security Rule administrative safeguards</a></p>
+<p class="hrr-src-pub">U.S. Department of Health and Human Services (Code of Federal Regulations), current</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">Workforce security: authorization and supervision of workforce members who work with ePHI, a workforce clearance procedure to determine that access is appropriate, termination procedures, information access management, and regular review of information system activity.</p>
+<p class="hrr-src-note">Read on govinfo.gov (2021 CFR edition).</p>
+</li>
+<li class="hrr-src" id="src-cfr-21-1301-76">
+<p class="hrr-src-title"><a href="https://www.ecfr.gov/current/title-21/chapter-II/part-1301/subject-group-ECFRa7ff8142033a7a2/section-1301.76" target="_blank" rel="noopener">21 CFR 1301.76, Other security controls for practitioners (controlled substances)</a></p>
+<p class="hrr-src-pub">Drug Enforcement Administration (Code of Federal Regulations), current</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">A registrant may not employ, in a role with access to controlled substances, a person convicted of a felony relating to controlled substances or whose DEA registration was denied, revoked or surrendered for cause. Theft or significant loss must be reported to DEA within one business day.</p>
+<p class="hrr-src-note">Read on the Cornell LII copy of the regulation.</p>
+</li>
+<li class="hrr-src" id="src-iso-27002-2022">
+<p class="hrr-src-title"><a href="https://www.iso.org/standard/75652.html" target="_blank" rel="noopener">ISO/IEC 27002:2022 (and Annex A of ISO/IEC 27001:2022)</a></p>
+<p class="hrr-src-pub">ISO/IEC, 2022</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-copyright">Copyrighted; cited by number and paraphrased, not reproduced</span> <span class="hrr-pill hrr-conf-corroborated">Corroborated: two independent secondary sources</span></p>
+<p class="hrr-src-says">Relevant controls by number and title: 5.3 Segregation of duties; 5.18 Access rights; 5.19 Information security in supplier relationships; 6.1 Screening; 6.2 Terms and conditions of employment; 6.5 Responsibilities after termination or change of employment; 6.6 Confidentiality or non-disclosure agreements; 8.2 Privileged access rights; 8.16 Monitoring activities.</p>
+<p class="hrr-src-note">Control numbers and titles confirmed from secondary mappings; the standard itself is paywalled and was not read. Cited by number and title only.</p>
+</li>
+<li class="hrr-src" id="src-aicpa-tsc">
+<p class="hrr-src-title"><a href="https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022" target="_blank" rel="noopener">2017 Trust Services Criteria (with revised points of focus, 2022), basis of SOC 2</a></p>
+<p class="hrr-src-pub">AICPA &amp; CIMA, 2022</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-copyright">Copyrighted; cited by number and paraphrased, not reproduced</span> <span class="hrr-pill hrr-conf-unverified">Unverified: not read for this page</span></p>
+<p class="hrr-src-says">The logical access criteria CC6.1 to CC6.3 cover access provisioning, removal, and role-based access designed around least privilege and segregation of duties. Cited by criterion ID only.</p>
+<p class="hrr-src-note">Criterion text could not be read for this page; IDs and topics are from general knowledge. Check against the AICPA download before relying on the wording.</p>
+</li>
+<li class="hrr-src" id="src-pci-dss-4">
+<p class="hrr-src-title"><a href="https://www.pcisecuritystandards.org/document_library/" target="_blank" rel="noopener">PCI DSS v4.0.1</a></p>
+<p class="hrr-src-pub">PCI Security Standards Council, 2024</p>
+<p class="hrr-meta"><span class="hrr-pill">Gives a partial list or examples</span> <span class="hrr-pill hrr-lic-copyright">Copyrighted; cited by number and paraphrased, not reproduced</span> <span class="hrr-pill hrr-conf-single-source">Single source</span></p>
+<p class="hrr-src-says">Requirement 12.7.1: people who will have access to the cardholder data environment are screened before hire, within local law. For roles such as cashiers who see one card number at a time, it is a recommendation only. Requirement 7 restricts access to cardholder data by business need to know.</p>
+<p class="hrr-src-note">Requirement text read on a third-party mirror, not the PCI SSC document library. Paraphrased here; check against the official v4.0.1 PDF.</p>
+</li>
+<li class="hrr-src" id="src-nice-800-181">
+<p class="hrr-src-title"><a href="https://doi.org/10.6028/NIST.SP.800-181r1" target="_blank" rel="noopener">SP 800-181 Rev. 1, Workforce Framework for Cybersecurity (NICE Framework)</a></p>
+<p class="hrr-src-pub">National Institute of Standards and Technology (NIST), 2020, components updated</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">Describes cybersecurity work as work roles built from tasks, knowledge and skills. It describes the work, not the risk of the person doing it, so it does not rank roles. Useful for naming technical roles consistently; this site's KSA to NICE crosswalk is at /crosswalk.</p>
+<p class="hrr-src-note">NICE Framework structure already used by this site's crosswalk.</p>
+</li>
+<li class="hrr-src" id="src-mitre-ctid-itkb">
+<p class="hrr-src-title"><a href="https://ctid.mitre.org/projects/insider-threat-ttp-knowledge-base" target="_blank" rel="noopener">Insider Threat TTP Knowledge Base</a></p>
+<p class="hrr-src-pub">MITRE Center for Threat-Informed Defense, 2024</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-apache-2.0">Apache License 2.0 (repository)</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-src-says">Insider tactics, techniques and procedures built from incident data and ATT&amp;CK. Organized by behavior, not by role, so it helps choose what to monitor for a role rather than which roles to designate.</p>
+<p class="hrr-src-note">Repository license (Apache 2.0) read on GitHub; ATT&amp;CK content inside it carries the separate ATT&amp;CK terms of use.</p>
+</li>
+<li class="hrr-src" id="src-forscie-itm">
+<p class="hrr-src-title"><a href="https://insiderthreatmatrix.org/" target="_blank" rel="noopener">The Insider Threat Matrix</a></p>
+<p class="hrr-src-pub">Forscie, 2026</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-unverified">License not confirmed; linked only</span> <span class="hrr-pill hrr-conf-unverified">Unverified: not read for this page</span></p>
+<p class="hrr-src-says">A framework of insider behaviors and the detections and preventions that map to them. Like the MITRE knowledge base it is organized by behavior, not role.</p>
+<p class="hrr-src-note">Already listed in this site's References. Its license was not confirmed for this page, so it is linked only.</p>
+</li>
+</ol></section>
+<!-- HRR:END -->
+
+<div class="section">
+<h2 id="build-your-own">How to build your own high-risk roles register</h2>
+<p>The method below follows the shape of NPSA's role-based security risk assessment and NIST PS-2: start from what you must protect, work out which roles could do it the most harm, and review on a schedule. It is a triage aid for a program team. It is not a validated instrument, and the tiers it produces are not scores about people.</p>
+<ol class="hrr-steps">
+<li><strong>Start from critical assets, not job titles.</strong> List the assets whose loss, exposure or corruption would hurt most: money movement, customer or member data, crown-jewel systems, safety systems, intellectual property, the security tooling itself. CERT's first practice and NPSA's first step both start here.</li>
+<li><strong>Map roles to assets.</strong> For each asset, list the roles (positions, not named people) that can reach, change, approve or conceal changes to it. Include contractors, service accounts and AI agents that act for someone.</li>
+<li><strong>Ask the same questions of every role.</strong>
+<ul>
+<li>Can this role reach a critical asset directly, below the application controls?</li>
+<li>Can it act alone, or approve its own work?</li>
+<li>Can it hide or erase evidence of what it did, including logs, footage or records?</li>
+<li>How much damage could one person in this role do, and how fast?</li>
+<li>Does it move money, change records of value, or hold data on many people?</li>
+<li>Is it a known target for outside recruitment, coercion or social engineering?</li>
+<li>Does anyone independent review its work today?</li>
+</ul></li>
+<li><strong>Sort roles into a few tiers.</strong> Three is enough, for example standard, elevated and high. A practical rule: a role that can reach a critical asset <em>and</em> act alone <em>or</em> hide its actions is high; a role with one of those properties is elevated. Write the rule down so it is applied the same way every time, and record the reasons for each designation.</li>
+<li><strong>Attach controls to tiers, not to people.</strong> For each tier, decide screening and rescreening, privileged access rules, separation-of-duties requirements, monitoring scope and offboarding steps. The role entries above give starting points.</li>
+<li><strong>Treat transient states as roles.</strong> Notice periods, adverse separations, role changes and long absences change risk for anyone. Define what happens to access and monitoring in each, and make HR's notification to security automatic.</li>
+<li><strong>Govern it.</strong> Give the register an owner, agree it with HR, legal, privacy and the business owners of the assets, and tell the workforce which roles are designated and what that means for them.</li>
+<li><strong>Review it.</strong> At least annually, as NPSA recommends for the risk register and NIST PS-2 requires for position designations, and sooner after a reorganization, a new critical system, a merger, a significant incident, a change in threat or a new regulation.</li>
+</ol>
+<div class="callout callout-blue">
+<strong>For financial institutions.</strong> The regulators already ask for a version of this. The Federal Reserve's SR 96-37 and New York DFS's 2022 letter both expect institutions to identify sensitive positions and require time away from them with no physical or electronic access. A high-risk roles register can be the same list, kept once.
+</div>
+</div>
+
+<div class="section">
+<h2 id="known-gaps">Known gaps</h2>
+<ul>
+<li><strong>CNSSD 504 Annex C</strong> (Privileged User and Privileged Access Controls) exists according to NITTF's technical page, but that version of the directive is not public, so its requirements are not reflected here.</li>
+<li><strong>The 2026 CISA Insider Threat Mitigation Guide</strong> is cited from CISA's announcement of its new topics; its full text was not re-read for this page.</li>
+<li><strong>The current FFIEC Information Security booklet (2016)</strong> could not be retrieved; the screening language cited is from the 2006 booklet it replaced.</li>
+<li><strong>FS-ISAC</strong> material on high-risk roles, if any, is member-only; nothing public was found.</li>
+<li><strong>Outside the U.S. and UK,</strong> no sector regulator's role list was reviewed.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2 id="related">Related on this site</h2>
+<ul>
+<li><a href="/program">Build &amp; Run Your Program</a>: where a register like this fits in a program.</li>
+<li><a href="/framework">Framework</a>, including A-AGENT01 on investigating AI agents as non-human insiders.</li>
+<li><a href="/crosswalk">KSA to NICE crosswalk</a>: the NICE Framework names technical work roles consistently, but it describes work, not risk.</li>
+<li><a href="/wellness">Analyst Wellness</a>: the people who watch the high-risk roles are on this list too.</li>
+</ul>
+</div>
+
+<div class="section">
+<p>Know a role we missed, or a source that lists high-risk roles? <a href="/suggest?from=high-risk-roles">Suggest a role or correction</a>.</p>
+<p class="hrr-data">Data: <a href="/content/high-risk-roles.json">/content/high-risk-roles.json</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Sources keep their own licenses, listed above. Last reviewed 2026-11-06.</p>
+</div>
+
+
+</main>
+
+<div class="feedback-widget" id="feedback-widget">
+<span>Helpful?</span>
+<button class="feedback-btn" onclick="sendFeedback('up',this)" title="Yes, this was helpful">👍</button>
+<button class="feedback-btn" onclick="sendFeedback('down',this)" title="Not helpful">👎</button>
+<span class="feedback-thanks" id="feedback-thanks">Thanks!</span>
+</div>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<footer class="footer">
+<p><a href="about">About</a> &middot; <a href="start">🚀 Start here</a> · <a href="references">📚 References</a> · <a href="contributors">🤝 Contributors</a> · <a href="changelog">Changelog</a> · <a href="suggest?from=high-risk-roles">💬 Suggest</a></p>
+<p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; <a href="https://github.com/robknowles-cybersecurity/insiderthreatanalyst.com" target="_blank" rel="noopener">Source on GitHub&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+<p style="margin-top:0.25rem;font-size:0.58rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.55rem">hello@insiderthreatanalyst.com</a></p>
+</footer>
+<script>
+/* High-Risk Roles: sector filter and expand/collapse. Progressive enhancement:
+   with JS off the control bar stays [hidden], every role is listed, and each
+   role still opens and closes as a native <details>. A sector filter hides
+   categories with no matching role. Keys off the class names
+   and data-* attributes emitted by tools/build-high-risk-roles.mjs. */
+(function(){
+var bar=document.getElementById('hrr-controls');if(!bar)return;
+var chips=[].slice.call(bar.querySelectorAll('.hrr-chip')),clear=document.getElementById('hrr-clear'),status=document.getElementById('hrr-status');
+var roles=[].slice.call(document.querySelectorAll('.hrr-role')),groups=[].slice.call(document.querySelectorAll('.hrr-group'));
+var ex=document.getElementById('hrr-expand-all'),co=document.getElementById('hrr-collapse-all');
+function n(k,one,many){return k+' '+(k===1?one:many)}
+function on(b){return b.getAttribute('aria-pressed')==='true'}
+function sync(){var vis=roles.filter(function(r){return !r.hidden}),o=vis.filter(function(r){return r.open}).length;ex.disabled=o===vis.length;co.disabled=o===0}
+function apply(){
+var sel=chips.filter(on).map(function(c){return c.getAttribute('data-sector')}),shown=0;
+groups.forEach(function(g){var rs=[].slice.call(g.querySelectorAll('.hrr-role')),c=0;
+rs.forEach(function(r){var m=!sel.length||sel.indexOf(r.getAttribute('data-sector'))>=0;r.hidden=!m;if(m)c++});
+var cnt=g.querySelector('h2 .hrr-count');cnt.textContent=sel.length?c+' of '+n(rs.length,'role','roles'):n(rs.length,'role','roles');
+g.hidden=!!(sel.length&&c===0);shown+=c});
+status.textContent=sel.length?'Showing '+shown+' of '+n(roles.length,'role','roles'):'Showing all '+n(roles.length,'role','roles');
+clear.disabled=!sel.length;sync()}
+chips.forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',on(b)?'false':'true');apply()})});
+clear.addEventListener('click',function(){chips.forEach(function(b){b.setAttribute('aria-pressed','false')});apply()});
+ex.addEventListener('click',function(){roles.forEach(function(r){if(!r.hidden)r.open=true});sync()});
+co.addEventListener('click',function(){roles.forEach(function(r){r.open=false});sync()});
+roles.forEach(function(r){r.addEventListener('toggle',sync)});
+function openForHash(){var id=location.hash.slice(1),t;try{t=id&&document.getElementById(decodeURIComponent(id))}catch(e){t=null}if(t&&t.classList&&t.classList.contains('hrr-role')){t.hidden=false;t.open=true;t.scrollIntoView()}}
+window.addEventListener('hashchange',openForHash);
+bar.hidden=false;apply();openForHash();
+}());
+</script>
+<script>
+requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transition')})});
+function toggleTheme(){const h=document.documentElement,t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light':'Dark';document.getElementById('theme-btn').setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');try{localStorage.setItem('ita-theme',t);}catch(e){}}
+function sendFeedback(vote,btn){const w=document.getElementById('feedback-widget');w.querySelectorAll('.feedback-btn').forEach(b=>b.classList.add('voted'));document.getElementById('feedback-thanks').style.display='inline';setTimeout(()=>{w.style.opacity='0';setTimeout(()=>w.style.display='none',400)},1800);const page=location.pathname.replace(/\//g,'').replace('.html','')||'index';fetch('https://feedback.insiderthreatanalyst.com/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page,vote})}).catch(()=>{});}
+(function(){try{const t=localStorage.getItem('ita-theme');if(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('theme-btn').textContent=t==='dark'?'Light':'Dark';}}catch(e){}}());
+(function(){const b=document.getElementById('btt');if(!b)return;let t;window.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){b.classList.toggle('visible',window.scrollY>400)},50)},{passive:true});}());
+(function(){
+const quotes=['"All you really need is a stick of gum, a pocket knife, and a smile"','"The insider threat is coming from inside the house"','"In God we trust. All others, we monitor."','"Trust, but verify. Then verify again. Then check the logs."','"This meeting could have been an alert"'];
+const el=document.querySelector('.footer p:last-child');if(!el||!el.style)return;
+let clicks=0,timer;el.style.cursor='default';el.style.userSelect='none';
+el.addEventListener('click',function(e){clicks++;clearTimeout(timer);timer=setTimeout(()=>{clicks=0;},500);if(clicks>=3){clicks=0;const q=quotes[Math.floor(Math.random()*quotes.length)];el.style.transition='opacity 0.3s';el.style.opacity='0';setTimeout(()=>{el.textContent=q;el.style.opacity='1';},300);}});
+}());
+(function(){const alts=['Hand-crafted by a mass of floating point operations','Debugged with caffeine and poor life choices','Built by an AI that has never once triaged a real alert'];if(Math.random()<0.05){const el=document.querySelector('.footer p:nth-child(2)');if(el&&el.textContent.includes('Vibe-coded'))el.textContent=alts[Math.floor(Math.random()*alts.length)];}
+}());
+</script>
+</body>
+</html>
