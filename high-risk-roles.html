@@ -91,8 +91,8 @@
 .hrr-src-pub{color:var(--fg3);font-size:0.74rem}
 .hrr-meta{display:flex;flex-wrap:wrap;gap:0.3rem}
 .hrr-pill.hrr-conf-verified{background:var(--accent2-bg);border-color:transparent;color:var(--accent2)}
-.hrr-pill.hrr-conf-unverified,.hrr-pill.hrr-conf-single-source{background:#fffbeb;border-color:rgba(245,158,11,0.3);color:#92400e}
-[data-theme="dark"] .hrr-pill.hrr-conf-unverified,[data-theme="dark"] .hrr-pill.hrr-conf-single-source{background:rgba(245,158,11,0.08);color:#fbbf24}
+.hrr-pill.hrr-conf-unverified,.hrr-pill.hrr-conf-single-source,.hrr-pill.hrr-conf-not-rechecked{background:#fffbeb;border-color:rgba(245,158,11,0.3);color:#92400e}
+[data-theme="dark"] .hrr-pill.hrr-conf-unverified,[data-theme="dark"] .hrr-pill.hrr-conf-single-source,[data-theme="dark"] .hrr-pill.hrr-conf-not-rechecked{background:rgba(245,158,11,0.08);color:#fbbf24}
 .hrr-src-note{font-size:0.72rem;color:var(--fg3);font-style:italic}
 .hrr-steps{margin-left:1.3rem}
 .hrr-steps>li{margin-bottom:0.55rem}
@@ -715,149 +715,149 @@
 <li class="hrr-src" id="src-cisa-itmg-2026">
 <p class="hrr-src-title"><a href="https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide" target="_blank" rel="noopener">Insider Threat Mitigation Guide (2026 edition)</a></p>
 <p class="hrr-src-pub">Cybersecurity and Infrastructure Security Agency (CISA), 2026</p>
-<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-corroborated">Corroborated: two independent secondary sources</span></p>
-<p class="hrr-src-says">Program-building guide for critical infrastructure. The September 2026 update, as CISA announced it, adds material on access control, visitor screening, hybrid and remote work, and managing risk from adverse employee separations. Treats critical assets and the people with access to them as the starting point.</p>
-<p class="hrr-src-note">Edition and new topics confirmed from two independent trade-press reports of CISA's announcement; the full 2026 text was not re-read for this page.</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-single-source">Single source</span></p>
+<p class="hrr-src-says">Program-building guide for critical infrastructure. The September 2026 update, as CISA announced it, adds material on access control, visitor screening, hybrid and remote work, and managing risk from adverse employee separations.</p>
+<p class="hrr-src-note">Not read. cisa.gov refused automated access on 2026-11-07, so neither the guide nor CISA's page was opened. The edition and its new topics come from CISA's September 2026 announcement as relayed by trade press (ExecutiveGov, Infosecurity Magazine, ABA Banking Journal). Several outlets relaying one announcement count as one source.</p>
 </li>
 <li class="hrr-src" id="src-nist-800-53">
 <p class="hrr-src-title"><a href="https://doi.org/10.6028/NIST.SP.800-53r5" target="_blank" rel="noopener">SP 800-53 Rev. 5, Security and Privacy Controls for Information Systems and Organizations (release 5.2.0)</a></p>
 <p class="hrr-src-pub">National Institute of Standards and Technology (NIST), 2020, updated</p>
 <p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
-<p class="hrr-src-says">PS-2 requires a risk designation for every organizational position, screening criteria for those positions, and periodic review of the designations. PS-3 (screening and rescreening), PS-4 (termination), PS-5 (transfer), PS-6 (access agreements) and PS-7 (external personnel) follow from it. AC-2(13) disables accounts of individuals on discovery of significant risk; AC-5 separation of duties; AC-6 least privilege, with AC-6(5) restricting privileged accounts, AC-6(7) reviewing privileges, AC-6(9) logging privileged functions. PM-12 is the insider threat program control.</p>
-<p class="hrr-src-note">Control statements read from the FedRAMP Rev 5 control reference, which reproduces the NIST OSCAL catalog 5.2.0.</p>
+<p class="hrr-src-says">PS-2 requires a risk designation for every organizational position, screening criteria for those positions, and review and update of the designations at a frequency the organization defines. PS-3 (screening and rescreening), PS-4 (termination), PS-5 (transfer), PS-6 (access agreements) and PS-7 (external personnel) follow from it. AC-2(13) disables accounts of individuals within an organization-defined time of discovering significant risks; AC-5 separation of duties; AC-6 least privilege, with AC-6(5) restricting privileged accounts, AC-6(7) reviewing privileges, AC-6(9) logging privileged functions. PM-12 is the insider threat program control.</p>
+<p class="hrr-src-note">Control statements read on 2026-11-07 in NIST's own OSCAL catalog for release 5.2.0 (usnistgov/oscal-content on GitHub). The DOI resolves to the NIST PDF, which names it as the publication's address.</p>
 </li>
 <li class="hrr-src" id="src-cfr-5-731-106">
 <p class="hrr-src-title"><a href="https://www.ecfr.gov/current/title-5/chapter-I/subchapter-B/part-731/subpart-A/section-731.106" target="_blank" rel="noopener">5 CFR 731.106, Designation of public trust positions and investigative requirements</a></p>
 <p class="hrr-src-pub">U.S. Office of Personnel Management (Code of Federal Regulations), current</p>
 <p class="hrr-meta"><span class="hrr-pill">Gives a partial list or examples</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
-<p class="hrr-src-says">Every federal competitive-service position is designated high, moderate or low risk by its potential for adverse impact on the efficiency or integrity of the service. High and moderate risk positions are public trust positions, which may involve policy making, major program responsibility, public safety and health, law enforcement, fiduciary responsibilities, access to or control of financial records, or significant risk of causing damage or realizing personal gain.</p>
-<p class="hrr-src-note">Read on the Cornell LII copy of the regulation.</p>
+<p class="hrr-src-says">Every covered federal position (competitive service, excepted service, career Senior Executive Service, and contractor and nonappropriated fund positions) is designated high, moderate or low risk by its potential for adverse impact on the efficiency or integrity of the service. High and moderate risk positions are public trust positions, which may involve policy making, major program responsibility, public safety and health, law enforcement, fiduciary responsibilities, access to or control of financial records, or significant risk of causing damage or realizing personal gain.</p>
+<p class="hrr-src-note">Read on eCFR (ecfr.gov), current text, 2026-11-07.</p>
 </li>
 <li class="hrr-src" id="src-opm-pds">
 <p class="hrr-src-title"><a href="https://www.opm.gov/suitability/suitability-executive-agent/position-designation-tool" target="_blank" rel="noopener">Position Designation System and Position Designation Tool</a></p>
 <p class="hrr-src-pub">U.S. Office of Personnel Management and Defense Counterintelligence and Security Agency, current</p>
-<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-not-rechecked">Not re-checked: read earlier, site refused access on the review date</span></p>
 <p class="hrr-src-says">The federal method for turning a position's duties into a risk and sensitivity designation and an investigation level. A critical-sensitive or special-sensitive national security designation automatically confers high-risk public trust; noncritical-sensitive confers at least moderate risk.</p>
-<p class="hrr-src-note">Read on opm.gov. The full Position Designation System document was not retrieved.</p>
+<p class="hrr-src-note">Read on opm.gov on 2026-11-06. opm.gov refused automated access on 2026-11-07, so this was not re-checked. The full Position Designation System document has never been retrieved for this page.</p>
 </li>
 <li class="hrr-src" id="src-dodm-8140-03">
 <p class="hrr-src-title"><a href="https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/814003p.PDF" target="_blank" rel="noopener">DoD Manual 8140.03, Cyberspace Workforce Qualification and Management Program</a></p>
 <p class="hrr-src-pub">U.S. Department of Defense, 2023</p>
-<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-not-rechecked">Not re-checked: read earlier, site refused access on the review date</span></p>
 <p class="hrr-src-says">Tracks, per position, whether the position requires designation as an IT Privileged User, and per person whether that requirement is met. Requires cyberspace personnel to meet security and sensitivity levels commensurate with the position.</p>
-<p class="hrr-src-note">Read on esd.whs.mil. The separate DoD IT privileged user memorandum on cyberworkforce.mil could not be retrieved.</p>
+<p class="hrr-src-note">Read on esd.whs.mil on 2026-11-06. esd.whs.mil refused automated access on 2026-11-07, so this was not re-checked, and no paragraph numbers are cited. The separate DoD IT privileged user memorandum has not been retrieved.</p>
 </li>
 <li class="hrr-src" id="src-cnssd-504">
 <p class="hrr-src-title"><a href="https://archive.dni.gov/index.php/ncsc-how-we-work/ncsc-nittf/nittf-technical" target="_blank" rel="noopener">CNSSD 504, Directive on Protecting National Security Systems from Insider Threat (with Annex C)</a></p>
 <p class="hrr-src-pub">Committee on National Security Systems, 2016 version</p>
 <p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-not-public">Not publicly released; existence cited only</span> <span class="hrr-pill hrr-conf-single-source">Single source</span></p>
-<p class="hrr-src-says">Sets user activity monitoring requirements for national security systems. NITTF's technical page lists a 2016 version that adds Annex C, Privileged User and Privileged Access Controls. That version is not public; the link goes to NITTF's listing, not the directive.</p>
-<p class="hrr-src-note">Existence of Annex C confirmed only from NITTF's own listing; its content could not be read.</p>
+<p class="hrr-src-says">Sets user activity monitoring requirements for national security systems. NITTF's technical page lists a 2016 version that adds Annex C, Privileged User and Privileged Access Controls. NITTF lists that version, dated 09/15/2016, among items &quot;not available for public release&quot;; the link goes to NITTF's listing, not the directive.</p>
+<p class="hrr-src-note">NITTF technical page read 2026-11-07: it confirms the 2016 version, its Annex C title and that it is not available for public release. The directive's text could not be read, so none of its requirements are reflected here.</p>
 </li>
 <li class="hrr-src" id="src-nitp-2012">
 <p class="hrr-src-title"><a href="https://www.govinfo.gov/content/pkg/DCPD-201200905/html/DCPD-201200905.htm" target="_blank" rel="noopener">National Insider Threat Policy and Minimum Standards for Executive Branch Insider Threat Programs (Presidential Memorandum)</a></p>
 <p class="hrr-src-pub">The White House, 2012</p>
 <p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
 <p class="hrr-src-says">Requires executive branch programs to gather and analyze threat-related information, monitor employee use of classified networks, and train the workforce. Applies monitoring to everyone with access to classified networks rather than to a list of roles.</p>
-<p class="hrr-src-note">Transmittal memorandum read on govinfo.gov; the minimum standards annex itself was not re-read.</p>
+<p class="hrr-src-note">Transmittal memorandum read on govinfo.gov 2026-11-07. The minimum standards annex itself was not re-read.</p>
 </li>
 <li class="hrr-src" id="src-sei-csg-7">
 <p class="hrr-src-title"><a href="https://www.sei.cmu.edu/library/common-sense-guide-to-mitigating-insider-threats-seventh-edition/" target="_blank" rel="noopener">Common Sense Guide to Mitigating Insider Threats, Seventh Edition</a></p>
 <p class="hrr-src-pub">Carnegie Mellon University Software Engineering Institute (CERT Division), 2022</p>
 <p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-copyright">Copyrighted; cited by number and paraphrased, not reproduced</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
 <p class="hrr-src-says">Twenty-two best practices. The ones most tied to roles: Practice 1 (know and protect critical assets), Practice 6 (include insiders and trusted external entities in enterprise risk assessments), Practice 11 (stringent access controls and monitoring on privileged users), Practice 15 (separation of duties and least privilege) and Practice 20 (a comprehensive termination procedure).</p>
-<p class="hrr-src-note">Practice numbers and topics read from the public-release copy on DTIC. Copyright Carnegie Mellon University; cited by practice number only.</p>
+<p class="hrr-src-note">Title, date (September 7, 2022), the count of 22 practices and the five practice numbers and titles read 2026-11-07 on SEI's library page and SEI's own PDF. Copyright Carnegie Mellon University; the PDF may be reproduced externally only in its entirety, so it is cited by practice number only.</p>
 </li>
 <li class="hrr-src" id="src-npsa-rbsra">
 <p class="hrr-src-title"><a href="https://www.npsa.gov.uk/insider-risks/role-based-security-risk-assessment" target="_blank" rel="noopener">Role-based security risk assessment (insider risk)</a></p>
 <p class="hrr-src-pub">National Protective Security Authority (NPSA), United Kingdom, 2023</p>
-<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-crown-copyright">Crown copyright; Open Government Licence not confirmed, linked and paraphrased</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-crown-copyright">Crown copyright; Open Government Licence not confirmed, linked and paraphrased</span> <span class="hrr-pill hrr-conf-not-rechecked">Not re-checked: read earlier, site refused access on the review date</span></p>
 <p class="hrr-src-says">A six-step method: identify critical assets, identify threats by intent and capability, estimate likelihood and impact, check existing countermeasures, and propose proportionate new ones. Roles that enable a risk are noted against it so extra measures can be considered. Recommends reviewing the risk register at least annually, or sooner after a change in threat, a major incident, a change to critical assets or a new mitigation. Names five insider risk types: unauthorised disclosure, process corruption, facilitation of third-party access, physical sabotage, and IT or electronic sabotage.</p>
-<p class="hrr-src-note">Web page and the Spring 2023 PDF guidance read on npsa.gov.uk. Marked Crown Copyright 2023; no Open Government Licence statement found on the documents.</p>
+<p class="hrr-src-note">Web page and the Spring 2023 PDF guidance read on npsa.gov.uk on 2026-11-06, marked Crown Copyright 2023 with no Open Government Licence statement found. npsa.gov.uk refused automated access on 2026-11-07, so none of this was re-checked.</p>
 </li>
 <li class="hrr-src" id="src-nydfs-2022">
 <p class="hrr-src-title"><a href="https://www.dfs.ny.gov/industry_guidance/industry_letters/il20221115_absence" target="_blank" rel="noopener">Industry Letter: Absence from the Office as an Internal Control Safeguard</a></p>
 <p class="hrr-src-pub">New York State Department of Financial Services, 2022</p>
 <p class="hrr-meta"><span class="hrr-pill">Gives a partial list or examples</span> <span class="hrr-pill hrr-lic-state-gov">State government publication; reuse terms not confirmed, quoted minimally</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
-<p class="hrr-src-says">The closest thing to a regulator's role list found. Sensitive positions should at a minimum include people who can change official books, records or transactions (or influence others to), people with privileged access to information systems including authority to alter them, and people in specialized higher-risk products. Absence means no physical or electronic access. Addressed to state-chartered banks, thrifts, credit unions and foreign bank branches.</p>
-<p class="hrr-src-note">Read on dfs.ny.gov. Corroborated by a law-firm summary.</p>
+<p class="hrr-src-says">The closest thing to a regulator's role list found. DFS recommends that sensitive positions at a minimum include people who can change official books, records or transactions (or influence others to), people with privileged access to information systems including authority to alter them, and people in specialized higher-risk products. Each institution defines absence for its own operations, taking into account both physical and electronic access, and may use a tiered approach, for example allowing email while blocking ledger and transaction systems. Addressed to state-chartered banks, thrifts, credit unions and foreign bank branches.</p>
+<p class="hrr-src-note">Read on dfs.ny.gov 2026-11-07.</p>
 </li>
 <li class="hrr-src" id="src-frb-sr-96-37">
 <p class="hrr-src-title"><a href="https://www.federalreserve.gov/supervisionreg/srletters/SR9637.htm" target="_blank" rel="noopener">SR 96-37, Supervisory Guidance on Required Absences from Sensitive Positions</a></p>
 <p class="hrr-src-pub">Board of Governors of the Federal Reserve System, 1996, revised 2025</p>
 <p class="hrr-meta"><span class="hrr-pill">Gives a partial list or examples</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
 <p class="hrr-src-says">Mandatory time away as an internal control, because most frauds and embezzlements require the wrongdoer's continual presence. Names trading and wire transfer as examples of sensitive key positions and asks each organization to assess its own significant risk areas. Duties are not to be performed physically or electronically during the absence.</p>
-<p class="hrr-src-note">Read on federalreserve.gov.</p>
+<p class="hrr-src-note">Read on federalreserve.gov 2026-11-07. The attachment was revised on October 1, 2025 to remove references to reputational risk.</p>
 </li>
 <li class="hrr-src" id="src-ffiec-is-2006">
 <p class="hrr-src-title"><a href="https://webarchive.library.unt.edu/web/20090808024303/http://www.ffiec.gov/ffiecinfobase/booklets/information_security/information_security.pdf" target="_blank" rel="noopener">FFIEC IT Examination Handbook, Information Security booklet (July 2006)</a></p>
 <p class="hrr-src-pub">Federal Financial Institutions Examination Council, 2006</p>
-<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
-<p class="hrr-src-says">Personnel security section: the sensitivity of a job or access level may warrant additional background and credit checks; contractors should be subject to similar screening; managers should stay alert to changes in personal circumstances after hire. Superseded by the 2016 booklet.</p>
-<p class="hrr-src-note">Read on an archived copy. The current (2016) booklet could not be retrieved, so its equivalent language is not confirmed.</p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-not-rechecked">Not re-checked: read earlier, site refused access on the review date</span></p>
+<p class="hrr-src-says">Personnel security section: the sensitivity of a job or access level may warrant additional background and credit checks; contractors should be subject to similar screening; managers should stay alert to changes in personal circumstances after hire. Superseded: FFIEC members issued a revised Information Security booklet on September 9, 2016. The revised booklet's personnel security language has not been checked for this page.</p>
+<p class="hrr-src-note">The 2006 text was read on an archived copy on 2026-11-06; the archive host was not reachable on 2026-11-07, so it was not re-checked. The 2016 revision is confirmed from the FFIEC members' release as posted on ncua.gov (read 2026-11-07). The current booklet on ithandbook.ffiec.gov refused automated access, so its wording, and whether a later revision exists, were not checked.</p>
 </li>
 <li class="hrr-src" id="src-ncua-205d">
 <p class="hrr-src-title"><a href="https://ncua.gov/regulation-supervision/regulatory-compliance-resources/fair-hiring-banking-act-section-205d" target="_blank" rel="noopener">Section 205(d) of the Federal Credit Union Act and 12 CFR Part 752</a></p>
 <p class="hrr-src-pub">National Credit Union Administration, current</p>
 <p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
-<p class="hrr-src-says">Generally prohibits people convicted of certain crimes involving dishonesty or breach of trust from working at or participating in the affairs of a federally insured credit union without NCUA consent. Amended by the Fair Hiring in Banking Act in 2022. Banks have a parallel rule in Section 19 of the FDI Act.</p>
-<p class="hrr-src-note">Read on ncua.gov. The Section 19 parallel is stated from general knowledge and was not re-read for this page.</p>
+<p class="hrr-src-says">Generally prohibits people convicted of, or in a pretrial diversion program for, a crime involving dishonesty or breach of trust from working at or participating in the affairs of a federally insured credit union without NCUA consent. Amended by the Fair Hiring in Banking Act in 2022. Banks have a parallel rule in Section 19 of the Federal Deposit Insurance Act, which also covers money laundering offenses and requires the FDIC's prior written consent.</p>
+<p class="hrr-src-note">Read on ncua.gov 2026-11-07. Section 19 read in the FDIC's copy of the Federal Deposit Insurance Act on fdic.gov the same day.</p>
 </li>
 <li class="hrr-src" id="src-hipaa-164-308">
 <p class="hrr-src-title"><a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308" target="_blank" rel="noopener">45 CFR 164.308, HIPAA Security Rule administrative safeguards</a></p>
 <p class="hrr-src-pub">U.S. Department of Health and Human Services (Code of Federal Regulations), current</p>
 <p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
-<p class="hrr-src-says">Workforce security: authorization and supervision of workforce members who work with ePHI, a workforce clearance procedure to determine that access is appropriate, termination procedures, information access management, and regular review of information system activity.</p>
-<p class="hrr-src-note">Read on govinfo.gov (2021 CFR edition).</p>
+<p class="hrr-src-says">Workforce security, with addressable implementation specifications: authorization and supervision of workforce members who work with ePHI, a workforce clearance procedure to determine that access is appropriate, termination procedures, information access management, and regular review of information system activity.</p>
+<p class="hrr-src-note">Read on eCFR (ecfr.gov), current text, 2026-11-07.</p>
 </li>
 <li class="hrr-src" id="src-cfr-21-1301-76">
 <p class="hrr-src-title"><a href="https://www.ecfr.gov/current/title-21/chapter-II/part-1301/subject-group-ECFRa7ff8142033a7a2/section-1301.76" target="_blank" rel="noopener">21 CFR 1301.76, Other security controls for practitioners (controlled substances)</a></p>
 <p class="hrr-src-pub">Drug Enforcement Administration (Code of Federal Regulations), current</p>
 <p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
 <p class="hrr-src-says">A registrant may not employ, in a role with access to controlled substances, a person convicted of a felony relating to controlled substances or whose DEA registration was denied, revoked or surrendered for cause. Theft or significant loss must be reported to DEA within one business day.</p>
-<p class="hrr-src-note">Read on the Cornell LII copy of the regulation.</p>
+<p class="hrr-src-note">Read on eCFR (ecfr.gov), current text, 2026-11-07.</p>
 </li>
 <li class="hrr-src" id="src-iso-27002-2022">
 <p class="hrr-src-title"><a href="https://www.iso.org/standard/75652.html" target="_blank" rel="noopener">ISO/IEC 27002:2022 (and Annex A of ISO/IEC 27001:2022)</a></p>
 <p class="hrr-src-pub">ISO/IEC, 2022</p>
-<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-copyright">Copyrighted; cited by number and paraphrased, not reproduced</span> <span class="hrr-pill hrr-conf-corroborated">Corroborated: two independent secondary sources</span></p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-copyright">Copyrighted; cited by number and paraphrased, not reproduced</span> <span class="hrr-pill hrr-conf-unverified">Unverified: not read for this page</span></p>
 <p class="hrr-src-says">Relevant controls by number and title: 5.3 Segregation of duties; 5.18 Access rights; 5.19 Information security in supplier relationships; 6.1 Screening; 6.2 Terms and conditions of employment; 6.5 Responsibilities after termination or change of employment; 6.6 Confidentiality or non-disclosure agreements; 8.2 Privileged access rights; 8.16 Monitoring activities.</p>
-<p class="hrr-src-note">Control numbers and titles confirmed from secondary mappings; the standard itself is paywalled and was not read. Cited by number and title only.</p>
+<p class="hrr-src-note">Not checked against ISO. Control numbers and titles come from secondary mappings consulted on 2026-11-06; the standard is paywalled and iso.org refused automated access on 2026-11-07. Cited by number and title only.</p>
 </li>
 <li class="hrr-src" id="src-aicpa-tsc">
 <p class="hrr-src-title"><a href="https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022" target="_blank" rel="noopener">2017 Trust Services Criteria (with revised points of focus, 2022), basis of SOC 2</a></p>
 <p class="hrr-src-pub">AICPA &amp; CIMA, 2022</p>
 <p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-copyright">Copyrighted; cited by number and paraphrased, not reproduced</span> <span class="hrr-pill hrr-conf-unverified">Unverified: not read for this page</span></p>
-<p class="hrr-src-says">The logical access criteria CC6.1 to CC6.3 cover access provisioning, removal, and role-based access designed around least privilege and segregation of duties. Cited by criterion ID only.</p>
-<p class="hrr-src-note">Criterion text could not be read for this page; IDs and topics are from general knowledge. Check against the AICPA download before relying on the wording.</p>
+<p class="hrr-src-says">Cited for its logical access criteria, given here from general knowledge as CC6.1 to CC6.3 (access provisioning, removal, and role-based access designed around least privilege and segregation of duties). Not checked against the criteria text; cited by criterion ID only.</p>
+<p class="hrr-src-note">AICPA's resource page for this document was read 2026-11-07 and confirms its title. The criteria document itself downloads only after signing in to an AICPA account, so it was not read. Check the criterion IDs and topics against it before relying on them.</p>
 </li>
 <li class="hrr-src" id="src-pci-dss-4">
 <p class="hrr-src-title"><a href="https://www.pcisecuritystandards.org/document_library/" target="_blank" rel="noopener">PCI DSS v4.0.1</a></p>
 <p class="hrr-src-pub">PCI Security Standards Council, 2024</p>
 <p class="hrr-meta"><span class="hrr-pill">Gives a partial list or examples</span> <span class="hrr-pill hrr-lic-copyright">Copyrighted; cited by number and paraphrased, not reproduced</span> <span class="hrr-pill hrr-conf-single-source">Single source</span></p>
-<p class="hrr-src-says">Requirement 12.7.1: people who will have access to the cardholder data environment are screened before hire, within local law. For roles such as cashiers who see one card number at a time, it is a recommendation only. Requirement 7 restricts access to cardholder data by business need to know.</p>
-<p class="hrr-src-note">Requirement text read on a third-party mirror, not the PCI SSC document library. Paraphrased here; check against the official v4.0.1 PDF.</p>
+<p class="hrr-src-says">Requirement 12.7.1: people who will have access to the cardholder data environment are screened before hire, within local law. A third-party copy of the standard reports an applicability note that makes this a recommendation only for roles such as cashiers who see one card number at a time; that note has not been checked against the official text. Requirement 7 restricts access to cardholder data by business need to know.</p>
+<p class="hrr-src-note">Requirement 12.7.1 wording matches third-party copies of the standard (checked again 2026-11-07); the cashier note was read on one such copy on 2026-11-06 only. The official v4.0.1 PDF was not retrieved: PCI SSC's direct document link answered that it must be opened from the document library. Paraphrased here.</p>
 </li>
 <li class="hrr-src" id="src-nice-800-181">
 <p class="hrr-src-title"><a href="https://doi.org/10.6028/NIST.SP.800-181r1" target="_blank" rel="noopener">SP 800-181 Rev. 1, Workforce Framework for Cybersecurity (NICE Framework)</a></p>
 <p class="hrr-src-pub">National Institute of Standards and Technology (NIST), 2020, components updated</p>
 <p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-us-gov">U.S. government work, public domain in the U.S.</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
 <p class="hrr-src-says">Describes cybersecurity work as work roles built from tasks, knowledge and skills. It describes the work, not the risk of the person doing it, so it does not rank roles. Useful for naming technical roles consistently; this site's KSA to NICE crosswalk is at /crosswalk.</p>
-<p class="hrr-src-note">NICE Framework structure already used by this site's crosswalk.</p>
+<p class="hrr-src-note">Read in the NIST PDF 2026-11-07: work roles are built from task, knowledge and skill statements. The site's crosswalk uses the same structure.</p>
 </li>
 <li class="hrr-src" id="src-mitre-ctid-itkb">
 <p class="hrr-src-title"><a href="https://ctid.mitre.org/projects/insider-threat-ttp-knowledge-base" target="_blank" rel="noopener">Insider Threat TTP Knowledge Base</a></p>
 <p class="hrr-src-pub">MITRE Center for Threat-Informed Defense, 2024</p>
 <p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-apache-2.0">Apache License 2.0 (repository)</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
 <p class="hrr-src-says">Insider tactics, techniques and procedures built from incident data and ATT&amp;CK. Organized by behavior, not by role, so it helps choose what to monitor for a role rather than which roles to designate.</p>
-<p class="hrr-src-note">Repository license (Apache 2.0) read on GitHub; ATT&amp;CK content inside it carries the separate ATT&amp;CK terms of use.</p>
+<p class="hrr-src-note">Read on GitHub 2026-11-07 (center-for-threat-informed-defense/insider-threat-ttp-kb): copyright 2024 Center for Threat-Informed Defense, Apache License 2.0; ATT&amp;CK content inside it carries the separate ATT&amp;CK terms of use. The ctid.mitre.org project page was not opened.</p>
 </li>
 <li class="hrr-src" id="src-forscie-itm">
 <p class="hrr-src-title"><a href="https://insiderthreatmatrix.org/" target="_blank" rel="noopener">The Insider Threat Matrix</a></p>
 <p class="hrr-src-pub">Forscie, 2026</p>
-<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-unverified">License not confirmed; linked only</span> <span class="hrr-pill hrr-conf-unverified">Unverified: not read for this page</span></p>
+<p class="hrr-meta"><span class="hrr-pill">No role list</span> <span class="hrr-pill hrr-lic-forscie">Forscie license: royalty-free use, copies must carry its notice; linked only</span> <span class="hrr-pill hrr-conf-verified">Verified: primary source read</span></p>
 <p class="hrr-src-says">A framework of insider behaviors and the detections and preventions that map to them. Like the MITRE knowledge base it is organized by behavior, not role.</p>
-<p class="hrr-src-note">Already listed in this site's References. Its license was not confirmed for this page, so it is linked only.</p>
+<p class="hrr-src-note">License read on insiderthreatmatrix.org/terms-of-use 2026-11-07: Forscie grants a non-exclusive, royalty-free license for research, development and commercial use, provided copies carry Forscie's copyright notice and the license. This page links to the Matrix and reproduces none of it.</p>
 </li>
 </ol></section>
 <!-- HRR:END -->
@@ -882,10 +882,10 @@
 <li><strong>Attach controls to tiers, not to people.</strong> For each tier, decide screening and rescreening, privileged access rules, separation-of-duties requirements, monitoring scope and offboarding steps. The role entries above give starting points.</li>
 <li><strong>Treat transient states as roles.</strong> Notice periods, adverse separations, role changes and long absences change risk for anyone. Define what happens to access and monitoring in each, and make HR's notification to security automatic.</li>
 <li><strong>Govern it.</strong> Give the register an owner, agree it with HR, legal, privacy and the business owners of the assets, and tell the workforce which roles are designated and what that means for them.</li>
-<li><strong>Review it.</strong> At least annually, as NPSA recommends for the risk register and NIST PS-2 requires for position designations, and sooner after a reorganization, a new critical system, a merger, a significant incident, a change in threat or a new regulation.</li>
+<li><strong>Review it.</strong> At least annually, as NPSA recommends for the risk register, and sooner after a reorganization, a new critical system, a merger, a significant incident, a change in threat or a new regulation. NIST PS-2 requires position designations to be reviewed and updated at a frequency the organization defines, so write yours down.</li>
 </ol>
 <div class="callout callout-blue">
-<strong>For financial institutions.</strong> The regulators already ask for a version of this. The Federal Reserve's SR 96-37 and New York DFS's 2022 letter both expect institutions to identify sensitive positions and require time away from them with no physical or electronic access. A high-risk roles register can be the same list, kept once.
+<strong>For financial institutions.</strong> The regulators already ask for a version of this. The Federal Reserve's SR 96-37 and New York DFS's 2022 letter both expect institutions to identify sensitive positions and require time away from them. SR 96-37 says the duties should not be carried out physically or electronically during the absence; DFS asks each institution to define absence itself, covering both physical and electronic access, and allows a tiered approach. A high-risk roles register can be the same list, kept once.
 </div>
 </div>
 
@@ -893,8 +893,10 @@
 <h2 id="known-gaps">Known gaps</h2>
 <ul>
 <li><strong>CNSSD 504 Annex C</strong> (Privileged User and Privileged Access Controls) exists according to NITTF's technical page, but that version of the directive is not public, so its requirements are not reflected here.</li>
-<li><strong>The 2026 CISA Insider Threat Mitigation Guide</strong> is cited from CISA's announcement of its new topics; its full text was not re-read for this page.</li>
-<li><strong>The current FFIEC Information Security booklet (2016)</strong> could not be retrieved; the screening language cited is from the 2006 booklet it replaced.</li>
+<li><strong>The 2026 CISA Insider Threat Mitigation Guide</strong> is cited from CISA's announcement of its new topics, as relayed by trade press; the guide itself has not been read for this page.</li>
+<li><strong>The current FFIEC Information Security booklet</strong> (revised September 2016) could not be retrieved; the screening language cited is from the 2006 booklet it replaced.</li>
+<li><strong>Paywalled or gated standards.</strong> ISO/IEC 27002 control numbers, AICPA Trust Services Criteria IDs and the PCI DSS cashier note have not been checked against the official texts. Their source entries say exactly what was checked.</li>
+<li><strong>Not re-checked on 2026-11-07.</strong> The OPM, DoD Manual 8140.03, NPSA and FFIEC entries were read on 2026-11-06, but their sites refused automated access on the review date, so they carry a not re-checked label.</li>
 <li><strong>FS-ISAC</strong> material on high-risk roles, if any, is member-only; nothing public was found.</li>
 <li><strong>Outside the U.S. and UK,</strong> no sector regulator's role list was reviewed.</li>
 </ul>
@@ -912,7 +914,7 @@
 
 <div class="section">
 <p>Know a role we missed, or a source that lists high-risk roles? <a href="/suggest?from=high-risk-roles">Suggest a role or correction</a>.</p>
-<p class="hrr-data">Data: <a href="/content/high-risk-roles.json">/content/high-risk-roles.json</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Sources keep their own licenses, listed above. Last reviewed 2026-11-06.</p>
+<p class="hrr-data">Data: <a href="/content/high-risk-roles.json">/content/high-risk-roles.json</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Sources keep their own licenses, listed above. Last reviewed 2026-11-07.</p>
 </div>
 
 

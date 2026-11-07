@@ -53,12 +53,14 @@ const LICENSES = {
   'apache-2.0': 'Apache License 2.0 (repository)',
   'not-public': 'Not publicly released; existence cited only',
   'unverified': 'License not confirmed; linked only',
+  'forscie': 'Forscie license: royalty-free use, copies must carry its notice; linked only',
 };
 const CONFIDENCE = {
   verified: 'Verified: primary source read',
   corroborated: 'Corroborated: two independent secondary sources',
   'single-source': 'Single source',
   unverified: 'Unverified: not read for this page',
+  'not-rechecked': 'Not re-checked: read earlier, site refused access on the review date',
 };
 const GIVES = { yes: 'Gives a role list', partial: 'Gives a partial list or examples', no: 'No role list' };
 
