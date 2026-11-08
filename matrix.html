@@ -35,7 +35,7 @@
 <link rel="canonical" href="https://insiderthreatanalyst.com/matrix">
 <link rel="stylesheet" href="/assets/ita.css">
 <style>
-[data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0f172a;--fg2:#334155;--fg3:#64748b;--fg4:#64748b;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0d9488;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08);--tooltip-bg:#0f172a;--tooltip-fg:#f1f5f9;--row-hover:#f0f9ff;--col-hover:rgba(37,99,235,0.06);--ksa-nice-bg:#dbeafe;--ksa-nice-fg:#1e40af;--ksa-custom-bg:#ccfbf1;--ksa-custom-fg:#115e59;--ksa-adj-bg:#fae8ff;--ksa-adj-fg:#7e22ce;--dot-on:#2563eb;--dot-off:#e2e8f0;--check:#16a34a}
+[data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0f172a;--fg2:#334155;--fg3:#5a6a7f;--fg4:#5a6a7f;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0c7d73;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08);--tooltip-bg:#0f172a;--tooltip-fg:#f1f5f9;--row-hover:#f0f9ff;--col-hover:rgba(37,99,235,0.06);--ksa-nice-bg:#dbeafe;--ksa-nice-fg:#1e40af;--ksa-custom-bg:#ccfbf1;--ksa-custom-fg:#115e59;--ksa-adj-bg:#fae8ff;--ksa-adj-fg:#7e22ce;--dot-on:#2563eb;--dot-off:#e2e8f0;--check:#16a34a}
 [data-theme="dark"]{--bg:#0c1222;--bg2:#162032;--bg3:#1e2d44;--fg:#f1f5f9;--fg2:#cbd5e1;--fg3:#94a3b8;--fg4:#94a3b8;--border:#253550;--border2:#3a5070;--accent:#6cb4ff;--accent-bg:#1a3358;--accent2:#34d9c3;--header-bg:#0c1424;--header-fg:#f1f5f9;--card-shadow:0 1px 4px rgba(0,0,0,0.35),0 0 0 1px rgba(100,180,255,0.04);--tooltip-bg:#f1f5f9;--tooltip-fg:#0f172a;--row-hover:#1a3358;--col-hover:rgba(108,180,255,0.08);--ksa-nice-bg:#172e52;--ksa-nice-fg:#7dbaff;--ksa-custom-bg:#0e3630;--ksa-custom-fg:#4ae8d0;--ksa-adj-bg:#2d1054;--ksa-adj-fg:#c9a8ff;--dot-on:#6cb4ff;--dot-off:#253550;--check:#4ade80}
 html{font-size:16px}body{font-family:var(--font-sans);color:var(--fg);background:var(--bg);line-height:1.5;transition:background 0.3s,color 0.3s}
 
@@ -46,7 +46,7 @@ html{font-size:16px}body{font-family:var(--font-sans);color:var(--fg);background
 [data-theme="dark"] .chip.on{box-shadow:0 0 6px rgba(108,180,255,0.2)}
 [data-theme="dark"] .section-label{border-bottom-color:var(--accent)}
 .header-inner{max-width:1400px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center}
-.header h1 a{color:inherit;text-decoration:none;opacity:0.7}
+.header h1 a{color:inherit;text-decoration:none;opacity:0.7;border-bottom:1px dashed rgba(255,255,255,0.3)}
 .header h1 a:hover{opacity:1}
 .header-right a{color:var(--header-fg);text-decoration:none;font-size:0.75rem;opacity:0.7;padding:0.3rem 0.7rem;border:1px solid rgba(255,255,255,0.15);border-radius:6px}
 .header-right a:hover{opacity:1;border-color:rgba(255,255,255,0.4)}
@@ -58,7 +58,7 @@ html{font-size:16px}body{font-family:var(--font-sans);color:var(--fg);background
 .filter-group{display:flex;flex-direction:column;gap:0.15rem}
 .filter-label{font-size:0.6rem;font-weight:600;color:var(--fg3);text-transform:uppercase;letter-spacing:0.05em;display:flex;align-items:center;gap:0.3rem}
 .filter-toggle{font-family:inherit;font-size:0.9rem;line-height:1;background:none;border:none;color:var(--fg3);cursor:pointer;padding:0;border-radius:3px;opacity:0.5;transition:opacity 0.15s,background 0.15s;min-width:32px;min-height:32px;display:inline-flex;align-items:center;justify-content:center;margin:-0.5rem 0}
-.filter-toggle:hover,.filter-toggle:focus{opacity:1;background:var(--bg);outline:none}
+.filter-toggle:hover,.filter-toggle:focus{opacity:1;background:var(--bg)}
 .filter-options{display:flex;gap:0.25rem;flex-wrap:wrap}
 .chip{padding:0.2rem 0.55rem;border:1px solid var(--border);border-radius:5px;font-size:0.68rem;cursor:pointer;background:var(--bg2);color:var(--fg3);transition:all 0.15s;user-select:none}
 .chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
@@ -182,7 +182,7 @@ html{font-size:16px}body{font-family:var(--font-sans);color:var(--fg);background
 <script src="/assets/search.js" defer></script>
 <!-- NAV:END -->
 
-<div class="filters"><div class="filters-inner">
+<div class="filters" role="region" aria-label="Matrix filters"><div class="filters-inner">
 <div class="filter-row">
 <div class="filter-group"><div class="filter-label">Type<button class="filter-toggle" data-toggle="type" title="Toggle all on/off" aria-label="Toggle all Type filters">⇅</button></div><div class="filter-options">
 <button class="chip on" data-filter="type" data-val="K" role="switch" aria-checked="true">Knowledge</button>
@@ -248,7 +248,7 @@ html{font-size:16px}body{font-family:var(--font-sans);color:var(--fg);background
 <div id="tables"></div>
 </main>
 
-<div style="max-width:1400px;margin:2rem auto 0;padding:0 1.5rem">
+<section aria-label="Sources and attribution" style="max-width:1400px;margin:2rem auto 0;padding:0 1.5rem">
 <div style="font-family:var(--font-serif);font-size:0.9rem;font-weight:600;color:var(--fg);margin-bottom:0.5rem;padding-bottom:0.25rem;border-bottom:2px solid var(--accent)">Sources & attribution</div>
 
 <div style="display:grid;grid-template-columns:1fr;gap:0.5rem;font-size:0.72rem;line-height:1.65">
@@ -266,28 +266,28 @@ html{font-size:16px}body{font-family:var(--font-sans);color:var(--fg);background
 <b style="color:var(--fg2)">Frameworks referenced</b> — <a href="https://attack.mitre.org/" target="_blank" rel="noopener">MITRE ATT&CK</a> · <a href="https://center-for-threat-informed-defense.github.io/insider-threat-ttp-kb/" target="_blank" rel="noopener">InT TTP KB v2.0</a> · <a href="https://www.cdse.edu/" target="_blank" rel="noopener">CDSE/DSI</a> · <a href="https://www.ncfta.net/" target="_blank" rel="noopener">NCFTA</a> · <a href="https://www.dni.gov/index.php/ncsc-how-we-work/ncsc-nittf" target="_blank" rel="noopener">NITTF</a> · <a href="https://www.atapworldwide.org/" target="_blank" rel="noopener">ATAP</a></div>
 
 </div>
-</div>
+</section>
 
-<div class="rag-export" style="max-width:1400px;margin:1.5rem auto 0;padding:1rem 1.5rem">
+<section class="rag-export" aria-labelledby="ai-export" style="max-width:1400px;margin:1.5rem auto 0;padding:1rem 1.5rem">
 <h2 id="ai-export">🤖 Use this matrix with your AI assistant</h2>
 <p>Want to feed this KSA framework into an LLM, Copilot, or your own RAG pipeline? Download a machine-readable JSON export of the full matrix — every KSA with its ID, description, type, source, concentration, and level. Use it for career planning prompts, gap analysis, job description generation, or whatever you can dream up.</p>
 <p style="font-size:0.65rem;color:var(--fg4)">This export is provided for individual and organizational use. Attribution appreciated: <b>insiderthreatanalyst.com</b>. Data is structured, not copyrighted text — use freely.</p>
 <button class="btn" onclick="exportRAG()" style="margin-top:0.35rem">⬇ Download KSA matrix (JSON)</button>
-</div>
+</section>
 
-<div class="feedback-widget" id="feedback-widget">
+<aside class="feedback-widget" id="feedback-widget" aria-label="Page feedback">
 <span>Helpful?</span>
 <button class="feedback-btn" onclick="sendFeedback('up',this)" title="Yes, this was helpful">👍</button>
 <button class="feedback-btn" onclick="sendFeedback('down',this)" title="Not helpful">👎</button>
 <span class="feedback-thanks" id="feedback-thanks">Thanks!</span>
-</div>
+</aside>
 
 
-<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})" title="Back to top" aria-label="Back to top">↑</button>
 <footer class="footer">
 <p><a href="about">About</a> &middot; <a href="start">🚀 Start here</a> · <a href="references">📚 References</a> · <a href="contributors">🤝 Contributors</a> · <a href="changelog">Changelog</a> · <a href="suggest?from=matrix">💬 Suggest</a></p>
 <p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; <a href="https://github.com/robknowles-cybersecurity/insiderthreatanalyst.com" target="_blank" rel="noopener">Source on GitHub&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
-<p style="margin-top:0.25rem;font-size:0.625rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.625rem">hello@insiderthreatanalyst.com</a></p>
+<p style="margin-top:0.25rem;font-size:0.625rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="font-size:0.625rem">hello@insiderthreatanalyst.com</a></p>
 </footer>
 <script>
 requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transition')})});

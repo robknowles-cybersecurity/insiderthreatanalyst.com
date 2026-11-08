@@ -35,7 +35,7 @@
 <link rel="canonical" href="https://insiderthreatanalyst.com/clusters">
 <link rel="stylesheet" href="/assets/ita.css">
 <style>
-[data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0a1628;--fg2:#2a3a52;--fg3:#64748b;--fg4:#64748b;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0d9488;--accent2-bg:#f0fdfa;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08);--check:#16a34a}
+[data-theme="light"]{--bg:#f8fafc;--bg2:#fff;--bg3:#f1f5f9;--fg:#0a1628;--fg2:#2a3a52;--fg3:#5a6a7f;--fg4:#5a6a7f;--border:#e2e8f0;--border2:#cbd5e1;--accent:#2563eb;--accent-bg:#eff6ff;--accent2:#0c7d73;--accent2-bg:#f0fdfa;--header-bg:#0f172a;--header-fg:#f8fafc;--card-shadow:0 1px 3px rgba(15,23,42,0.08);--check:#16a34a}
 [data-theme="dark"]{--bg:#0c1222;--bg2:#162032;--bg3:#1e2d44;--fg:#f1f5f9;--fg2:#cbd5e1;--fg3:#94a3b8;--fg4:#94a3b8;--border:#253550;--border2:#3a5070;--accent:#6cb4ff;--accent-bg:#1a3358;--accent2:#34d9c3;--accent2-bg:#0f3d38;--header-bg:#0c1424;--header-fg:#f1f5f9;--card-shadow:0 1px 4px rgba(0,0,0,0.35),0 0 0 1px rgba(100,180,255,0.04);--check:#4ade80}
 
 .header-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center}
@@ -55,7 +55,7 @@
 .pb-group{display:flex;flex-direction:column;gap:0.2rem}
 .pb-label{font-size:0.62rem;font-weight:600;color:var(--fg3);text-transform:uppercase;letter-spacing:0.04em}
 .pb-select{font-family:inherit;font-size:0.78rem;padding:0.35rem 0.6rem;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--fg);cursor:pointer}
-.pb-select:focus{outline:none;border-color:var(--accent)}
+.pb-select:focus{border-color:var(--accent)}
 .pb-results{display:none}
 .pb-results.active{display:block}
 .pb-tier{margin-bottom:0.65rem}
@@ -255,18 +255,18 @@
 </main>
 
 
-<div class="feedback-widget" id="feedback-widget">
+<aside class="feedback-widget" id="feedback-widget" aria-label="Page feedback">
 <span>Helpful?</span>
 <button class="feedback-btn" onclick="sendFeedback('up',this)" title="Yes, this was helpful">👍</button>
 <button class="feedback-btn" onclick="sendFeedback('down',this)" title="Not helpful">👎</button>
 <span class="feedback-thanks" id="feedback-thanks">Thanks!</span>
-</div>
+</aside>
 
-<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})" title="Back to top" aria-label="Back to top">↑</button>
 <footer class="footer">
 <p><a href="about">About</a> &middot; <a href="start">🚀 Start here</a> · <a href="references">📚 References</a> · <a href="contributors">🤝 Contributors</a> · <a href="changelog">Changelog</a> · <a href="suggest?from=clusters">💬 Suggest</a></p>
 <p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; <a href="https://github.com/robknowles-cybersecurity/insiderthreatanalyst.com" target="_blank" rel="noopener">Source on GitHub&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
-<p style="margin-top:0.25rem;font-size:0.625rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.625rem">hello@insiderthreatanalyst.com</a></p>
+<p style="margin-top:0.25rem;font-size:0.625rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="font-size:0.625rem">hello@insiderthreatanalyst.com</a></p>
 </footer>
 <script>
 requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transition')})});
