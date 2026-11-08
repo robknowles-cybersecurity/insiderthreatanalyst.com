@@ -834,7 +834,7 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://www.cybercollaboration.org.au/collaboration-partnerships/australian-insider-risk-centre-of-excellence-air-coe/",
-    "note": "NEW this pass. Australia. Hub row. Also hosts an Insider Risk for Executives Workshop and the McGrathNicol Insider Risk Investigations Playbook, neither of which has a separately verifiable course URL; the workshop's menu link returned 404 on 2026-09-14. Aus3C also convenes the FVEY Insider Risk Practitioner Alliance (FIRPA), which is worth a look for the events calendar.",
+    "note": "NEW this pass. Australia. Hub row. Also hosts an Insider Risk for Executives Workshop and the McGrathNicol Insider Risk Investigations Playbook, neither of which has a separately verifiable course URL; the workshop's menu link returned 404 on 2026-09-14 and failed again on 2026-11-07. Aus3C also convenes the FVEY Insider Risk Practitioner Alliance (FIRPA), which is worth a look for the events calendar.",
     "venue": "directory",
     "parent_program": null,
     "verification": "confirmed on the institution's own domain"
@@ -879,7 +879,7 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://www.cdse.edu/Training/eLearning/INT122/",
-    "note": "Non-academic. 60-minute eLearning for designated organizational Insider Threat Program Managers on organizing and designing a program that meets the Executive Order 13587 minimum standards. Verified 2026-09-14.",
+    "note": "Non-academic. 60-minute eLearning for designated organizational Insider Threat Program Managers on organizing and designing a program that meets the Executive Order 13587 minimum standards. Verified 2026-09-14; re-verified 2026-11-07.",
     "venue": "directory",
     "parent_program": null,
     "verification": "confirmed on the institution's own domain"
@@ -894,7 +894,7 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://www.cdse.edu/Training/eLearning/INT210/",
-    "note": "Non-academic. 60-minute eLearning for insider threat program operational personnel on response options, from administrative action to HR, EAP and law enforcement referrals. Verified 2026-09-14.",
+    "note": "Non-academic. 60-minute eLearning for insider threat program operational personnel on response options, from administrative action to HR, EAP and law enforcement referrals. Verified 2026-09-14; re-verified 2026-11-07.",
     "venue": "directory",
     "parent_program": null,
     "verification": "confirmed on the institution's own domain"
@@ -924,7 +924,7 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://www.cdse.edu/Training/eLearning/INT220/",
-    "note": "Non-academic. 60-minute eLearning for program management and operations personnel on incident response within their authority, evidence handling and chain of custody. Verified 2026-09-14.",
+    "note": "Non-academic. 60-minute eLearning for program management and operations personnel on incident response within their authority, evidence handling and chain of custody. Verified 2026-09-14; re-verified 2026-11-07.",
     "venue": "directory",
     "parent_program": null,
     "verification": "confirmed on the institution's own domain"
@@ -939,7 +939,7 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://www.cdse.edu/Training/eLearning/INT230/",
-    "note": "Non-academic. 80-minute eLearning for operational personnel on identifying insider threat indicators in records and databases under DOD Directive 5205.16. Verified 2026-09-14.",
+    "note": "Non-academic. 80-minute eLearning for operational personnel on identifying insider threat indicators in records and databases under DOD Directive 5205.16. Verified 2026-09-14; re-verified 2026-11-07.",
     "venue": "directory",
     "parent_program": null,
     "verification": "confirmed on the institution's own domain"
@@ -954,7 +954,7 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://www.cdse.edu/Training/eLearning/INT240/",
-    "note": "Non-academic. 90-minute eLearning on the roles, purpose and management processes of an insider threat hub, for DOD, industry and federal agency personnel. Verified 2026-09-14.",
+    "note": "Non-academic. 90-minute eLearning on the roles, purpose and management processes of an insider threat hub, for DOD, industry and federal agency personnel. Verified 2026-09-14; re-verified 2026-11-07.",
     "venue": "directory",
     "parent_program": null,
     "verification": "confirmed on the institution's own domain"
@@ -969,7 +969,7 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://www.cdse.edu/Training/eLearning/INT250/",
-    "note": "Non-academic. 90-minute eLearning on analytical and critical thinking tools for producing insider threat analytic products. Verified 2026-09-14.",
+    "note": "Non-academic. 90-minute eLearning on analytical and critical thinking tools for producing insider threat analytic products. Verified 2026-09-14; re-verified 2026-11-07.",
     "venue": "directory",
     "parent_program": null,
     "verification": "confirmed on the institution's own domain"
@@ -984,7 +984,7 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://www.cdse.edu/Training/eLearning/INT260/",
-    "note": "Non-academic. 90-minute eLearning on the civil liberties and privacy laws, regulations and policies that bound insider threat program actions. Verified 2026-09-14.",
+    "note": "Non-academic. 90-minute eLearning on the civil liberties and privacy laws, regulations and policies that bound insider threat program actions. Verified 2026-09-14; re-verified 2026-11-07.",
     "venue": "directory",
     "parent_program": null,
     "verification": "confirmed on the institution's own domain"
@@ -999,7 +999,7 @@
     "credit": "non-credit",
     "cost": "unknown",
     "url": "https://www.cdse.edu/Training/eLearning/INT270/",
-    "note": "Non-academic. 60-minute eLearning for organizational leaders on building the workforce trust that makes employees willing to report concerns. Verified 2026-09-14.",
+    "note": "Non-academic. 60-minute eLearning for organizational leaders on building the workforce trust that makes employees willing to report concerns. Verified 2026-09-14; re-verified 2026-11-07.",
     "venue": "directory",
     "parent_program": null,
     "verification": "confirmed on the institution's own domain"
@@ -1015,6 +1015,51 @@
     "cost": "unknown",
     "url": "https://www.cdse.edu/Training/Curricula/INT333/",
     "note": "Non-academic. 5-hour curriculum of courses and exams for insider threat program personnel in cleared defense industry, including the contractor's designated Insider Threat Program Senior Official. Verified 2026-09-14.",
+    "venue": "directory",
+    "parent_program": null,
+    "verification": "confirmed on the institution's own domain"
+  },
+  {
+    "institution": "Signpost Six (Netherlands)",
+    "program_name": "Certified Insider Risk Analyst Training",
+    "group": "professional_body_and_vendor",
+    "field": "core insider risk",
+    "scope": "insider-threat",
+    "format": "multi-session",
+    "credit": "non-credit",
+    "cost": "unknown",
+    "url": "https://www.signpostsix.com/product/analyst-training/",
+    "note": "NEW 2026-11-07. Independent provider, Netherlands (The Hague). 6-hour online course for established and aspiring analysts in three blocks: insider risk and its threat environment; policy, privacy and ethics; responding to and recovering from an insider incident. Two assignments with personalised feedback. The page calls the course certified but does not name the credential or say whether it is self-paced. Passes the vendor test: Signpost Six sells insider risk training and advisory services, not monitoring software, and the page teaches no product. Verified 2026-11-07.",
+    "venue": "directory",
+    "parent_program": null,
+    "verification": "confirmed on the institution's own domain"
+  },
+  {
+    "institution": "Signpost Six (Netherlands)",
+    "program_name": "E-learning Insider Risk Introduction",
+    "group": "professional_body_and_vendor",
+    "field": "core insider risk",
+    "scope": "insider-threat",
+    "format": "self-paced",
+    "credit": "non-credit",
+    "cost": "paid",
+    "url": "https://www.signpostsix.com/product/e-learning-on-the-critical-pathway-to-insider-risk-60-90-minutes/",
+    "note": "NEW 2026-11-07. Independent provider, Netherlands. Self-paced e-learning for managers and employees, built on Shaw and Sellers' Critical Pathway to Insider Risk (2015): a step-by-step case study, theory and a wrap-up video, with optional extra cases. The page states a price of 149 euros and a 25-minute session, although its address says 60-90 minutes. Same vendor-test call as the analyst course. Verified 2026-11-07.",
+    "venue": "directory",
+    "parent_program": null,
+    "verification": "confirmed on the institution's own domain"
+  },
+  {
+    "institution": "Signpost Six (Netherlands)",
+    "program_name": "Essentials Insider Risk Workshop",
+    "group": "professional_body_and_vendor",
+    "field": "core insider risk",
+    "scope": "insider-threat",
+    "format": "single-session",
+    "credit": "non-credit",
+    "cost": "unknown",
+    "url": "https://www.signpostsix.com/academy/essentials-insider-risk-workshop/",
+    "note": "NEW 2026-11-07. Independent provider, Netherlands. One-day (8-hour) in-person workshop for groups of 5 to 20: insider risk and its threat environment, the role of culture, leadership and people, then tabletop exercises on real cases. A two-day Advanced workshop adds crisis simulation games. The page gives no price and no dates. Same vendor-test call as the analyst course. Verified 2026-11-07.",
     "venue": "directory",
     "parent_program": null,
     "verification": "confirmed on the institution's own domain"
