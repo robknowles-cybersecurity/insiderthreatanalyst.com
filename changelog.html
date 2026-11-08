@@ -131,6 +131,18 @@
 
 <div class="version">
 <div class="version-header">
+<span class="version-tag">v1.7.7</span>
+<span class="version-date">2026-11-07</span>
+</div>
+<div class="version-body">
+<ul>
+<li><span class="change-tag tag-fixed">Fixed</span> <strong>Accessibility pass.</strong> Every page was checked against WCAG 2.1 AA with axe-core at phone and desktop widths, in light and dark. The light theme&rsquo;s muted grey and teal are a shade darker so small text reads at 4.5:1. The secondary nav links, the footer email link and the &ldquo;Career Framework&rdquo; header link no longer fade below that. Focus outlines are back on the clusters picker and the matrix toggle buttons. The homepage questions are now proper second-level headings. The jump bars on Start Here and Wellness, the feedback box, and the matrix and framework controls are now labelled page regions, so screen readers can find them. The cognitive-bias quiz on the framework page works from the keyboard, the DIKW pyramid has a text description, and Back to top no longer animates when your device asks for reduced motion. Items that need a design decision are listed for a later round.</li>
+</ul>
+</div>
+</div>
+
+<div class="version">
+<div class="version-header">
 <span class="version-tag">v1.7.6</span>
 <span class="version-date">2026-11-07</span>
 </div>
@@ -841,11 +853,11 @@
 
 </main>
 
-<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})" title="Back to top" aria-label="Back to top">↑</button>
 <footer class="footer">
 <p><a href="about">About</a> &middot; <a href="start">🚀 Start here</a> · <a href="references">📚 References</a> · <a href="contributors">🤝 Contributors</a> · <a href="changelog">Changelog</a> · <a href="suggest?from=changelog">💬 Suggest</a></p>
 <p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; <a href="https://github.com/robknowles-cybersecurity/insiderthreatanalyst.com" target="_blank" rel="noopener">Source on GitHub&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
-<p style="margin-top:0.25rem;font-size:0.58rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.55rem">hello@insiderthreatanalyst.com</a></p>
+<p style="margin-top:0.25rem;font-size:0.58rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="font-size:0.55rem">hello@insiderthreatanalyst.com</a></p>
 </footer>
 <script>
 requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transition')})});

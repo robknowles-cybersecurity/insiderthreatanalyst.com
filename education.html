@@ -329,18 +329,18 @@
 
 </main>
 
-<div class="feedback-widget" id="feedback-widget">
+<aside class="feedback-widget" id="feedback-widget" aria-label="Page feedback">
 <span>Helpful?</span>
 <button class="feedback-btn" onclick="sendFeedback('up',this)" title="Yes, this was helpful">👍</button>
 <button class="feedback-btn" onclick="sendFeedback('down',this)" title="Not helpful">👎</button>
 <span class="feedback-thanks" id="feedback-thanks">Thanks!</span>
-</div>
+</aside>
 
-<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})" title="Back to top" aria-label="Back to top">↑</button>
 <footer class="footer">
 <p><a href="about">About</a> &middot; <a href="start">🚀 Start here</a> · <a href="references">📚 References</a> · <a href="contributors">🤝 Contributors</a> · <a href="changelog">Changelog</a> · <a href="suggest?from=education">💬 Suggest</a></p>
 <p style="margin-top:0.4rem">Maintained by Rob Knowles &middot; <a href="https://www.linkedin.com/in/robknowles-cybersecurity" target="_blank" rel="noopener">LinkedIn&#8599;</a> &middot; <a href="https://github.com/robknowles-cybersecurity/insiderthreatanalyst.com" target="_blank" rel="noopener">Source on GitHub&#8599;</a> &middot; Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
-<p style="margin-top:0.25rem;font-size:0.58rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="opacity:0.6;font-size:0.55rem">hello@insiderthreatanalyst.com</a></p>
+<p style="margin-top:0.25rem;font-size:0.58rem">Vibe-coded with Claude™ · <a href="mailto:hello@insiderthreatanalyst.com" style="font-size:0.55rem">hello@insiderthreatanalyst.com</a></p>
 </footer>
 <script>
 /* PE-278: directory filters and collapsible groups. Progressive enhancement:
